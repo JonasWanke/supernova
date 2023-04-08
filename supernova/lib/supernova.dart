@@ -45,6 +45,7 @@ export 'src/date_time/module.dart';
 export 'src/debug_mode.dart';
 export 'src/email_address.dart';
 export 'src/google_cloud.dart';
+export 'src/https_url.dart';
 export 'src/id.dart';
 export 'src/iterable.dart';
 export 'src/localization.dart';

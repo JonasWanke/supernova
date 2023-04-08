@@ -1,0 +1,5 @@
+include: package:supernova/lints.yaml
+
+linter:
+  rules:
+    depend_on_referenced_packages: true

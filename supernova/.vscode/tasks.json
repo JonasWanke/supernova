@@ -1,0 +1,21 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pub get",
+      "type": "dart",
+      "command": "dart",
+      "args": ["pub", "get"]
+    },
+    {
+      "label": "build_runner watch",
+      "type": "dart",
+      "command": "dart",
+      "args": ["run", "build_runner", "watch", "--delete-conflicting-outputs"],
+      "problemMatcher": ["$dart-build_runner"],
+      "isBackground": true,
+      "dependsOn": ["pub get"],
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}

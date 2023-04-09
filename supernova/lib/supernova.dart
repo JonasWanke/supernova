@@ -52,6 +52,7 @@ export 'src/localization.dart';
 export 'src/logger.dart' hide initLogger;
 export 'src/math.dart';
 export 'src/oxidized.dart';
+export 'src/random.dart';
 export 'src/string.dart';
 export 'src/typedefs.dart';
 export 'src/validation.dart';

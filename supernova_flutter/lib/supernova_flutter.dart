@@ -27,22 +27,7 @@ export 'package:black_hole_flutter/black_hole_flutter.dart';
 export 'package:flutter/foundation.dart'
     hide Factory, binarySearch, clampDouble, mergeSort;
 export 'package:flutter/material.dart'
-    hide
-        Chip,
-        ElevatedButton,
-        FutureBuilder,
-        Material,
-        NavigationDrawer,
-        NavigationToolbar,
-        OutlinedButton,
-        SliverAppBar,
-        SnapshotWidget,
-        StepState,
-        Stepper,
-        StreamBuilder,
-        TextButton,
-        Title,
-        ValueGetter;
+    hide FutureBuilder, SnapshotWidget, StepState, Stepper, StreamBuilder;
 export 'package:flutter/services.dart';
 export 'package:flutter_blurhash/flutter_blurhash.dart';
 export 'package:flutter_hooks/flutter_hooks.dart' hide useFuture, useStream;

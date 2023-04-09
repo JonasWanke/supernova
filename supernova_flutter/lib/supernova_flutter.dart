@@ -23,13 +23,7 @@ export 'dart:ui'
 
 export 'package:align_positioned/align_positioned.dart';
 export 'package:auto_size_text/auto_size_text.dart';
-export 'package:black_hole_flutter/black_hole_flutter.dart'
-    hide
-        FancyContext,
-        FancyElevatedButton,
-        FancyFab,
-        FancyOutlinedButton,
-        FancyTextButton;
+export 'package:black_hole_flutter/black_hole_flutter.dart';
 export 'package:flutter/foundation.dart'
     hide Factory, binarySearch, clampDouble, mergeSort;
 export 'package:flutter/material.dart'

@@ -31,6 +31,11 @@ class LocalDate implements Comparable<LocalDate>, ToJson, Validatable {
   static LocalDate get yesterday =>
       LocalDate.fromDateTime(LocalDate.today.dateTime - 1.days);
 
+  static final stream = Stream.periodic(1.seconds, (_) => DateTime.now())
+      .map(LocalDate.fromDateTime)
+      .distinct()
+      .asBroadcastStream();
+
   final DateTime dateTime;
 
   LocalMonth get localMonth => LocalMonth(year, month);

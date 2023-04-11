@@ -7,6 +7,6 @@ class HelpIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(message: tooltip, child: Icon(Icons.help_outlined));
+    return Tooltip(message: tooltip, child: const Icon(Icons.help_outlined));
   }
 }

@@ -32,8 +32,10 @@ class SupernovaHttpsUrlFormField extends SupernovaFormFieldBase<HttpsUrl>
 
 class _SupernovaHttpsUrlFormFieldWidget extends HookWidget {
   _SupernovaHttpsUrlFormFieldWidget(
-      this.common, this.onSubmitted, this.formField)
-      : assert(
+    this.common,
+    this.onSubmitted,
+    this.formField,
+  ) : assert(
           common.necessity
               .when(optional: () => true, required: (text) => text != null),
           "SupernovaHttpsUrlFormField needs a `requiredText` if it's required.",

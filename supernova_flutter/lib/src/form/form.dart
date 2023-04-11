@@ -11,7 +11,8 @@ typedef SupernovaFormBuilder = Widget Function(
 );
 
 typedef StatelessSupernovaFormBuilder = Widget Function(
-    AsyncVoidCallback submit);
+  AsyncVoidCallback submit,
+);
 
 class SupernovaForm extends HookWidget {
   const SupernovaForm({
@@ -119,7 +120,9 @@ class _StatelessSupernovaForm extends HookWidget {
     return Form(
       key: formKey,
       child: _SupernovaFormIsEnabled(
-          isEnabled: isEnabled, child: builder(doSubmit)),
+        isEnabled: isEnabled,
+        child: builder(doSubmit),
+      ),
     );
   }
 }

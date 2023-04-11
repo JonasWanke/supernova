@@ -164,7 +164,7 @@ abstract class SupernovaFormFieldBase<T extends Object> {
 }
 
 /// Wrapper widget for form fields that adds an optional label and wraps the
-/// child in a [FancyCard].
+/// child in a [Card].
 class SupernovaFormFieldWidget extends StatelessWidget {
   const SupernovaFormFieldWidget(
     this.common, {

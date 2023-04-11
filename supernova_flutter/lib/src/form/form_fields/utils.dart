@@ -13,7 +13,7 @@ class ClearButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
-      icon: Icon(Icons.close_outlined),
+      icon: const Icon(Icons.close_outlined),
       iconSize: 16,
       color: context.theme.colorScheme.primary,
       tooltip: context.supernovaL10n.clear,

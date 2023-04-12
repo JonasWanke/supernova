@@ -1245,9 +1245,11 @@ packages:
   supernova:
     dependency: "direct main"
     description:
-      path: "../supernova"
-      relative: true
-    source: path
+      path: supernova
+      ref: "50c65de1bfc8ff739f163339d5b9ae22a4b39f7f"
+      resolved-ref: "50c65de1bfc8ff739f163339d5b9ae22a4b39f7f"
+      url: "https://github.com/JonasWanke/supernova.git"
+    source: git
     version: "0.0.0"
   term_glyph:
     dependency: transitive

@@ -36,6 +36,7 @@ dependencies:
   platformx: ^1.1.0
   sliver_tools: ^0.2.5
   stack_trace: ^1.10.0
+  streaming_shared_preferences: ^2.0.0
   supernova:
     path: ../supernova
   timeago_flutter: ^1.0.0

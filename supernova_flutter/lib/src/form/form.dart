@@ -7,6 +7,7 @@ import '../hooks.dart';
 
 typedef SupernovaFormBuilder = Widget Function(
   AsyncVoidCallback submit,
+  // ignore: avoid_positional_boolean_parameters
   bool isSubmitting,
 );
 

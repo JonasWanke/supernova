@@ -60,12 +60,14 @@ class SnapshotWidget<T> extends StatelessWidget {
     super.key,
     this.isSliver = false,
     this.wrapLoadingError,
+    this.progressIndicatorSize,
     required this.builder,
   }) : assert(!isSliver || wrapLoadingError == null);
 
   final Snapshot<T> snapshot;
   final bool isSliver;
   final Mapper<Widget, Widget>? wrapLoadingError;
+  final double? progressIndicatorSize;
   final DataWidgetBuilder<T> builder;
 
   @override
@@ -74,14 +76,22 @@ class SnapshotWidget<T> extends StatelessWidget {
         (it) => isSliver ? SliverFillRemaining(child: it) : it;
 
     return snapshot.when(
-      loading: () => wrapLoadingError(buildLoading()),
+      loading: () => wrapLoadingError(
+        buildLoading(progressIndicatorSize: progressIndicatorSize),
+      ),
       success: builder,
       error: (error, stackTrace) => wrapLoadingError(buildError(error)),
     );
   }
 
-  static Widget buildLoading() =>
-      const Center(child: CircularProgressIndicator());
+  static Widget buildLoading({double? progressIndicatorSize}) {
+    Widget child = const CircularProgressIndicator();
+    if (progressIndicatorSize != null) {
+      child = SizedBox.square(dimension: progressIndicatorSize, child: child);
+    }
+    return Center(child: child);
+  }
+
   static Widget buildError(Object? error) {
     return Center(
       child: Builder(builder: (context) {
@@ -98,17 +108,24 @@ typedef DataWidgetBuilder<T> = Mapper<T, Widget>;
 SnapshotWidgetBuilder<T> handleLoadingError<T>(
   DataWidgetBuilder<T> builder, {
   Mapper<Widget, Widget>? wrapLoadingError,
+  double? progressIndicatorSize,
 }) =>
     (snapshot) => SnapshotWidget(
           snapshot,
           wrapLoadingError: wrapLoadingError,
+          progressIndicatorSize: progressIndicatorSize,
           builder: builder,
         );
 SnapshotWidgetBuilder<T> handleLoadingErrorSliver<T>(
-  DataWidgetBuilder<T> builder,
-) {
-  return (snapshot) =>
-      SnapshotWidget(snapshot, isSliver: true, builder: builder);
+  DataWidgetBuilder<T> builder, {
+  double? progressIndicatorSize,
+}) {
+  return (snapshot) => SnapshotWidget(
+        snapshot,
+        isSliver: true,
+        progressIndicatorSize: progressIndicatorSize,
+        builder: builder,
+      );
 }
 
 SnapshotWidgetBuilder<T> handleError<T extends Object>(

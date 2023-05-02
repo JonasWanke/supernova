@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:json_annotation/json_annotation.dart';
 import 'package:path/path.dart' as p;
 import 'package:rxdart/rxdart.dart';
 
@@ -64,4 +65,13 @@ extension UriSupernova on Uri {
       },
     );
   }
+}
+
+class FileJsonConverter extends JsonConverter<File, String> {
+  const FileJsonConverter();
+
+  @override
+  File fromJson(String json) => File(json);
+  @override
+  String toJson(File object) => object.path;
 }

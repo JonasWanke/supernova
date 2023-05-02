@@ -75,3 +75,12 @@ class FileJsonConverter extends JsonConverter<File, String> {
   @override
   String toJson(File object) => object.path;
 }
+
+class DirectoryJsonConverter extends JsonConverter<Directory, String> {
+  const DirectoryJsonConverter();
+
+  @override
+  Directory fromJson(String json) => Directory(json);
+  @override
+  String toJson(Directory object) => object.path;
+}

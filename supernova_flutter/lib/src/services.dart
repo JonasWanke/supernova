@@ -9,13 +9,15 @@ import 'package:supernova/supernova.dart';
 
 final services = GetIt.instance;
 
-Future<void> initServices(FirebaseOptions firebaseOptions) async {
+Future<void> initServices({FirebaseOptions? firebaseOptions}) async {
   logger.trace('Initializing common_flutter services…');
   services.registerSingletonAsync(PackageInfo.fromPlatform);
 
-  logger.trace('Initializing Firebase…');
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: firebaseOptions);
+  if (firebaseOptions != null) {
+    logger.trace('Initializing Firebase…');
+    WidgetsFlutterBinding.ensureInitialized();
+    await Firebase.initializeApp(options: firebaseOptions);
+  }
 }
 
 extension GetItSupernova on GetIt {

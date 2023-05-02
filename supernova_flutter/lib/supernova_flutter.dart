@@ -83,7 +83,7 @@ export 'src/widgets/preferences.dart';
 export 'src/widgets/stepper.dart';
 
 Future<void> initSupernova({
-  required FirebaseOptions firebaseOptions,
+  FirebaseOptions? firebaseOptions,
   AddressingFormality addressingFormality = AddressingFormality.informal,
 }) async {
   localization.addressingFormality = addressingFormality;
@@ -97,7 +97,7 @@ Future<void> initSupernova({
     timeZoneOverride: await FlutterNativeTimezone.getLocalTimezone(),
   );
 
-  await initServices(firebaseOptions);
+  await initServices(firebaseOptions: firebaseOptions);
 
   // https://pub.dev/packages/timeago#adding-locales
   timeago.setLocaleMessages('de', timeago.DeMessages());

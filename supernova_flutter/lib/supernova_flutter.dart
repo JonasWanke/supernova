@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:platformx/platformx.dart';
 import 'package:supernova/supernova.dart' as supernova;
 import 'package:time_machine/time_machine.dart';
 import 'package:timeago/timeago.dart' as timeago;
@@ -92,13 +93,32 @@ Future<void> initSupernova({
   WidgetsFlutterBinding.ensureInitialized();
 
   usePathUrlStrategy();
+
+  final timeZoneOverride = _isFlutterNativeTimezoneSupported
+      ? await FlutterNativeTimezone.getLocalTimezone()
+      : null;
   await TimeMachine.initialize(
     flutterRootBundle: rootBundle,
-    timeZoneOverride: await FlutterNativeTimezone.getLocalTimezone(),
+    timeZoneOverride: timeZoneOverride,
   );
 
   await initServices(firebaseOptions: firebaseOptions);
 
   // https://pub.dev/packages/timeago#adding-locales
   timeago.setLocaleMessages('de', timeago.DeMessages());
+}
+
+bool get _isFlutterNativeTimezoneSupported {
+  // https://pub.dev/packages/flutter_native_timezone
+  switch (PlatformX.platform) {
+    case PlatformEnum.Android:
+    case PlatformEnum.IOS:
+    case PlatformEnum.MacOS:
+    case PlatformEnum.Web:
+      return true;
+    case PlatformEnum.Fuchsia:
+    case PlatformEnum.Linux:
+    case PlatformEnum.Windows:
+      return false;
+  }
 }

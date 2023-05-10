@@ -124,13 +124,13 @@ extension ListSupernova<T> on List<T> {
 
   @useResult
   List<T> removeImmutable(int index) {
-    assert(index < length);
+    assert(isValidIndex(index));
     return [...sublist(0, index), ...sublist(index + 1)];
   }
 
   @useResult
   List<T> replaceImmutable(int index, T item) {
-    assert(index < length);
+    assert(isValidIndex(index));
     return [...sublist(0, index), item, ...sublist(index + 1)];
   }
 

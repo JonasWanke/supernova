@@ -41,7 +41,7 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 803f78e227bd2ed3008220408bbc4de2f902c42d
+      ref: 281e63e305ea6b6f7bb306e2651df00ae0007e3b
   timeago_flutter: ^1.0.0
   url_launcher: ^6.0.2
 

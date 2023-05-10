@@ -128,6 +128,19 @@ extension ListSupernova<T> on List<T> {
     assert(index < length);
     return [...sublist(0, index), item, ...sublist(index + 1)];
   }
+
+  /// Suitable for https://api.flutter.dev/flutter/widgets/ReorderCallback.html.
+  List<T> reorderImmutable(int oldIndex, int newIndex) {
+    assert(isValidIndex(oldIndex));
+
+    if (oldIndex < newIndex) newIndex--;
+    assert(isValidIndex(newIndex));
+
+    final newList = List.of(this);
+    final item = newList.removeAt(oldIndex);
+    newList.insert(newIndex, item);
+    return newList;
+  }
 }
 
 extension SetSupernova<T> on Set<T> {

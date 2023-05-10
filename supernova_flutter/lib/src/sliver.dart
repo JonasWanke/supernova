@@ -1,24 +1,26 @@
 import 'package:flutter/widgets.dart';
 import 'package:supernova/supernova.dart';
 
+import 'widgets/async.dart';
+
 extension SliverChildBuilderDelegateSupernova on SliverChildBuilderDelegate {
   static SliverChildBuilderDelegate fromList<T>({
     required List<T> items,
-    required Widget Function(BuildContext, T) itemBuilder,
+    required DataWidgetBuilder<T> itemBuilder,
   }) =>
       SliverChildBuilderDelegate(
-        (context, index) => itemBuilder(context, items[index]),
+        (context, index) => itemBuilder(items[index]),
         childCount: items.length,
       );
 
   static SliverChildBuilderDelegate separatedFromList<T>({
     required List<T> items,
-    required Widget Function(BuildContext, T) itemBuilder,
+    required DataWidgetBuilder<T> itemBuilder,
     required IndexedWidgetBuilder separatorBuilder,
   }) =>
       separated(
         itemCount: items.length,
-        itemBuilder: (context, index) => itemBuilder(context, items[index]),
+        itemBuilder: (context, index) => itemBuilder(items[index]),
         separatorBuilder: separatorBuilder,
       );
 

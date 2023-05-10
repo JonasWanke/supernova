@@ -108,28 +108,34 @@ extension ListSupernova<T> on List<T> {
 
   T? get randomItem => isEmpty ? null : this[Random().nextInt(length)];
 
+  @useResult
   List<T> addImmutable(T item) => [...this, item];
 
+  @useResult
   List<T> insertImmutable(int index, T item) {
     final newList = List.of(this);
     newList.insert(index, item);
     return newList;
   }
 
+  @useResult
   List<T> insertSortedImmutable(T item) =>
       insertImmutable(lowerBound(item), item);
 
+  @useResult
   List<T> removeImmutable(int index) {
     assert(index < length);
     return [...sublist(0, index), ...sublist(index + 1)];
   }
 
+  @useResult
   List<T> replaceImmutable(int index, T item) {
     assert(index < length);
     return [...sublist(0, index), item, ...sublist(index + 1)];
   }
 
   /// Suitable for https://api.flutter.dev/flutter/widgets/ReorderCallback.html.
+  @useResult
   List<T> reorderImmutable(int oldIndex, int newIndex) {
     assert(isValidIndex(oldIndex));
 

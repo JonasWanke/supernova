@@ -87,6 +87,7 @@ export 'src/widgets/stepper.dart';
 Future<void> initSupernova({
   FirebaseOptions? firebaseOptions,
   AddressingFormality addressingFormality = AddressingFormality.informal,
+  bool shouldInitializeTimeMachine = true,
 }) async {
   localization.addressingFormality = addressingFormality;
   await supernova.initSupernova(shouldInitializeTimeMachine: false);
@@ -95,13 +96,15 @@ Future<void> initSupernova({
 
   usePathUrlStrategy();
 
-  final timeZoneOverride = _isFlutterNativeTimezoneSupported
-      ? await FlutterNativeTimezone.getLocalTimezone()
-      : null;
-  await TimeMachine.initialize(
-    flutterRootBundle: rootBundle,
-    timeZoneOverride: timeZoneOverride,
-  );
+  if (shouldInitializeTimeMachine) {
+    final timeZoneOverride = _isFlutterNativeTimezoneSupported
+        ? await FlutterNativeTimezone.getLocalTimezone()
+        : null;
+    await TimeMachine.initialize(
+      flutterRootBundle: rootBundle,
+      timeZoneOverride: timeZoneOverride,
+    );
+  }
 
   await initServices(firebaseOptions: firebaseOptions);
 

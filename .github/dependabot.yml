@@ -3,6 +3,16 @@ updates:
   - package-ecosystem: github-actions
     directory: /
     labels: ['T: Build']
-    reviewers: ['JonasWanke']
     schedule:
-      interval: weekly
+      interval: daily
+
+  - package-ecosystem: dart
+    directory: /supernova
+    labels: ['T: Build']
+    schedule:
+      interval: daily
+  - package-ecosystem: dart
+    directory: /supernova_flutter
+    labels: ['T: Build']
+    schedule:
+      interval: daily

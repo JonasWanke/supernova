@@ -7,7 +7,7 @@ environment:
 
 dependencies:
   align_positioned: ^3.0.0
-  assorted_layout_widgets: ^7.0.0
+  assorted_layout_widgets: ^8.0.4
   async: ^2.8.2
   auto_size_text: ^3.0.0
   black_hole_flutter: ^1.0.0
@@ -24,13 +24,12 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_markdown: ^0.6.1
-  flutter_math_fork: ^0.6.0
   flutter_native_timezone: ^2.0.0
-  flutter_svg: ^1.0.0
+  flutter_svg: ^2.0.6
   get_it: ^7.1.3
   image_picker: ^0.8.5
   octo_image: ^1.0.0+1
-  package_info_plus: ^3.0.1
+  package_info_plus: ^4.0.2
   path_provider: ^2.0.11
   petitparser: ^5.0.0
   platformx: ^1.1.0
@@ -41,8 +40,8 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 281e63e305ea6b6f7bb306e2651df00ae0007e3b
-  timeago_flutter: ^1.0.0
+      ref: 42318be86f4e2d2d35494f6eda4b11be13027a68
+  timeago_flutter: ^3.4.0
   url_launcher: ^6.0.2
 
 dev_dependencies:

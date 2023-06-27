@@ -6,12 +6,12 @@ updates:
     schedule:
       interval: daily
 
-  - package-ecosystem: dart
+  - package-ecosystem: pub
     directory: /supernova
     labels: ['T: Build']
     schedule:
       interval: daily
-  - package-ecosystem: dart
+  - package-ecosystem: pub
     directory: /supernova_flutter
     labels: ['T: Build']
     schedule:

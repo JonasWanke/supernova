@@ -1,9 +1,8 @@
 import 'dart:math';
 
 import 'package:collection/collection.dart' show IterableExtension;
-import 'package:dartx/dartx.dart' hide IterableMapIndexed;
+import 'package:dartx/dartx.dart' hide IterableFirstOrNull, IterableMapIndexed;
 import 'package:meta/meta.dart';
-import 'package:tuple/tuple.dart';
 
 import 'typedefs.dart';
 
@@ -26,32 +25,32 @@ int compareMultiple(List<Comparable<dynamic>> a, List<Comparable<dynamic>> b) {
 
   return IterableSupernova(a)
           .zip(b)
-          .map((it) => it.item1.compareTo(it.item2))
-          .firstOrNullWhere((it) => it != 0) ??
+          .map((it) => it.$1.compareTo(it.$2))
+          .where((it) => it != 0)
+          .firstOrNull ??
       0;
 }
 
 extension IterableSupernova<T> on Iterable<T> {
-  Iterable<IndexedItem<T>> withIndex() => mapIndexed(IndexedItem.new);
-
-  Tuple2<List<T>, List<T>> partitionBy(bool Function(T it) predicate) {
-    final result = Tuple2<List<T>, List<T>>([], []);
+  (List<T>, List<T>) partitionBy(bool Function(T it) predicate) {
+    final result = (<T>[], <T>[]);
     for (final element in this) {
-      final list = predicate(element) ? result.item1 : result.item2;
+      final list = predicate(element) ? result.$1 : result.$2;
       list.add(element);
     }
     return result;
   }
 
-  Iterable<Tuple2<T, T>> windowed2() {
+  Iterable<(T, T)> windowed2() {
+    // https://github.com/dart-lang/collection/pull/244
     return windowed(2).map((it) {
       assert(it.length == 2);
-      return Tuple2(it.first, it.second);
+      return (it.first, it.second);
     });
   }
 
-  Iterable<Tuple2<T, T2>> zip<T2>(Iterable<T2> other) =>
-      IterableZip(this).zip(other, Tuple2.new);
+  Iterable<(T, T2)> zip<T2>(Iterable<T2> other) =>
+      IterableZip(this).zip(other, (a, b) => (a, b));
 
   int firstIndexWhere(Predicate<T> test) => firstIndexWhereOrNull(test)!;
   int? firstIndexWhereOrNull(Predicate<T> test) {
@@ -92,14 +91,6 @@ extension IterableSupernova<T> on Iterable<T> {
       yield item;
     }
   }
-}
-
-@immutable
-class IndexedItem<T> {
-  const IndexedItem(this.index, this.item) : assert(index >= 0);
-
-  final int index;
-  final T item;
 }
 
 extension ListSupernova<T> on List<T> {

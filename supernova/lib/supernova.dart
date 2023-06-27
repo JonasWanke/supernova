@@ -35,7 +35,6 @@ export 'package:oxidized/oxidized.dart' hide Err, None, Ok, Some;
 export 'package:rxdart/rxdart.dart' hide Notification;
 export 'package:time/time.dart';
 export 'package:todo/todo.dart';
-export 'package:tuple/tuple.dart';
 
 export 'src/async.dart';
 export 'src/bool.dart';

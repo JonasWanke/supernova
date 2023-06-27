@@ -6,7 +6,6 @@ import 'package:bson/bson.dart';
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:stack_trace/stack_trace.dart';
-import 'package:tuple/tuple.dart';
 
 import 'date_time/module.dart';
 import 'debug_mode.dart';
@@ -296,16 +295,16 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
 /// Customized version of `Trace.toString`: https://github.com/dart-lang/stack_trace/blob/4755bcf8ab0258212f4767218fdeb8429f3e550e/lib/src/trace.dart#L330-L341
 String _traceToPrettyString(Trace trace, String Function(String) color) {
   final frames = trace.frames.map((it) {
-    if (it is UnparsedFrame) return Tuple2(it.toString(), '');
-    return Tuple2(it.member ?? '', it.location);
+    if (it is UnparsedFrame) return (it.toString(), '');
+    return (it.member ?? '', it.location);
   }).toList();
 
   // Figure out the longest message so we know how much to pad.
-  final longest = frames.map((it) => it.item2.length).maxOrNull ?? 0;
+  final longest = frames.map((it) => it.$2.length).maxOrNull ?? 0;
 
   // Print out the stack trace nicely formatted.
   return frames
-      .map((it) => '${color(it.item1.padRight(longest))}  ${it.item2}')
+      .map((it) => '${color(it.$1.padRight(longest))}  ${it.$2}')
       .join('\n');
 }
 

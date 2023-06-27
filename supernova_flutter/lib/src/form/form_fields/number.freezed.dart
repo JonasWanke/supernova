@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SupernovaNumberFormField {
   ValueNotifier<int?> get currentValue => throw _privateConstructorUsedError;
-  Tuple2<int, String Function(String)>? get maxAndTooLargeErrorFormatter =>
+  ({int max, String Function(String) tooLargeErrorFormatter})? get max =>
       throw _privateConstructorUsedError;
   TextInputAction get textInputAction => throw _privateConstructorUsedError;
   String? get hintText => throw _privateConstructorUsedError;
@@ -25,7 +25,7 @@ mixin _$SupernovaNumberFormField {
   TResult when<TResult extends Object?>({
     required TResult Function(
             ValueNotifier<int?> currentValue,
-            Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+            ({int max, String Function(String) tooLargeErrorFormatter})? max,
             TextInputAction textInputAction,
             String? hintText)
         amount,
@@ -35,7 +35,7 @@ mixin _$SupernovaNumberFormField {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             ValueNotifier<int?> currentValue,
-            Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+            ({int max, String Function(String) tooLargeErrorFormatter})? max,
             TextInputAction textInputAction,
             String? hintText)?
         amount,
@@ -45,7 +45,7 @@ mixin _$SupernovaNumberFormField {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             ValueNotifier<int?> currentValue,
-            Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+            ({int max, String Function(String) tooLargeErrorFormatter})? max,
             TextInputAction textInputAction,
             String? hintText)?
         amount,
@@ -82,7 +82,7 @@ abstract class $SupernovaNumberFormFieldCopyWith<$Res> {
   @useResult
   $Res call(
       {ValueNotifier<int?> currentValue,
-      Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+      ({int max, String Function(String) tooLargeErrorFormatter})? max,
       TextInputAction textInputAction,
       String? hintText});
 }
@@ -102,7 +102,7 @@ class _$SupernovaNumberFormFieldCopyWithImpl<$Res,
   @override
   $Res call({
     Object? currentValue = null,
-    Object? maxAndTooLargeErrorFormatter = freezed,
+    Object? max = freezed,
     Object? textInputAction = null,
     Object? hintText = freezed,
   }) {
@@ -111,10 +111,10 @@ class _$SupernovaNumberFormFieldCopyWithImpl<$Res,
           ? _value.currentValue
           : currentValue // ignore: cast_nullable_to_non_nullable
               as ValueNotifier<int?>,
-      maxAndTooLargeErrorFormatter: freezed == maxAndTooLargeErrorFormatter
-          ? _value.maxAndTooLargeErrorFormatter
-          : maxAndTooLargeErrorFormatter // ignore: cast_nullable_to_non_nullable
-              as Tuple2<int, String Function(String)>?,
+      max: freezed == max
+          ? _value.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as ({int max, String Function(String) tooLargeErrorFormatter})?,
       textInputAction: null == textInputAction
           ? _value.textInputAction
           : textInputAction // ignore: cast_nullable_to_non_nullable
@@ -138,7 +138,7 @@ abstract class _$$_SingleLineSupernovaNumberFormFieldCopyWith<$Res>
   @useResult
   $Res call(
       {ValueNotifier<int?> currentValue,
-      Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+      ({int max, String Function(String) tooLargeErrorFormatter})? max,
       TextInputAction textInputAction,
       String? hintText});
 }
@@ -157,7 +157,7 @@ class __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
   @override
   $Res call({
     Object? currentValue = null,
-    Object? maxAndTooLargeErrorFormatter = freezed,
+    Object? max = freezed,
     Object? textInputAction = null,
     Object? hintText = freezed,
   }) {
@@ -166,10 +166,10 @@ class __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
           ? _value.currentValue
           : currentValue // ignore: cast_nullable_to_non_nullable
               as ValueNotifier<int?>,
-      maxAndTooLargeErrorFormatter: freezed == maxAndTooLargeErrorFormatter
-          ? _value.maxAndTooLargeErrorFormatter
-          : maxAndTooLargeErrorFormatter // ignore: cast_nullable_to_non_nullable
-              as Tuple2<int, String Function(String)>?,
+      max: freezed == max
+          ? _value.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as ({int max, String Function(String) tooLargeErrorFormatter})?,
       textInputAction: null == textInputAction
           ? _value.textInputAction
           : textInputAction // ignore: cast_nullable_to_non_nullable
@@ -187,15 +187,13 @@ class __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
 class _$_SingleLineSupernovaNumberFormField
     extends _SingleLineSupernovaNumberFormField {
   const _$_SingleLineSupernovaNumberFormField(this.currentValue,
-      {this.maxAndTooLargeErrorFormatter,
-      required this.textInputAction,
-      this.hintText})
+      {this.max, required this.textInputAction, this.hintText})
       : super._();
 
   @override
   final ValueNotifier<int?> currentValue;
   @override
-  final Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter;
+  final ({int max, String Function(String) tooLargeErrorFormatter})? max;
   @override
   final TextInputAction textInputAction;
   @override
@@ -203,7 +201,7 @@ class _$_SingleLineSupernovaNumberFormField
 
   @override
   String toString() {
-    return 'SupernovaNumberFormField.amount(currentValue: $currentValue, maxAndTooLargeErrorFormatter: $maxAndTooLargeErrorFormatter, textInputAction: $textInputAction, hintText: $hintText)';
+    return 'SupernovaNumberFormField.amount(currentValue: $currentValue, max: $max, textInputAction: $textInputAction, hintText: $hintText)';
   }
 
   @override
@@ -213,10 +211,7 @@ class _$_SingleLineSupernovaNumberFormField
             other is _$_SingleLineSupernovaNumberFormField &&
             (identical(other.currentValue, currentValue) ||
                 other.currentValue == currentValue) &&
-            (identical(other.maxAndTooLargeErrorFormatter,
-                    maxAndTooLargeErrorFormatter) ||
-                other.maxAndTooLargeErrorFormatter ==
-                    maxAndTooLargeErrorFormatter) &&
+            (identical(other.max, max) || other.max == max) &&
             (identical(other.textInputAction, textInputAction) ||
                 other.textInputAction == textInputAction) &&
             (identical(other.hintText, hintText) ||
@@ -224,8 +219,8 @@ class _$_SingleLineSupernovaNumberFormField
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentValue,
-      maxAndTooLargeErrorFormatter, textInputAction, hintText);
+  int get hashCode =>
+      Object.hash(runtimeType, currentValue, max, textInputAction, hintText);
 
   @JsonKey(ignore: true)
   @override
@@ -240,13 +235,12 @@ class _$_SingleLineSupernovaNumberFormField
   TResult when<TResult extends Object?>({
     required TResult Function(
             ValueNotifier<int?> currentValue,
-            Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+            ({int max, String Function(String) tooLargeErrorFormatter})? max,
             TextInputAction textInputAction,
             String? hintText)
         amount,
   }) {
-    return amount(
-        currentValue, maxAndTooLargeErrorFormatter, textInputAction, hintText);
+    return amount(currentValue, max, textInputAction, hintText);
   }
 
   @override
@@ -254,13 +248,12 @@ class _$_SingleLineSupernovaNumberFormField
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             ValueNotifier<int?> currentValue,
-            Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+            ({int max, String Function(String) tooLargeErrorFormatter})? max,
             TextInputAction textInputAction,
             String? hintText)?
         amount,
   }) {
-    return amount?.call(
-        currentValue, maxAndTooLargeErrorFormatter, textInputAction, hintText);
+    return amount?.call(currentValue, max, textInputAction, hintText);
   }
 
   @override
@@ -268,15 +261,14 @@ class _$_SingleLineSupernovaNumberFormField
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             ValueNotifier<int?> currentValue,
-            Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+            ({int max, String Function(String) tooLargeErrorFormatter})? max,
             TextInputAction textInputAction,
             String? hintText)?
         amount,
     required TResult orElse(),
   }) {
     if (amount != null) {
-      return amount(currentValue, maxAndTooLargeErrorFormatter, textInputAction,
-          hintText);
+      return amount(currentValue, max, textInputAction, hintText);
     }
     return orElse();
   }
@@ -314,7 +306,7 @@ abstract class _SingleLineSupernovaNumberFormField
     extends SupernovaNumberFormField {
   const factory _SingleLineSupernovaNumberFormField(
       final ValueNotifier<int?> currentValue,
-      {final Tuple2<int, String Function(String)>? maxAndTooLargeErrorFormatter,
+      {final ({int max, String Function(String) tooLargeErrorFormatter})? max,
       required final TextInputAction textInputAction,
       final String? hintText}) = _$_SingleLineSupernovaNumberFormField;
   const _SingleLineSupernovaNumberFormField._() : super._();
@@ -322,7 +314,7 @@ abstract class _SingleLineSupernovaNumberFormField
   @override
   ValueNotifier<int?> get currentValue;
   @override
-  Tuple2<int, String Function(String)>? get maxAndTooLargeErrorFormatter;
+  ({int max, String Function(String) tooLargeErrorFormatter})? get max;
   @override
   TextInputAction get textInputAction;
   @override

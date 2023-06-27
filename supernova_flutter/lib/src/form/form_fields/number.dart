@@ -14,7 +14,7 @@ class SupernovaNumberFormField extends SupernovaFormFieldBase<int>
     with _$SupernovaNumberFormField {
   const factory SupernovaNumberFormField.amount(
     ValueNotifier<int?> currentValue, {
-    Tuple2<int, String Function(String max)>? maxAndTooLargeErrorFormatter,
+    ({int max, Mapper<String, String> tooLargeErrorFormatter})? max,
     required TextInputAction textInputAction,
     String? hintText,
   }) = _SingleLineSupernovaNumberFormField;
@@ -67,15 +67,12 @@ class _SupernovaNumberFormFieldWidget extends HookWidget {
       autofillHints: null,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.digitsOnly],
-      validator: formField.maxAndTooLargeErrorFormatter == null
+      validator: formField.max == null
           ? null
           : SupernovaFormFieldValidators.buildValidator(
-              (value) =>
-                  value.toInt() <=
-                  formField.maxAndTooLargeErrorFormatter!.item1,
-              formField.maxAndTooLargeErrorFormatter!.item2(
-                NumberFormat.decimalPattern()
-                    .format(formField.maxAndTooLargeErrorFormatter!.item1),
+              (value) => value.toInt() <= formField.max!.max,
+              formField.max!.tooLargeErrorFormatter(
+                NumberFormat.decimalPattern().format(formField.max!.max),
               ),
             ),
       textInputAction: formField.textInputAction,

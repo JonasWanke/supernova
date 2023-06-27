@@ -29,7 +29,8 @@ class SupernovaLocalMonthFormField extends SupernovaFormFieldBase<LocalMonth>
         Formatter<LocalMonth> formatMonth,
     String? hintText,
     String? dialogHelpText,
-    @Default(LocalMonthPickerMode.year) LocalMonthPickerMode initialPickerMode,
+    @Default(LocalMonthPickerMode.year)
+        LocalMonthPickerMode initialPickerMode,
     SupernovaFormFieldValidator<LocalMonth>? validator,
   }) = _SupernovaLocalMonthFormField;
 
@@ -77,9 +78,9 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
 
           Future<void> onTap() async {
             final firstMonth =
-                formField.firstMonth?.call() ?? LocalMonth(1900, 1);
+                formField.firstMonth?.call() ?? const LocalMonth(1900, 1);
             final lastMonth =
-                formField.lastMonth?.call() ?? LocalMonth(2100, 1);
+                formField.lastMonth?.call() ?? const LocalMonth(2100, 1);
             final initialMonth = formField.value ??
                 LocalMonth.current.coerceIn(firstMonth, lastMonth);
 

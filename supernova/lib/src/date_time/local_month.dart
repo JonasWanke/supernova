@@ -7,7 +7,8 @@ import '../validation.dart';
 
 @immutable
 class LocalMonth implements Comparable<LocalMonth>, ToJson, Validatable {
-  LocalMonth(int year, int month) : dateTime = DateTime.utc(year, month, 1);
+  const LocalMonth(this.year, this.month)
+      : assert(DateTime.january <= month && month <= DateTime.december);
   LocalMonth.fromDateTime(DateTime dateTime)
       : this(dateTime.year, dateTime.month);
 
@@ -23,10 +24,9 @@ class LocalMonth implements Comparable<LocalMonth>, ToJson, Validatable {
   static LocalMonth get current => LocalMonth.fromDateTime(DateTime.now());
   static LocalMonth get next => current.plus(months: 1);
 
-  final DateTime dateTime;
-
-  int get year => dateTime.year;
-  int get month => dateTime.month;
+  final int year;
+  final int month;
+  DateTime get dateTime => DateTime.utc(year, month, 1);
 
   LocalMonth plus({int years = 0, int months = 0}) =>
       LocalMonth.fromDateTime(DateTime.utc(year + years, month + months));

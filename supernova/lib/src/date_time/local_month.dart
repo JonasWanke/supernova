@@ -32,6 +32,8 @@ class LocalMonth implements Comparable<LocalMonth>, ToJson, Validatable {
       LocalMonth.fromDateTime(DateTime.utc(year + years, month + months));
   LocalMonth minus({int years = 0, int months = 0}) =>
       plus(years: -years, months: -months);
+  int difference(LocalMonth other) =>
+      (year - other.year) * 12 + (month - other.month);
 
   @override
   ValidationErrors validate() {

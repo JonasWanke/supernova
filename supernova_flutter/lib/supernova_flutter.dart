@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:platformx/platformx.dart';
 import 'package:supernova/supernova.dart' as supernova;
@@ -98,7 +98,7 @@ Future<void> initSupernova({
 
   if (shouldInitializeTimeMachine) {
     final timeZoneOverride = _isFlutterNativeTimezoneSupported
-        ? await FlutterNativeTimezone.getLocalTimezone()
+        ? await FlutterTimezone.getLocalTimezone()
         : null;
     await TimeMachine.initialize(
       flutterRootBundle: rootBundle,

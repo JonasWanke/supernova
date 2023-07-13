@@ -14,6 +14,8 @@ jobs:
   approve-dependabot-pr:
     if: github.event.action == 'opened' && github.event.pull_request.user.login == 'dependabot[bot]'
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
     steps:
       - uses: dependabot/fetch-metadata@v1.6.0
         id: dependabot-metadata

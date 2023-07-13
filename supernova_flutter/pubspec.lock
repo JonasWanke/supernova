@@ -252,10 +252,11 @@ packages:
   dart_code_metrics:
     dependency: transitive
     description:
-      name: dart_code_metrics
-      sha256: "1dc1fa763b73ed52147bd91b015d81903edc3f227b77b1672fcddba43390ed18"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: "98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35"
+      resolved-ref: "98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35"
+      url: "https://github.com/vareversat/dart-code-metrics.git"
+    source: git
     version: "5.7.5"
   dart_code_metrics_presets:
     dependency: transitive
@@ -1006,8 +1007,8 @@ packages:
     dependency: "direct main"
     description:
       path: supernova
-      ref: ee44cebf0cc90086ef3c0db3f07c7a5e77816b88
-      resolved-ref: ee44cebf0cc90086ef3c0db3f07c7a5e77816b88
+      ref: "9f65fbd5006a2342127621bf552c5b61ea073318"
+      resolved-ref: "9f65fbd5006a2342127621bf552c5b61ea073318"
       url: "https://github.com/JonasWanke/supernova.git"
     source: git
     version: "0.0.0"

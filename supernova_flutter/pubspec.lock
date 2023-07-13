@@ -253,8 +253,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35"
-      resolved-ref: "98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35"
+      ref: "3ee273f7f197d9b59946678f44356283ac2327cb"
+      resolved-ref: "3ee273f7f197d9b59946678f44356283ac2327cb"
       url: "https://github.com/vareversat/dart-code-metrics.git"
     source: git
     version: "5.7.5"
@@ -527,7 +527,7 @@ packages:
     source: hosted
     version: "0.15.4"
   http:
-    dependency: "direct overridden"
+    dependency: transitive
     description:
       name: http
       sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
@@ -1007,8 +1007,8 @@ packages:
     dependency: "direct main"
     description:
       path: supernova
-      ref: "9f65fbd5006a2342127621bf552c5b61ea073318"
-      resolved-ref: "9f65fbd5006a2342127621bf552c5b61ea073318"
+      ref: "4ff8db40ec6f6a7eceb998abe7114e628d878790"
+      resolved-ref: "4ff8db40ec6f6a7eceb998abe7114e628d878790"
       url: "https://github.com/JonasWanke/supernova.git"
     source: git
     version: "0.0.0"

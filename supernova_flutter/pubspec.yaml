@@ -31,16 +31,13 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 9f65fbd5006a2342127621bf552c5b61ea073318
+      ref: 4ff8db40ec6f6a7eceb998abe7114e628d878790
   timeago_flutter: ^3.4.0
   url_launcher: ^6.0.2
 
 dev_dependencies:
   build_runner: ^2.1.10
   freezed: ^2.0.2
-
-dependency_overrides:
-  http: ^1.0.0
 
 flutter:
   uses-material-design: true

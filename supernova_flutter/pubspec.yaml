@@ -32,7 +32,7 @@ dependencies:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
       ref: 4ff8db40ec6f6a7eceb998abe7114e628d878790
-  timeago_flutter: ^3.4.0
+  timeago_flutter: ^3.5.0
   url_launcher: ^6.1.12
 
 dev_dependencies:

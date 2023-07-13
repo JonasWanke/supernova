@@ -221,8 +221,8 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35"
-      resolved-ref: "98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35"
+      ref: "3ee273f7f197d9b59946678f44356283ac2327cb"
+      resolved-ref: "3ee273f7f197d9b59946678f44356283ac2327cb"
       url: "https://github.com/vareversat/dart-code-metrics.git"
     source: git
     version: "5.7.5"

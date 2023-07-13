@@ -15,7 +15,7 @@ dependencies:
     # https://dcm.dev/blog/2023/06/06/announcing-dcm-free-version-sunset/
     git:
       url: https://github.com/vareversat/dart-code-metrics.git
-      ref: 98f908a1ab1370b02a4fec9a6f8d7f7de4ae8f35
+      ref: 3ee273f7f197d9b59946678f44356283ac2327cb
   dartx: ^1.1.0
   email_validator: ^2.0.1
   flutter_lints: ^2.0.1
@@ -43,6 +43,3 @@ dev_dependencies:
   build_runner: ^2.1.10
   freezed: ^2.0.2
   json_serializable: ^6.1.6
-
-dependency_overrides:
-  http: ^1.0.0

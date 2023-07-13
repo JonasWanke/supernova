@@ -27,7 +27,7 @@ dependencies:
   oxidized: ^6.0.0
   path: ^1.8.1
   rxdart: ^0.27.0
-  stack_trace: ^1.10.0
+  stack_trace: ^1.11.1
   time: ^2.1.0
   time_machine:
     # time_machine can't load its required data files when running in a

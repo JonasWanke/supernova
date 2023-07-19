@@ -16,7 +16,7 @@ dependencies:
     git:
       url: https://github.com/vareversat/dart-code-metrics.git
       ref: 3ee273f7f197d9b59946678f44356283ac2327cb
-  dartx: ^1.1.0
+  dartx: ^1.2.0
   email_validator: ^2.0.1
   flutter_lints: ^2.0.2
   freezed_annotation: ^2.0.3

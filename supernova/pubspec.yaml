@@ -8,7 +8,7 @@ dependencies:
   ansi_styles: ^0.3.1-dev.0
   bson: ^4.0.0
   characters: ^1.2.0
-  collection: ^1.16.0
+  collection: ^1.18.0
   color: ^3.0.0
   country_code: ^1.0.0
   dart_code_metrics:

@@ -22,7 +22,7 @@ dependencies:
   flutter_svg: ^2.0.6
   flutter_timezone: ^1.0.7
   get_it: ^7.1.3
-  package_info_plus: ^4.0.2
+  package_info_plus: ^4.1.0
   platformx: ^1.1.0
   sliver_tools: ^0.2.12
   stack_trace: ^1.10.0

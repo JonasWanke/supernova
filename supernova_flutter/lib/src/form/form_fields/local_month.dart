@@ -371,6 +371,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
     final textTheme = theme.textTheme;
     // Constrain the textScaleFactor to the largest supported value to prevent
     // layout issues.
+    // TODO(JonasWanke): Update to use `TextScaler`
+    // ignore: deprecated_member_use
     final textScaleFactor = math.min(context.mediaQuery.textScaleFactor, 1.3);
 
     final monthText = LocalMonthFormat.long.format(_selectedMonth);
@@ -427,6 +429,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
         duration: _dialogSizeAnimationDuration,
         curve: Curves.easeIn,
         child: MediaQuery(
+          // TODO(JonasWanke): Update to use `TextScaler`
+          // ignore: deprecated_member_use
           data: context.mediaQuery.copyWith(textScaleFactor: textScaleFactor),
           child: Builder(builder: (context) {
             switch (orientation) {

@@ -14,7 +14,7 @@ dependencies:
   dart_code_metrics:
     git:
       url: https://github.com/JonasWanke/dart-code-metrics.git
-      ref: 96ca37818433c4c497b62f580ffc0a289a5b0c8f
+      ref: e962142c6c505c81460c5a94a3cd0c83700ebdb3
   dartx: ^1.2.0
   email_validator: ^2.0.1
   flutter_lints: ^2.0.2
@@ -26,7 +26,7 @@ dependencies:
   oxidized: ^6.1.0
   path: ^1.8.1
   rxdart: ^0.27.0
-  stack_trace: ^1.11.1
+  stack_trace: ^1.11.0
   time: ^2.1.0
   time_machine:
     # time_machine can't load its required data files when running in a

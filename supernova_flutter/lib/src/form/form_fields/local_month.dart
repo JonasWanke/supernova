@@ -747,7 +747,6 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
           key: _yearPickerKey,
           firstDate: widget.firstMonth.dateTime,
           lastDate: widget.lastMonth.dateTime,
-          initialDate: DateTime(_currentDisplayedYear),
           selectedDate: _selectedMonth.dateTime,
           onChanged: (it) => _handleYearChanged(it.year),
         );

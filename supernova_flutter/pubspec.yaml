@@ -10,7 +10,7 @@ dependencies:
   async: ^2.8.2
   auto_size_text: ^3.0.0
   black_hole_flutter: ^1.0.0
-  debug_overlay: ^0.2.3
+  debug_overlay: ^0.2.9
   firebase_core: ^2.17.0
   firebase_crashlytics: ^3.3.7
   flutter:

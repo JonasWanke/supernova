@@ -12,7 +12,7 @@ dependencies:
   black_hole_flutter: ^1.0.0
   debug_overlay: ^0.2.9
   firebase_core: ^2.18.0
-  firebase_crashlytics: ^3.3.7
+  firebase_crashlytics: ^3.4.1
   flutter:
     sdk: flutter
   flutter_blurhash: ^0.7.0

@@ -85,10 +85,10 @@ packages:
     dependency: "direct main"
     description:
       name: black_hole_flutter
-      sha256: "43a5b16b0cbd55e762afa6e438daa179b86d7b93277737e07298b82b83b946a9"
+      sha256: d1646e3638c15cd56a0f075128fa50317d26e7c824bde6b981d70118be34bd2f
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.3"
+    version: "1.1.0"
   boolean_selector:
     dependency: transitive
     description:

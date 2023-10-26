@@ -33,7 +33,7 @@ dependencies:
       path: supernova
       ref: 9f71f4585786d454530fef360c3dc7e4b4b81de7
   timeago_flutter: ^3.5.0
-  url_launcher: ^6.2.0
+  url_launcher: ^6.2.1
 
 dev_dependencies:
   build_runner: ^2.4.6

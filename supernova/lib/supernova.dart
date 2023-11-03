@@ -8,7 +8,6 @@ export 'package:bson/bson.dart';
 export 'package:characters/characters.dart';
 export 'package:collection/collection.dart' hide IterableZip;
 export 'package:color/color.dart' show RgbColor;
-export 'package:country_code/country_code.dart';
 export 'package:dartx/dartx.dart'
     hide
         IterableAll,

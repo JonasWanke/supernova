@@ -10,7 +10,6 @@ dependencies:
   characters: ^1.2.0
   collection: ^1.17.0
   color: ^3.0.0
-  country_code: ^1.0.0
   dart_code_metrics:
     git:
       url: https://github.com/JonasWanke/dart-code-metrics.git
@@ -36,7 +35,6 @@ dependencies:
       url: https://github.com/JonasWanke/time_machine.git
       ref: 0a68b36272f437bd5c638f79ab2f5b4cecb5dbcb
   todo: ^2.0.1
-  web_socket_channel: ^2.4.0
 
 dev_dependencies:
   build_runner: ^2.4.6

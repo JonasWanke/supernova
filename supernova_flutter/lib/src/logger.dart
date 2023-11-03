@@ -18,13 +18,14 @@ void initLogging() {
   DebugOverlay.appendHelper(LogsDebugHelper(logs));
 
   logListeners.add((it) {
-    logs.add(Log(
+    final log = Log(
       level: _loggerToDiagnosticLevel(it.level),
       timestamp: it.instant.dateTime.toLocal(),
       message: it.message,
       error: it.data,
       stackTrace: it.stackTrace,
-    ));
+    );
+    logs.add(log);
   });
   if (isInDebugMode) return;
 

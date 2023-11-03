@@ -205,10 +205,10 @@ packages:
     dependency: transitive
     description:
       name: collection
-      sha256: f092b211a4319e98e5ff58223576de6c2803db36221657b46c82574721240687
+      sha256: "4a07be6cb69c84d677a6c3096fcf960cc3285a8330b4603e0d463d15d9bd934c"
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.2"
+    version: "1.17.1"
   color:
     dependency: transitive
     description:
@@ -225,14 +225,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.1.1"
-  country_code:
-    dependency: transitive
-    description:
-      name: country_code
-      sha256: f69ccd5163b1ca43011be9632e33ebe7ffac65e49ce2afcd3e3e5228af5d91fc
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   crypto:
     dependency: transitive
     description:
@@ -431,14 +423,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.20.3"
-  flutter_lints:
-    dependency: transitive
-    description:
-      name: flutter_lints
-      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.2"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -466,7 +450,7 @@ packages:
     source: hosted
     version: "1.0.8"
   flutter_web_plugins:
-    dependency: transitive
+    dependency: "direct main"
     description: flutter
     source: sdk
     version: "0.0.0"
@@ -559,7 +543,7 @@ packages:
     source: hosted
     version: "2.2.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
@@ -590,14 +574,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.8.1"
-  lints:
-    dependency: transitive
-    description:
-      name: lints
-      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.1"
   list_diff:
     dependency: transitive
     description:
@@ -618,18 +594,18 @@ packages:
     dependency: transitive
     description:
       name: matcher
-      sha256: "1803e76e6653768d64ed8ff2e1e67bea3ad4b923eb5c56a295c3e634bad5960e"
+      sha256: "6501fbd55da300384b768785b83e5ce66991266cec21af89ab9ae7f5ce1c4cbb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.12.16"
+    version: "0.12.15"
   material_color_utilities:
     dependency: transitive
     description:
       name: material_color_utilities
-      sha256: "9528f2f296073ff54cb9fee677df673ace1218163c3bc7628093e7eed5203d41"
+      sha256: "586678f20e112219ed0f73215f01bcdf1d769824ba2ebae45ad918a9bfde9bdb"
       url: "https://pub.dev"
     source: hosted
-    version: "0.5.0"
+    version: "0.3.0"
   matrix4_transform:
     dependency: transitive
     description:
@@ -991,8 +967,8 @@ packages:
     dependency: "direct main"
     description:
       path: supernova
-      ref: "9f71f4585786d454530fef360c3dc7e4b4b81de7"
-      resolved-ref: "9f71f4585786d454530fef360c3dc7e4b4b81de7"
+      ref: ee9327dfb2a2bc41f807da6ad56d90a12913a085
+      resolved-ref: ee9327dfb2a2bc41f807da6ad56d90a12913a085
       url: "https://github.com/JonasWanke/supernova.git"
     source: git
     version: "0.0.0"
@@ -1008,10 +984,10 @@ packages:
     dependency: transitive
     description:
       name: test_api
-      sha256: "75760ffd7786fffdfb9597c35c5b27eaeec82be8edfb6d71d32651128ed7aab8"
+      sha256: daadc9baabec998b062c9091525aa95786508b1c48e9c30f1f891b8bf6ff2e64
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.0"
+    version: "0.5.2"
   time:
     dependency: transitive
     description:
@@ -1030,7 +1006,7 @@ packages:
     source: git
     version: "0.9.17"
   timeago:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: timeago
       sha256: c44b80cbc6b44627c00d76960f2af571f6f50e5dbedef4d9215d455e4335165b
@@ -1073,10 +1049,10 @@ packages:
     dependency: "direct main"
     description:
       name: url_launcher
-      sha256: b1c9e98774adf8820c96fbc7ae3601231d324a7d5ebd8babe27b6dfac91357ba
+      sha256: "47e208a6711459d813ba18af120d9663c20bdf6985d6ad39fe165d2538378d27"
       url: "https://pub.dev"
     source: hosted
-    version: "6.2.1"
+    version: "6.1.14"
   url_launcher_android:
     dependency: transitive
     description:
@@ -1121,10 +1097,10 @@ packages:
     dependency: transitive
     description:
       name: url_launcher_web
-      sha256: "7fd2f55fe86cea2897b963e864dc01a7eb0719ecc65fcef4c1cc3d686d718bb2"
+      sha256: ba140138558fcc3eead51a1c42e92a9fb074a1b1149ed3c73e66035b2ccd94f2
       url: "https://pub.dev"
     source: hosted
-    version: "2.2.0"
+    version: "2.0.19"
   url_launcher_windows:
     dependency: transitive
     description:
@@ -1181,14 +1157,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
-  web:
-    dependency: transitive
-    description:
-      name: web
-      sha256: dc8ccd225a2005c1be616fe02951e2e342092edf968cf0844220383757ef8f10
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.4-beta"
   web_socket_channel:
     dependency: transitive
     description:

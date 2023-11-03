@@ -8,6 +8,7 @@ class DesktopPage extends StatelessWidget {
   // space _plus_ padding. Therefore, we add the padding inside the non-sliver
   // widget.
   DesktopPage({
+    super.key,
     required this.title,
     this.actions = const [],
     this.isFullwidth = false,
@@ -17,6 +18,7 @@ class DesktopPage extends StatelessWidget {
                   Padding(padding: _getPadding(horizontalMargin), child: child),
             ));
   DesktopPage.center({
+    super.key,
     required this.title,
     this.actions = const [],
     this.isFullwidth = false,
@@ -30,6 +32,7 @@ class DesktopPage extends StatelessWidget {
             ));
 
   DesktopPage.sliver({
+    super.key,
     required this.title,
     this.actions = const [],
     this.isFullwidth = false,
@@ -58,24 +61,28 @@ class DesktopPage extends StatelessWidget {
     return Scaffold(
       body: AdaptivePage(
         isFullwidth: isFullwidth,
-        builder: (horizontalMargin) => CustomScrollView(slivers: [
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                left: 32,
-                top: titleTopPadding,
-                right: 32,
-              ),
-              child: Row(children: [
-                Expanded(
-                  child: Text(title, style: context.textTheme.titleLarge),
+        builder: (horizontalMargin) => CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  left: 32,
+                  top: titleTopPadding,
+                  right: 32,
                 ),
-                ...actions,
-              ]),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Text(title, style: context.textTheme.titleLarge),
+                    ),
+                    ...actions,
+                  ],
+                ),
+              ),
             ),
-          ),
-          builder(horizontalMargin),
-        ]),
+            builder(horizontalMargin),
+          ],
+        ),
       ),
     );
   }

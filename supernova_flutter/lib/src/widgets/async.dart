@@ -94,12 +94,14 @@ class SnapshotWidget<T> extends StatelessWidget {
 
   static Widget buildError(Object? error) {
     return Center(
-      child: Builder(builder: (context) {
-        return Text(
-          context.supernovaL10n
-              .errorUnknown(message: isInDebugMode ? error.toString() : null),
-        );
-      }),
+      child: Builder(
+        builder: (context) {
+          return Text(
+            context.supernovaL10n
+                .errorUnknown(message: isInDebugMode ? error.toString() : null),
+          );
+        },
+      ),
     );
   }
 }
@@ -162,7 +164,7 @@ Snapshot<T> useFuture<T>(
     () async {
       try {
         return await futureGetter();
-      } catch (e, st) {
+      } on Exception catch (e, st) {
         logger.error('Future<$T> in `useFuture` has an error:', e, st);
         rethrow;
       }
@@ -176,6 +178,7 @@ Snapshot<T> useFuture<T>(
 class FutureBuilder<T> extends HookWidget {
   const FutureBuilder(
     this.getFuture, {
+    super.key,
     required this.keys,
     required this.builder,
   });
@@ -217,6 +220,7 @@ Snapshot<T> useStream<T>(
 class StreamBuilder<T> extends HookWidget {
   const StreamBuilder(
     this.getStream, {
+    super.key,
     required this.keys,
     required this.builder,
   });

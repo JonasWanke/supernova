@@ -21,7 +21,8 @@ class SupernovaLocalDateFormField extends SupernovaFormFieldBase<LocalDate>
         Formatter<LocalDate> formatDate,
     String? hintText,
     String? dialogHelpText,
-    @Default(DatePickerMode.day) DatePickerMode initialDatePickerMode,
+    @Default(DatePickerMode.day)
+        DatePickerMode initialDatePickerMode,
     SupernovaFormFieldValidator<LocalDate>? validator,
   }) = _SupernovaLocalDateFormField;
 
@@ -90,16 +91,18 @@ class _SupernovaLocalDateFormFieldWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Row(children: [
-                  Expanded(child: _buildContent(context)),
-                  if (common.necessity.isOptional &&
-                      formField.selectedDate.value != null) ...[
-                    const SizedBox(width: 16),
-                    ClearButton(onPressed: () => setValue(null)),
-                    SizedBox(width: horizontalPadding - 16),
-                  ] else
-                    SizedBox(width: horizontalPadding),
-                ]),
+                Row(
+                  children: [
+                    Expanded(child: _buildContent(context)),
+                    if (common.necessity.isOptional &&
+                        formField.selectedDate.value != null) ...[
+                      const SizedBox(width: 16),
+                      ClearButton(onPressed: () => setValue(null)),
+                      SizedBox(width: horizontalPadding - 16),
+                    ] else
+                      SizedBox(width: horizontalPadding),
+                  ],
+                ),
                 if (state.hasError) PaddedFormError(state.errorText!),
               ],
             ),
@@ -117,24 +120,26 @@ class _SupernovaLocalDateFormFieldWidget extends StatelessWidget {
         0,
         16,
       ),
-      child: Row(children: [
-        Expanded(
-          child: Text(
-            formField.selectedDate.value != null
-                ? formField.formatDate(formField.selectedDate.value!)
-                : formField.hintText ?? context.supernovaL10n.choose,
-            style: formField.selectedDate.value == null
-                ? SupernovaFormFieldWidget.hintTextStyle(context)
-                : SupernovaFormFieldWidget.textStyle(context),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              formField.selectedDate.value != null
+                  ? formField.formatDate(formField.selectedDate.value!)
+                  : formField.hintText ?? context.supernovaL10n.choose,
+              style: formField.selectedDate.value == null
+                  ? SupernovaFormFieldWidget.hintTextStyle(context)
+                  : SupernovaFormFieldWidget.textStyle(context),
+            ),
           ),
-        ),
-        const SizedBox(width: 16),
-        Icon(
-          Icons.calendar_month_outlined,
-          size: 16,
-          color: context.theme.colorScheme.primary,
-        ),
-      ]),
+          const SizedBox(width: 16),
+          Icon(
+            Icons.calendar_month_outlined,
+            size: 16,
+            color: context.theme.colorScheme.primary,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -149,7 +154,7 @@ Future<LocalDate?> _showLocalDatePicker(
 }) async {
   firstDate ??= LocalDate(1900, 1, 1);
   lastDate ??= LocalDate(2100, 1, 1);
-  initialDate ??= LocalDate.today.coerceIn(firstDate, lastDate);
+  initialDate ??= LocalDate.today().coerceIn(firstDate, lastDate);
   final date = await showDatePicker(
     context: context,
     initialDate: initialDate.dateTime,

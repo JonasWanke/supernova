@@ -17,6 +17,7 @@ typedef StatelessSupernovaFormBuilder = Widget Function(
 
 class SupernovaForm extends HookWidget {
   const SupernovaForm({
+    super.key,
     this.formKey,
     this.extraValidator,
     required this.submit,

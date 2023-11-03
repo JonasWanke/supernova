@@ -5,6 +5,7 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:platformx/platformx.dart';
 import 'package:supernova/supernova.dart' as supernova;
+// ignore: depend_on_referenced_packages, `supernova` ensures a specific Git SHA
 import 'package:time_machine/time_machine.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
@@ -51,7 +52,6 @@ export 'package:supernova/supernova.dart'
         ValueSetter,
         VoidCallback,
         initSupernova;
-export 'package:web_socket_channel/web_socket_channel.dart';
 
 export 'src/caching/module.dart';
 export 'src/color.dart';

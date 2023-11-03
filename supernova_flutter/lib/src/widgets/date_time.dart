@@ -6,6 +6,7 @@ import 'package:timeago_flutter/timeago_flutter.dart';
 class InstantWidget extends StatelessWidget {
   const InstantWidget(
     this.instant, {
+    super.key,
     this.formatter,
     this.isSelectable = false,
     this.textStyle,

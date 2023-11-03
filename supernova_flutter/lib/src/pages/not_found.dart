@@ -5,7 +5,7 @@ import '../localization.dart';
 import '../widgets/desktop_page.dart';
 
 class DesktopNotFoundPage extends StatelessWidget {
-  const DesktopNotFoundPage(this.uri);
+  const DesktopNotFoundPage(this.uri, {super.key});
 
   final Uri uri;
 
@@ -19,7 +19,7 @@ class DesktopNotFoundPage extends StatelessWidget {
 }
 
 class NotFoundPage extends StatelessWidget {
-  const NotFoundPage(this.uri);
+  const NotFoundPage(this.uri, {super.key});
 
   final Uri uri;
 

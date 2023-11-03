@@ -59,7 +59,8 @@ class _SupernovaAutocompleteFormFieldWidget<T extends Object, R extends Object>
   ) : assert(
           common.necessity
               .when(optional: () => true, required: (text) => text != null),
-          "SupernovaAutocompleteFormField needs a `requiredText` if it's required.",
+          "SupernovaAutocompleteFormField needs a `requiredText` if it's "
+          'required.' ,
         );
 
   final SupernovaFormFieldData common;

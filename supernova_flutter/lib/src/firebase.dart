@@ -15,15 +15,13 @@ FirebaseOptions supernovaFirebaseOptions({
     case PlatformEnum.Android:
       base = android!;
       iosConfig = null;
-      break;
     case PlatformEnum.IOS:
       base = ios!;
       iosConfig = ios;
-      break;
     case PlatformEnum.Web:
       base = web!;
       iosConfig = null;
-      break;
+    // ignore: no_default_cases
     default:
       TODO('Unsupported platform ${PlatformX.platform.name}.');
   }

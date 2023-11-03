@@ -9,7 +9,8 @@ import 'label.dart';
 
 part 'form_field.freezed.dart';
 
-/// Wrapper for [SupernovaFormFieldBase] that stores common state and configuration.
+/// Wrapper for [SupernovaFormFieldBase] that stores common state and
+/// configuration.
 @immutable
 abstract class SupernovaFormField<T extends Object> {
   SupernovaFormField._({

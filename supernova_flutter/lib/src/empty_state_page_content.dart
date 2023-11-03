@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EmptyStatePageContent extends StatelessWidget {
-  const EmptyStatePageContent(this.text);
+  const EmptyStatePageContent(this.text, {super.key});
 
   final String text;
 

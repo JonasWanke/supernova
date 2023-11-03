@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:supernova/supernova.dart';
 
 class AdaptivePage extends StatelessWidget {
-  const AdaptivePage({this.isFullwidth = false, required this.builder});
+  const AdaptivePage({
+    super.key,
+    this.isFullwidth = false,
+    required this.builder,
+  });
 
   static const navigationDrawerWidth = 256.0;
   static const _breakpointS = 600.0;

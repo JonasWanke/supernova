@@ -39,35 +39,37 @@ class SupernovaFormFieldLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: padding ?? SupernovaFormFieldWidget.horizontalPadding(context),
-      child: Row(children: [
-        Expanded(
-          child: Text.rich(
-            TextSpan(
-              text: text,
-              semanticsLabel: semanticsLabel,
-              children: [if (isRequired) _buildRequiredAsterisk(context)],
-            ),
-            textAlign: TextAlign.left,
-            style: textStyle ?? context.textTheme.labelMedium,
-          ),
-        ),
-        if (valueText != null) ...[
-          const SizedBox(width: 16),
+      child: Row(
+        children: [
           Expanded(
-            flex: 2,
-            child: Text(
-              valueText!,
-              textAlign: TextAlign.right,
-              style: SupernovaFormFieldWidget.textStyle(context)
-                  .copyWith(color: context.theme.colorScheme.primary),
+            child: Text.rich(
+              TextSpan(
+                text: text,
+                semanticsLabel: semanticsLabel,
+                children: [if (isRequired) _buildRequiredAsterisk(context)],
+              ),
+              textAlign: TextAlign.left,
+              style: textStyle ?? context.textTheme.labelMedium,
             ),
           ),
+          if (valueText != null) ...[
+            const SizedBox(width: 16),
+            Expanded(
+              flex: 2,
+              child: Text(
+                valueText!,
+                textAlign: TextAlign.right,
+                style: SupernovaFormFieldWidget.textStyle(context)
+                    .copyWith(color: context.theme.colorScheme.primary),
+              ),
+            ),
+          ],
+          if (helpText != null) ...[
+            const SizedBox(width: 16),
+            HelpIcon(tooltip: helpText!),
+          ],
         ],
-        if (helpText != null) ...[
-          const SizedBox(width: 16),
-          HelpIcon(tooltip: helpText!),
-        ],
-      ]),
+      ),
     );
   }
 }
@@ -81,12 +83,14 @@ class RequiredFormFieldExplanation extends StatelessWidget {
       child: Padding(
         padding: SupernovaFormFieldWidget.horizontalPadding(context),
         child: Text.rich(
-          TextSpan(children: [
-            _buildRequiredAsterisk(context),
-            TextSpan(
-              text: context.supernovaL10n.formFieldLabelRequiredExplanation,
-            ),
-          ]),
+          TextSpan(
+            children: [
+              _buildRequiredAsterisk(context),
+              TextSpan(
+                text: context.supernovaL10n.formFieldLabelRequiredExplanation,
+              ),
+            ],
+          ),
           style: context.textTheme.labelSmall,
         ),
       ),

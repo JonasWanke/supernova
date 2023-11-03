@@ -21,19 +21,24 @@ dependencies:
     sdk: flutter
   flutter_svg: ^2.0.9
   flutter_timezone: ^1.0.8
+  flutter_web_plugins:
+    sdk: flutter
   get_it: ^7.6.4
+  intl: ^0.18.1
   package_info_plus: ^4.2.0
   platformx: ^1.1.0
   sliver_tools: ^0.2.12
   stack_trace: ^1.10.0
   streaming_shared_preferences: ^2.0.0
   supernova:
+    # path: ../supernova
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 9f71f4585786d454530fef360c3dc7e4b4b81de7
+      ref: ee9327dfb2a2bc41f807da6ad56d90a12913a085
+  timeago: ^3.6.0
   timeago_flutter: ^3.6.0
-  url_launcher: ^6.2.1
+  url_launcher: ^6.1.14
 
 dev_dependencies:
   build_runner: ^2.4.6

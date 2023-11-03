@@ -5,7 +5,7 @@ import '../../localization.dart';
 import '../form_field.dart';
 
 class ClearButton extends StatelessWidget {
-  const ClearButton({required this.onPressed});
+  const ClearButton({super.key, required this.onPressed});
 
   final VoidCallback onPressed;
 

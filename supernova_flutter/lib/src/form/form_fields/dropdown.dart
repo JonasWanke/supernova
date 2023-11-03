@@ -34,8 +34,9 @@ class SupernovaDropdownFormFieldWidget<T extends Object> extends HookWidget {
   const SupernovaDropdownFormFieldWidget(
     this.common,
     this.onSubmitted,
-    this.formField,
-  );
+    this.formField, {
+    super.key,
+  });
 
   static const iconSize = 12.0;
 

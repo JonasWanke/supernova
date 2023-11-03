@@ -50,13 +50,15 @@ class _SupernovaSliderFormFieldWidget<T extends Object> extends HookWidget {
     useListenable(formField.selectedValue);
     return Padding(
       padding: SupernovaFormFieldWidget.horizontalPadding(context),
-      child: Column(children: [
-        _buildHeader(),
-        const SizedBox(height: 8),
-        _buildSlider(context),
-        const SizedBox(height: 8),
-        _buildFooter(context),
-      ]),
+      child: Column(
+        children: [
+          _buildHeader(),
+          const SizedBox(height: 8),
+          _buildSlider(context),
+          const SizedBox(height: 8),
+          _buildFooter(context),
+        ],
+      ),
     );
   }
 
@@ -82,7 +84,6 @@ class _SupernovaSliderFormFieldWidget<T extends Object> extends HookWidget {
                 formField.selectedValue.value = formField.values[value.toInt()]
             : null,
         onChangeEnd: onSubmitted == null ? null : (_) => onSubmitted!.call(),
-        min: 0,
         max: formField.values.lastIndex.toDouble(),
         divisions: formField.values.lastIndex,
         label: (formField.labelGetter ?? formField.descriptionGetter)
@@ -92,23 +93,25 @@ class _SupernovaSliderFormFieldWidget<T extends Object> extends HookWidget {
   }
 
   Widget _buildFooter(BuildContext context) {
-    return Row(children: [
-      Expanded(
-        child: Text(
-          formField.minDescription ??
-              formField.descriptionGetter(formField.values.first),
-          style: context.textTheme.labelSmall,
+    return Row(
+      children: [
+        Expanded(
+          child: Text(
+            formField.minDescription ??
+                formField.descriptionGetter(formField.values.first),
+            style: context.textTheme.labelSmall,
+          ),
         ),
-      ),
-      Expanded(
-        child: Text(
-          formField.maxDescription ??
-              formField.descriptionGetter(formField.values.last),
-          style: context.textTheme.labelSmall,
-          textAlign: TextAlign.end,
+        Expanded(
+          child: Text(
+            formField.maxDescription ??
+                formField.descriptionGetter(formField.values.last),
+            style: context.textTheme.labelSmall,
+            textAlign: TextAlign.end,
+          ),
         ),
-      ),
-    ]);
+      ],
+    );
   }
 }
 

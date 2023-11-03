@@ -82,7 +82,7 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
             final lastMonth =
                 formField.lastMonth?.call() ?? const LocalMonth(2100, 1);
             final initialMonth = formField.value ??
-                LocalMonth.current.coerceIn(firstMonth, lastMonth);
+                LocalMonth.current().coerceIn(firstMonth, lastMonth);
 
             final month = await showLocalMonthPicker(
               context: context,
@@ -106,16 +106,18 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Row(children: [
-                  Expanded(child: _buildContent(context)),
-                  if (common.necessity.isOptional &&
-                      formField.selectedMonth.value != null) ...[
-                    const SizedBox(width: 16),
-                    ClearButton(onPressed: () => setValue(null)),
-                    SizedBox(width: horizontalPadding - 16),
-                  ] else
-                    SizedBox(width: horizontalPadding),
-                ]),
+                Row(
+                  children: [
+                    Expanded(child: _buildContent(context)),
+                    if (common.necessity.isOptional &&
+                        formField.selectedMonth.value != null) ...[
+                      const SizedBox(width: 16),
+                      ClearButton(onPressed: () => setValue(null)),
+                      SizedBox(width: horizontalPadding - 16),
+                    ] else
+                      SizedBox(width: horizontalPadding),
+                  ],
+                ),
                 if (state.hasError) PaddedFormError(state.errorText!),
               ],
             ),
@@ -133,24 +135,26 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
         0,
         16,
       ),
-      child: Row(children: [
-        Expanded(
-          child: Text(
-            formField.selectedMonth.value != null
-                ? formField.formatMonth(formField.selectedMonth.value!)
-                : formField.hintText ?? context.supernovaL10n.choose,
-            style: formField.selectedMonth.value == null
-                ? SupernovaFormFieldWidget.hintTextStyle(context)
-                : SupernovaFormFieldWidget.textStyle(context),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              formField.selectedMonth.value != null
+                  ? formField.formatMonth(formField.selectedMonth.value!)
+                  : formField.hintText ?? context.supernovaL10n.choose,
+              style: formField.selectedMonth.value == null
+                  ? SupernovaFormFieldWidget.hintTextStyle(context)
+                  : SupernovaFormFieldWidget.textStyle(context),
+            ),
           ),
-        ),
-        const SizedBox(width: 16),
-        Icon(
-          Icons.calendar_month_outlined,
-          size: 16,
-          color: context.theme.colorScheme.primary,
-        ),
-      ]),
+          const SizedBox(width: 16),
+          Icon(
+            Icons.calendar_month_outlined,
+            size: 16,
+            color: context.theme.colorScheme.primary,
+          ),
+        ],
+      ),
     );
   }
 }
@@ -331,11 +335,13 @@ class _MonthPickerDialog extends StatefulWidget {
         ),
         assert(
           firstMonth <= initialMonth,
-          'initialMonth $initialMonth must be on or after firstMonth $firstMonth.',
+          'initialMonth $initialMonth must be on or after firstMonth '
+          '$firstMonth.',
         ),
         assert(
           initialMonth <= lastMonth,
-          'initialMonth $initialMonth must be on or before lastMonth $lastMonth.',
+          'initialMonth $initialMonth must be on or before lastMonth '
+          '$lastMonth.',
         );
 
   final LocalMonth initialMonth;
@@ -432,31 +438,33 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
           // TODO(JonasWanke): Update to use `TextScaler`
           // ignore: deprecated_member_use
           data: context.mediaQuery.copyWith(textScaleFactor: textScaleFactor),
-          child: Builder(builder: (context) {
-            switch (orientation) {
-              case Orientation.portrait:
-                return Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [header, Expanded(child: picker), actions],
-                );
-              case Orientation.landscape:
-                return Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    header,
-                    Flexible(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [Expanded(child: picker), actions],
+          child: Builder(
+            builder: (context) {
+              switch (orientation) {
+                case Orientation.portrait:
+                  return Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [header, Expanded(child: picker), actions],
+                  );
+                case Orientation.landscape:
+                  return Row(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      header,
+                      Flexible(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [Expanded(child: picker), actions],
+                        ),
                       ),
-                    ),
-                  ],
-                );
-            }
-          }),
+                    ],
+                  );
+              }
+            },
+          ),
         ),
       ),
     );
@@ -488,7 +496,8 @@ class _LocalMonthPickerHeader extends StatelessWidget {
     final colorScheme = theme.colorScheme;
     final textTheme = theme.textTheme;
 
-    // The header should use the primary color in light themes and surface color in dark
+    // The header should use the primary color in light themes and surface color
+    // in dark.
     final isDark = colorScheme.brightness == Brightness.dark;
     final primarySurfaceColor =
         isDark ? colorScheme.surface : colorScheme.primary;
@@ -582,11 +591,13 @@ class _CalendarMonthPicker extends StatefulWidget {
         ),
         assert(
           firstMonth <= initialMonth,
-          'initialMonth $initialMonth must be on or after firstMonth $firstMonth.',
+          'initialMonth $initialMonth must be on or after firstMonth '
+          '$firstMonth.',
         ),
         assert(
           initialMonth <= lastMonth,
-          'initialMonth $initialMonth must be on or before lastMonth $lastMonth.',
+          'initialMonth $initialMonth must be on or before lastMonth '
+          '$lastMonth.',
         );
 
   final LocalMonth initialMonth;
@@ -639,10 +650,12 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     _textDirection = Directionality.of(context);
     if (!_announcedInitialMonth) {
       _announcedInitialMonth = true;
-      unawaited(SemanticsService.announce(
-        LocalMonthFormat.long.format(_selectedMonth),
-        _textDirection,
-      ));
+      unawaited(
+        SemanticsService.announce(
+          LocalMonthFormat.long.format(_selectedMonth),
+          _textDirection,
+        ),
+      );
     }
   }
 
@@ -651,7 +664,6 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
       case PlatformEnum.Android:
       case PlatformEnum.Web:
         unawaited(HapticFeedback.vibrate());
-        break;
       case PlatformEnum.IOS:
       case PlatformEnum.Windows:
       case PlatformEnum.Linux:
@@ -670,10 +682,8 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
       switch (_mode) {
         case LocalMonthPickerMode.month:
           message = LocalMonthFormat.long.format(_selectedMonth);
-          break;
         case LocalMonthPickerMode.year:
           message = _localizations.formatYear(_selectedMonth.dateTime);
-          break;
       }
       unawaited(SemanticsService.announce(message, _textDirection));
     });
@@ -706,27 +716,29 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     assert(debugCheckHasMaterial(context));
     assert(debugCheckHasMaterialLocalizations(context));
     assert(debugCheckHasDirectionality(context));
-    return Column(children: [
-      _LocalMonthPickerModeToggleButton(
-        mode: _mode,
-        title: _localizations.formatYear(DateTime(_currentDisplayedYear)),
-        onTitlePressed: () {
-          // Toggle the month/year mode.
-          _handleModeChanged(
-            _mode == LocalMonthPickerMode.month
-                ? LocalMonthPickerMode.year
-                : LocalMonthPickerMode.month,
-          );
-        },
-      ),
-      Expanded(child: _buildPicker()),
-    ]);
+    return Column(
+      children: [
+        _LocalMonthPickerModeToggleButton(
+          mode: _mode,
+          title: _localizations.formatYear(DateTime(_currentDisplayedYear)),
+          onTitlePressed: () {
+            // Toggle the month/year mode.
+            _handleModeChanged(
+              _mode == LocalMonthPickerMode.month
+                  ? LocalMonthPickerMode.year
+                  : LocalMonthPickerMode.month,
+            );
+          },
+        ),
+        Expanded(child: _buildPicker()),
+      ],
+    );
   }
 
   Widget _buildPicker() {
     switch (_mode) {
       case LocalMonthPickerMode.month:
-        final currentMonth = LocalMonth.current;
+        final currentMonth = LocalMonth.current();
         return MonthPicker(
           key: _monthPickerKey,
           currentMonth: _currentDisplayedYear == currentMonth.year
@@ -824,19 +836,21 @@ class _LocalMonthPickerModeToggleButtonState
           onTap: widget.onTitlePressed,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Row(children: [
-              Flexible(
-                child: Text(
-                  widget.title,
-                  overflow: TextOverflow.ellipsis,
-                  style: textTheme.titleSmall?.copyWith(color: controlColor),
+            child: Row(
+              children: [
+                Flexible(
+                  child: Text(
+                    widget.title,
+                    overflow: TextOverflow.ellipsis,
+                    style: textTheme.titleSmall?.copyWith(color: controlColor),
+                  ),
                 ),
-              ),
-              RotationTransition(
-                turns: _controller,
-                child: Icon(Icons.arrow_drop_down, color: controlColor),
-              ),
-            ]),
+                RotationTransition(
+                  turns: _controller,
+                  child: Icon(Icons.arrow_drop_down, color: controlColor),
+                ),
+              ],
+            ),
           ),
         ),
       ),

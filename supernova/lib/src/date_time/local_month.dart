@@ -21,12 +21,12 @@ class LocalMonth implements Comparable<LocalMonth>, ToJson, Validatable {
     );
   }
 
-  static LocalMonth get current => LocalMonth.fromDateTime(DateTime.now());
-  static LocalMonth get next => current.plus(months: 1);
+  factory LocalMonth.current() => LocalMonth.fromDateTime(DateTime.now());
+  factory LocalMonth.next() => LocalMonth.current().plus(months: 1);
 
   final int year;
   final int month;
-  DateTime get dateTime => DateTime.utc(year, month, 1);
+  DateTime get dateTime => DateTime.utc(year, month);
 
   LocalMonth plus({int years = 0, int months = 0}) =>
       LocalMonth.fromDateTime(DateTime.utc(year + years, month + months));
@@ -84,7 +84,6 @@ enum LocalMonthFormat {
       switch (Intl.defaultLocale?.substring(0, 2)) {
         case 'de':
           since = 'seit';
-          break;
         case 'en':
         default:
           since = 'since';

@@ -27,9 +27,9 @@ class LocalDate implements Comparable<LocalDate>, ToJson, Validatable {
     );
   }
 
-  static LocalDate get today => LocalDate.fromDateTime(DateTime.now());
-  static LocalDate get yesterday =>
-      LocalDate.fromDateTime(LocalDate.today.dateTime - 1.days);
+  factory LocalDate.today() => LocalDate.fromDateTime(DateTime.now());
+  factory LocalDate.yesterday() =>
+      LocalDate.fromDateTime(LocalDate.today().dateTime - 1.days);
 
   static final stream = Stream.periodic(1.seconds, (_) => DateTime.now())
       .map(LocalDate.fromDateTime)
@@ -53,7 +53,7 @@ class LocalDate implements Comparable<LocalDate>, ToJson, Validatable {
   LocalDateTime at(LocalTime time) => LocalDateTime(this, time);
 
   int birthdayToAge([LocalDate? onDate]) {
-    final comparisonDate = onDate ?? LocalDate.today;
+    final comparisonDate = onDate ?? LocalDate.today();
     if (year < 1) {
       throw ArgumentError.value(
         this,

@@ -17,7 +17,7 @@ late final LogLevel _minLogLevel;
 final logger = Logger();
 
 // ignore: avoid-global-state
-var logListeners = <LogListener>[printLogPretty];
+List<LogListener> logListeners = <LogListener>[printLogPretty];
 
 void initLogger({LogLevel? minLogLevel}) {
   _stopwatch = Stopwatch()..start();
@@ -210,7 +210,7 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
   const indent = '  ';
   final output = StringBuffer();
   final data = record.data != null
-      ? stringifyObjectForLogging(record.data!, indent)
+      ? stringifyObjectForLogging(record.data, indent)
       : null;
 
   final rawColor = _levelColors[record.level];
@@ -317,15 +317,15 @@ String stringifyObjectForLogging(dynamic message, [String? indent]) {
     try {
       // ignore: avoid_dynamic_calls
       return object.toBson();
-    } catch (_) {}
+    } on Exception catch (_) {}
     try {
       // ignore: avoid_dynamic_calls
       return object.toJson();
-    } catch (_) {}
+    } on Exception catch (_) {}
 
     try {
       return '$object';
-    } catch (_) {}
+    } on Exception catch (_) {}
 
     return object.runtimeType;
   }

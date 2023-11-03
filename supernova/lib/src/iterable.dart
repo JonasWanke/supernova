@@ -36,6 +36,7 @@ extension IterableSupernova<T> on Iterable<T> {
     final result = (<T>[], <T>[]);
     for (final element in this) {
       final list = predicate(element) ? result.$1 : result.$2;
+      // ignore: cascade_invocations
       list.add(element);
     }
     return result;
@@ -101,14 +102,9 @@ extension ListSupernova<T> on List<T> {
 
   @useResult
   List<T> addImmutable(T item) => [...this, item];
-
   @useResult
-  List<T> insertImmutable(int index, T item) {
-    final newList = List.of(this);
-    newList.insert(index, item);
-    return newList;
-  }
-
+  List<T> insertImmutable(int index, T item) =>
+      List.of(this)..insert(index, item);
   @useResult
   List<T> insertSortedImmutable(T item) =>
       insertImmutable(lowerBound(item), item);

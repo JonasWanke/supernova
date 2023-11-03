@@ -27,7 +27,7 @@ class LocalDateTime implements Comparable<LocalDateTime>, ToJson, Validatable {
     );
   }
 
-  static LocalDateTime get now => LocalDateTime.fromDateTime(DateTime.now());
+  factory LocalDateTime.now() => LocalDateTime.fromDateTime(DateTime.now());
 
   final LocalDate date;
   final LocalTime time;

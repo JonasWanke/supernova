@@ -37,15 +37,8 @@ extension ValidatableExtension on Validatable {
     final errors = validate();
     if (errors.isEmpty) return;
 
-    String? id;
-    try {
-      // Try to provide more context for fixing the error. `id` is defined in
-      // some API structs and in the backend's `Entity` class.
-      id = (this as dynamic).id.toString();
-    } catch (_) {}
-
     throw Exception(
-      'Validation failed for $runtimeType${id == null ? '' : ' $id'}:\n'
+      'Validation failed for $runtimeType:\n'
       '${errors.join('\n')}',
     );
   }
@@ -209,7 +202,7 @@ class Is {
   // LocalDate
   static Validator<LocalDate> get dateInPast {
     return (value) =>
-        Validate.custom('Date must be in the past.', value < LocalDate.today);
+        Validate.custom('Date must be in the past.', value < LocalDate.today());
   }
 
   // Duration

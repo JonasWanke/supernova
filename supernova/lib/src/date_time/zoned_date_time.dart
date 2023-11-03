@@ -20,10 +20,12 @@ class ZonedDateTime implements Comparable<ZonedDateTime>, ToJson {
   ZonedDateTime.fromLocalDateTimeInZoneLeniently(
     LocalDateTime localDateTime,
     DateTimeZone zone,
-  ) : this._(time_machine.ZonedDateTime.atLeniently(
-          localDateTime.toTimeMachine(),
-          zone,
-        ));
+  ) : this._(
+          time_machine.ZonedDateTime.atLeniently(
+            localDateTime.toTimeMachine(),
+            zone,
+          ),
+        );
   const ZonedDateTime._(this._zonedDateTime);
 
   factory ZonedDateTime.fromJson(Map<String, dynamic> json) {

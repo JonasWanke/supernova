@@ -13,10 +13,12 @@ class Instant implements Comparable<Instant>, ToBson, ToJson {
   factory Instant.now() =>
       Instant.fromMillisecondsSinceEpoch(DateTime.now().millisecondsSinceEpoch);
   factory Instant.fromMillisecondsSinceEpoch(int millisecondsSinceEpoch) =>
-      Instant.fromDateTime(DateTime.fromMillisecondsSinceEpoch(
-        millisecondsSinceEpoch,
-        isUtc: true,
-      ));
+      Instant.fromDateTime(
+        DateTime.fromMillisecondsSinceEpoch(
+          millisecondsSinceEpoch,
+          isUtc: true,
+        ),
+      );
 
   factory Instant.fromJson(String string) {
     if (string.isEmpty || string.substring(string.length - 1) != 'Z') {

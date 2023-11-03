@@ -11,8 +11,18 @@ updates:
     labels: ['T: Build']
     schedule:
       interval: daily
+    ignore:
+      - dependency-name: '*'
+        update-types: version-update:semver-minor
+      - dependency-name: '*'
+        update-types: version-update:semver-patch
   - package-ecosystem: pub
     directory: /supernova_flutter
     labels: ['T: Build']
     schedule:
       interval: daily
+    ignore:
+      - dependency-name: '*'
+        update-types: version-update:semver-minor
+      - dependency-name: '*'
+        update-types: version-update:semver-patch

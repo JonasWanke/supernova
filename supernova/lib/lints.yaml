@@ -89,7 +89,8 @@ linter:
     depend_on_referenced_packages: true
     deprecated_consistency: true
     deprecated_member_use_from_same_package: true
-    diagnostic_describe_all_properties: true
+    diagnostic_describe_all_properties: false
+    # Only in `package_lints.yaml`
     directives_ordering: true
     discarded_futures: true
     do_not_use_environment: true

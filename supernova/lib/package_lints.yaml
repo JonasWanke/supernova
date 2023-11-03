@@ -4,6 +4,7 @@ include: package:supernova/lints.yaml
 
 linter:
   rules:
+    diagnostic_describe_all_properties: true
     package_api_docs: true
     prefer_asserts_with_message: true
     public_member_api_docs: true

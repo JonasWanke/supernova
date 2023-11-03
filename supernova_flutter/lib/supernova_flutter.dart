@@ -40,7 +40,6 @@ export 'package:flutter/material.dart'
 export 'package:flutter/services.dart';
 export 'package:flutter_blurhash/flutter_blurhash.dart';
 export 'package:flutter_hooks/flutter_hooks.dart' hide useFuture, useStream;
-export 'package:flutter_svg/flutter_svg.dart';
 export 'package:get_it/get_it.dart' show GetIt;
 export 'package:sliver_tools/sliver_tools.dart';
 export 'package:supernova/supernova.dart'

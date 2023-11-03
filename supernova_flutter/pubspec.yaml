@@ -7,7 +7,6 @@ environment:
 
 dependencies:
   align_positioned: ^3.0.0
-  async: ^2.8.2
   auto_size_text: ^3.0.0
   black_hole_flutter: ^1.1.0
   debug_overlay: ^0.2.9
@@ -19,7 +18,6 @@ dependencies:
   flutter_hooks: ^0.20.3
   flutter_localizations:
     sdk: flutter
-  flutter_svg: ^2.0.9
   flutter_timezone: ^1.0.8
   flutter_web_plugins:
     sdk: flutter

@@ -25,7 +25,6 @@ linter:
     always_use_package_imports: false
     # Instead, see `prefer_relative_imports`
     annotate_overrides: true
-    annotate_redeclares: true
     avoid_annotating_with_dynamic: false
     # `dynamic` should be explicit
     avoid_bool_literals_in_conditional_expressions: true
@@ -67,7 +66,6 @@ linter:
     avoid_types_as_parameter_names: true
     avoid_types_on_closure_parameters: true
     avoid_unnecessary_containers: true
-    avoid_unstable_final_fields: true
     avoid_unused_constructor_parameters: true
     avoid_void_async: true
     avoid_web_libraries_in_flutter: true
@@ -127,8 +125,6 @@ linter:
     no_literal_bool_comparisons: true
     no_logic_in_create_state: true
     no_runtimeType_toString: true
-    no_self_assignments: true
-    no_wildcard_variable_uses: true
     non_constant_identifier_names: true
     noop_primitive_operations: true
     null_check_on_nullable_type_parameter: true

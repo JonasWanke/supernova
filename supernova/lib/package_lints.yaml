@@ -1,0 +1,9 @@
+# Lint configuration for published packages.
+
+include: package:supernova/lints.yaml
+
+linter:
+  rules:
+    package_api_docs: true
+    prefer_asserts_with_message: true
+    public_member_api_docs: true

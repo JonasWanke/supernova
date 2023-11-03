@@ -223,7 +223,8 @@ linter:
     unnecessary_new: true
     unnecessary_null_aware_assignments: true
     unnecessary_null_aware_operator_on_extension_on_nullable: true
-    unnecessary_null_checks: true
+    unnecessary_null_checks: false
+    # Sometimes, we want to be explicit.
     unnecessary_null_in_if_null_operators: true
     unnecessary_nullable_for_final_variable_declarations: true
     unnecessary_overrides: true

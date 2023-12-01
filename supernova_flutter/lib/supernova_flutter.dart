@@ -71,6 +71,7 @@ export 'src/padding.dart';
 export 'src/pages/coming_soon.dart';
 export 'src/pages/not_found.dart';
 export 'src/platform.dart';
+export 'src/preferences.dart';
 export 'src/scroll_controller.dart';
 export 'src/services.dart' hide initServices;
 export 'src/sliver.dart';

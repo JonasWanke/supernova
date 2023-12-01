@@ -38,7 +38,6 @@ export 'package:flutter/material.dart'
         Stepper,
         StreamBuilder;
 export 'package:flutter/services.dart';
-export 'package:flutter_blurhash/flutter_blurhash.dart';
 export 'package:flutter_hooks/flutter_hooks.dart' hide useFuture, useStream;
 export 'package:get_it/get_it.dart' show GetIt;
 export 'package:shared_preferences/shared_preferences.dart';

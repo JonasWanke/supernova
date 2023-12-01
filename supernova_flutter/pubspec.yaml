@@ -14,7 +14,6 @@ dependencies:
   firebase_crashlytics: ^3.4.3
   flutter:
     sdk: flutter
-  flutter_blurhash: ^0.7.0
   flutter_hooks: ^0.20.3
   flutter_localizations:
     sdk: flutter

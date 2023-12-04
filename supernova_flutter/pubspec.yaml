@@ -22,7 +22,7 @@ dependencies:
     sdk: flutter
   get_it: ^7.6.4
   intl: '>=0.17.0 <0.19.0'
-  package_info_plus: ^4.2.0
+  package_info_plus: ^5.0.1
   platformx: ^1.1.0
   shared_preferences: ^2.2.2
   sliver_tools: ^0.2.12

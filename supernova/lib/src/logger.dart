@@ -317,15 +317,18 @@ String stringifyObjectForLogging(dynamic message, [String? indent]) {
     try {
       // ignore: avoid_dynamic_calls
       return object.toBson();
-    } on Exception catch (_) {}
+      // ignore: avoid_catches_without_on_clauses
+    } catch (_) {}
     try {
       // ignore: avoid_dynamic_calls
       return object.toJson();
-    } on Exception catch (_) {}
+      // ignore: avoid_catches_without_on_clauses
+    } catch (_) {}
 
     try {
       return '$object';
-    } on Exception catch (_) {}
+      // ignore: avoid_catches_without_on_clauses
+    } catch (_) {}
 
     return object.runtimeType;
   }

@@ -24,7 +24,7 @@ class Id<T> {
   Id<R> cast<R>() => Id._(value);
 
   @override
-  bool operator ==(dynamic other) =>
+  bool operator ==(Object other) =>
       identical(this, other) || (other is Id<T> && other.value == value);
   @override
   int get hashCode => value.hashCode;

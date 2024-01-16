@@ -951,8 +951,8 @@ packages:
     dependency: "direct main"
     description:
       path: supernova
-      ref: "1c0fbdf87112b9106dd4fd5814782a753fab2283"
-      resolved-ref: "1c0fbdf87112b9106dd4fd5814782a753fab2283"
+      ref: "4d3c562e44e824c537aa0ddfe3ce649dd4fa7e98"
+      resolved-ref: "4d3c562e44e824c537aa0ddfe3ce649dd4fa7e98"
       url: "https://github.com/JonasWanke/supernova.git"
     source: git
     version: "0.0.0"

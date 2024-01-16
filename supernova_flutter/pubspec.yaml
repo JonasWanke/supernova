@@ -6,7 +6,7 @@ environment:
   flutter: '>=3.10.0'
 
 dependencies:
-  align_positioned: ^3.0.0
+  align_positioned: '>=3.0.0 <5.0.0'
   auto_size_text: ^3.0.0
   black_hole_flutter: ^1.1.0
   debug_overlay: ^0.2.9
@@ -21,7 +21,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   get_it: ^7.6.4
-  intl: '>=0.17.0 <0.19.0'
+  intl: '>=0.17.0 <0.20.0'
   package_info_plus: '>=3.0.0 <6.0.0'
   platformx: ^1.1.0
   shared_preferences: ^2.2.2

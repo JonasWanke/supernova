@@ -2,7 +2,7 @@ import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 import 'package:time/time.dart';
 
-import '../bson_json.dart';
+import '../json.dart';
 import '../typedefs.dart';
 import '../validation.dart';
 import 'local_date_time.dart';

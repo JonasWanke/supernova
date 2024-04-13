@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:ansi_styles/ansi_styles.dart';
-import 'package:bson/bson.dart';
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:stack_trace/stack_trace.dart';
@@ -312,13 +311,6 @@ String _traceToPrettyString(Trace trace, String Function(String) color) {
 
 String stringifyObjectForLogging(dynamic message, [String? indent]) {
   dynamic toEncodable(dynamic object) {
-    if (object is BsonDate) return Instant.fromBson(object.data).toString();
-
-    try {
-      // ignore: avoid_dynamic_calls
-      return object.toBson();
-      // ignore: avoid_catches_without_on_clauses
-    } catch (_) {}
     try {
       // ignore: avoid_dynamic_calls
       return object.toJson();

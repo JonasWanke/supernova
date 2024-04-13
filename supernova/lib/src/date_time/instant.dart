@@ -1,15 +1,14 @@
-import 'package:bson/bson.dart';
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 import 'package:time/time.dart';
 
-import '../bson_json.dart';
+import '../json.dart';
 import 'local_date.dart';
 import 'local_date_time.dart';
 import 'local_time.dart';
 
 @immutable
-class Instant implements Comparable<Instant>, ToBson, ToJson {
+class Instant implements Comparable<Instant>, ToJson {
   factory Instant.now() =>
       Instant.fromMillisecondsSinceEpoch(DateTime.now().millisecondsSinceEpoch);
   factory Instant.fromMillisecondsSinceEpoch(int millisecondsSinceEpoch) =>
@@ -29,7 +28,6 @@ class Instant implements Comparable<Instant>, ToBson, ToJson {
         .inUtc
         .instant;
   }
-  factory Instant.fromBson(DateTime bson) => Instant.fromDateTime(bson);
 
   Instant.fromDateTime(this.dateTime)
       : assert(dateTime.isUtc),
@@ -74,8 +72,6 @@ class Instant implements Comparable<Instant>, ToBson, ToJson {
 
   @override
   String toJson() => toString();
-  @override
-  BsonDate toBson() => BsonDate(dateTime);
 }
 
 @immutable

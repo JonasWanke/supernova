@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:oxidized/oxidized.dart';
 
-import 'bson_json.dart';
+import 'json.dart';
 import 'typedefs.dart';
 
 extension NullableToOptionSupernova<T extends Object> on T? {

@@ -4,7 +4,6 @@ import 'src/logger.dart';
 
 export 'dart:async';
 
-export 'package:bson/bson.dart';
 export 'package:characters/characters.dart';
 export 'package:collection/collection.dart' hide IterableZip;
 export 'package:color/color.dart' show RgbColor;
@@ -37,7 +36,6 @@ export 'package:todo/todo.dart';
 
 export 'src/async.dart';
 export 'src/bool.dart';
-export 'src/bson_json.dart';
 export 'src/bytes.dart';
 export 'src/date_time/module.dart';
 export 'src/debug_mode.dart';
@@ -46,6 +44,7 @@ export 'src/google_cloud.dart';
 export 'src/https_url.dart';
 export 'src/id.dart';
 export 'src/iterable.dart';
+export 'src/json.dart';
 export 'src/localization.dart';
 export 'src/logger.dart' hide initLogger;
 export 'src/math.dart';

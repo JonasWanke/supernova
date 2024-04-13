@@ -1,27 +1,19 @@
-import 'package:bson/bson.dart';
 import 'package:meta/meta.dart';
-
-// ignore_for_file: sort_constructors_first
 
 @immutable
 @sealed
 class Id<T> {
-  Id([String? value])
-      : value = value == null ? ObjectId() : ObjectId.fromHexString(value);
-  const Id._(this.value);
+  const Id(this.value);
 
   static Id<T>? fromStringOrNull<T>(String? value) =>
       value == null ? null : Id(value);
 
-  factory Id.fromBson(ObjectId bson) => Id._(bson);
-  static Id<T>? fromBsonOrNull<T>(ObjectId? bson) =>
-      bson == null ? null : Id.fromBson(bson);
+  // ignore: sort_constructors_first
+  factory Id.fromJson(String json) => Id(json);
 
-  factory Id.fromJson(String json) => Id._(ObjectId.fromHexString(json));
+  final String value;
 
-  final ObjectId value;
-
-  Id<R> cast<R>() => Id._(value);
+  Id<R> cast<R>() => Id(value);
 
   @override
   bool operator ==(Object other) =>
@@ -31,8 +23,7 @@ class Id<T> {
 
   @override
   String toString() => toJson();
-  String toJson() => value.id.hexString;
-  ObjectId toBson() => value;
+  String toJson() => value;
 }
 
 extension SetOfIdSupernova<T> on Set<Id<T>> {

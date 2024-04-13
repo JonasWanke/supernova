@@ -1,8 +1,8 @@
 import 'package:intl/intl.dart';
 import 'package:meta/meta.dart';
 
-import '../bson_json.dart';
 import '../iterable.dart';
+import '../json.dart';
 import '../typedefs.dart';
 import '../validation.dart';
 

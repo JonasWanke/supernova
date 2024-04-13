@@ -1,9 +1,9 @@
 import 'package:meta/meta.dart';
-import 'package:time_machine/time_machine.dart' show DateTimeZone;
 import 'package:time_machine/time_machine.dart' as time_machine;
+import 'package:time_machine/time_machine.dart' show DateTimeZone;
 
-import '../bson_json.dart';
 import '../iterable.dart';
+import '../json.dart';
 import 'instant.dart';
 import 'local_date.dart';
 import 'local_date_time.dart';

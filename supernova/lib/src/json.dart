@@ -13,9 +13,18 @@ extension ToJsonListToJsonSupernova<T extends ToJson> on List<T> {
 }
 
 // Map
-extension IdMapToJsonSupernova<T extends ToJson> on Map<Id<T>, T> {
+extension IdMapToJsonSupernova<T extends ToJson> on IdMap<T> {
   Map<String, dynamic> toJson() =>
       map((key, value) => MapEntry(key.value, value.toJson()));
+}
+
+IdMap<T> idMapFromJson<T extends Object>(
+  Map<String, dynamic> json,
+  FromJson<T> fromJson,
+) {
+  return json.map(
+    (key, value) => MapEntry(Id(key), fromJson(value as Map<String, dynamic>)),
+  );
 }
 
 // Enum

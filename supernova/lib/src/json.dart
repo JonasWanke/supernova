@@ -1,3 +1,4 @@
+import 'id.dart';
 import 'string.dart';
 
 typedef FromJson<T extends Object> = T Function(Map<String, dynamic> json);
@@ -11,20 +12,10 @@ extension ToJsonListToJsonSupernova<T extends ToJson> on List<T> {
   List<dynamic> toJson() => map((it) => it.toJson()).toList();
 }
 
-dynamic debugShortenJson(dynamic json) {
-  const maxLength = 100;
-
-  if (json is String) {
-    return json.limitWithEllipsis(maxLength);
-  } else if (json is List<dynamic>) {
-    return json.map<dynamic>(debugShortenJson).toList();
-  } else if (json is Map<String, dynamic>) {
-    return json.map<String, dynamic>(
-      (key, dynamic value) =>
-          MapEntry<String, dynamic>(key, debugShortenJson(value)),
-    );
-  }
-  return json;
+// Map
+extension IdMapToJsonSupernova<T extends ToJson> on Map<Id<T>, T> {
+  Map<String, dynamic> toJson() =>
+      map((key, value) => MapEntry(key.value, value.toJson()));
 }
 
 // Enum
@@ -53,4 +44,21 @@ typedef FromNullableJson<T extends Object> = T? Function(
 
 extension FromJsonNullableSupernova<T extends Object> on FromJson<T> {
   FromNullableJson<T> get orNull => (it) => it == null ? null : this(it);
+}
+
+// Utils
+dynamic debugShortenJson(dynamic json) {
+  const maxLength = 100;
+
+  if (json is String) {
+    return json.limitWithEllipsis(maxLength);
+  } else if (json is List<dynamic>) {
+    return json.map<dynamic>(debugShortenJson).toList();
+  } else if (json is Map<String, dynamic>) {
+    return json.map<String, dynamic>(
+      (key, dynamic value) =>
+          MapEntry<String, dynamic>(key, debugShortenJson(value)),
+    );
+  }
+  return json;
 }

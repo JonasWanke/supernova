@@ -28,7 +28,8 @@ linter:
     avoid_annotating_with_dynamic: false
     # `dynamic` should be explicit
     avoid_bool_literals_in_conditional_expressions: true
-    avoid_catches_without_on_clauses: true
+    avoid_catches_without_on_clauses: false
+    # It's usually intentional to catch everything.
     avoid_catching_errors: true
     avoid_classes_with_only_static_members: false
     # Classes can still be used to namespace declarations and not pollute the

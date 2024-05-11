@@ -1,8 +1,10 @@
 import 'package:meta/meta.dart';
 
+import 'json.dart';
+
 @immutable
 @sealed
-class Id<T> {
+class Id<T> implements ToJson {
   const Id(this.value);
 
   static Id<T>? fromStringOrNull<T>(String? value) =>
@@ -23,6 +25,7 @@ class Id<T> {
 
   @override
   String toString() => toJson();
+  @override
   String toJson() => value;
 }
 

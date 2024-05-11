@@ -26,6 +26,8 @@ class Id<T> {
   String toJson() => value;
 }
 
+typedef IdMap<T> = Map<Id<T>, T>;
+
 extension SetOfIdSupernova<T> on Set<Id<T>> {
   Set<Id<R>> castIds<R>() => map((id) => id.cast<R>()).toSet();
 }

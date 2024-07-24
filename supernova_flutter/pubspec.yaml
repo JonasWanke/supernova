@@ -10,19 +10,19 @@ dependencies:
   auto_size_text: ^3.0.0
   black_hole_flutter: ^1.1.0
   debug_overlay: ^0.2.9
-  firebase_core: ^2.20.0
-  firebase_crashlytics: ^3.4.3
+  firebase_core: ^3.0.0
+  firebase_crashlytics: ^4.0.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.3
   flutter_localizations:
     sdk: flutter
-  flutter_timezone: ^1.0.8
+  flutter_timezone: '>=1.0.8 <3.0.0'
   flutter_web_plugins:
     sdk: flutter
   get_it: ^7.6.4
   intl: '>=0.17.0 <0.20.0'
-  package_info_plus: '>=3.0.0 <8.0.0'
+  package_info_plus: '>=3.0.0 <9.0.0'
   platformx: ^1.1.0
   shared_preferences: ^2.2.2
   sliver_tools: ^0.2.12
@@ -33,7 +33,7 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 16e713c9db21416edc8668b74dc2da111c4bf1d9
+      ref: 2a7c14bce71effa5332ad8dee72685101d424502
   timeago: ^3.6.0
   timeago_flutter: ^3.6.0
   url_launcher: ^6.1.14

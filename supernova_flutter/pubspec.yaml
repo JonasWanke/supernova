@@ -17,7 +17,7 @@ dependencies:
   flutter_hooks: ^0.20.3
   flutter_localizations:
     sdk: flutter
-  flutter_timezone: '>=1.0.8 <3.0.0'
+  flutter_timezone: ^2.1.0
   flutter_web_plugins:
     sdk: flutter
   get_it: ^7.6.4

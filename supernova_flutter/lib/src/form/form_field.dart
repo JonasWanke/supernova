@@ -191,13 +191,13 @@ class SupernovaFormFieldWidget extends StatelessWidget {
   static TextStyle textStyle(BuildContext context) {
     final color = SupernovaForm.isEnabled(context)
         ? null
-        : context.theme.colorScheme.background.disabledOnColor;
+        : context.theme.colorScheme.surface.disabledOnColor;
     return context.theme.textTheme.bodyLarge!.copyWith(color: color);
   }
 
   static TextStyle hintTextStyle(BuildContext context) {
     return textStyle(context).copyWith(
-      color: context.theme.colorScheme.background.mediumEmphasisOnColor,
+      color: context.theme.colorScheme.surface.mediumEmphasisOnColor,
     );
   }
 

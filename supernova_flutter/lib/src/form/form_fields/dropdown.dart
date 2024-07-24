@@ -102,7 +102,7 @@ class SupernovaDropdownFormFieldWidget<T extends Object> extends HookWidget {
           ? item.child
           : DefaultTextStyle.merge(
               style: TextStyle(
-                color: context.theme.colorScheme.background.disabledOnColor,
+                color: context.theme.colorScheme.surface.disabledOnColor,
               ),
               child: item.child,
             ),

@@ -26,11 +26,10 @@ class SupernovaLocalMonthFormField extends SupernovaFormFieldBase<LocalMonth>
     ValueGetter<LocalMonth?>? firstMonth,
     ValueGetter<LocalMonth?>? lastMonth,
     @Default(SupernovaLocalMonthFormField.defaultFormatMonth)
-        Formatter<LocalMonth> formatMonth,
+    Formatter<LocalMonth> formatMonth,
     String? hintText,
     String? dialogHelpText,
-    @Default(LocalMonthPickerMode.year)
-        LocalMonthPickerMode initialPickerMode,
+    @Default(LocalMonthPickerMode.year) LocalMonthPickerMode initialPickerMode,
     SupernovaFormFieldValidator<LocalMonth>? validator,
   }) = _SupernovaLocalMonthFormField;
 
@@ -234,7 +233,7 @@ class MonthPicker extends HookWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       );
     } else if (isDisabled) {
-      textColor = colorScheme.background.disabledOnColor;
+      textColor = colorScheme.surface.disabledOnColor;
     } else if (isCurrentMonth) {
       textColor = colorScheme.primary;
       decoration = BoxDecoration(
@@ -242,7 +241,7 @@ class MonthPicker extends HookWidget {
         borderRadius: BorderRadius.circular(borderRadius),
       );
     } else {
-      textColor = colorScheme.background.mediumEmphasisOnColor;
+      textColor = colorScheme.surface.mediumEmphasisOnColor;
     }
 
     Widget monthItem = Center(

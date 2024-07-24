@@ -9,16 +9,16 @@ extension BuildContextSupernovaFormDialogs on BuildContext {
     return showDecisionDialog(
       title: supernovaL10n.discardChanges,
       content: Text(supernovaL10n.discardChangesMessage),
-      actionConfirm: supernovaL10n.discardChangesActionDiscard,
       actionCancel: supernovaL10n.discardChangesActionKeepEditing,
+      actionConfirm: supernovaL10n.discardChangesActionDiscard,
     );
   }
 
   Future<bool> showDecisionDialog({
     required String title,
     required Widget content,
-    required String actionConfirm,
     required String actionCancel,
+    required String actionConfirm,
   }) async {
     final result = await showDialog<bool>(
       context: this,
@@ -26,13 +26,13 @@ extension BuildContextSupernovaFormDialogs on BuildContext {
         title: Text(title),
         content: content,
         actions: [
+          TextButton(
+            onPressed: () => context.navigator.pop(false),
+            child: Text(actionCancel),
+          ),
           ElevatedButton(
             onPressed: () => context.navigator.pop(true),
             child: Text(actionConfirm),
-          ),
-          OutlinedButton(
-            onPressed: () => context.navigator.pop(false),
-            child: Text(actionCancel),
           ),
         ],
       ),

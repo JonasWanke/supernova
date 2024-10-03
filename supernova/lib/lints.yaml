@@ -107,6 +107,7 @@ linter:
     implicit_call_tearoffs: true
     implicit_reopen: true
     invalid_case_patterns: true
+    invalid_runtime_check_with_js_interop_types: true
     iterable_contains_unrelated_type: true
     join_return_with_assignment: true
     leading_newlines_in_multiline_strings: true
@@ -217,6 +218,7 @@ linter:
     unnecessary_getters_setters: true
     unnecessary_lambdas: true
     unnecessary_late: true
+    unnecessary_library_name: true
     unnecessary_library_directive: true
     unnecessary_new: true
     unnecessary_null_aware_assignments: true
@@ -233,6 +235,7 @@ linter:
     unnecessary_string_interpolations: true
     unnecessary_this: true
     unnecessary_to_list_in_spreads: true
+    unintended_html_in_doc_comment: true
     unreachable_from_main: true
     unrelated_type_equality_checks: true
     unsafe_html: true

@@ -283,7 +283,6 @@ dart_code_metrics:
     - avoid-unused-parameters
     - avoid-use-expanded-as-spacer
     - avoid-wrapping-in-padding
-    - binary-expression-operand-order
     - check-for-equals-in-render-object-setters
     - consistent-update-render-object
     - double-literal-format

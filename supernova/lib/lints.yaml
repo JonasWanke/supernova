@@ -304,7 +304,6 @@ dart_code_metrics:
         ignored-named-arguments:
           - builder
           - rowBuilder
-    - prefer-first
     - prefer-immediate-return
     - prefer-intl-name
     - prefer-iterable-of

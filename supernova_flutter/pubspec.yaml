@@ -2,7 +2,7 @@ name: supernova_flutter
 publish_to: none
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ^3.0.0
   flutter: '>=3.10.0'
 
 dependencies:
@@ -33,7 +33,7 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/supernova.git
       path: supernova
-      ref: 2a7c14bce71effa5332ad8dee72685101d424502
+      ref: c870dff3e9fe88f80a9f8f5ea6f39f7a243ce5dd
   timeago: ^3.6.0
   timeago_flutter: ^3.6.0
   url_launcher: ^6.1.14

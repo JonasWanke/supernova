@@ -27,6 +27,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: ${{ matrix.flutterChannel }}
+      - run: flutter --version
 
       - run: dart pub get
         working-directory: supernova

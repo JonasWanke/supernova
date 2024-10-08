@@ -2,7 +2,7 @@ name: supernova_flutter
 publish_to: none
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ^3.0.0
   flutter: '>=3.10.0'
 
 dependencies:

@@ -293,7 +293,6 @@ dart_code_metrics:
     - missing-test-assertion
     - no-boolean-literal-compare
     - no-equal-then-else
-    - no-object-declaration
     - prefer-async-await
     - prefer-const-border-radius # ?
     - prefer-correct-edge-insets-constructor

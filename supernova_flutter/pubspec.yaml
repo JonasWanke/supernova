@@ -45,11 +45,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  assets:
-    # https://pub.dev/packages/time_machine#flutter-specific-notes
-    - packages/time_machine/data/cultures/cultures.bin
-    - packages/time_machine/data/tzdb/tzdb.bin
-
   fonts:
     - family: FlatIconsFilledRounded
       fonts:

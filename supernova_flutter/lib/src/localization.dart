@@ -1,4 +1,5 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:chrono/chrono.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -86,18 +87,6 @@ abstract class SupernovaLocalizations {
   String get companyDeleted;
   String get companyTitle;
 
-  String dateTimeRange(ZonedDateTime start, Duration duration) {
-    final localStart = start.inLocalZone.localDateTime;
-    final startString = LocalDateTimeFormat.shortToMinute.format(localStart);
-
-    final end = start + duration;
-    final endString = localStart.date == end.localDateTime.date
-        ? LocalTimeFormat.minute.format(end.localDateTime.time)
-        : LocalDateTimeFormat.shortToMinute.format(end.localDateTime);
-
-    return range(startString, endString);
-  }
-
   String get done;
 
   String get discardChanges;
@@ -135,11 +124,8 @@ abstract class SupernovaLocalizations {
   String get loading;
   String get loadingShort => '…';
 
-  String monthRange(
-    LocalMonth? begin,
-    LocalMonth? end, {
-    bool isEndExpected = false,
-  });
+  String month(Month month);
+  String monthRange(Month? begin, Month? end, {bool isEndExpected = false});
 
   String get notFoundShort => '—';
 
@@ -315,19 +301,32 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
   String get loading => 'Lädt …';
 
   @override
-  String monthRange(
-    LocalMonth? begin,
-    LocalMonth? end, {
-    bool isEndExpected = false,
-  }) {
-    final format = LocalMonthFormat.long.format;
+  String month(Month month) {
+    return switch (month) {
+      Month.january => 'Januar',
+      Month.february => 'Februar',
+      Month.march => 'März',
+      Month.april => 'April',
+      Month.may => 'Mai',
+      Month.june => 'Juni',
+      Month.july => 'Juli',
+      Month.august => 'August',
+      Month.september => 'September',
+      Month.october => 'Oktober',
+      Month.november => 'November',
+      Month.december => 'Dezember',
+    };
+  }
+
+  @override
+  String monthRange(Month? begin, Month? end, {bool isEndExpected = false}) {
     final until = isEndExpected ? 'bis vsl.' : 'bis';
     if (begin != null) {
       return end != null
-          ? '${format(begin)} $until ${format(end)}'
-          : 'ab ${format(begin)}';
+          ? '${month(begin)} $until ${month(end)}'
+          : 'ab ${month(begin)}';
     } else {
-      return end != null ? '$until ${format(end)}' : 'Irgendwann';
+      return end != null ? '$until ${month(end)}' : 'Irgendwann';
     }
   }
 
@@ -465,19 +464,32 @@ class SupernovaLocalizationEn extends SupernovaLocalizations {
   String get loading => 'Loading…';
 
   @override
-  String monthRange(
-    LocalMonth? begin,
-    LocalMonth? end, {
-    bool isEndExpected = false,
-  }) {
-    final format = LocalMonthFormat.long.format;
+  String month(Month month) {
+    return switch (month) {
+      Month.january => 'January',
+      Month.february => 'February',
+      Month.march => 'March',
+      Month.april => 'April',
+      Month.may => 'May',
+      Month.june => 'June',
+      Month.july => 'July',
+      Month.august => 'August',
+      Month.september => 'September',
+      Month.october => 'October',
+      Month.november => 'November',
+      Month.december => 'December',
+    };
+  }
+
+  @override
+  String monthRange(Month? begin, Month? end, {bool isEndExpected = false}) {
     final untilSuffix = isEndExpected ? ' (expected)' : '';
     if (begin != null) {
       return end != null
-          ? '${format(begin)} until ${format(end)}$untilSuffix'
-          : 'since ${format(begin)}';
+          ? '${month(begin)} until ${month(end)}$untilSuffix'
+          : 'since ${month(begin)}';
     } else {
-      return end != null ? 'until ${format(end)}$untilSuffix' : 'Sometime';
+      return end != null ? 'until ${month(end)}$untilSuffix' : 'Sometime';
     }
   }
 

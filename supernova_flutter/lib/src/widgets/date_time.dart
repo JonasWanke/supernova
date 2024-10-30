@@ -1,5 +1,7 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:chrono/chrono.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:supernova/supernova.dart';
 import 'package:timeago_flutter/timeago_flutter.dart';
 
@@ -20,9 +22,11 @@ class InstantWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tooltip(
-      message: InstantFormat.long.format(instant),
+      message: DateFormat.yMMMMEEEEd()
+          .add_jms()
+          .format(instant.asCoreDateTimeInLocalZone),
       child: Timeago(
-        date: instant.dateTime,
+        date: instant.asCoreDateTimeInLocalZone,
         locale: context.locale.toLanguageTag(),
         allowFromNow: true,
         builder: (context, text) {

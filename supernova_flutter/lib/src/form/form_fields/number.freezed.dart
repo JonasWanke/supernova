@@ -12,7 +12,7 @@ part of 'number.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaNumberFormField {
@@ -69,7 +69,9 @@ mixin _$SupernovaNumberFormField {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaNumberFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaNumberFormFieldCopyWith<SupernovaNumberFormField> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -98,6 +100,8 @@ class _$SupernovaNumberFormFieldCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaNumberFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,12 +132,12 @@ class _$SupernovaNumberFormFieldCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SingleLineSupernovaNumberFormFieldCopyWith<$Res>
+abstract class _$$SingleLineSupernovaNumberFormFieldImplCopyWith<$Res>
     implements $SupernovaNumberFormFieldCopyWith<$Res> {
-  factory _$$_SingleLineSupernovaNumberFormFieldCopyWith(
-          _$_SingleLineSupernovaNumberFormField value,
-          $Res Function(_$_SingleLineSupernovaNumberFormField) then) =
-      __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>;
+  factory _$$SingleLineSupernovaNumberFormFieldImplCopyWith(
+          _$SingleLineSupernovaNumberFormFieldImpl value,
+          $Res Function(_$SingleLineSupernovaNumberFormFieldImpl) then) =
+      __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -144,15 +148,17 @@ abstract class _$$_SingleLineSupernovaNumberFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
+class __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaNumberFormFieldCopyWithImpl<$Res,
-        _$_SingleLineSupernovaNumberFormField>
-    implements _$$_SingleLineSupernovaNumberFormFieldCopyWith<$Res> {
-  __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl(
-      _$_SingleLineSupernovaNumberFormField _value,
-      $Res Function(_$_SingleLineSupernovaNumberFormField) _then)
+        _$SingleLineSupernovaNumberFormFieldImpl>
+    implements _$$SingleLineSupernovaNumberFormFieldImplCopyWith<$Res> {
+  __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl(
+      _$SingleLineSupernovaNumberFormFieldImpl _value,
+      $Res Function(_$SingleLineSupernovaNumberFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaNumberFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -161,7 +167,7 @@ class __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
     Object? textInputAction = null,
     Object? hintText = freezed,
   }) {
-    return _then(_$_SingleLineSupernovaNumberFormField(
+    return _then(_$SingleLineSupernovaNumberFormFieldImpl(
       null == currentValue
           ? _value.currentValue
           : currentValue // ignore: cast_nullable_to_non_nullable
@@ -184,9 +190,9 @@ class __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SingleLineSupernovaNumberFormField
+class _$SingleLineSupernovaNumberFormFieldImpl
     extends _SingleLineSupernovaNumberFormField {
-  const _$_SingleLineSupernovaNumberFormField(this.currentValue,
+  const _$SingleLineSupernovaNumberFormFieldImpl(this.currentValue,
       {this.max, required this.textInputAction, this.hintText})
       : super._();
 
@@ -205,10 +211,10 @@ class _$_SingleLineSupernovaNumberFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SingleLineSupernovaNumberFormField &&
+            other is _$SingleLineSupernovaNumberFormFieldImpl &&
             (identical(other.currentValue, currentValue) ||
                 other.currentValue == currentValue) &&
             (identical(other.max, max) || other.max == max) &&
@@ -222,13 +228,15 @@ class _$_SingleLineSupernovaNumberFormField
   int get hashCode =>
       Object.hash(runtimeType, currentValue, max, textInputAction, hintText);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaNumberFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SingleLineSupernovaNumberFormFieldCopyWith<
-          _$_SingleLineSupernovaNumberFormField>
-      get copyWith => __$$_SingleLineSupernovaNumberFormFieldCopyWithImpl<
-          _$_SingleLineSupernovaNumberFormField>(this, _$identity);
+  _$$SingleLineSupernovaNumberFormFieldImplCopyWith<
+          _$SingleLineSupernovaNumberFormFieldImpl>
+      get copyWith => __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl<
+          _$SingleLineSupernovaNumberFormFieldImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -308,7 +316,7 @@ abstract class _SingleLineSupernovaNumberFormField
       final ValueNotifier<int?> currentValue,
       {final ({int max, String Function(String) tooLargeErrorFormatter})? max,
       required final TextInputAction textInputAction,
-      final String? hintText}) = _$_SingleLineSupernovaNumberFormField;
+      final String? hintText}) = _$SingleLineSupernovaNumberFormFieldImpl;
   const _SingleLineSupernovaNumberFormField._() : super._();
 
   @override
@@ -319,9 +327,12 @@ abstract class _SingleLineSupernovaNumberFormField
   TextInputAction get textInputAction;
   @override
   String? get hintText;
+
+  /// Create a copy of SupernovaNumberFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SingleLineSupernovaNumberFormFieldCopyWith<
-          _$_SingleLineSupernovaNumberFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SingleLineSupernovaNumberFormFieldImplCopyWith<
+          _$SingleLineSupernovaNumberFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

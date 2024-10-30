@@ -12,7 +12,7 @@ part of 'text.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaTextFormField {
@@ -145,7 +145,9 @@ mixin _$SupernovaTextFormField {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaTextFormFieldCopyWith<SupernovaTextFormField> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -170,6 +172,8 @@ class _$SupernovaTextFormFieldCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -185,12 +189,12 @@ class _$SupernovaTextFormFieldCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SingleLineSupernovaTextFormFieldCopyWith<$Res>
+abstract class _$$SingleLineSupernovaTextFormFieldImplCopyWith<$Res>
     implements $SupernovaTextFormFieldCopyWith<$Res> {
-  factory _$$_SingleLineSupernovaTextFormFieldCopyWith(
-          _$_SingleLineSupernovaTextFormField value,
-          $Res Function(_$_SingleLineSupernovaTextFormField) then) =
-      __$$_SingleLineSupernovaTextFormFieldCopyWithImpl<$Res>;
+  factory _$$SingleLineSupernovaTextFormFieldImplCopyWith(
+          _$SingleLineSupernovaTextFormFieldImpl value,
+          $Res Function(_$SingleLineSupernovaTextFormFieldImpl) then) =
+      __$$SingleLineSupernovaTextFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -208,15 +212,17 @@ abstract class _$$_SingleLineSupernovaTextFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SingleLineSupernovaTextFormFieldCopyWithImpl<$Res>
+class __$$SingleLineSupernovaTextFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaTextFormFieldCopyWithImpl<$Res,
-        _$_SingleLineSupernovaTextFormField>
-    implements _$$_SingleLineSupernovaTextFormFieldCopyWith<$Res> {
-  __$$_SingleLineSupernovaTextFormFieldCopyWithImpl(
-      _$_SingleLineSupernovaTextFormField _value,
-      $Res Function(_$_SingleLineSupernovaTextFormField) _then)
+        _$SingleLineSupernovaTextFormFieldImpl>
+    implements _$$SingleLineSupernovaTextFormFieldImplCopyWith<$Res> {
+  __$$SingleLineSupernovaTextFormFieldImplCopyWithImpl(
+      _$SingleLineSupernovaTextFormFieldImpl _value,
+      $Res Function(_$SingleLineSupernovaTextFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -232,7 +238,7 @@ class __$$_SingleLineSupernovaTextFormFieldCopyWithImpl<$Res>
     Object? prefixIcon = freezed,
     Object? suffixIcon = freezed,
   }) {
-    return _then(_$_SingleLineSupernovaTextFormField(
+    return _then(_$SingleLineSupernovaTextFormFieldImpl(
       null == controller
           ? _value.controller
           : controller // ignore: cast_nullable_to_non_nullable
@@ -283,9 +289,9 @@ class __$$_SingleLineSupernovaTextFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SingleLineSupernovaTextFormField
+class _$SingleLineSupernovaTextFormFieldImpl
     extends _SingleLineSupernovaTextFormField {
-  const _$_SingleLineSupernovaTextFormField(this.controller,
+  const _$SingleLineSupernovaTextFormFieldImpl(this.controller,
       {required final List<String>? autofillHints,
       this.keyboardType,
       final List<TextInputFormatter>? inputFormatters,
@@ -346,10 +352,10 @@ class _$_SingleLineSupernovaTextFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SingleLineSupernovaTextFormField &&
+            other is _$SingleLineSupernovaTextFormFieldImpl &&
             (identical(other.controller, controller) ||
                 other.controller == controller) &&
             const DeepCollectionEquality()
@@ -389,13 +395,15 @@ class _$_SingleLineSupernovaTextFormField
       prefixIcon,
       suffixIcon);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SingleLineSupernovaTextFormFieldCopyWith<
-          _$_SingleLineSupernovaTextFormField>
-      get copyWith => __$$_SingleLineSupernovaTextFormFieldCopyWithImpl<
-          _$_SingleLineSupernovaTextFormField>(this, _$identity);
+  _$$SingleLineSupernovaTextFormFieldImplCopyWith<
+          _$SingleLineSupernovaTextFormFieldImpl>
+      get copyWith => __$$SingleLineSupernovaTextFormFieldImplCopyWithImpl<
+          _$SingleLineSupernovaTextFormFieldImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -595,7 +603,7 @@ abstract class _SingleLineSupernovaTextFormField
       required final TextInputAction textInputAction,
       final String? hintText,
       final FlatIcon? prefixIcon,
-      final Widget? suffixIcon}) = _$_SingleLineSupernovaTextFormField;
+      final Widget? suffixIcon}) = _$SingleLineSupernovaTextFormFieldImpl;
   const _SingleLineSupernovaTextFormField._() : super._();
 
   @override
@@ -610,20 +618,23 @@ abstract class _SingleLineSupernovaTextFormField
   String? get hintText;
   FlatIcon? get prefixIcon;
   Widget? get suffixIcon;
+
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SingleLineSupernovaTextFormFieldCopyWith<
-          _$_SingleLineSupernovaTextFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SingleLineSupernovaTextFormFieldImplCopyWith<
+          _$SingleLineSupernovaTextFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_MultiLineSupernovaTextFormFieldCopyWith<$Res>
+abstract class _$$MultiLineSupernovaTextFormFieldImplCopyWith<$Res>
     implements $SupernovaTextFormFieldCopyWith<$Res> {
-  factory _$$_MultiLineSupernovaTextFormFieldCopyWith(
-          _$_MultiLineSupernovaTextFormField value,
-          $Res Function(_$_MultiLineSupernovaTextFormField) then) =
-      __$$_MultiLineSupernovaTextFormFieldCopyWithImpl<$Res>;
+  factory _$$MultiLineSupernovaTextFormFieldImplCopyWith(
+          _$MultiLineSupernovaTextFormFieldImpl value,
+          $Res Function(_$MultiLineSupernovaTextFormFieldImpl) then) =
+      __$$MultiLineSupernovaTextFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -636,15 +647,17 @@ abstract class _$$_MultiLineSupernovaTextFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MultiLineSupernovaTextFormFieldCopyWithImpl<$Res>
+class __$$MultiLineSupernovaTextFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaTextFormFieldCopyWithImpl<$Res,
-        _$_MultiLineSupernovaTextFormField>
-    implements _$$_MultiLineSupernovaTextFormFieldCopyWith<$Res> {
-  __$$_MultiLineSupernovaTextFormFieldCopyWithImpl(
-      _$_MultiLineSupernovaTextFormField _value,
-      $Res Function(_$_MultiLineSupernovaTextFormField) _then)
+        _$MultiLineSupernovaTextFormFieldImpl>
+    implements _$$MultiLineSupernovaTextFormFieldImplCopyWith<$Res> {
+  __$$MultiLineSupernovaTextFormFieldImplCopyWithImpl(
+      _$MultiLineSupernovaTextFormFieldImpl _value,
+      $Res Function(_$MultiLineSupernovaTextFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -655,7 +668,7 @@ class __$$_MultiLineSupernovaTextFormFieldCopyWithImpl<$Res>
     Object? validator = freezed,
     Object? hintText = freezed,
   }) {
-    return _then(_$_MultiLineSupernovaTextFormField(
+    return _then(_$MultiLineSupernovaTextFormFieldImpl(
       null == controller
           ? _value.controller
           : controller // ignore: cast_nullable_to_non_nullable
@@ -686,9 +699,9 @@ class __$$_MultiLineSupernovaTextFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MultiLineSupernovaTextFormField
+class _$MultiLineSupernovaTextFormFieldImpl
     extends _MultiLineSupernovaTextFormField {
-  const _$_MultiLineSupernovaTextFormField(this.controller,
+  const _$MultiLineSupernovaTextFormFieldImpl(this.controller,
       {required final List<String>? autofillHints,
       this.keyboardType,
       this.maxLength,
@@ -724,10 +737,10 @@ class _$_MultiLineSupernovaTextFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MultiLineSupernovaTextFormField &&
+            other is _$MultiLineSupernovaTextFormFieldImpl &&
             (identical(other.controller, controller) ||
                 other.controller == controller) &&
             const DeepCollectionEquality()
@@ -752,13 +765,15 @@ class _$_MultiLineSupernovaTextFormField
       validator,
       hintText);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MultiLineSupernovaTextFormFieldCopyWith<
-          _$_MultiLineSupernovaTextFormField>
-      get copyWith => __$$_MultiLineSupernovaTextFormFieldCopyWithImpl<
-          _$_MultiLineSupernovaTextFormField>(this, _$identity);
+  _$$MultiLineSupernovaTextFormFieldImplCopyWith<
+          _$MultiLineSupernovaTextFormFieldImpl>
+      get copyWith => __$$MultiLineSupernovaTextFormFieldImplCopyWithImpl<
+          _$MultiLineSupernovaTextFormFieldImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -922,7 +937,7 @@ abstract class _MultiLineSupernovaTextFormField extends SupernovaTextFormField {
       final TextInputType? keyboardType,
       final int? maxLength,
       final SupernovaFormFieldValidator<String>? validator,
-      final String? hintText}) = _$_MultiLineSupernovaTextFormField;
+      final String? hintText}) = _$MultiLineSupernovaTextFormFieldImpl;
   const _MultiLineSupernovaTextFormField._() : super._();
 
   @override
@@ -932,20 +947,23 @@ abstract class _MultiLineSupernovaTextFormField extends SupernovaTextFormField {
   int? get maxLength;
   SupernovaFormFieldValidator<String>? get validator;
   String? get hintText;
+
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_MultiLineSupernovaTextFormFieldCopyWith<
-          _$_MultiLineSupernovaTextFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MultiLineSupernovaTextFormFieldImplCopyWith<
+          _$MultiLineSupernovaTextFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_EmailAddressSupernovaTextFormFieldCopyWith<$Res>
+abstract class _$$EmailAddressSupernovaTextFormFieldImplCopyWith<$Res>
     implements $SupernovaTextFormFieldCopyWith<$Res> {
-  factory _$$_EmailAddressSupernovaTextFormFieldCopyWith(
-          _$_EmailAddressSupernovaTextFormField value,
-          $Res Function(_$_EmailAddressSupernovaTextFormField) then) =
-      __$$_EmailAddressSupernovaTextFormFieldCopyWithImpl<$Res>;
+  factory _$$EmailAddressSupernovaTextFormFieldImplCopyWith(
+          _$EmailAddressSupernovaTextFormFieldImpl value,
+          $Res Function(_$EmailAddressSupernovaTextFormFieldImpl) then) =
+      __$$EmailAddressSupernovaTextFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -953,22 +971,24 @@ abstract class _$$_EmailAddressSupernovaTextFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_EmailAddressSupernovaTextFormFieldCopyWithImpl<$Res>
+class __$$EmailAddressSupernovaTextFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaTextFormFieldCopyWithImpl<$Res,
-        _$_EmailAddressSupernovaTextFormField>
-    implements _$$_EmailAddressSupernovaTextFormFieldCopyWith<$Res> {
-  __$$_EmailAddressSupernovaTextFormFieldCopyWithImpl(
-      _$_EmailAddressSupernovaTextFormField _value,
-      $Res Function(_$_EmailAddressSupernovaTextFormField) _then)
+        _$EmailAddressSupernovaTextFormFieldImpl>
+    implements _$$EmailAddressSupernovaTextFormFieldImplCopyWith<$Res> {
+  __$$EmailAddressSupernovaTextFormFieldImplCopyWithImpl(
+      _$EmailAddressSupernovaTextFormFieldImpl _value,
+      $Res Function(_$EmailAddressSupernovaTextFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? controller = null,
     Object? textInputAction = null,
   }) {
-    return _then(_$_EmailAddressSupernovaTextFormField(
+    return _then(_$EmailAddressSupernovaTextFormFieldImpl(
       null == controller
           ? _value.controller
           : controller // ignore: cast_nullable_to_non_nullable
@@ -983,9 +1003,9 @@ class __$$_EmailAddressSupernovaTextFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailAddressSupernovaTextFormField
+class _$EmailAddressSupernovaTextFormFieldImpl
     extends _EmailAddressSupernovaTextFormField {
-  const _$_EmailAddressSupernovaTextFormField(this.controller,
+  const _$EmailAddressSupernovaTextFormFieldImpl(this.controller,
       {required this.textInputAction})
       : super._();
 
@@ -1000,10 +1020,10 @@ class _$_EmailAddressSupernovaTextFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailAddressSupernovaTextFormField &&
+            other is _$EmailAddressSupernovaTextFormFieldImpl &&
             (identical(other.controller, controller) ||
                 other.controller == controller) &&
             (identical(other.textInputAction, textInputAction) ||
@@ -1013,13 +1033,15 @@ class _$_EmailAddressSupernovaTextFormField
   @override
   int get hashCode => Object.hash(runtimeType, controller, textInputAction);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmailAddressSupernovaTextFormFieldCopyWith<
-          _$_EmailAddressSupernovaTextFormField>
-      get copyWith => __$$_EmailAddressSupernovaTextFormFieldCopyWithImpl<
-          _$_EmailAddressSupernovaTextFormField>(this, _$identity);
+  _$$EmailAddressSupernovaTextFormFieldImplCopyWith<
+          _$EmailAddressSupernovaTextFormFieldImpl>
+      get copyWith => __$$EmailAddressSupernovaTextFormFieldImplCopyWithImpl<
+          _$EmailAddressSupernovaTextFormFieldImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1178,26 +1200,29 @@ abstract class _EmailAddressSupernovaTextFormField
   const factory _EmailAddressSupernovaTextFormField(
           final TextEditingController controller,
           {required final TextInputAction textInputAction}) =
-      _$_EmailAddressSupernovaTextFormField;
+      _$EmailAddressSupernovaTextFormFieldImpl;
   const _EmailAddressSupernovaTextFormField._() : super._();
 
   @override
   TextEditingController get controller;
   TextInputAction get textInputAction;
+
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_EmailAddressSupernovaTextFormFieldCopyWith<
-          _$_EmailAddressSupernovaTextFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EmailAddressSupernovaTextFormFieldImplCopyWith<
+          _$EmailAddressSupernovaTextFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PasswordSupernovaTextFormFieldCopyWith<$Res>
+abstract class _$$PasswordSupernovaTextFormFieldImplCopyWith<$Res>
     implements $SupernovaTextFormFieldCopyWith<$Res> {
-  factory _$$_PasswordSupernovaTextFormFieldCopyWith(
-          _$_PasswordSupernovaTextFormField value,
-          $Res Function(_$_PasswordSupernovaTextFormField) then) =
-      __$$_PasswordSupernovaTextFormFieldCopyWithImpl<$Res>;
+  factory _$$PasswordSupernovaTextFormFieldImplCopyWith(
+          _$PasswordSupernovaTextFormFieldImpl value,
+          $Res Function(_$PasswordSupernovaTextFormFieldImpl) then) =
+      __$$PasswordSupernovaTextFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -1207,15 +1232,17 @@ abstract class _$$_PasswordSupernovaTextFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PasswordSupernovaTextFormFieldCopyWithImpl<$Res>
+class __$$PasswordSupernovaTextFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaTextFormFieldCopyWithImpl<$Res,
-        _$_PasswordSupernovaTextFormField>
-    implements _$$_PasswordSupernovaTextFormFieldCopyWith<$Res> {
-  __$$_PasswordSupernovaTextFormFieldCopyWithImpl(
-      _$_PasswordSupernovaTextFormField _value,
-      $Res Function(_$_PasswordSupernovaTextFormField) _then)
+        _$PasswordSupernovaTextFormFieldImpl>
+    implements _$$PasswordSupernovaTextFormFieldImplCopyWith<$Res> {
+  __$$PasswordSupernovaTextFormFieldImplCopyWithImpl(
+      _$PasswordSupernovaTextFormFieldImpl _value,
+      $Res Function(_$PasswordSupernovaTextFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1223,7 +1250,7 @@ class __$$_PasswordSupernovaTextFormFieldCopyWithImpl<$Res>
     Object? role = null,
     Object? textInputAction = null,
   }) {
-    return _then(_$_PasswordSupernovaTextFormField(
+    return _then(_$PasswordSupernovaTextFormFieldImpl(
       null == controller
           ? _value.controller
           : controller // ignore: cast_nullable_to_non_nullable
@@ -1242,9 +1269,9 @@ class __$$_PasswordSupernovaTextFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PasswordSupernovaTextFormField
+class _$PasswordSupernovaTextFormFieldImpl
     extends _PasswordSupernovaTextFormField {
-  const _$_PasswordSupernovaTextFormField(this.controller,
+  const _$PasswordSupernovaTextFormFieldImpl(this.controller,
       {required this.role, required this.textInputAction})
       : super._();
 
@@ -1261,10 +1288,10 @@ class _$_PasswordSupernovaTextFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PasswordSupernovaTextFormField &&
+            other is _$PasswordSupernovaTextFormFieldImpl &&
             (identical(other.controller, controller) ||
                 other.controller == controller) &&
             (identical(other.role, role) || other.role == role) &&
@@ -1276,12 +1303,15 @@ class _$_PasswordSupernovaTextFormField
   int get hashCode =>
       Object.hash(runtimeType, controller, role, textInputAction);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PasswordSupernovaTextFormFieldCopyWith<_$_PasswordSupernovaTextFormField>
-      get copyWith => __$$_PasswordSupernovaTextFormFieldCopyWithImpl<
-          _$_PasswordSupernovaTextFormField>(this, _$identity);
+  _$$PasswordSupernovaTextFormFieldImplCopyWith<
+          _$PasswordSupernovaTextFormFieldImpl>
+      get copyWith => __$$PasswordSupernovaTextFormFieldImplCopyWithImpl<
+          _$PasswordSupernovaTextFormFieldImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1440,15 +1470,19 @@ abstract class _PasswordSupernovaTextFormField extends SupernovaTextFormField {
           final TextEditingController controller,
           {required final SupernovaPasswordFormFieldRole role,
           required final TextInputAction textInputAction}) =
-      _$_PasswordSupernovaTextFormField;
+      _$PasswordSupernovaTextFormFieldImpl;
   const _PasswordSupernovaTextFormField._() : super._();
 
   @override
   TextEditingController get controller;
   SupernovaPasswordFormFieldRole get role;
   TextInputAction get textInputAction;
+
+  /// Create a copy of SupernovaTextFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_PasswordSupernovaTextFormFieldCopyWith<_$_PasswordSupernovaTextFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PasswordSupernovaTextFormFieldImplCopyWith<
+          _$PasswordSupernovaTextFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

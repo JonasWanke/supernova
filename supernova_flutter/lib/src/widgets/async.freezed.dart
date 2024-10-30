@@ -12,7 +12,7 @@ part of 'async.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Snapshot<T> {
@@ -78,28 +78,34 @@ class _$SnapshotCopyWithImpl<T, $Res, $Val extends Snapshot<T>>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_LoadingSnapshotCopyWith<T, $Res> {
-  factory _$$_LoadingSnapshotCopyWith(_$_LoadingSnapshot<T> value,
-          $Res Function(_$_LoadingSnapshot<T>) then) =
-      __$$_LoadingSnapshotCopyWithImpl<T, $Res>;
+abstract class _$$LoadingSnapshotImplCopyWith<T, $Res> {
+  factory _$$LoadingSnapshotImplCopyWith(_$LoadingSnapshotImpl<T> value,
+          $Res Function(_$LoadingSnapshotImpl<T>) then) =
+      __$$LoadingSnapshotImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$_LoadingSnapshotCopyWithImpl<T, $Res>
-    extends _$SnapshotCopyWithImpl<T, $Res, _$_LoadingSnapshot<T>>
-    implements _$$_LoadingSnapshotCopyWith<T, $Res> {
-  __$$_LoadingSnapshotCopyWithImpl(
-      _$_LoadingSnapshot<T> _value, $Res Function(_$_LoadingSnapshot<T>) _then)
+class __$$LoadingSnapshotImplCopyWithImpl<T, $Res>
+    extends _$SnapshotCopyWithImpl<T, $Res, _$LoadingSnapshotImpl<T>>
+    implements _$$LoadingSnapshotImplCopyWith<T, $Res> {
+  __$$LoadingSnapshotImplCopyWithImpl(_$LoadingSnapshotImpl<T> _value,
+      $Res Function(_$LoadingSnapshotImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_LoadingSnapshot<T> extends _LoadingSnapshot<T> {
-  const _$_LoadingSnapshot() : super._();
+class _$LoadingSnapshotImpl<T> extends _LoadingSnapshot<T> {
+  const _$LoadingSnapshotImpl() : super._();
 
   @override
   String toString() {
@@ -107,9 +113,9 @@ class _$_LoadingSnapshot<T> extends _LoadingSnapshot<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadingSnapshot<T>);
+        (other.runtimeType == runtimeType && other is _$LoadingSnapshotImpl<T>);
   }
 
   @override
@@ -185,33 +191,35 @@ class _$_LoadingSnapshot<T> extends _LoadingSnapshot<T> {
 }
 
 abstract class _LoadingSnapshot<T> extends Snapshot<T> {
-  const factory _LoadingSnapshot() = _$_LoadingSnapshot<T>;
+  const factory _LoadingSnapshot() = _$LoadingSnapshotImpl<T>;
   const _LoadingSnapshot._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_SuccessSnapshotCopyWith<T, $Res> {
-  factory _$$_SuccessSnapshotCopyWith(_$_SuccessSnapshot<T> value,
-          $Res Function(_$_SuccessSnapshot<T>) then) =
-      __$$_SuccessSnapshotCopyWithImpl<T, $Res>;
+abstract class _$$SuccessSnapshotImplCopyWith<T, $Res> {
+  factory _$$SuccessSnapshotImplCopyWith(_$SuccessSnapshotImpl<T> value,
+          $Res Function(_$SuccessSnapshotImpl<T>) then) =
+      __$$SuccessSnapshotImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T data});
 }
 
 /// @nodoc
-class __$$_SuccessSnapshotCopyWithImpl<T, $Res>
-    extends _$SnapshotCopyWithImpl<T, $Res, _$_SuccessSnapshot<T>>
-    implements _$$_SuccessSnapshotCopyWith<T, $Res> {
-  __$$_SuccessSnapshotCopyWithImpl(
-      _$_SuccessSnapshot<T> _value, $Res Function(_$_SuccessSnapshot<T>) _then)
+class __$$SuccessSnapshotImplCopyWithImpl<T, $Res>
+    extends _$SnapshotCopyWithImpl<T, $Res, _$SuccessSnapshotImpl<T>>
+    implements _$$SuccessSnapshotImplCopyWith<T, $Res> {
+  __$$SuccessSnapshotImplCopyWithImpl(_$SuccessSnapshotImpl<T> _value,
+      $Res Function(_$SuccessSnapshotImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? data = freezed,
   }) {
-    return _then(_$_SuccessSnapshot<T>(
+    return _then(_$SuccessSnapshotImpl<T>(
       freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -222,8 +230,8 @@ class __$$_SuccessSnapshotCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_SuccessSnapshot<T> extends _SuccessSnapshot<T> {
-  const _$_SuccessSnapshot(this.data) : super._();
+class _$SuccessSnapshotImpl<T> extends _SuccessSnapshot<T> {
+  const _$SuccessSnapshotImpl(this.data) : super._();
 
   @override
   final T data;
@@ -234,10 +242,10 @@ class _$_SuccessSnapshot<T> extends _SuccessSnapshot<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuccessSnapshot<T> &&
+            other is _$SuccessSnapshotImpl<T> &&
             const DeepCollectionEquality().equals(other.data, data));
   }
 
@@ -245,11 +253,13 @@ class _$_SuccessSnapshot<T> extends _SuccessSnapshot<T> {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessSnapshotCopyWith<T, _$_SuccessSnapshot<T>> get copyWith =>
-      __$$_SuccessSnapshotCopyWithImpl<T, _$_SuccessSnapshot<T>>(
+  _$$SuccessSnapshotImplCopyWith<T, _$SuccessSnapshotImpl<T>> get copyWith =>
+      __$$SuccessSnapshotImplCopyWithImpl<T, _$SuccessSnapshotImpl<T>>(
           this, _$identity);
 
   @override
@@ -322,39 +332,44 @@ class _$_SuccessSnapshot<T> extends _SuccessSnapshot<T> {
 }
 
 abstract class _SuccessSnapshot<T> extends Snapshot<T> {
-  const factory _SuccessSnapshot(final T data) = _$_SuccessSnapshot<T>;
+  const factory _SuccessSnapshot(final T data) = _$SuccessSnapshotImpl<T>;
   const _SuccessSnapshot._() : super._();
 
   T get data;
-  @JsonKey(ignore: true)
-  _$$_SuccessSnapshotCopyWith<T, _$_SuccessSnapshot<T>> get copyWith =>
+
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessSnapshotImplCopyWith<T, _$SuccessSnapshotImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorSnapshotCopyWith<T, $Res> {
-  factory _$$_ErrorSnapshotCopyWith(
-          _$_ErrorSnapshot<T> value, $Res Function(_$_ErrorSnapshot<T>) then) =
-      __$$_ErrorSnapshotCopyWithImpl<T, $Res>;
+abstract class _$$ErrorSnapshotImplCopyWith<T, $Res> {
+  factory _$$ErrorSnapshotImplCopyWith(_$ErrorSnapshotImpl<T> value,
+          $Res Function(_$ErrorSnapshotImpl<T>) then) =
+      __$$ErrorSnapshotImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({Object? error, StackTrace stackTrace});
 }
 
 /// @nodoc
-class __$$_ErrorSnapshotCopyWithImpl<T, $Res>
-    extends _$SnapshotCopyWithImpl<T, $Res, _$_ErrorSnapshot<T>>
-    implements _$$_ErrorSnapshotCopyWith<T, $Res> {
-  __$$_ErrorSnapshotCopyWithImpl(
-      _$_ErrorSnapshot<T> _value, $Res Function(_$_ErrorSnapshot<T>) _then)
+class __$$ErrorSnapshotImplCopyWithImpl<T, $Res>
+    extends _$SnapshotCopyWithImpl<T, $Res, _$ErrorSnapshotImpl<T>>
+    implements _$$ErrorSnapshotImplCopyWith<T, $Res> {
+  __$$ErrorSnapshotImplCopyWithImpl(_$ErrorSnapshotImpl<T> _value,
+      $Res Function(_$ErrorSnapshotImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? error = freezed,
     Object? stackTrace = null,
   }) {
-    return _then(_$_ErrorSnapshot<T>(
+    return _then(_$ErrorSnapshotImpl<T>(
       freezed == error ? _value.error : error,
       null == stackTrace
           ? _value.stackTrace
@@ -366,8 +381,8 @@ class __$$_ErrorSnapshotCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_ErrorSnapshot<T> extends _ErrorSnapshot<T> {
-  const _$_ErrorSnapshot(this.error, this.stackTrace) : super._();
+class _$ErrorSnapshotImpl<T> extends _ErrorSnapshot<T> {
+  const _$ErrorSnapshotImpl(this.error, this.stackTrace) : super._();
 
   @override
   final Object? error;
@@ -380,10 +395,10 @@ class _$_ErrorSnapshot<T> extends _ErrorSnapshot<T> {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ErrorSnapshot<T> &&
+            other is _$ErrorSnapshotImpl<T> &&
             const DeepCollectionEquality().equals(other.error, error) &&
             (identical(other.stackTrace, stackTrace) ||
                 other.stackTrace == stackTrace));
@@ -393,11 +408,14 @@ class _$_ErrorSnapshot<T> extends _ErrorSnapshot<T> {
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(error), stackTrace);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorSnapshotCopyWith<T, _$_ErrorSnapshot<T>> get copyWith =>
-      __$$_ErrorSnapshotCopyWithImpl<T, _$_ErrorSnapshot<T>>(this, _$identity);
+  _$$ErrorSnapshotImplCopyWith<T, _$ErrorSnapshotImpl<T>> get copyWith =>
+      __$$ErrorSnapshotImplCopyWithImpl<T, _$ErrorSnapshotImpl<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -470,12 +488,16 @@ class _$_ErrorSnapshot<T> extends _ErrorSnapshot<T> {
 
 abstract class _ErrorSnapshot<T> extends Snapshot<T> {
   const factory _ErrorSnapshot(
-      final Object? error, final StackTrace stackTrace) = _$_ErrorSnapshot<T>;
+          final Object? error, final StackTrace stackTrace) =
+      _$ErrorSnapshotImpl<T>;
   const _ErrorSnapshot._() : super._();
 
   Object? get error;
   StackTrace get stackTrace;
-  @JsonKey(ignore: true)
-  _$$_ErrorSnapshotCopyWith<T, _$_ErrorSnapshot<T>> get copyWith =>
+
+  /// Create a copy of Snapshot
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorSnapshotImplCopyWith<T, _$ErrorSnapshotImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

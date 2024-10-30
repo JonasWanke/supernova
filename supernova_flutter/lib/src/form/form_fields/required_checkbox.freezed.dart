@@ -12,7 +12,7 @@ part of 'required_checkbox.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaRequiredCheckboxFormField {
@@ -21,7 +21,9 @@ mixin _$SupernovaRequiredCheckboxFormField {
   EdgeInsets? get contentPadding => throw _privateConstructorUsedError;
   TextStyle? get textStyle => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaRequiredCheckboxFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaRequiredCheckboxFormFieldCopyWith<
           SupernovaRequiredCheckboxFormField>
       get copyWith => throw _privateConstructorUsedError;
@@ -53,6 +55,8 @@ class _$SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaRequiredCheckboxFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,12 +87,12 @@ class _$SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SupernovaRequiredCheckboxFormFieldCopyWith<$Res>
+abstract class _$$SupernovaRequiredCheckboxFormFieldImplCopyWith<$Res>
     implements $SupernovaRequiredCheckboxFormFieldCopyWith<$Res> {
-  factory _$$_SupernovaRequiredCheckboxFormFieldCopyWith(
-          _$_SupernovaRequiredCheckboxFormField value,
-          $Res Function(_$_SupernovaRequiredCheckboxFormField) then) =
-      __$$_SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res>;
+  factory _$$SupernovaRequiredCheckboxFormFieldImplCopyWith(
+          _$SupernovaRequiredCheckboxFormFieldImpl value,
+          $Res Function(_$SupernovaRequiredCheckboxFormFieldImpl) then) =
+      __$$SupernovaRequiredCheckboxFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -99,15 +103,17 @@ abstract class _$$_SupernovaRequiredCheckboxFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res>
+class __$$SupernovaRequiredCheckboxFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res,
-        _$_SupernovaRequiredCheckboxFormField>
-    implements _$$_SupernovaRequiredCheckboxFormFieldCopyWith<$Res> {
-  __$$_SupernovaRequiredCheckboxFormFieldCopyWithImpl(
-      _$_SupernovaRequiredCheckboxFormField _value,
-      $Res Function(_$_SupernovaRequiredCheckboxFormField) _then)
+        _$SupernovaRequiredCheckboxFormFieldImpl>
+    implements _$$SupernovaRequiredCheckboxFormFieldImplCopyWith<$Res> {
+  __$$SupernovaRequiredCheckboxFormFieldImplCopyWithImpl(
+      _$SupernovaRequiredCheckboxFormFieldImpl _value,
+      $Res Function(_$SupernovaRequiredCheckboxFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaRequiredCheckboxFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -116,7 +122,7 @@ class __$$_SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res>
     Object? contentPadding = freezed,
     Object? textStyle = freezed,
   }) {
-    return _then(_$_SupernovaRequiredCheckboxFormField(
+    return _then(_$SupernovaRequiredCheckboxFormFieldImpl(
       null == currentValue
           ? _value.currentValue
           : currentValue // ignore: cast_nullable_to_non_nullable
@@ -139,9 +145,9 @@ class __$$_SupernovaRequiredCheckboxFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SupernovaRequiredCheckboxFormField
+class _$SupernovaRequiredCheckboxFormFieldImpl
     extends _SupernovaRequiredCheckboxFormField {
-  const _$_SupernovaRequiredCheckboxFormField(this.currentValue,
+  const _$SupernovaRequiredCheckboxFormFieldImpl(this.currentValue,
       {required this.message, this.contentPadding, this.textStyle})
       : super._();
 
@@ -160,10 +166,10 @@ class _$_SupernovaRequiredCheckboxFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SupernovaRequiredCheckboxFormField &&
+            other is _$SupernovaRequiredCheckboxFormFieldImpl &&
             (identical(other.currentValue, currentValue) ||
                 other.currentValue == currentValue) &&
             (identical(other.message, message) || other.message == message) &&
@@ -177,13 +183,15 @@ class _$_SupernovaRequiredCheckboxFormField
   int get hashCode => Object.hash(
       runtimeType, currentValue, message, contentPadding, textStyle);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaRequiredCheckboxFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SupernovaRequiredCheckboxFormFieldCopyWith<
-          _$_SupernovaRequiredCheckboxFormField>
-      get copyWith => __$$_SupernovaRequiredCheckboxFormFieldCopyWithImpl<
-          _$_SupernovaRequiredCheckboxFormField>(this, _$identity);
+  _$$SupernovaRequiredCheckboxFormFieldImplCopyWith<
+          _$SupernovaRequiredCheckboxFormFieldImpl>
+      get copyWith => __$$SupernovaRequiredCheckboxFormFieldImplCopyWithImpl<
+          _$SupernovaRequiredCheckboxFormFieldImpl>(this, _$identity);
 }
 
 abstract class _SupernovaRequiredCheckboxFormField
@@ -192,7 +200,7 @@ abstract class _SupernovaRequiredCheckboxFormField
       final ValueNotifier<bool> currentValue,
       {required final String message,
       final EdgeInsets? contentPadding,
-      final TextStyle? textStyle}) = _$_SupernovaRequiredCheckboxFormField;
+      final TextStyle? textStyle}) = _$SupernovaRequiredCheckboxFormFieldImpl;
   const _SupernovaRequiredCheckboxFormField._() : super._();
 
   @override
@@ -203,9 +211,12 @@ abstract class _SupernovaRequiredCheckboxFormField
   EdgeInsets? get contentPadding;
   @override
   TextStyle? get textStyle;
+
+  /// Create a copy of SupernovaRequiredCheckboxFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SupernovaRequiredCheckboxFormFieldCopyWith<
-          _$_SupernovaRequiredCheckboxFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SupernovaRequiredCheckboxFormFieldImplCopyWith<
+          _$SupernovaRequiredCheckboxFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

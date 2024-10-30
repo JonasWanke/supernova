@@ -12,7 +12,7 @@ part of 'form_field.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaFormFieldData {
@@ -22,7 +22,9 @@ mixin _$SupernovaFormFieldData {
   SupernovaFormFieldNecessity get necessity =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaFormFieldData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaFormFieldDataCopyWith<SupernovaFormFieldData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -53,6 +55,8 @@ class _$SupernovaFormFieldDataCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaFormFieldData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class _$SupernovaFormFieldDataCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of SupernovaFormFieldData
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SupernovaFormFieldNecessityCopyWith<$Res> get necessity {
@@ -92,11 +98,12 @@ class _$SupernovaFormFieldDataCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SupernovaFormFieldDataCopyWith<$Res>
+abstract class _$$SupernovaFormFieldDataImplCopyWith<$Res>
     implements $SupernovaFormFieldDataCopyWith<$Res> {
-  factory _$$_SupernovaFormFieldDataCopyWith(_$_SupernovaFormFieldData value,
-          $Res Function(_$_SupernovaFormFieldData) then) =
-      __$$_SupernovaFormFieldDataCopyWithImpl<$Res>;
+  factory _$$SupernovaFormFieldDataImplCopyWith(
+          _$SupernovaFormFieldDataImpl value,
+          $Res Function(_$SupernovaFormFieldDataImpl) then) =
+      __$$SupernovaFormFieldDataImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -110,14 +117,17 @@ abstract class _$$_SupernovaFormFieldDataCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SupernovaFormFieldDataCopyWithImpl<$Res>
+class __$$SupernovaFormFieldDataImplCopyWithImpl<$Res>
     extends _$SupernovaFormFieldDataCopyWithImpl<$Res,
-        _$_SupernovaFormFieldData>
-    implements _$$_SupernovaFormFieldDataCopyWith<$Res> {
-  __$$_SupernovaFormFieldDataCopyWithImpl(_$_SupernovaFormFieldData _value,
-      $Res Function(_$_SupernovaFormFieldData) _then)
+        _$SupernovaFormFieldDataImpl>
+    implements _$$SupernovaFormFieldDataImplCopyWith<$Res> {
+  __$$SupernovaFormFieldDataImplCopyWithImpl(
+      _$SupernovaFormFieldDataImpl _value,
+      $Res Function(_$SupernovaFormFieldDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaFormFieldData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -126,7 +136,7 @@ class __$$_SupernovaFormFieldDataCopyWithImpl<$Res>
     Object? helpText = freezed,
     Object? necessity = null,
   }) {
-    return _then(_$_SupernovaFormFieldData(
+    return _then(_$SupernovaFormFieldDataImpl(
       focusNode: null == focusNode
           ? _value.focusNode
           : focusNode // ignore: cast_nullable_to_non_nullable
@@ -149,10 +159,10 @@ class __$$_SupernovaFormFieldDataCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SupernovaFormFieldData
+class _$SupernovaFormFieldDataImpl
     with DiagnosticableTreeMixin
     implements _SupernovaFormFieldData {
-  const _$_SupernovaFormFieldData(
+  const _$SupernovaFormFieldDataImpl(
       {required this.focusNode,
       this.labelText,
       this.helpText,
@@ -184,10 +194,10 @@ class _$_SupernovaFormFieldData
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SupernovaFormFieldData &&
+            other is _$SupernovaFormFieldDataImpl &&
             (identical(other.focusNode, focusNode) ||
                 other.focusNode == focusNode) &&
             (identical(other.labelText, labelText) ||
@@ -202,12 +212,14 @@ class _$_SupernovaFormFieldData
   int get hashCode =>
       Object.hash(runtimeType, focusNode, labelText, helpText, necessity);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaFormFieldData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SupernovaFormFieldDataCopyWith<_$_SupernovaFormFieldData> get copyWith =>
-      __$$_SupernovaFormFieldDataCopyWithImpl<_$_SupernovaFormFieldData>(
-          this, _$identity);
+  _$$SupernovaFormFieldDataImplCopyWith<_$SupernovaFormFieldDataImpl>
+      get copyWith => __$$SupernovaFormFieldDataImplCopyWithImpl<
+          _$SupernovaFormFieldDataImpl>(this, _$identity);
 }
 
 abstract class _SupernovaFormFieldData implements SupernovaFormFieldData {
@@ -216,7 +228,7 @@ abstract class _SupernovaFormFieldData implements SupernovaFormFieldData {
           final String? labelText,
           final String? helpText,
           required final SupernovaFormFieldNecessity necessity}) =
-      _$_SupernovaFormFieldData;
+      _$SupernovaFormFieldDataImpl;
 
   @override
   FocusNode get focusNode;
@@ -226,10 +238,13 @@ abstract class _SupernovaFormFieldData implements SupernovaFormFieldData {
   String? get helpText;
   @override
   SupernovaFormFieldNecessity get necessity;
+
+  /// Create a copy of SupernovaFormFieldData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SupernovaFormFieldDataCopyWith<_$_SupernovaFormFieldData> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SupernovaFormFieldDataImplCopyWith<_$SupernovaFormFieldDataImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -295,32 +310,38 @@ class _$SupernovaFormFieldNecessityCopyWithImpl<$Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SupernovaFormFieldNecessity
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_OptionalSupernovaFormFieldNecessityCopyWith<$Res> {
-  factory _$$_OptionalSupernovaFormFieldNecessityCopyWith(
-          _$_OptionalSupernovaFormFieldNecessity value,
-          $Res Function(_$_OptionalSupernovaFormFieldNecessity) then) =
-      __$$_OptionalSupernovaFormFieldNecessityCopyWithImpl<$Res>;
+abstract class _$$OptionalSupernovaFormFieldNecessityImplCopyWith<$Res> {
+  factory _$$OptionalSupernovaFormFieldNecessityImplCopyWith(
+          _$OptionalSupernovaFormFieldNecessityImpl value,
+          $Res Function(_$OptionalSupernovaFormFieldNecessityImpl) then) =
+      __$$OptionalSupernovaFormFieldNecessityImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_OptionalSupernovaFormFieldNecessityCopyWithImpl<$Res>
+class __$$OptionalSupernovaFormFieldNecessityImplCopyWithImpl<$Res>
     extends _$SupernovaFormFieldNecessityCopyWithImpl<$Res,
-        _$_OptionalSupernovaFormFieldNecessity>
-    implements _$$_OptionalSupernovaFormFieldNecessityCopyWith<$Res> {
-  __$$_OptionalSupernovaFormFieldNecessityCopyWithImpl(
-      _$_OptionalSupernovaFormFieldNecessity _value,
-      $Res Function(_$_OptionalSupernovaFormFieldNecessity) _then)
+        _$OptionalSupernovaFormFieldNecessityImpl>
+    implements _$$OptionalSupernovaFormFieldNecessityImplCopyWith<$Res> {
+  __$$OptionalSupernovaFormFieldNecessityImplCopyWithImpl(
+      _$OptionalSupernovaFormFieldNecessityImpl _value,
+      $Res Function(_$OptionalSupernovaFormFieldNecessityImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SupernovaFormFieldNecessity
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_OptionalSupernovaFormFieldNecessity
+class _$OptionalSupernovaFormFieldNecessityImpl
     extends _OptionalSupernovaFormFieldNecessity with DiagnosticableTreeMixin {
-  const _$_OptionalSupernovaFormFieldNecessity() : super._();
+  const _$OptionalSupernovaFormFieldNecessityImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -335,10 +356,10 @@ class _$_OptionalSupernovaFormFieldNecessity
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OptionalSupernovaFormFieldNecessity);
+            other is _$OptionalSupernovaFormFieldNecessityImpl);
   }
 
   @override
@@ -412,36 +433,38 @@ class _$_OptionalSupernovaFormFieldNecessity
 abstract class _OptionalSupernovaFormFieldNecessity
     extends SupernovaFormFieldNecessity {
   const factory _OptionalSupernovaFormFieldNecessity() =
-      _$_OptionalSupernovaFormFieldNecessity;
+      _$OptionalSupernovaFormFieldNecessityImpl;
   const _OptionalSupernovaFormFieldNecessity._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_RequiredSupernovaFormFieldNecessityCopyWith<$Res> {
-  factory _$$_RequiredSupernovaFormFieldNecessityCopyWith(
-          _$_RequiredSupernovaFormFieldNecessity value,
-          $Res Function(_$_RequiredSupernovaFormFieldNecessity) then) =
-      __$$_RequiredSupernovaFormFieldNecessityCopyWithImpl<$Res>;
+abstract class _$$RequiredSupernovaFormFieldNecessityImplCopyWith<$Res> {
+  factory _$$RequiredSupernovaFormFieldNecessityImplCopyWith(
+          _$RequiredSupernovaFormFieldNecessityImpl value,
+          $Res Function(_$RequiredSupernovaFormFieldNecessityImpl) then) =
+      __$$RequiredSupernovaFormFieldNecessityImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? text});
 }
 
 /// @nodoc
-class __$$_RequiredSupernovaFormFieldNecessityCopyWithImpl<$Res>
+class __$$RequiredSupernovaFormFieldNecessityImplCopyWithImpl<$Res>
     extends _$SupernovaFormFieldNecessityCopyWithImpl<$Res,
-        _$_RequiredSupernovaFormFieldNecessity>
-    implements _$$_RequiredSupernovaFormFieldNecessityCopyWith<$Res> {
-  __$$_RequiredSupernovaFormFieldNecessityCopyWithImpl(
-      _$_RequiredSupernovaFormFieldNecessity _value,
-      $Res Function(_$_RequiredSupernovaFormFieldNecessity) _then)
+        _$RequiredSupernovaFormFieldNecessityImpl>
+    implements _$$RequiredSupernovaFormFieldNecessityImplCopyWith<$Res> {
+  __$$RequiredSupernovaFormFieldNecessityImplCopyWithImpl(
+      _$RequiredSupernovaFormFieldNecessityImpl _value,
+      $Res Function(_$RequiredSupernovaFormFieldNecessityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaFormFieldNecessity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? text = freezed,
   }) {
-    return _then(_$_RequiredSupernovaFormFieldNecessity(
+    return _then(_$RequiredSupernovaFormFieldNecessityImpl(
       freezed == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -452,9 +475,9 @@ class __$$_RequiredSupernovaFormFieldNecessityCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RequiredSupernovaFormFieldNecessity
+class _$RequiredSupernovaFormFieldNecessityImpl
     extends _RequiredSupernovaFormFieldNecessity with DiagnosticableTreeMixin {
-  const _$_RequiredSupernovaFormFieldNecessity(this.text) : super._();
+  const _$RequiredSupernovaFormFieldNecessityImpl(this.text) : super._();
 
   @override
   final String? text;
@@ -473,23 +496,25 @@ class _$_RequiredSupernovaFormFieldNecessity
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RequiredSupernovaFormFieldNecessity &&
+            other is _$RequiredSupernovaFormFieldNecessityImpl &&
             (identical(other.text, text) || other.text == text));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, text);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaFormFieldNecessity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RequiredSupernovaFormFieldNecessityCopyWith<
-          _$_RequiredSupernovaFormFieldNecessity>
-      get copyWith => __$$_RequiredSupernovaFormFieldNecessityCopyWithImpl<
-          _$_RequiredSupernovaFormFieldNecessity>(this, _$identity);
+  _$$RequiredSupernovaFormFieldNecessityImplCopyWith<
+          _$RequiredSupernovaFormFieldNecessityImpl>
+      get copyWith => __$$RequiredSupernovaFormFieldNecessityImplCopyWithImpl<
+          _$RequiredSupernovaFormFieldNecessityImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -559,12 +584,15 @@ class _$_RequiredSupernovaFormFieldNecessity
 abstract class _RequiredSupernovaFormFieldNecessity
     extends SupernovaFormFieldNecessity {
   const factory _RequiredSupernovaFormFieldNecessity(final String? text) =
-      _$_RequiredSupernovaFormFieldNecessity;
+      _$RequiredSupernovaFormFieldNecessityImpl;
   const _RequiredSupernovaFormFieldNecessity._() : super._();
 
   String? get text;
-  @JsonKey(ignore: true)
-  _$$_RequiredSupernovaFormFieldNecessityCopyWith<
-          _$_RequiredSupernovaFormFieldNecessity>
+
+  /// Create a copy of SupernovaFormFieldNecessity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RequiredSupernovaFormFieldNecessityImplCopyWith<
+          _$RequiredSupernovaFormFieldNecessityImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

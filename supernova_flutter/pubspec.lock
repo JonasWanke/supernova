@@ -183,7 +183,7 @@ packages:
     source: hosted
     version: "2.0.3"
   chrono:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: chrono
       sha256: ec0e43e7268e2b13664a53e91249a10de423032975308d01b3aa455bd9911e35
@@ -446,14 +446,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_timezone:
-    dependency: "direct main"
-    description:
-      name: flutter_timezone
-      sha256: ea53c61c9152f271a5e30624a624184804947b6a733ff2b64186bb2579446892
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.1"
   flutter_web_plugins:
     dependency: "direct main"
     description: flutter

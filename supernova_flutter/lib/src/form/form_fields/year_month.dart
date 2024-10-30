@@ -1,7 +1,10 @@
+import 'dart:core' as core;
+import 'dart:core';
 import 'dart:math' as math;
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:chrono/chrono.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -16,41 +19,37 @@ import '../form_field.dart';
 import '../validators.dart';
 import 'utils.dart';
 
-part 'local_month.freezed.dart';
+part 'year_month.freezed.dart';
 
 @freezed
-class SupernovaLocalMonthFormField extends SupernovaFormFieldBase<LocalMonth>
-    with _$SupernovaLocalMonthFormField {
-  const factory SupernovaLocalMonthFormField(
-    ValueNotifier<LocalMonth?> selectedMonth, {
-    ValueGetter<LocalMonth?>? firstMonth,
-    ValueGetter<LocalMonth?>? lastMonth,
-    @Default(SupernovaLocalMonthFormField.defaultFormatMonth)
-    Formatter<LocalMonth> formatMonth,
+class SupernovaYearMonthFormField extends SupernovaFormFieldBase<YearMonth>
+    with _$SupernovaYearMonthFormField {
+  const factory SupernovaYearMonthFormField(
+    ValueNotifier<YearMonth?> selectedYearMonth, {
+    ValueGetter<YearMonth?>? firstYearMonth,
+    ValueGetter<YearMonth?>? lastYearMonth,
+    required Formatter<YearMonth> formatYearMonth,
     String? hintText,
     String? dialogHelpText,
-    @Default(LocalMonthPickerMode.year) LocalMonthPickerMode initialPickerMode,
-    SupernovaFormFieldValidator<LocalMonth>? validator,
-  }) = _SupernovaLocalMonthFormField;
+    @Default(YearMonthPickerMode.year) YearMonthPickerMode initialPickerMode,
+    SupernovaFormFieldValidator<YearMonth>? validator,
+  }) = _SupernovaYearMonthFormField;
 
-  const SupernovaLocalMonthFormField._();
-
-  static String defaultFormatMonth(LocalMonth month) =>
-      LocalMonthFormat.long.format(month);
+  const SupernovaYearMonthFormField._();
 
   @override
-  LocalMonth? get value => selectedMonth.value;
+  YearMonth? get value => selectedYearMonth.value;
 
   @override
   Widget build(SupernovaFormFieldData common, VoidCallback? onSubmitted) =>
-      _SupernovaLocalMonthFormFieldWidget(common, onSubmitted, this);
+      _SupernovaYearMonthFormFieldWidget(common, onSubmitted, this);
 
   @override
-  void dispose() => selectedMonth.dispose();
+  void dispose() => selectedYearMonth.dispose();
 }
 
-class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
-  const _SupernovaLocalMonthFormFieldWidget(
+class _SupernovaYearMonthFormFieldWidget extends HookWidget {
+  const _SupernovaYearMonthFormFieldWidget(
     this.common,
     this.onSubmitted,
     this.formField,
@@ -58,36 +57,37 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
-  final SupernovaLocalMonthFormField formField;
+  final SupernovaYearMonthFormField formField;
 
   @override
   Widget build(BuildContext context) {
     return SupernovaFormFieldWidget(
       common,
-      child: FormField<LocalMonth?>(
-        initialValue: formField.selectedMonth.value,
+      child: FormField<YearMonth?>(
+        initialValue: formField.selectedYearMonth.value,
         validator:
-            common.necessity.validator<LocalMonth>() & formField.validator,
+            common.necessity.validator<YearMonth>() & formField.validator,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         builder: (state) {
-          void setValue(LocalMonth? month) {
+          void setValue(YearMonth? month) {
             state.didChange(month);
-            formField.selectedMonth.value = month;
+            formField.selectedYearMonth.value = month;
           }
 
           Future<void> onTap() async {
-            final firstMonth =
-                formField.firstMonth?.call() ?? const LocalMonth(1900, 1);
-            final lastMonth =
-                formField.lastMonth?.call() ?? const LocalMonth(2100, 1);
-            final initialMonth = formField.value ??
-                LocalMonth.current().coerceIn(firstMonth, lastMonth);
+            final firstYearMonth =
+                formField.firstYearMonth?.call() ?? const Year(1900).firstMonth;
+            final lastYearMonth =
+                formField.lastYearMonth?.call() ?? const Year(2100).lastMonth;
+            final initialYearMonth = formField.value ??
+                YearMonth.currentInLocalZone()
+                    .coerceIn(firstYearMonth, lastYearMonth);
 
-            final month = await showLocalMonthPicker(
+            final month = await showYearMonthPicker(
               context: context,
-              initialMonth: initialMonth,
-              firstMonth: firstMonth,
-              lastMonth: lastMonth,
+              initialYearMonth: initialYearMonth,
+              firstYearMonth: firstYearMonth,
+              lastYearMonth: lastYearMonth,
               helpText: formField.dialogHelpText,
               initialPickerMode: formField.initialPickerMode,
             );
@@ -109,7 +109,7 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
                   children: [
                     Expanded(child: _buildContent(context)),
                     if (common.necessity.isOptional &&
-                        formField.selectedMonth.value != null) ...[
+                        formField.selectedYearMonth.value != null) ...[
                       const SizedBox(width: 16),
                       ClearButton(onPressed: () => setValue(null)),
                       SizedBox(width: horizontalPadding - 16),
@@ -138,10 +138,11 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
         children: [
           Expanded(
             child: Text(
-              formField.selectedMonth.value != null
-                  ? formField.formatMonth(formField.selectedMonth.value!)
+              formField.selectedYearMonth.value != null
+                  ? formField
+                      .formatYearMonth(formField.selectedYearMonth.value!)
                   : formField.hintText ?? context.supernovaL10n.choose,
-              style: formField.selectedMonth.value == null
+              style: formField.selectedYearMonth.value == null
                   ? SupernovaFormFieldWidget.hintTextStyle(context)
                   : SupernovaFormFieldWidget.textStyle(context),
             ),
@@ -158,7 +159,7 @@ class _SupernovaLocalMonthFormFieldWidget extends HookWidget {
   }
 }
 
-enum LocalMonthPickerMode { month, year }
+enum YearMonthPickerMode { month, year }
 
 class MonthPicker extends HookWidget {
   const MonthPicker({
@@ -175,22 +176,22 @@ class MonthPicker extends HookWidget {
   static const columnCount = 3;
   static const rowCount = 4;
 
-  final int? currentMonth;
-  final int firstMonth;
-  final int lastMonth;
-  final int? selectedMonth;
-  final ValueChanged<int> onChanged;
+  final Month? currentMonth;
+  final Month firstMonth;
+  final Month lastMonth;
+  final Month? selectedMonth;
+  final ValueChanged<Month> onChanged;
 
   @override
   Widget build(BuildContext context) {
     assert(
-      MonthPicker.rowCount * MonthPicker.columnCount == DateTime.monthsPerYear,
+      MonthPicker.rowCount * MonthPicker.columnCount == Months.perYear,
     );
     assert(debugCheckHasMaterial(context));
 
     final autoSizeGroup = useAutoSizeGroup();
 
-    Widget buildMonth(int month) =>
+    Widget buildMonth(Month month) =>
         Expanded(child: _buildMonthItem(context, autoSizeGroup, month));
     Widget buildRow(int rowIndex) {
       return Expanded(
@@ -198,7 +199,8 @@ class MonthPicker extends HookWidget {
           children: List.generate(
             MonthPicker.columnCount,
             (columnIndex) => buildMonth(
-              rowIndex * MonthPicker.columnCount + columnIndex + 1,
+              Month.fromIndex(rowIndex * MonthPicker.columnCount + columnIndex)
+                  .unwrap(),
             ),
           ),
         ),
@@ -216,7 +218,7 @@ class MonthPicker extends HookWidget {
   Widget _buildMonthItem(
     BuildContext context,
     AutoSizeGroup autoSizeGroup,
-    int month,
+    Month month,
   ) {
     final isSelected = month == selectedMonth;
     final isCurrentMonth = month == currentMonth;
@@ -253,7 +255,7 @@ class MonthPicker extends HookWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             child: AutoSizeText(
-              LocalMonthFormat.monthOnlyLong.format(LocalMonth(2000, month)),
+              context.supernovaL10n.month(month),
               style: context.textTheme.bodyMedium!.copyWith(color: textColor),
               textAlign: TextAlign.center,
               maxLines: 1,
@@ -283,38 +285,41 @@ class MonthPicker extends HookWidget {
 
 const _calendarPortraitDialogSize = Size(330, 480);
 const _calendarLandscapeDialogSize = Size(496, 360);
-const _dialogSizeAnimationDuration = Duration(milliseconds: 200);
+const _dialogSizeAnimationDuration = core.Duration(milliseconds: 200);
 
-Future<LocalMonth?> showLocalMonthPicker({
+Future<YearMonth?> showYearMonthPicker({
   required BuildContext context,
-  required LocalMonth initialMonth,
-  required LocalMonth firstMonth,
-  required LocalMonth lastMonth,
+  required YearMonth initialYearMonth,
+  required YearMonth firstYearMonth,
+  required YearMonth lastYearMonth,
   String? helpText,
   bool useRootNavigator = true,
-  LocalMonthPickerMode initialPickerMode = LocalMonthPickerMode.year,
+  YearMonthPickerMode initialPickerMode = YearMonthPickerMode.year,
 }) async {
   assert(
-    firstMonth <= lastMonth,
-    'lastMonth $lastMonth must be on or after firstMonth $firstMonth.',
+    firstYearMonth <= lastYearMonth,
+    'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
+    '$firstYearMonth.',
   );
   assert(
-    firstMonth <= initialMonth,
-    'initialMonth $initialMonth must be on or after firstMonth $firstMonth.',
+    firstYearMonth <= initialYearMonth,
+    'initialYearMonth $initialYearMonth must be on or after firstYearMonth '
+    '$firstYearMonth.',
   );
   assert(
-    initialMonth <= lastMonth,
-    'initialMonth $initialMonth must be on or before lastMonth $lastMonth.',
+    initialYearMonth <= lastYearMonth,
+    'initialYearMonth $initialYearMonth must be on or before lastYearMonth '
+    '$lastYearMonth.',
   );
   assert(debugCheckHasMaterialLocalizations(context));
 
-  return showDialog<LocalMonth>(
+  return showDialog<YearMonth>(
     context: context,
     useRootNavigator: useRootNavigator,
     builder: (context) => _MonthPickerDialog(
-      initialMonth: initialMonth,
-      firstMonth: firstMonth,
-      lastMonth: lastMonth,
+      initialYearMonth: initialYearMonth,
+      firstYearMonth: firstYearMonth,
+      lastYearMonth: lastYearMonth,
       helpText: helpText,
       initialPickerMode: initialPickerMode,
     ),
@@ -323,38 +328,39 @@ Future<LocalMonth?> showLocalMonthPicker({
 
 class _MonthPickerDialog extends StatefulWidget {
   const _MonthPickerDialog({
-    required this.initialMonth,
-    required this.firstMonth,
-    required this.lastMonth,
+    required this.initialYearMonth,
+    required this.firstYearMonth,
+    required this.lastYearMonth,
     this.helpText,
-    this.initialPickerMode = LocalMonthPickerMode.year,
+    this.initialPickerMode = YearMonthPickerMode.year,
   })  : assert(
-          firstMonth <= lastMonth,
-          'lastMonth $lastMonth must be on or after firstMonth $firstMonth.',
+          firstYearMonth <= lastYearMonth,
+          'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
+          '$firstYearMonth.',
         ),
         assert(
-          firstMonth <= initialMonth,
-          'initialMonth $initialMonth must be on or after firstMonth '
-          '$firstMonth.',
+          firstYearMonth <= initialYearMonth,
+          'initialYearMonth $initialYearMonth must be on or after '
+          'firstYearMonth $firstYearMonth.',
         ),
         assert(
-          initialMonth <= lastMonth,
-          'initialMonth $initialMonth must be on or before lastMonth '
-          '$lastMonth.',
+          initialYearMonth <= lastYearMonth,
+          'initialYearMonth $initialYearMonth must be on or before '
+          'lastYearMonth $lastYearMonth.',
         );
 
-  final LocalMonth initialMonth;
-  final LocalMonth firstMonth;
-  final LocalMonth lastMonth;
+  final YearMonth initialYearMonth;
+  final YearMonth firstYearMonth;
+  final YearMonth lastYearMonth;
   final String? helpText;
-  final LocalMonthPickerMode initialPickerMode;
+  final YearMonthPickerMode initialPickerMode;
 
   @override
   State<_MonthPickerDialog> createState() => _MonthPickerDialogState();
 }
 
 class _MonthPickerDialogState extends State<_MonthPickerDialog> {
-  late var _selectedMonth = widget.initialMonth;
+  late var _selectedYearMonth = widget.initialYearMonth;
 
   final GlobalKey _calendarPickerKey = GlobalKey();
 
@@ -380,7 +386,9 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
     // ignore: deprecated_member_use
     final textScaleFactor = math.min(context.mediaQuery.textScaleFactor, 1.3);
 
-    final monthText = LocalMonthFormat.long.format(_selectedMonth);
+    final monthText = localizations.formatMonthYear(
+      _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+    );
     final onPrimarySurface = colorScheme.brightness == Brightness.light
         ? colorScheme.onPrimary
         : colorScheme.onSurface;
@@ -400,7 +408,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
             child: Text(localizations.cancelButtonLabel),
           ),
           TextButton(
-            onPressed: () => Navigator.pop(context, _selectedMonth),
+            onPressed: () => Navigator.pop(context, _selectedYearMonth),
             child: Text(localizations.okButtonLabel),
           ),
         ],
@@ -409,14 +417,14 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
 
     final picker = _CalendarMonthPicker(
       key: _calendarPickerKey,
-      initialMonth: _selectedMonth,
-      firstMonth: widget.firstMonth,
-      lastMonth: widget.lastMonth,
-      onMonthChanged: (month) => setState(() => _selectedMonth = month),
+      initialYearMonth: _selectedYearMonth,
+      firstYearMonth: widget.firstYearMonth,
+      lastYearMonth: widget.lastYearMonth,
+      onMonthChanged: (month) => setState(() => _selectedYearMonth = month),
       initialPickerMode: widget.initialPickerMode,
     );
 
-    final header = _LocalMonthPickerHeader(
+    final header = _YearMonthPickerHeader(
       helpText: widget.helpText ?? localizations.datePickerHelpText,
       titleText: monthText,
       titleStyle: dateStyle,
@@ -470,8 +478,8 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   }
 }
 
-class _LocalMonthPickerHeader extends StatelessWidget {
-  const _LocalMonthPickerHeader({
+class _YearMonthPickerHeader extends StatelessWidget {
+  const _YearMonthPickerHeader({
     required this.helpText,
     required this.titleText,
     required this.titleStyle,
@@ -579,41 +587,42 @@ const _subHeaderHeight = 52.0;
 class _CalendarMonthPicker extends StatefulWidget {
   const _CalendarMonthPicker({
     super.key,
-    required this.initialMonth,
-    required this.firstMonth,
-    required this.lastMonth,
+    required this.initialYearMonth,
+    required this.firstYearMonth,
+    required this.lastYearMonth,
     required this.onMonthChanged,
-    this.initialPickerMode = LocalMonthPickerMode.year,
+    this.initialPickerMode = YearMonthPickerMode.year,
   })  : assert(
-          firstMonth <= lastMonth,
-          'lastMonth $lastMonth must be on or after firstMonth $firstMonth.',
+          firstYearMonth <= lastYearMonth,
+          'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
+          '$firstYearMonth.',
         ),
         assert(
-          firstMonth <= initialMonth,
-          'initialMonth $initialMonth must be on or after firstMonth '
-          '$firstMonth.',
+          firstYearMonth <= initialYearMonth,
+          'initialYearMonth $initialYearMonth must be on or after '
+          'firstYearMonth $firstYearMonth.',
         ),
         assert(
-          initialMonth <= lastMonth,
-          'initialMonth $initialMonth must be on or before lastMonth '
-          '$lastMonth.',
+          initialYearMonth <= lastYearMonth,
+          'initialYearMonth $initialYearMonth must be on or before '
+          'lastYearMonth $lastYearMonth.',
         );
 
-  final LocalMonth initialMonth;
-  final LocalMonth firstMonth;
-  final LocalMonth lastMonth;
-  final ValueChanged<LocalMonth> onMonthChanged;
-  final LocalMonthPickerMode initialPickerMode;
+  final YearMonth initialYearMonth;
+  final YearMonth firstYearMonth;
+  final YearMonth lastYearMonth;
+  final ValueChanged<YearMonth> onMonthChanged;
+  final YearMonthPickerMode initialPickerMode;
 
   @override
   State<_CalendarMonthPicker> createState() => _CalendarMonthPickerState();
 }
 
 class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
-  bool _announcedInitialMonth = false;
-  late LocalMonthPickerMode _mode;
-  late int _currentDisplayedYear;
-  late LocalMonth _selectedMonth;
+  bool _announcedInitialYearMonth = false;
+  late YearMonthPickerMode _mode;
+  late Year _currentDisplayedYear;
+  late YearMonth _selectedYearMonth;
   final GlobalKey _monthPickerKey = GlobalKey();
   final GlobalKey _yearPickerKey = GlobalKey();
   late MaterialLocalizations _localizations;
@@ -623,8 +632,8 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
   void initState() {
     super.initState();
     _mode = widget.initialPickerMode;
-    _currentDisplayedYear = widget.initialMonth.year;
-    _selectedMonth = widget.initialMonth;
+    _currentDisplayedYear = widget.initialYearMonth.year;
+    _selectedYearMonth = widget.initialYearMonth;
   }
 
   @override
@@ -633,9 +642,9 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     if (widget.initialPickerMode != oldWidget.initialPickerMode) {
       _mode = widget.initialPickerMode;
     }
-    if (widget.initialMonth != oldWidget.initialMonth) {
-      _currentDisplayedYear = widget.initialMonth.year;
-      _selectedMonth = widget.initialMonth;
+    if (widget.initialYearMonth != oldWidget.initialYearMonth) {
+      _currentDisplayedYear = widget.initialYearMonth.year;
+      _selectedYearMonth = widget.initialYearMonth;
     }
   }
 
@@ -647,11 +656,13 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     assert(debugCheckHasDirectionality(context));
     _localizations = context.materialLocalizations;
     _textDirection = Directionality.of(context);
-    if (!_announcedInitialMonth) {
-      _announcedInitialMonth = true;
+    if (!_announcedInitialYearMonth) {
+      _announcedInitialYearMonth = true;
       unawaited(
         SemanticsService.announce(
-          LocalMonthFormat.long.format(_selectedMonth),
+          _localizations.formatMonthYear(
+            _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          ),
           _textDirection,
         ),
       );
@@ -672,41 +683,45 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     }
   }
 
-  void _handleModeChanged(LocalMonthPickerMode mode) {
+  void _handleModeChanged(YearMonthPickerMode mode) {
     _vibrate();
     setState(() {
       _mode = mode;
 
       final String message;
       switch (_mode) {
-        case LocalMonthPickerMode.month:
-          message = LocalMonthFormat.long.format(_selectedMonth);
-        case LocalMonthPickerMode.year:
-          message = _localizations.formatYear(_selectedMonth.dateTime);
+        case YearMonthPickerMode.month:
+          message = _localizations.formatMonthYear(
+            _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          );
+        case YearMonthPickerMode.year:
+          message = _localizations.formatYear(
+            _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          );
       }
       unawaited(SemanticsService.announce(message, _textDirection));
     });
   }
 
-  void _handleYearChanged(int year) {
-    assert(widget.firstMonth.year <= year);
-    assert(year <= widget.lastMonth.year);
+  void _handleYearChanged(Year year) {
+    assert(widget.firstYearMonth.year <= year);
+    assert(year <= widget.lastYearMonth.year);
 
     _vibrate();
     setState(() {
-      _mode = LocalMonthPickerMode.month;
+      _mode = YearMonthPickerMode.month;
       _currentDisplayedYear = year;
     });
   }
 
-  void _handleMonthChanged(LocalMonth month) {
-    assert(widget.firstMonth <= month);
-    assert(month <= widget.lastMonth);
+  void _handleMonthChanged(YearMonth month) {
+    assert(widget.firstYearMonth <= month);
+    assert(month <= widget.lastYearMonth);
 
     _vibrate();
     setState(() {
-      _selectedMonth = month;
-      widget.onMonthChanged(_selectedMonth);
+      _selectedYearMonth = month;
+      widget.onMonthChanged(_selectedYearMonth);
     });
   }
 
@@ -717,15 +732,17 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     assert(debugCheckHasDirectionality(context));
     return Column(
       children: [
-        _LocalMonthPickerModeToggleButton(
+        _YearMonthPickerModeToggleButton(
           mode: _mode,
-          title: _localizations.formatYear(DateTime(_currentDisplayedYear)),
+          title: _localizations.formatYear(
+            _currentDisplayedYear.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          ),
           onTitlePressed: () {
             // Toggle the month/year mode.
             _handleModeChanged(
-              _mode == LocalMonthPickerMode.month
-                  ? LocalMonthPickerMode.year
-                  : LocalMonthPickerMode.month,
+              _mode == YearMonthPickerMode.month
+                  ? YearMonthPickerMode.year
+                  : YearMonthPickerMode.month,
             );
           },
         ),
@@ -736,48 +753,51 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
 
   Widget _buildPicker() {
     switch (_mode) {
-      case LocalMonthPickerMode.month:
-        final currentMonth = LocalMonth.current();
+      case YearMonthPickerMode.month:
+        final currentMonth = YearMonth.currentInLocalZone();
         return MonthPicker(
           key: _monthPickerKey,
           currentMonth: _currentDisplayedYear == currentMonth.year
               ? currentMonth.month
               : null,
-          firstMonth: widget.firstMonth.year < _currentDisplayedYear
-              ? 1
-              : widget.firstMonth.month,
-          lastMonth: widget.lastMonth.year > _currentDisplayedYear
-              ? 12
-              : widget.lastMonth.month,
-          selectedMonth: _selectedMonth.month,
+          firstMonth: widget.firstYearMonth.year < _currentDisplayedYear
+              ? Month.january
+              : widget.firstYearMonth.month,
+          lastMonth: widget.lastYearMonth.year > _currentDisplayedYear
+              ? Month.december
+              : widget.lastYearMonth.month,
+          selectedMonth: _selectedYearMonth.month,
           onChanged: (month) =>
-              _handleMonthChanged(LocalMonth(_currentDisplayedYear, month)),
+              _handleMonthChanged(YearMonth(_currentDisplayedYear, month)),
         );
-      case LocalMonthPickerMode.year:
+      case YearMonthPickerMode.year:
         return YearPicker(
           key: _yearPickerKey,
-          firstDate: widget.firstMonth.dateTime,
-          lastDate: widget.lastMonth.dateTime,
-          selectedDate: _selectedMonth.dateTime,
-          onChanged: (it) => _handleYearChanged(it.year),
+          firstDate: widget
+              .firstYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          lastDate: widget
+              .lastYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          selectedDate:
+              _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          onChanged: (it) => _handleYearChanged(Year(it.year)),
         );
     }
   }
 }
 
-/// A button that used to toggle the [LocalMonthPickerMode] for a date picker.
+/// A button that used to toggle the [YearMonthPickerMode] for a date picker.
 ///
 /// This appears above the calendar grid and allows the user to toggle the
-/// [LocalMonthPickerMode] to display either the calendar view or the year list.
-class _LocalMonthPickerModeToggleButton extends StatefulWidget {
-  const _LocalMonthPickerModeToggleButton({
+/// [YearMonthPickerMode] to display either the calendar view or the year list.
+class _YearMonthPickerModeToggleButton extends StatefulWidget {
+  const _YearMonthPickerModeToggleButton({
     required this.mode,
     required this.title,
     required this.onTitlePressed,
   });
 
   /// The current display of the calendar picker.
-  final LocalMonthPickerMode mode;
+  final YearMonthPickerMode mode;
 
   /// The text that displays the current month/year being viewed.
   final String title;
@@ -786,12 +806,12 @@ class _LocalMonthPickerModeToggleButton extends StatefulWidget {
   final VoidCallback onTitlePressed;
 
   @override
-  _LocalMonthPickerModeToggleButtonState createState() =>
-      _LocalMonthPickerModeToggleButtonState();
+  _YearMonthPickerModeToggleButtonState createState() =>
+      _YearMonthPickerModeToggleButtonState();
 }
 
-class _LocalMonthPickerModeToggleButtonState
-    extends State<_LocalMonthPickerModeToggleButton>
+class _YearMonthPickerModeToggleButtonState
+    extends State<_YearMonthPickerModeToggleButton>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
 
@@ -799,19 +819,19 @@ class _LocalMonthPickerModeToggleButtonState
   void initState() {
     super.initState();
     _controller = AnimationController(
-      value: widget.mode == LocalMonthPickerMode.year ? 0.5 : 0,
+      value: widget.mode == YearMonthPickerMode.year ? 0.5 : 0,
       upperBound: 0.5,
-      duration: const Duration(milliseconds: 200),
+      duration: const core.Duration(milliseconds: 200),
       vsync: this,
     );
   }
 
   @override
-  void didUpdateWidget(_LocalMonthPickerModeToggleButton oldWidget) {
+  void didUpdateWidget(_YearMonthPickerModeToggleButton oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.mode == widget.mode) return;
 
-    if (widget.mode == LocalMonthPickerMode.year) {
+    if (widget.mode == YearMonthPickerMode.year) {
       _controller.forward();
     } else {
       _controller.reverse();

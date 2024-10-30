@@ -12,7 +12,7 @@ part of 'autocomplete.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaAutocompleteFormField<T extends Object, R extends Object> {
@@ -32,7 +32,9 @@ mixin _$SupernovaAutocompleteFormField<T extends Object, R extends Object> {
       throw _privateConstructorUsedError;
   Widget? get optionFooter => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaAutocompleteFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaAutocompleteFormFieldCopyWith<T, R,
           SupernovaAutocompleteFormField<T, R>>
       get copyWith => throw _privateConstructorUsedError;
@@ -75,6 +77,8 @@ class _$SupernovaAutocompleteFormFieldCopyWithImpl<
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaAutocompleteFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,14 +144,14 @@ class _$SupernovaAutocompleteFormFieldCopyWithImpl<
 }
 
 /// @nodoc
-abstract class _$$_SupernovaAutocompleteFormFieldCopyWith<
+abstract class _$$SupernovaAutocompleteFormFieldImplCopyWith<
     T extends Object,
     R extends Object,
     $Res> implements $SupernovaAutocompleteFormFieldCopyWith<T, R, $Res> {
-  factory _$$_SupernovaAutocompleteFormFieldCopyWith(
-          _$_SupernovaAutocompleteFormField<T, R> value,
-          $Res Function(_$_SupernovaAutocompleteFormField<T, R>) then) =
-      __$$_SupernovaAutocompleteFormFieldCopyWithImpl<T, R, $Res>;
+  factory _$$SupernovaAutocompleteFormFieldImplCopyWith(
+          _$SupernovaAutocompleteFormFieldImpl<T, R> value,
+          $Res Function(_$SupernovaAutocompleteFormFieldImpl<T, R>) then) =
+      __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T, R, $Res>;
   @override
   @useResult
   $Res call(
@@ -165,16 +169,18 @@ abstract class _$$_SupernovaAutocompleteFormFieldCopyWith<
 }
 
 /// @nodoc
-class __$$_SupernovaAutocompleteFormFieldCopyWithImpl<T extends Object,
+class __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T extends Object,
         R extends Object, $Res>
     extends _$SupernovaAutocompleteFormFieldCopyWithImpl<T, R, $Res,
-        _$_SupernovaAutocompleteFormField<T, R>>
-    implements _$$_SupernovaAutocompleteFormFieldCopyWith<T, R, $Res> {
-  __$$_SupernovaAutocompleteFormFieldCopyWithImpl(
-      _$_SupernovaAutocompleteFormField<T, R> _value,
-      $Res Function(_$_SupernovaAutocompleteFormField<T, R>) _then)
+        _$SupernovaAutocompleteFormFieldImpl<T, R>>
+    implements _$$SupernovaAutocompleteFormFieldImplCopyWith<T, R, $Res> {
+  __$$SupernovaAutocompleteFormFieldImplCopyWithImpl(
+      _$SupernovaAutocompleteFormFieldImpl<T, R> _value,
+      $Res Function(_$SupernovaAutocompleteFormFieldImpl<T, R>) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaAutocompleteFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -190,7 +196,7 @@ class __$$_SupernovaAutocompleteFormFieldCopyWithImpl<T extends Object,
     Object? optionViewBuilder = freezed,
     Object? optionFooter = freezed,
   }) {
-    return _then(_$_SupernovaAutocompleteFormField<T, R>(
+    return _then(_$SupernovaAutocompleteFormFieldImpl<T, R>(
       null == textEditingController
           ? _value.textEditingController
           : textEditingController // ignore: cast_nullable_to_non_nullable
@@ -241,9 +247,9 @@ class __$$_SupernovaAutocompleteFormFieldCopyWithImpl<T extends Object,
 
 /// @nodoc
 
-class _$_SupernovaAutocompleteFormField<T extends Object, R extends Object>
+class _$SupernovaAutocompleteFormFieldImpl<T extends Object, R extends Object>
     extends _SupernovaAutocompleteFormField<T, R> {
-  const _$_SupernovaAutocompleteFormField(
+  const _$SupernovaAutocompleteFormFieldImpl(
       this.textEditingController, this.selectedItem,
       {required this.valueSelector,
       required final List<String>? autofillHints,
@@ -295,10 +301,10 @@ class _$_SupernovaAutocompleteFormField<T extends Object, R extends Object>
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SupernovaAutocompleteFormField<T, R> &&
+            other is _$SupernovaAutocompleteFormFieldImpl<T, R> &&
             (identical(other.textEditingController, textEditingController) ||
                 other.textEditingController == textEditingController) &&
             (identical(other.selectedItem, selectedItem) ||
@@ -338,13 +344,15 @@ class _$_SupernovaAutocompleteFormField<T extends Object, R extends Object>
       optionViewBuilder,
       optionFooter);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaAutocompleteFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SupernovaAutocompleteFormFieldCopyWith<T, R,
-          _$_SupernovaAutocompleteFormField<T, R>>
-      get copyWith => __$$_SupernovaAutocompleteFormFieldCopyWithImpl<T, R,
-          _$_SupernovaAutocompleteFormField<T, R>>(this, _$identity);
+  _$$SupernovaAutocompleteFormFieldImplCopyWith<T, R,
+          _$SupernovaAutocompleteFormFieldImpl<T, R>>
+      get copyWith => __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T, R,
+          _$SupernovaAutocompleteFormFieldImpl<T, R>>(this, _$identity);
 }
 
 abstract class _SupernovaAutocompleteFormField<T extends Object,
@@ -360,7 +368,7 @@ abstract class _SupernovaAutocompleteFormField<T extends Object,
       required final SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
       required final AutocompleteOptionToString<T> displayStringForOption,
       final DataWidgetBuilder<T>? optionViewBuilder,
-      final Widget? optionFooter}) = _$_SupernovaAutocompleteFormField<T, R>;
+      final Widget? optionFooter}) = _$SupernovaAutocompleteFormFieldImpl<T, R>;
   const _SupernovaAutocompleteFormField._() : super._();
 
   @override
@@ -385,9 +393,12 @@ abstract class _SupernovaAutocompleteFormField<T extends Object,
   DataWidgetBuilder<T>? get optionViewBuilder;
   @override
   Widget? get optionFooter;
+
+  /// Create a copy of SupernovaAutocompleteFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SupernovaAutocompleteFormFieldCopyWith<T, R,
-          _$_SupernovaAutocompleteFormField<T, R>>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SupernovaAutocompleteFormFieldImplCopyWith<T, R,
+          _$SupernovaAutocompleteFormFieldImpl<T, R>>
       get copyWith => throw _privateConstructorUsedError;
 }

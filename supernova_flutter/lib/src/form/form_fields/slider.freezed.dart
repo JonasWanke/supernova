@@ -12,7 +12,7 @@ part of 'slider.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaSliderFormField<T extends Object> {
@@ -23,7 +23,9 @@ mixin _$SupernovaSliderFormField<T extends Object> {
   String? get minDescription => throw _privateConstructorUsedError;
   String? get maxDescription => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaSliderFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaSliderFormFieldCopyWith<T, SupernovaSliderFormField<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -55,6 +57,8 @@ class _$SupernovaSliderFormFieldCopyWithImpl<T extends Object, $Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaSliderFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,12 +99,12 @@ class _$SupernovaSliderFormFieldCopyWithImpl<T extends Object, $Res,
 }
 
 /// @nodoc
-abstract class _$$_SupernovaSliderFormFieldCopyWith<T extends Object, $Res>
+abstract class _$$SupernovaSliderFormFieldImplCopyWith<T extends Object, $Res>
     implements $SupernovaSliderFormFieldCopyWith<T, $Res> {
-  factory _$$_SupernovaSliderFormFieldCopyWith(
-          _$_SupernovaSliderFormField<T> value,
-          $Res Function(_$_SupernovaSliderFormField<T>) then) =
-      __$$_SupernovaSliderFormFieldCopyWithImpl<T, $Res>;
+  factory _$$SupernovaSliderFormFieldImplCopyWith(
+          _$SupernovaSliderFormFieldImpl<T> value,
+          $Res Function(_$SupernovaSliderFormFieldImpl<T>) then) =
+      __$$SupernovaSliderFormFieldImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call(
@@ -113,15 +117,17 @@ abstract class _$$_SupernovaSliderFormFieldCopyWith<T extends Object, $Res>
 }
 
 /// @nodoc
-class __$$_SupernovaSliderFormFieldCopyWithImpl<T extends Object, $Res>
+class __$$SupernovaSliderFormFieldImplCopyWithImpl<T extends Object, $Res>
     extends _$SupernovaSliderFormFieldCopyWithImpl<T, $Res,
-        _$_SupernovaSliderFormField<T>>
-    implements _$$_SupernovaSliderFormFieldCopyWith<T, $Res> {
-  __$$_SupernovaSliderFormFieldCopyWithImpl(
-      _$_SupernovaSliderFormField<T> _value,
-      $Res Function(_$_SupernovaSliderFormField<T>) _then)
+        _$SupernovaSliderFormFieldImpl<T>>
+    implements _$$SupernovaSliderFormFieldImplCopyWith<T, $Res> {
+  __$$SupernovaSliderFormFieldImplCopyWithImpl(
+      _$SupernovaSliderFormFieldImpl<T> _value,
+      $Res Function(_$SupernovaSliderFormFieldImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaSliderFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -132,7 +138,7 @@ class __$$_SupernovaSliderFormFieldCopyWithImpl<T extends Object, $Res>
     Object? minDescription = freezed,
     Object? maxDescription = freezed,
   }) {
-    return _then(_$_SupernovaSliderFormField<T>(
+    return _then(_$SupernovaSliderFormFieldImpl<T>(
       null == selectedValue
           ? _value.selectedValue
           : selectedValue // ignore: cast_nullable_to_non_nullable
@@ -163,9 +169,9 @@ class __$$_SupernovaSliderFormFieldCopyWithImpl<T extends Object, $Res>
 
 /// @nodoc
 
-class _$_SupernovaSliderFormField<T extends Object>
+class _$SupernovaSliderFormFieldImpl<T extends Object>
     extends _SupernovaSliderFormField<T> {
-  const _$_SupernovaSliderFormField(this.selectedValue,
+  const _$SupernovaSliderFormFieldImpl(this.selectedValue,
       {required final List<T> values,
       this.labelGetter,
       required this.descriptionGetter,
@@ -199,10 +205,10 @@ class _$_SupernovaSliderFormField<T extends Object>
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SupernovaSliderFormField<T> &&
+            other is _$SupernovaSliderFormFieldImpl<T> &&
             (identical(other.selectedValue, selectedValue) ||
                 other.selectedValue == selectedValue) &&
             const DeepCollectionEquality().equals(other._values, _values) &&
@@ -226,12 +232,14 @@ class _$_SupernovaSliderFormField<T extends Object>
       minDescription,
       maxDescription);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaSliderFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SupernovaSliderFormFieldCopyWith<T, _$_SupernovaSliderFormField<T>>
-      get copyWith => __$$_SupernovaSliderFormFieldCopyWithImpl<T,
-          _$_SupernovaSliderFormField<T>>(this, _$identity);
+  _$$SupernovaSliderFormFieldImplCopyWith<T, _$SupernovaSliderFormFieldImpl<T>>
+      get copyWith => __$$SupernovaSliderFormFieldImplCopyWithImpl<T,
+          _$SupernovaSliderFormFieldImpl<T>>(this, _$identity);
 }
 
 abstract class _SupernovaSliderFormField<T extends Object>
@@ -241,7 +249,7 @@ abstract class _SupernovaSliderFormField<T extends Object>
       final Formatter<T>? labelGetter,
       required final Formatter<T> descriptionGetter,
       final String? minDescription,
-      final String? maxDescription}) = _$_SupernovaSliderFormField<T>;
+      final String? maxDescription}) = _$SupernovaSliderFormFieldImpl<T>;
   const _SupernovaSliderFormField._() : super._();
 
   @override
@@ -256,8 +264,11 @@ abstract class _SupernovaSliderFormField<T extends Object>
   String? get minDescription;
   @override
   String? get maxDescription;
+
+  /// Create a copy of SupernovaSliderFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SupernovaSliderFormFieldCopyWith<T, _$_SupernovaSliderFormField<T>>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SupernovaSliderFormFieldImplCopyWith<T, _$SupernovaSliderFormFieldImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

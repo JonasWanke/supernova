@@ -112,7 +112,7 @@ class SupernovaDropdownFormFieldWidget<T extends Object> extends HookWidget {
 
 @freezed
 class _ClearableDropdownSelection<T extends Object>
-    with _$_ClearableDropdownSelection<T> {
+    with _$ClearableDropdownSelection<T> {
   const factory _ClearableDropdownSelection.value(T value) =
       _ValueClearableDropdownSelection;
   const factory _ClearableDropdownSelection.clear() =

@@ -12,7 +12,7 @@ part of 'https_url.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaHttpsUrlFormField {
@@ -21,7 +21,9 @@ mixin _$SupernovaHttpsUrlFormField {
   TextInputAction get textInputAction => throw _privateConstructorUsedError;
   String? get hintText => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaHttpsUrlFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaHttpsUrlFormFieldCopyWith<SupernovaHttpsUrlFormField>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -50,6 +52,8 @@ class _$SupernovaHttpsUrlFormFieldCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaHttpsUrlFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -75,12 +79,12 @@ class _$SupernovaHttpsUrlFormFieldCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_SingleLineSupernovaHttpsUrlFormFieldCopyWith<$Res>
+abstract class _$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWith<$Res>
     implements $SupernovaHttpsUrlFormFieldCopyWith<$Res> {
-  factory _$$_SingleLineSupernovaHttpsUrlFormFieldCopyWith(
-          _$_SingleLineSupernovaHttpsUrlFormField value,
-          $Res Function(_$_SingleLineSupernovaHttpsUrlFormField) then) =
-      __$$_SingleLineSupernovaHttpsUrlFormFieldCopyWithImpl<$Res>;
+  factory _$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWith(
+          _$SingleLineSupernovaHttpsUrlFormFieldImpl value,
+          $Res Function(_$SingleLineSupernovaHttpsUrlFormFieldImpl) then) =
+      __$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -90,15 +94,17 @@ abstract class _$$_SingleLineSupernovaHttpsUrlFormFieldCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SingleLineSupernovaHttpsUrlFormFieldCopyWithImpl<$Res>
+class __$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWithImpl<$Res>
     extends _$SupernovaHttpsUrlFormFieldCopyWithImpl<$Res,
-        _$_SingleLineSupernovaHttpsUrlFormField>
-    implements _$$_SingleLineSupernovaHttpsUrlFormFieldCopyWith<$Res> {
-  __$$_SingleLineSupernovaHttpsUrlFormFieldCopyWithImpl(
-      _$_SingleLineSupernovaHttpsUrlFormField _value,
-      $Res Function(_$_SingleLineSupernovaHttpsUrlFormField) _then)
+        _$SingleLineSupernovaHttpsUrlFormFieldImpl>
+    implements _$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWith<$Res> {
+  __$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWithImpl(
+      _$SingleLineSupernovaHttpsUrlFormFieldImpl _value,
+      $Res Function(_$SingleLineSupernovaHttpsUrlFormFieldImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaHttpsUrlFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -106,7 +112,7 @@ class __$$_SingleLineSupernovaHttpsUrlFormFieldCopyWithImpl<$Res>
     Object? textInputAction = null,
     Object? hintText = freezed,
   }) {
-    return _then(_$_SingleLineSupernovaHttpsUrlFormField(
+    return _then(_$SingleLineSupernovaHttpsUrlFormFieldImpl(
       null == currentValue
           ? _value.currentValue
           : currentValue // ignore: cast_nullable_to_non_nullable
@@ -125,9 +131,9 @@ class __$$_SingleLineSupernovaHttpsUrlFormFieldCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SingleLineSupernovaHttpsUrlFormField
+class _$SingleLineSupernovaHttpsUrlFormFieldImpl
     extends _SingleLineSupernovaHttpsUrlFormField {
-  const _$_SingleLineSupernovaHttpsUrlFormField(this.currentValue,
+  const _$SingleLineSupernovaHttpsUrlFormFieldImpl(this.currentValue,
       {required this.textInputAction, this.hintText})
       : super._();
 
@@ -144,10 +150,10 @@ class _$_SingleLineSupernovaHttpsUrlFormField
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SingleLineSupernovaHttpsUrlFormField &&
+            other is _$SingleLineSupernovaHttpsUrlFormFieldImpl &&
             (identical(other.currentValue, currentValue) ||
                 other.currentValue == currentValue) &&
             (identical(other.textInputAction, textInputAction) ||
@@ -160,13 +166,15 @@ class _$_SingleLineSupernovaHttpsUrlFormField
   int get hashCode =>
       Object.hash(runtimeType, currentValue, textInputAction, hintText);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaHttpsUrlFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SingleLineSupernovaHttpsUrlFormFieldCopyWith<
-          _$_SingleLineSupernovaHttpsUrlFormField>
-      get copyWith => __$$_SingleLineSupernovaHttpsUrlFormFieldCopyWithImpl<
-          _$_SingleLineSupernovaHttpsUrlFormField>(this, _$identity);
+  _$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWith<
+          _$SingleLineSupernovaHttpsUrlFormFieldImpl>
+      get copyWith => __$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWithImpl<
+          _$SingleLineSupernovaHttpsUrlFormFieldImpl>(this, _$identity);
 }
 
 abstract class _SingleLineSupernovaHttpsUrlFormField
@@ -174,7 +182,7 @@ abstract class _SingleLineSupernovaHttpsUrlFormField
   const factory _SingleLineSupernovaHttpsUrlFormField(
       final ValueNotifier<HttpsUrl?> currentValue,
       {required final TextInputAction textInputAction,
-      final String? hintText}) = _$_SingleLineSupernovaHttpsUrlFormField;
+      final String? hintText}) = _$SingleLineSupernovaHttpsUrlFormFieldImpl;
   const _SingleLineSupernovaHttpsUrlFormField._() : super._();
 
   @override
@@ -183,9 +191,12 @@ abstract class _SingleLineSupernovaHttpsUrlFormField
   TextInputAction get textInputAction;
   @override
   String? get hintText;
+
+  /// Create a copy of SupernovaHttpsUrlFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SingleLineSupernovaHttpsUrlFormFieldCopyWith<
-          _$_SingleLineSupernovaHttpsUrlFormField>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SingleLineSupernovaHttpsUrlFormFieldImplCopyWith<
+          _$SingleLineSupernovaHttpsUrlFormFieldImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

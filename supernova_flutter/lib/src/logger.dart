@@ -20,7 +20,7 @@ void initLogging() {
   logListeners.add((it) {
     final log = Log(
       level: _loggerToDiagnosticLevel(it.level),
-      timestamp: it.instant.dateTime.toLocal(),
+      timestamp: it.instant.asCoreDateTimeInLocalZone,
       message: it.message,
       error: it.data,
       stackTrace: it.stackTrace,
@@ -44,7 +44,7 @@ void initLogging() {
         stringifyObjectForLogging(it.data),
         it.stackTrace,
         reason: it.message,
-        information: [StringProperty('instant', it.instant.toJson())],
+        information: [StringProperty('instant', it.instant.toString())],
         printDetails: false,
         fatal: it.level >= LogLevel.wtf,
       );

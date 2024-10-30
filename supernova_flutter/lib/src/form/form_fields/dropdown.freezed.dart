@@ -12,14 +12,16 @@ part of 'dropdown.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaDropdownFormField<T extends Object> {
   ValueNotifier<T?> get selectedItem => throw _privateConstructorUsedError;
   List<DropdownMenuItem<T>> get items => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaDropdownFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SupernovaDropdownFormFieldCopyWith<T, SupernovaDropdownFormField<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -46,6 +48,8 @@ class _$SupernovaDropdownFormFieldCopyWithImpl<T extends Object, $Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SupernovaDropdownFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -66,34 +70,36 @@ class _$SupernovaDropdownFormFieldCopyWithImpl<T extends Object, $Res,
 }
 
 /// @nodoc
-abstract class _$$_SupernovaDropdownFormFieldCopyWith<T extends Object, $Res>
+abstract class _$$SupernovaDropdownFormFieldImplCopyWith<T extends Object, $Res>
     implements $SupernovaDropdownFormFieldCopyWith<T, $Res> {
-  factory _$$_SupernovaDropdownFormFieldCopyWith(
-          _$_SupernovaDropdownFormField<T> value,
-          $Res Function(_$_SupernovaDropdownFormField<T>) then) =
-      __$$_SupernovaDropdownFormFieldCopyWithImpl<T, $Res>;
+  factory _$$SupernovaDropdownFormFieldImplCopyWith(
+          _$SupernovaDropdownFormFieldImpl<T> value,
+          $Res Function(_$SupernovaDropdownFormFieldImpl<T>) then) =
+      __$$SupernovaDropdownFormFieldImplCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call({ValueNotifier<T?> selectedItem, List<DropdownMenuItem<T>> items});
 }
 
 /// @nodoc
-class __$$_SupernovaDropdownFormFieldCopyWithImpl<T extends Object, $Res>
+class __$$SupernovaDropdownFormFieldImplCopyWithImpl<T extends Object, $Res>
     extends _$SupernovaDropdownFormFieldCopyWithImpl<T, $Res,
-        _$_SupernovaDropdownFormField<T>>
-    implements _$$_SupernovaDropdownFormFieldCopyWith<T, $Res> {
-  __$$_SupernovaDropdownFormFieldCopyWithImpl(
-      _$_SupernovaDropdownFormField<T> _value,
-      $Res Function(_$_SupernovaDropdownFormField<T>) _then)
+        _$SupernovaDropdownFormFieldImpl<T>>
+    implements _$$SupernovaDropdownFormFieldImplCopyWith<T, $Res> {
+  __$$SupernovaDropdownFormFieldImplCopyWithImpl(
+      _$SupernovaDropdownFormFieldImpl<T> _value,
+      $Res Function(_$SupernovaDropdownFormFieldImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of SupernovaDropdownFormField
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? selectedItem = null,
     Object? items = null,
   }) {
-    return _then(_$_SupernovaDropdownFormField<T>(
+    return _then(_$SupernovaDropdownFormFieldImpl<T>(
       null == selectedItem
           ? _value.selectedItem
           : selectedItem // ignore: cast_nullable_to_non_nullable
@@ -108,9 +114,9 @@ class __$$_SupernovaDropdownFormFieldCopyWithImpl<T extends Object, $Res>
 
 /// @nodoc
 
-class _$_SupernovaDropdownFormField<T extends Object>
+class _$SupernovaDropdownFormFieldImpl<T extends Object>
     extends _SupernovaDropdownFormField<T> {
-  const _$_SupernovaDropdownFormField(this.selectedItem,
+  const _$SupernovaDropdownFormFieldImpl(this.selectedItem,
       {required final List<DropdownMenuItem<T>> items})
       : _items = items,
         super._();
@@ -131,10 +137,10 @@ class _$_SupernovaDropdownFormField<T extends Object>
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SupernovaDropdownFormField<T> &&
+            other is _$SupernovaDropdownFormFieldImpl<T> &&
             (identical(other.selectedItem, selectedItem) ||
                 other.selectedItem == selectedItem) &&
             const DeepCollectionEquality().equals(other._items, _items));
@@ -144,12 +150,15 @@ class _$_SupernovaDropdownFormField<T extends Object>
   int get hashCode => Object.hash(
       runtimeType, selectedItem, const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SupernovaDropdownFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SupernovaDropdownFormFieldCopyWith<T, _$_SupernovaDropdownFormField<T>>
-      get copyWith => __$$_SupernovaDropdownFormFieldCopyWithImpl<T,
-          _$_SupernovaDropdownFormField<T>>(this, _$identity);
+  _$$SupernovaDropdownFormFieldImplCopyWith<T,
+          _$SupernovaDropdownFormFieldImpl<T>>
+      get copyWith => __$$SupernovaDropdownFormFieldImplCopyWithImpl<T,
+          _$SupernovaDropdownFormFieldImpl<T>>(this, _$identity);
 }
 
 abstract class _SupernovaDropdownFormField<T extends Object>
@@ -157,21 +166,25 @@ abstract class _SupernovaDropdownFormField<T extends Object>
   const factory _SupernovaDropdownFormField(
           final ValueNotifier<T?> selectedItem,
           {required final List<DropdownMenuItem<T>> items}) =
-      _$_SupernovaDropdownFormField<T>;
+      _$SupernovaDropdownFormFieldImpl<T>;
   const _SupernovaDropdownFormField._() : super._();
 
   @override
   ValueNotifier<T?> get selectedItem;
   @override
   List<DropdownMenuItem<T>> get items;
+
+  /// Create a copy of SupernovaDropdownFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SupernovaDropdownFormFieldCopyWith<T, _$_SupernovaDropdownFormField<T>>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SupernovaDropdownFormFieldImplCopyWith<T,
+          _$SupernovaDropdownFormFieldImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$_ClearableDropdownSelection<T extends Object> {
+mixin _$ClearableDropdownSelection<T extends Object> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T value) value,
@@ -231,35 +244,41 @@ class __$ClearableDropdownSelectionCopyWithImpl<T extends Object, $Res,
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of _ClearableDropdownSelection
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_ValueClearableDropdownSelectionCopyWith<T extends Object,
+abstract class _$$ValueClearableDropdownSelectionImplCopyWith<T extends Object,
     $Res> {
-  factory _$$_ValueClearableDropdownSelectionCopyWith(
-          _$_ValueClearableDropdownSelection<T> value,
-          $Res Function(_$_ValueClearableDropdownSelection<T>) then) =
-      __$$_ValueClearableDropdownSelectionCopyWithImpl<T, $Res>;
+  factory _$$ValueClearableDropdownSelectionImplCopyWith(
+          _$ValueClearableDropdownSelectionImpl<T> value,
+          $Res Function(_$ValueClearableDropdownSelectionImpl<T>) then) =
+      __$$ValueClearableDropdownSelectionImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({T value});
 }
 
 /// @nodoc
-class __$$_ValueClearableDropdownSelectionCopyWithImpl<T extends Object, $Res>
+class __$$ValueClearableDropdownSelectionImplCopyWithImpl<T extends Object,
+        $Res>
     extends __$ClearableDropdownSelectionCopyWithImpl<T, $Res,
-        _$_ValueClearableDropdownSelection<T>>
-    implements _$$_ValueClearableDropdownSelectionCopyWith<T, $Res> {
-  __$$_ValueClearableDropdownSelectionCopyWithImpl(
-      _$_ValueClearableDropdownSelection<T> _value,
-      $Res Function(_$_ValueClearableDropdownSelection<T>) _then)
+        _$ValueClearableDropdownSelectionImpl<T>>
+    implements _$$ValueClearableDropdownSelectionImplCopyWith<T, $Res> {
+  __$$ValueClearableDropdownSelectionImplCopyWithImpl(
+      _$ValueClearableDropdownSelectionImpl<T> _value,
+      $Res Function(_$ValueClearableDropdownSelectionImpl<T>) _then)
       : super(_value, _then);
 
+  /// Create a copy of _ClearableDropdownSelection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? value = null,
   }) {
-    return _then(_$_ValueClearableDropdownSelection<T>(
+    return _then(_$ValueClearableDropdownSelectionImpl<T>(
       null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
@@ -270,9 +289,9 @@ class __$$_ValueClearableDropdownSelectionCopyWithImpl<T extends Object, $Res>
 
 /// @nodoc
 
-class _$_ValueClearableDropdownSelection<T extends Object>
+class _$ValueClearableDropdownSelectionImpl<T extends Object>
     extends _ValueClearableDropdownSelection<T> {
-  const _$_ValueClearableDropdownSelection(this.value) : super._();
+  const _$ValueClearableDropdownSelectionImpl(this.value) : super._();
 
   @override
   final T value;
@@ -283,10 +302,10 @@ class _$_ValueClearableDropdownSelection<T extends Object>
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ValueClearableDropdownSelection<T> &&
+            other is _$ValueClearableDropdownSelectionImpl<T> &&
             const DeepCollectionEquality().equals(other.value, value));
   }
 
@@ -294,13 +313,15 @@ class _$_ValueClearableDropdownSelection<T extends Object>
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(value));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of _ClearableDropdownSelection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ValueClearableDropdownSelectionCopyWith<T,
-          _$_ValueClearableDropdownSelection<T>>
-      get copyWith => __$$_ValueClearableDropdownSelectionCopyWithImpl<T,
-          _$_ValueClearableDropdownSelection<T>>(this, _$identity);
+  _$$ValueClearableDropdownSelectionImplCopyWith<T,
+          _$ValueClearableDropdownSelectionImpl<T>>
+      get copyWith => __$$ValueClearableDropdownSelectionImplCopyWithImpl<T,
+          _$ValueClearableDropdownSelectionImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -368,41 +389,48 @@ class _$_ValueClearableDropdownSelection<T extends Object>
 abstract class _ValueClearableDropdownSelection<T extends Object>
     extends _ClearableDropdownSelection<T> {
   const factory _ValueClearableDropdownSelection(final T value) =
-      _$_ValueClearableDropdownSelection<T>;
+      _$ValueClearableDropdownSelectionImpl<T>;
   const _ValueClearableDropdownSelection._() : super._();
 
   T get value;
-  @JsonKey(ignore: true)
-  _$$_ValueClearableDropdownSelectionCopyWith<T,
-          _$_ValueClearableDropdownSelection<T>>
+
+  /// Create a copy of _ClearableDropdownSelection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ValueClearableDropdownSelectionImplCopyWith<T,
+          _$ValueClearableDropdownSelectionImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ClearClearableDropdownSelectionCopyWith<T extends Object,
+abstract class _$$ClearClearableDropdownSelectionImplCopyWith<T extends Object,
     $Res> {
-  factory _$$_ClearClearableDropdownSelectionCopyWith(
-          _$_ClearClearableDropdownSelection<T> value,
-          $Res Function(_$_ClearClearableDropdownSelection<T>) then) =
-      __$$_ClearClearableDropdownSelectionCopyWithImpl<T, $Res>;
+  factory _$$ClearClearableDropdownSelectionImplCopyWith(
+          _$ClearClearableDropdownSelectionImpl<T> value,
+          $Res Function(_$ClearClearableDropdownSelectionImpl<T>) then) =
+      __$$ClearClearableDropdownSelectionImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$_ClearClearableDropdownSelectionCopyWithImpl<T extends Object, $Res>
+class __$$ClearClearableDropdownSelectionImplCopyWithImpl<T extends Object,
+        $Res>
     extends __$ClearableDropdownSelectionCopyWithImpl<T, $Res,
-        _$_ClearClearableDropdownSelection<T>>
-    implements _$$_ClearClearableDropdownSelectionCopyWith<T, $Res> {
-  __$$_ClearClearableDropdownSelectionCopyWithImpl(
-      _$_ClearClearableDropdownSelection<T> _value,
-      $Res Function(_$_ClearClearableDropdownSelection<T>) _then)
+        _$ClearClearableDropdownSelectionImpl<T>>
+    implements _$$ClearClearableDropdownSelectionImplCopyWith<T, $Res> {
+  __$$ClearClearableDropdownSelectionImplCopyWithImpl(
+      _$ClearClearableDropdownSelectionImpl<T> _value,
+      $Res Function(_$ClearClearableDropdownSelectionImpl<T>) _then)
       : super(_value, _then);
+
+  /// Create a copy of _ClearableDropdownSelection
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_ClearClearableDropdownSelection<T extends Object>
+class _$ClearClearableDropdownSelectionImpl<T extends Object>
     extends _ClearClearableDropdownSelection<T> {
-  const _$_ClearClearableDropdownSelection() : super._();
+  const _$ClearClearableDropdownSelectionImpl() : super._();
 
   @override
   String toString() {
@@ -410,10 +438,10 @@ class _$_ClearClearableDropdownSelection<T extends Object>
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ClearClearableDropdownSelection<T>);
+            other is _$ClearClearableDropdownSelectionImpl<T>);
   }
 
   @override
@@ -485,6 +513,6 @@ class _$_ClearClearableDropdownSelection<T extends Object>
 abstract class _ClearClearableDropdownSelection<T extends Object>
     extends _ClearableDropdownSelection<T> {
   const factory _ClearClearableDropdownSelection() =
-      _$_ClearClearableDropdownSelection<T>;
+      _$ClearClearableDropdownSelectionImpl<T>;
   const _ClearClearableDropdownSelection._() : super._();
 }

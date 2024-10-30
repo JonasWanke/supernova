@@ -1,4 +1,5 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
+import 'package:chrono/chrono.dart';
 import 'package:flutter/material.dart';
 import 'package:supernova/supernova.dart' hide ValueChanged, ValueGetter;
 
@@ -8,42 +9,41 @@ import '../form_field.dart';
 import '../validators.dart';
 import 'utils.dart';
 
-part 'local_date.freezed.dart';
+part 'date.freezed.dart';
 
 @freezed
-class SupernovaLocalDateFormField extends SupernovaFormFieldBase<LocalDate>
-    with _$SupernovaLocalDateFormField {
-  const factory SupernovaLocalDateFormField(
-    ValueNotifier<LocalDate?> selectedDate, {
-    ValueGetter<LocalDate?>? firstDate,
-    ValueGetter<LocalDate?>? lastDate,
-    @Default(SupernovaLocalDateFormField.defaultFormatDate)
-        Formatter<LocalDate> formatDate,
+class SupernovaDateFormField extends SupernovaFormFieldBase<Date>
+    with _$SupernovaDateFormField {
+  const factory SupernovaDateFormField(
+    ValueNotifier<Date?> selectedDate, {
+    ValueGetter<Date?>? firstDate,
+    ValueGetter<Date?>? lastDate,
+    @Default(SupernovaDateFormField.defaultFormatDate)
+    Formatter<Date> formatDate,
     String? hintText,
     String? dialogHelpText,
-    @Default(DatePickerMode.day)
-        DatePickerMode initialDatePickerMode,
-    SupernovaFormFieldValidator<LocalDate>? validator,
-  }) = _SupernovaLocalDateFormField;
+    @Default(DatePickerMode.day) DatePickerMode initialDatePickerMode,
+    SupernovaFormFieldValidator<Date>? validator,
+  }) = _SupernovaDateFormField;
 
-  const SupernovaLocalDateFormField._();
+  const SupernovaDateFormField._();
 
-  static String defaultFormatDate(LocalDate date) =>
-      LocalDateFormat.long.format(date);
+  // TODO(JonasWanke): localization
+  static String defaultFormatDate(Date date) => date.toString();
 
   @override
-  LocalDate? get value => selectedDate.value;
+  Date? get value => selectedDate.value;
 
   @override
   Widget build(SupernovaFormFieldData common, VoidCallback? onSubmitted) =>
-      _SupernovaLocalDateFormFieldWidget(common, onSubmitted, this);
+      _SupernovaDateFormFieldWidget(common, onSubmitted, this);
 
   @override
   void dispose() => selectedDate.dispose();
 }
 
-class _SupernovaLocalDateFormFieldWidget extends StatelessWidget {
-  const _SupernovaLocalDateFormFieldWidget(
+class _SupernovaDateFormFieldWidget extends StatelessWidget {
+  const _SupernovaDateFormFieldWidget(
     this.common,
     this.onSubmitted,
     this.formField,
@@ -51,25 +51,24 @@ class _SupernovaLocalDateFormFieldWidget extends StatelessWidget {
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
-  final SupernovaLocalDateFormField formField;
+  final SupernovaDateFormField formField;
 
   @override
   Widget build(BuildContext context) {
     return SupernovaFormFieldWidget(
       common,
-      child: FormField<LocalDate?>(
+      child: FormField<Date?>(
         initialValue: formField.selectedDate.value,
-        validator:
-            common.necessity.validator<LocalDate>() & formField.validator,
+        validator: common.necessity.validator<Date>() & formField.validator,
         autovalidateMode: AutovalidateMode.onUserInteraction,
         builder: (state) {
-          void setValue(LocalDate? date) {
+          void setValue(Date? date) {
             state.didChange(date);
             formField.selectedDate.value = date;
           }
 
           Future<void> onTap() async {
-            final date = await _showLocalDatePicker(
+            final date = await _showDatePicker(
               context,
               initialDate: formField.selectedDate.value,
               firstDate: formField.firstDate?.call(),
@@ -144,25 +143,25 @@ class _SupernovaLocalDateFormFieldWidget extends StatelessWidget {
   }
 }
 
-Future<LocalDate?> _showLocalDatePicker(
+Future<Date?> _showDatePicker(
   BuildContext context, {
-  LocalDate? initialDate,
-  LocalDate? firstDate,
-  LocalDate? lastDate,
+  Date? initialDate,
+  Date? firstDate,
+  Date? lastDate,
   String? helpText,
   DatePickerMode initialDatePickerMode = DatePickerMode.day,
 }) async {
-  firstDate ??= LocalDate(1900, 1, 1);
-  lastDate ??= LocalDate(2100, 1, 1);
-  initialDate ??= LocalDate.today().coerceIn(firstDate, lastDate);
+  firstDate ??= const Year(1900).firstDay;
+  lastDate ??= const Year(2100).lastDay;
+  initialDate ??= Date.todayInLocalZone().coerceIn(firstDate, lastDate);
   final date = await showDatePicker(
     context: context,
-    initialDate: initialDate.dateTime,
-    firstDate: firstDate.dateTime,
-    lastDate: lastDate.dateTime,
+    initialDate: initialDate.atMidnight.asCoreDateTimeInLocalZone,
+    firstDate: firstDate.atMidnight.asCoreDateTimeInLocalZone,
+    lastDate: lastDate.atMidnight.asCoreDateTimeInLocalZone,
     helpText: helpText,
     initialDatePickerMode: initialDatePickerMode,
   );
   if (date == null) return null;
-  return LocalDate.fromDateTime(date);
+  return DateTime.fromCore(date).date;
 }

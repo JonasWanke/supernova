@@ -7,6 +7,7 @@ environment:
 dependencies:
   ansi_styles: ^0.3.1-dev.0
   characters: ^1.2.0
+  chrono: ^0.1.0
   collection: ^1.17.0
   color: ^3.0.0
   dart_code_metrics:
@@ -25,13 +26,6 @@ dependencies:
   rxdart: ^0.28.0
   stack_trace: ^1.11.0
   time: ^2.1.0
-  time_machine:
-    # time_machine can't load its required data files when running in a
-    # non-Flutter VM due to problems with `Isolate.resolvePackageUri(…)`. This
-    # fork allows us to provide a custom data directory.
-    git:
-      url: https://github.com/JonasWanke/time_machine.git
-      ref: 0a68b36272f437bd5c638f79ab2f5b4cecb5dbcb
   todo: ^2.0.1
 
 dev_dependencies:

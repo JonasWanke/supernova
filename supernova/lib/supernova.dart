@@ -1,5 +1,3 @@
-import 'package:time_machine/time_machine.dart';
-
 import 'src/logger.dart';
 
 export 'dart:async';
@@ -37,7 +35,6 @@ export 'package:todo/todo.dart';
 export 'src/async.dart';
 export 'src/bool.dart';
 export 'src/bytes.dart';
-export 'src/date_time/module.dart';
 export 'src/debug_mode.dart';
 export 'src/email_address.dart';
 export 'src/google_cloud.dart';
@@ -55,11 +52,6 @@ export 'src/string.dart';
 export 'src/typedefs.dart';
 export 'src/validation.dart';
 
-Future<void> initSupernova({
-  LogLevel? minLogLevel,
-  bool shouldInitializeTimeMachine = true,
-}) async {
+Future<void> initSupernova({LogLevel? minLogLevel}) async {
   initLogger(minLogLevel: minLogLevel);
-
-  if (shouldInitializeTimeMachine) await TimeMachine.initialize();
 }

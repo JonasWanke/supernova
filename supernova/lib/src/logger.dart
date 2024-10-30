@@ -2,11 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:ansi_styles/ansi_styles.dart';
+import 'package:chrono/chrono.dart';
 import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 import 'package:stack_trace/stack_trace.dart';
 
-import 'date_time/module.dart';
 import 'debug_mode.dart';
 import 'typedefs.dart';
 
@@ -64,7 +64,7 @@ class Logger {
   }
 
   T traceSync<T>(String message, {Object? data, required ValueGetter<T> body}) {
-    final start = _stopwatch.elapsed;
+    final start = Microseconds.fromCore(_stopwatch.elapsed);
     _traceStart(message, data);
     try {
       return body();
@@ -78,7 +78,7 @@ class Logger {
     Object? data,
     required AsyncValueGetter<T> body,
   }) async {
-    final start = _stopwatch.elapsed;
+    final start = Microseconds.fromCore(_stopwatch.elapsed);
     _traceStart(message, data);
     try {
       return await body();
@@ -100,7 +100,7 @@ class Logger {
   void _traceEnd(String message, Duration start) {
     trace('$message: End');
 
-    final end = _stopwatch.elapsed;
+    final end = Microseconds.fromCore(_stopwatch.elapsed);
     for (final listener in _traceListeners) {
       listener(message, start, end);
     }

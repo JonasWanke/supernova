@@ -1,8 +1,8 @@
+import 'package:chrono/chrono.dart';
 import 'package:dartx/dartx.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:oxidized/oxidized.dart';
 
-import 'date_time/module.dart';
 import 'string.dart';
 import 'typedefs.dart';
 
@@ -181,7 +181,7 @@ class Is {
   static Validator<String> get phoneNumber => singleLineString();
 
   // Instant
-  static Validator<Instant> inPast(Duration allowedClockSkew) {
+  static Validator<Instant> inPast(TimeDuration allowedClockSkew) {
     return (value) {
       return Validate.custom(
         'Instant must be in the past (± $allowedClockSkew).',
@@ -190,7 +190,7 @@ class Is {
     };
   }
 
-  static Validator<Instant> inFuture(Duration allowedClockSkew) {
+  static Validator<Instant> inFuture(TimeDuration allowedClockSkew) {
     return (value) {
       return Validate.custom(
         'Instant must be in the future (± $allowedClockSkew).',
@@ -200,17 +200,19 @@ class Is {
   }
 
   // LocalDate
-  static Validator<LocalDate> get dateInPast {
-    return (value) =>
-        Validate.custom('Date must be in the past.', value < LocalDate.today());
+  static Validator<Date> get dateInPastLocalZone {
+    return (value) => Validate.custom(
+          'Date must be in the past.',
+          value < Date.todayInLocalZone(),
+        );
   }
 
   // Duration
-  static Validator<Duration> get positiveDuration {
+  static Validator<TimeDuration> get positiveTimeDuration {
     return (value) {
       return Validate.custom(
         'Duration must be positive (> 0).',
-        value > Duration.zero,
+        value.isPositive,
       );
     };
   }

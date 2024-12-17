@@ -842,7 +842,7 @@ class _YearMonthPickerModeToggleButtonState
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
-    final controlColor = colorScheme.onSurface.withOpacity(0.6);
+    final controlColor = colorScheme.onSurface.withValues(alpha: 0.6);
 
     return Container(
       height: _subHeaderHeight,

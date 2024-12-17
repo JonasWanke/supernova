@@ -8,7 +8,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
-        flutter = pkgs.flutterPackages.v3_24;
+        flutter = pkgs.flutterPackages.v3_27;
       in {
         devShell = with pkgs;
           mkShell {

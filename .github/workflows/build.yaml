@@ -17,9 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        # TODO(JonasWanke): re-enable beta CI when next stable Flutter version
-        # including breaking changes to Color are released
-        flutterChannel: [stable]
+        flutterChannel: [stable, beta]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4

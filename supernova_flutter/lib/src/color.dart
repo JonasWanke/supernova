@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:supernova/supernova.dart';
 
 extension ColorSupernova on Color {
-  RgbColor get asRgbColor => RgbColor(red, green, blue);
+  RgbColor get asRgbColor => RgbColor(r * 255, g * 255, b * 255);
 
   static Color fromJson(String json) =>
       const ColorJsonConverter().fromJson(json);
@@ -29,11 +29,11 @@ class ColorJsonConverter extends JsonConverter<Color, String> {
 
   @override
   String toJson(Color object) {
-    String convertChannel(int channel) =>
-        channel.toRadixString(16).padLeft(2, '0');
+    String convertChannel(double channel) =>
+        ((channel * 255).round() & 0xFF).toRadixString(16).padLeft(2, '0');
 
-    return '#${convertChannel(object.red)}'
-        '${convertChannel(object.green)}'
-        '${convertChannel(object.blue)}';
+    return '#${convertChannel(object.r)}'
+        '${convertChannel(object.g)}'
+        '${convertChannel(object.b)}';
   }
 }

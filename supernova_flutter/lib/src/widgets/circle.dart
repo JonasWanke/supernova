@@ -2,16 +2,17 @@ import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 
 class Circle extends StatelessWidget {
-  const Circle({super.key, required this.diameter});
+  const Circle({super.key, required this.diameter, this.backgroundColor});
 
   final double diameter;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: context.theme.colorScheme.primary,
-        borderRadius: BorderRadius.circular(diameter / 2),
+        shape: BoxShape.circle,
+        color: backgroundColor ?? context.theme.colorScheme.primary,
       ),
       width: diameter,
       height: diameter,

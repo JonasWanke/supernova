@@ -30,10 +30,6 @@ dependencies:
   streaming_shared_preferences: ^2.0.0
   supernova:
     path: ../supernova
-    # git:
-    #   url: https://github.com/JonasWanke/supernova.git
-    #   path: supernova
-    #   ref: 83eecd1409c1945e587987920f60d3c1b4f9507a
   timeago: ^3.6.0
   timeago_flutter: ^3.6.0
   url_launcher: ^6.1.14

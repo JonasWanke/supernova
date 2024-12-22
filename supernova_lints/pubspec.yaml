@@ -1,0 +1,5 @@
+name: supernova_lints
+publish_to: none
+
+environment:
+  sdk: ^3.0.0

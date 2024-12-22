@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "pub get",
+      "type": "dart",
+      "command": "dart",
+      "args": ["pub", "get"]
+    }
+  ]
+}

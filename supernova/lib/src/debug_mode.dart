@@ -19,6 +19,6 @@ void runOnlyInDebugMode(VoidCallback action) {
 }
 
 /// `await`-able variant of [runOnlyInDebugMode].
-FutureOr<void> runOnlyInDebugModeAsync(AsyncVoidCallback action) {
+Future<void> runOnlyInDebugModeAsync(AsyncVoidCallback action) async {
   if (isInDebugMode) return action();
 }

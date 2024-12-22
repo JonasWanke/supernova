@@ -223,7 +223,7 @@ packages:
     source: hosted
     version: "1.0.2"
   dart_code_metrics:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "."
       ref: "42b9a1d6f8baac052411cf68448d29a82c621066"

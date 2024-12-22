@@ -10,10 +10,6 @@ dependencies:
   chrono: ^0.1.0
   collection: ^1.17.0
   color: ^3.0.0
-  dart_code_metrics:
-    git:
-      url: https://github.com/JonasWanke/dart-code-metrics.git
-      ref: 42b9a1d6f8baac052411cf68448d29a82c621066
   dartx: ^1.2.0
   email_validator: ^3.0.0
   freezed_annotation: ^2.0.3

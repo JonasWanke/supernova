@@ -13,7 +13,7 @@ analyzer:
 
 linter:
   rules:
-    # All rules: https://github.com/dart-lang/lints/blob/f58fd77bbff4ff4a62826a7bbfb9a72f0f03dd3c/tool/rules.json
+    # All rules: https://github.com/dart-lang/lints/blob/df1f635888837ddce6819294b87450dae06b6c68/tool/rules.json
     always_declare_return_types: true
     always_put_control_body_on_new_line: false
     # `If (simpleCondition) return;` is fine for me.
@@ -42,6 +42,7 @@ linter:
     avoid_field_initializers_in_const_classes: true
     avoid_final_parameters: true
     avoid_function_literals_in_foreach_calls: true
+    avoid_futureor_void: true
     avoid_implementing_value_types: true
     avoid_init_to_null: true
     avoid_js_rounded_ints: true
@@ -58,7 +59,6 @@ linter:
     avoid_return_types_on_setters: true
     avoid_returning_null_for_future: true
     avoid_returning_null_for_void: true
-    avoid_returning_null: true
     avoid_returning_this: true
     avoid_setters_without_getters: true
     avoid_shadowing_type_parameters: true
@@ -95,6 +95,8 @@ linter:
     directives_ordering: true
     discarded_futures: true
     do_not_use_environment: true
+    document_ignores: false
+    # Too verbose sometimes.
     empty_catches: true
     empty_constructor_bodies: true
     empty_statements: true
@@ -120,6 +122,7 @@ linter:
     list_remove_unrelated_type: true
     literal_only_boolean_expressions: true
     matching_super_parameters: true
+    missing_code_block_language_in_doc_comment: true
     missing_whitespace_between_adjacent_strings: true
     no_adjacent_strings_in_list: true
     no_default_cases: true
@@ -134,6 +137,8 @@ linter:
     null_check_on_nullable_type_parameter: true
     null_closures: true
     omit_local_variable_types: true
+    omit_obvious_local_variable_types: true
+    # not yet released to stable Dart: omit_obvious_property_types: true
     one_member_abstracts: false
     # I only use these where it makes sense.
     only_throw_errors: true
@@ -202,6 +207,10 @@ linter:
     sort_constructors_first: true
     sort_pub_dependencies: true
     sort_unnamed_constructors_first: true
+    specify_nonobvious_local_variable_types: false
+    # Too verbose; prefer `omit_local_variable_types`
+    # not yet released to stable Dart: specify_nonobvious_property_types: false
+    # Too verbose; prefer `omit_obvious_property_types`
     test_types_in_equals: true
     throw_in_finally: true
     tighten_type_of_initializing_formals: true
@@ -209,6 +218,7 @@ linter:
     type_init_formals: true
     type_literal_in_constant_pattern: true
     unawaited_futures: true
+    unintended_html_in_doc_comment: true
     unnecessary_await_in_return: true
     unnecessary_brace_in_string_interps: true
     unnecessary_breaks: true
@@ -236,10 +246,10 @@ linter:
     unnecessary_string_interpolations: true
     unnecessary_this: true
     unnecessary_to_list_in_spreads: true
-    unintended_html_in_doc_comment: true
     unreachable_from_main: true
     unrelated_type_equality_checks: true
     unsafe_html: true
+    # not yet released to stable Dart: unsafe_variance: true
     use_build_context_synchronously: true
     use_colored_box: true
     use_decorated_box: true
@@ -259,6 +269,7 @@ linter:
     use_super_parameters: true
     use_test_throws_matchers: true
     use_to_and_as_if_applicable: true
+    use_truncating_division: true
     valid_regexps: true
     void_checks: true
 

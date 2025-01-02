@@ -185,10 +185,11 @@ packages:
   chrono:
     dependency: "direct main"
     description:
-      name: chrono
-      sha256: ec0e43e7268e2b13664a53e91249a10de423032975308d01b3aa455bd9911e35
-      url: "https://pub.dev"
-    source: hosted
+      path: chrono
+      ref: "53ceefdb17bb66f12c5b5f46fd5c6a6a96e3513d"
+      resolved-ref: "53ceefdb17bb66f12c5b5f46fd5c6a6a96e3513d"
+      url: "https://github.com/JonasWanke/chrono.git"
+    source: git
     version: "0.1.0"
   clock:
     dependency: transitive
@@ -302,6 +303,7 @@ packages:
       sha256: b74afffe35ffb156c5b92d378dc891124148ca6f15730d3a4cc8357a34cda5e5
       url: "https://pub.dev"
     source: hosted
+<<<<<<< Updated upstream
     version: "1.0.0"
   decimal:
     dependency: transitive
@@ -311,6 +313,9 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.3"
+=======
+    version: "0.2.12"
+>>>>>>> Stashed changes
   device_info_plus:
     dependency: transitive
     description:
@@ -407,14 +412,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.7.0"
-  fixed:
-    dependency: transitive
-    description:
-      name: fixed
-      sha256: "0d55e0a083026060f0b50c7f6e00d40a772d6a6b5e1812bc6e57c75ea58c21cc"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.3.0"
   fixnum:
     dependency: transitive
     description:
@@ -803,14 +800,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.0"
-  rational:
-    dependency: transitive
-    description:
-      name: rational
-      sha256: cb808fb6f1a839e6fc5f7d8cb3b0a10e1db48b3be102de73938c627f0b636336
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.3"
   rxdart:
     dependency: transitive
     description:
@@ -1287,5 +1276,5 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.5.0 <4.0.0"
+  dart: ">=3.6.0 <4.0.0"
   flutter: ">=3.27.0-0"

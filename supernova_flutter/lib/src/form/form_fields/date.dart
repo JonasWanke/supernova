@@ -163,5 +163,5 @@ Future<Date?> _showDatePicker(
     initialDatePickerMode: initialDatePickerMode,
   );
   if (date == null) return null;
-  return DateTime.fromCore(date).date;
+  return date.chronoDate;
 }

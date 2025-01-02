@@ -64,7 +64,7 @@ class Logger {
   }
 
   T traceSync<T>(String message, {Object? data, required ValueGetter<T> body}) {
-    final start = Microseconds.fromCore(_stopwatch.elapsed);
+    final start = _stopwatch.elapsedChrono;
     _traceStart(message, data);
     try {
       return body();
@@ -78,7 +78,7 @@ class Logger {
     Object? data,
     required AsyncValueGetter<T> body,
   }) async {
-    final start = Microseconds.fromCore(_stopwatch.elapsed);
+    final start = _stopwatch.elapsedChrono;
     _traceStart(message, data);
     try {
       return await body();
@@ -97,10 +97,10 @@ class Logger {
     trace('$message: Start', data);
   }
 
-  void _traceEnd(String message, Duration start) {
+  void _traceEnd(String message, Microseconds start) {
     trace('$message: End');
 
-    final end = Microseconds.fromCore(_stopwatch.elapsed);
+    final end = _stopwatch.elapsedChrono;
     for (final listener in _traceListeners) {
       listener(message, start, end);
     }
@@ -110,8 +110,8 @@ class Logger {
 typedef LogListener = void Function(LogRecord);
 typedef TraceListener = void Function(
   String message,
-  Duration start,
-  Duration end,
+  Microseconds start,
+  Microseconds end,
 );
 
 /// See `/docs/logging.md` for descriptions of these levels.

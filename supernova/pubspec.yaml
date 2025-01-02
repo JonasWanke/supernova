@@ -7,7 +7,11 @@ environment:
 dependencies:
   ansi_styles: ^0.3.1-dev.0
   characters: ^1.2.0
-  chrono: ^0.1.0
+  chrono:
+    git:
+      url: https://github.com/JonasWanke/chrono.git
+      path: chrono
+      ref: 8636b8a8d6a1b937fdc8ea838787a6343be46d1d
   collection: ^1.17.0
   color: ^3.0.0
   dartx: ^1.2.0

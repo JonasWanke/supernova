@@ -75,10 +75,10 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
           }
 
           Future<void> onTap() async {
-            final firstYearMonth =
-                formField.firstYearMonth?.call() ?? const Year(1900).firstMonth;
-            final lastYearMonth =
-                formField.lastYearMonth?.call() ?? const Year(2100).lastMonth;
+            final firstYearMonth = formField.firstYearMonth?.call() ??
+                const Year(1900).months.start;
+            final lastYearMonth = formField.lastYearMonth?.call() ??
+                const Year(2100).months.endInclusive;
             final initialYearMonth = formField.value ??
                 YearMonth.currentInLocalZone()
                     .coerceIn(firstYearMonth, lastYearMonth);
@@ -387,7 +387,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
     final textScaleFactor = math.min(context.mediaQuery.textScaleFactor, 1.3);
 
     final monthText = localizations.formatMonthYear(
-      _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+      _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
     );
     final onPrimarySurface = colorScheme.brightness == Brightness.light
         ? colorScheme.onPrimary
@@ -661,7 +661,7 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
       unawaited(
         SemanticsService.announce(
           _localizations.formatMonthYear(
-            _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+            _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
           ),
           _textDirection,
         ),
@@ -692,11 +692,11 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
       switch (_mode) {
         case YearMonthPickerMode.month:
           message = _localizations.formatMonthYear(
-            _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+            _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
           );
         case YearMonthPickerMode.year:
           message = _localizations.formatYear(
-            _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+            _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
           );
       }
       unawaited(SemanticsService.announce(message, _textDirection));
@@ -735,7 +735,7 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
         _YearMonthPickerModeToggleButton(
           mode: _mode,
           title: _localizations.formatYear(
-            _currentDisplayedYear.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+            _currentDisplayedYear.dateTimes.start.asCoreDateTimeInLocalZone,
           ),
           onTitlePressed: () {
             // Toggle the month/year mode.
@@ -773,12 +773,12 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
       case YearMonthPickerMode.year:
         return YearPicker(
           key: _yearPickerKey,
-          firstDate: widget
-              .firstYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
-          lastDate: widget
-              .lastYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+          firstDate:
+              widget.firstYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
+          lastDate:
+              widget.lastYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
           selectedDate:
-              _selectedYearMonth.firstDay.atMidnight.asCoreDateTimeInLocalZone,
+              _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
           onChanged: (it) => _handleYearChanged(Year(it.year)),
         );
     }

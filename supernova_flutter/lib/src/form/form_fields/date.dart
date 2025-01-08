@@ -151,8 +151,8 @@ Future<Date?> _showDatePicker(
   String? helpText,
   DatePickerMode initialDatePickerMode = DatePickerMode.day,
 }) async {
-  firstDate ??= const Year(1900).firstDay;
-  lastDate ??= const Year(2100).lastDay;
+  firstDate ??= const Year(1900).dates.start;
+  lastDate ??= const Year(2100).dates.endInclusive;
   initialDate ??= Date.todayInLocalZone().coerceIn(firstDate, lastDate);
   final date = await showDatePicker(
     context: context,

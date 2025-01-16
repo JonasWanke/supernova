@@ -276,11 +276,6 @@ linter:
 dart_code_metrics:
   rules:
     - always-remove-listener
-    - avoid-banned-imports:
-        entries:
-          - paths: ['.*']
-            deny: ["^(?:\\.\\./)+module\\.dart$"]
-            message: Don't import the `module.dart` of your own module.
     - avoid-border-all
     - avoid-cascade-after-if-null
     - avoid-collection-methods-with-unrelated-types

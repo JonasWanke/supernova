@@ -198,7 +198,8 @@ linter:
     public_member_api_docs: false
     # Only in `package_lints.yaml`
     recursive_getters: true
-    require_trailing_commas: true
+    require_trailing_commas: false
+    # Not necessary with the new formatter.
     secure_pubspec_urls: true
     sized_box_for_whitespace: true
     sized_box_shrink_expand: true
@@ -312,7 +313,6 @@ dart_code_metrics:
     - prefer-intl-name
     - prefer-iterable-of
     - prefer-last
-    - prefer-trailing-comma
     - provide-correct-intl-args
     - tag-name
   rules-exclude:

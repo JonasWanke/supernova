@@ -18,7 +18,7 @@ extension IdMapToJsonSupernova<T extends ToJson> on IdMap<T> {
       map((key, value) => MapEntry(key.value, value.toJson()));
 }
 
-IdMap<T> idMapFromJson<T extends Object>(
+Map<Id<K>, T> idMapFromJson<K, T extends Object>(
   Map<String, dynamic> json,
   FromJson<T> fromJson,
 ) {

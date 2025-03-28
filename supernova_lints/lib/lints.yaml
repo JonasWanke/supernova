@@ -94,7 +94,8 @@ linter:
     # Only in `package_lints.yaml`
     directives_ordering: true
     discarded_futures: true
-    do_not_use_environment: true
+    do_not_use_environment: false
+    # Compile-time configuration is fine.
     document_ignores: false
     # Too verbose sometimes.
     empty_catches: true

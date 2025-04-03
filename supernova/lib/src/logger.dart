@@ -65,11 +65,11 @@ class Logger {
 
   T traceSync<T>(String message, {Object? data, required ValueGetter<T> body}) {
     final start = _stopwatch.elapsedChrono;
-    _traceStart(message, data);
+    traceStart(message, data);
     try {
       return body();
     } finally {
-      _traceEnd(message, start);
+      traceEnd(message, start, null);
     }
   }
 
@@ -79,11 +79,11 @@ class Logger {
     required AsyncValueGetter<T> body,
   }) async {
     final start = _stopwatch.elapsedChrono;
-    _traceStart(message, data);
+    traceStart(message, data);
     try {
       return await body();
     } finally {
-      _traceEnd(message, start);
+      traceEnd(message, start, null);
     }
   }
 
@@ -91,14 +91,14 @@ class Logger {
   void addTraceListener(TraceListener listener) =>
       _traceListeners.add(listener);
 
-  void _traceStart(String message, Object? data) {
+  void traceStart(String message, Object? data) {
     if (data is Map && data.isEmpty) data = null;
 
     trace('$message: Start', data);
   }
 
-  void _traceEnd(String message, Microseconds start) {
-    trace('$message: End');
+  void traceEnd(String message, Microseconds start, Object? data) {
+    trace('$message: End', data);
 
     final end = _stopwatch.elapsedChrono;
     for (final listener in _traceListeners) {

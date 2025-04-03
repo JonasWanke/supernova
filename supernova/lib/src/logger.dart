@@ -241,8 +241,20 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
     }
   }
 
-  // We only care about the time, not the date.
-  final time = Instant.now().toString().substring(11);
+  String formatTime(Time time) {
+    // Only show microseconds, not nanoseconds.
+    final hour = time.hour.toString().padLeft(2, '0');
+    final minute = time.minute.toString().padLeft(2, '0');
+    final second = time.second.toString().padLeft(2, '0');
+    final microseconds = time.nanoseconds
+        .roundToMilliseconds(rounding: Rounding.down)
+        .inMicroseconds
+        .toString()
+        .padLeft(6, '0');
+    return '$hour:$minute:$second.$microseconds';
+  }
+
+  final time = formatTime(Instant.now().dateTimeInLocalZone.time);
 
   // Header
   final messageFirstLinebreakIndex = record.message.indexOf('\n');

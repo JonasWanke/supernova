@@ -25,9 +25,7 @@ export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:intl/intl.dart' hide DateFormat, TextDirection;
 export 'package:json_annotation/json_annotation.dart';
 export 'package:meta/meta.dart';
-// Oxidized offers two ways for instantiating these enums, e.g., `Ok(…)` and
-// `Result.ok(…)`. By hiding one way for each, our code is more consistent.
-export 'package:oxidized/oxidized.dart' hide Err, None, Ok, Some;
+export 'package:oxidized/oxidized.dart';
 export 'package:rxdart/rxdart.dart';
 export 'package:time/time.dart';
 export 'package:todo/todo.dart';

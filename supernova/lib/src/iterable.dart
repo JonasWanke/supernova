@@ -1,6 +1,7 @@
 import 'dart:math';
 
-import 'package:collection/collection.dart' show IterableExtension;
+import 'package:collection/collection.dart'
+    show IterableExtension, ListExtensions;
 import 'package:dartx/dartx.dart' hide IterableFirstOrNull, IterableMapIndexed;
 import 'package:meta/meta.dart';
 
@@ -107,7 +108,7 @@ extension ListSupernova<T> on List<T> {
       List.of(this)..insert(index, item);
   @useResult
   List<T> insertImmutableSorted(T item) =>
-      insertImmutable(lowerBound(item), item);
+      insertImmutable(ListLowerBoundExtension(this).lowerBound(item), item);
   @useResult
   List<T> insertImmutableSortedBy<K extends Comparable<K>>(
     T item,

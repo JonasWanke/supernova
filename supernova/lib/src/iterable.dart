@@ -106,8 +106,14 @@ extension ListSupernova<T> on List<T> {
   List<T> insertImmutable(int index, T item) =>
       List.of(this)..insert(index, item);
   @useResult
-  List<T> insertSortedImmutable(T item) =>
+  List<T> insertImmutableSorted(T item) =>
       insertImmutable(lowerBound(item), item);
+  @useResult
+  List<T> insertImmutableSortedBy<K extends Comparable<K>>(
+    T item,
+    K Function(T) keyOf,
+  ) =>
+      insertImmutable(lowerBoundBy(item, keyOf), item);
 
   @useResult
   List<T> removeImmutable(int index) {

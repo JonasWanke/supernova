@@ -81,11 +81,12 @@ export 'src/widgets/preferences.dart';
 export 'src/widgets/stepper.dart';
 
 Future<void> initSupernova({
+  supernova.LogLevel? minLogLevel,
   FirebaseOptions? firebaseOptions,
   AddressingFormality addressingFormality = AddressingFormality.informal,
 }) async {
   localization.addressingFormality = addressingFormality;
-  await supernova.initSupernova();
+  await supernova.initSupernova(minLogLevel: minLogLevel);
   initLogging();
   WidgetsFlutterBinding.ensureInitialized();
 

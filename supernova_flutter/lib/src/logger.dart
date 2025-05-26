@@ -5,7 +5,7 @@ import 'package:supernova/supernova.dart';
 
 import 'services.dart';
 
-final logs = LogCollection();
+final logs = LogCollection(onlyStoreLogsInDebugMode: false);
 
 void initLogging() {
   logListeners = [

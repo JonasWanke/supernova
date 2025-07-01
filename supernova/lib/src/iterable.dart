@@ -153,14 +153,20 @@ extension SetSupernova<T> on Set<T> {
   Set<T> addImmutable(T item) => Set.of(this)..add(item);
   @useResult
   Set<T> addAllImmutable(Iterable<T> items) => Set.of(this)..addAll(items);
+
   @useResult
   Set<T> replaceImmutableOrdered(int index, T item) =>
       {...take(index), item, ...skip(index + 1)};
+
   @useResult
   Set<T> removeImmutable(T item) => Set.of(this)..remove(item);
   @useResult
   Set<T> removeAllImmutable(Iterable<T> items) =>
       Set.of(this)..removeAll(items);
+
+  @useResult
+  Set<T> toggleImmutable(T item) =>
+      contains(item) ? removeImmutable(item) : addImmutable(item);
 }
 
 extension MapSupernova<K, V> on Map<K, V> {

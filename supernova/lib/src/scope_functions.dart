@@ -22,5 +22,5 @@ extension ScopeFunctionsSupernova<T extends Object> on T {
   /// `null` if it does.
   ///
   /// https://kotlinlang.org/docs/scope-functions.html#takeif-and-takeunless
-  T? takeUnless(Predicate<T> predicate) => predicate(this) ? this : null;
+  T? takeUnless(Predicate<T> predicate) => predicate(this) ? null : this;
 }

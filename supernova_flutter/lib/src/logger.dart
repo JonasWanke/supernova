@@ -1,5 +1,6 @@
 import 'package:debug_overlay/debug_overlay.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:platformx/platformx.dart';
 import 'package:supernova/supernova.dart';
 
@@ -25,7 +26,10 @@ void initLogging() {
       error: it.data,
       stackTrace: it.stackTrace,
     );
-    logs.add(log);
+
+    // We can't add logs during the build phase in case the debug overlay is
+    // currently open.
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) => logs.add(log));
   });
   if (isInDebugMode) return;
 

@@ -12,11 +12,9 @@ class SupernovaDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    switch (axis) {
-      case Axis.horizontal:
-        return Divider(height: size);
-      case Axis.vertical:
-        return VerticalDivider(width: size);
-    }
+    return switch (axis) {
+      Axis.horizontal => Divider(height: size),
+      Axis.vertical => VerticalDivider(width: size)
+    };
   }
 }

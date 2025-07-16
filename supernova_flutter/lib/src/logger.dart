@@ -57,20 +57,13 @@ void initLogging() {
 }
 
 DiagnosticLevel _loggerToDiagnosticLevel(LogLevel level) {
-  switch (level) {
-    case LogLevel.wtf:
-      return DiagnosticLevel.error;
-    case LogLevel.error:
-      return DiagnosticLevel.error;
-    case LogLevel.warning:
-      return DiagnosticLevel.warning;
-    case LogLevel.info:
-      return DiagnosticLevel.info;
-    case LogLevel.config:
-      return DiagnosticLevel.info;
-    case LogLevel.debug:
-      return DiagnosticLevel.debug;
-    case LogLevel.trace:
-      return DiagnosticLevel.hint;
-  }
+  return switch (level) {
+    LogLevel.wtf => DiagnosticLevel.error,
+    LogLevel.error => DiagnosticLevel.error,
+    LogLevel.warning => DiagnosticLevel.warning,
+    LogLevel.info => DiagnosticLevel.info,
+    LogLevel.config => DiagnosticLevel.info,
+    LogLevel.debug => DiagnosticLevel.debug,
+    LogLevel.trace => DiagnosticLevel.hint
+  };
 }

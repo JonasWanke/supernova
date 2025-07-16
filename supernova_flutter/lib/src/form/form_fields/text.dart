@@ -24,7 +24,7 @@ class SupernovaTextFormField extends SupernovaFormFieldBase<String>
     List<TextInputFormatter>? inputFormatters,
     int? maxLength,
     @Default(TextCapitalization.sentences)
-        TextCapitalization textCapitalization,
+    TextCapitalization textCapitalization,
     SupernovaFormFieldValidator<String>? validator,
     required TextInputAction textInputAction,
     String? hintText,
@@ -120,20 +120,17 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
         EmailAddress.isValid,
         context.supernovaL10n.formFieldTextEmailAddressErrorInvalid,
       ),
-      password: (it) {
-        switch (it.role) {
-          case SupernovaPasswordFormFieldRole.create:
-            return SupernovaFormFieldValidators.buildValidator<String>(
-              (value) =>
-                  value.characters.length >=
-                  SupernovaTextFormField.minPasswordLength,
-              context.supernovaL10n.formFieldTextPasswordErrorTooShort(
+      password: (it) => switch (it.role) {
+        SupernovaPasswordFormFieldRole.create =>
+          SupernovaFormFieldValidators.buildValidator<String>(
+            (value) =>
+                value.characters.length >=
                 SupernovaTextFormField.minPasswordLength,
-              ),
-            );
-          case SupernovaPasswordFormFieldRole.enter:
-            return null;
-        }
+            context.supernovaL10n.formFieldTextPasswordErrorTooShort(
+              SupernovaTextFormField.minPasswordLength,
+            ),
+          ),
+        SupernovaPasswordFormFieldRole.enter => null
       },
     );
     final textInputAction = formField.map(

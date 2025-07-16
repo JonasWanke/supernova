@@ -24,14 +24,11 @@ extension ResultJsonSupernova<T extends ToJson, E extends ToJson>
   ) {
     final type = json['type'] as String;
     final dynamic value = json['value'];
-    switch (type) {
-      case 'ok':
-        return Result.ok(okFromJson(value));
-      case 'error':
-        return Result.err(errorFromJson(value));
-      default:
-        throw ArgumentError.value(type, 'type', 'Invalid `Result` variant');
-    }
+    return switch (type) {
+      'ok' => Result.ok(okFromJson(value)),
+      'error' => Result.err(errorFromJson(value)),
+      _ => throw ArgumentError.value(type, 'type', 'Invalid `Result` variant')
+    };
   }
 
   Map<String, dynamic> toJson() {

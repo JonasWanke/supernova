@@ -10,21 +10,14 @@ extension PlatformEnumSupernova on PlatformEnum {
     T? macOs,
     T? fuchsia,
   }) {
-    switch (this) {
-      case PlatformEnum.Android:
-        return android;
-      case PlatformEnum.IOS:
-        return ios;
-      case PlatformEnum.Web:
-        return web;
-      case PlatformEnum.Windows:
-        return windows;
-      case PlatformEnum.Linux:
-        return linux;
-      case PlatformEnum.MacOS:
-        return macOs;
-      case PlatformEnum.Fuchsia:
-        return fuchsia;
-    }
+    return switch (this) {
+      PlatformEnum.Android => android,
+      PlatformEnum.IOS => ios,
+      PlatformEnum.Web => web,
+      PlatformEnum.Windows => windows,
+      PlatformEnum.Linux => linux,
+      PlatformEnum.MacOS => macOs,
+      PlatformEnum.Fuchsia => fuchsia
+    };
   }
 }

@@ -365,12 +365,10 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   final GlobalKey _calendarPickerKey = GlobalKey();
 
   Size _dialogSize(BuildContext context) {
-    switch (context.mediaQuery.orientation) {
-      case Orientation.portrait:
-        return _calendarPortraitDialogSize;
-      case Orientation.landscape:
-        return _calendarLandscapeDialogSize;
-    }
+    return switch (context.mediaQuery.orientation) {
+      Orientation.portrait => _calendarPortraitDialogSize,
+      Orientation.landscape => _calendarLandscapeDialogSize
+    };
   }
 
   @override
@@ -445,33 +443,27 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
           // TODO(JonasWanke): Update to use `TextScaler`
           // ignore: deprecated_member_use
           data: context.mediaQuery.copyWith(textScaleFactor: textScaleFactor),
-          child: Builder(
-            builder: (context) {
-              switch (orientation) {
-                case Orientation.portrait:
-                  return Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [header, Expanded(child: picker), actions],
-                  );
-                case Orientation.landscape:
-                  return Row(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      header,
-                      Flexible(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [Expanded(child: picker), actions],
-                        ),
-                      ),
-                    ],
-                  );
-              }
-            },
-          ),
+          child: switch (orientation) {
+            Orientation.portrait => Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [header, Expanded(child: picker), actions],
+              ),
+            Orientation.landscape => Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  header,
+                  Flexible(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [Expanded(child: picker), actions],
+                    ),
+                  ),
+                ],
+              ),
+          },
         ),
       ),
     );
@@ -526,9 +518,8 @@ class _YearMonthPickerHeader extends StatelessWidget {
       maxLines: orientation == Orientation.portrait ? 1 : 2,
     );
 
-    switch (orientation) {
-      case Orientation.portrait:
-        return SizedBox(
+    return switch (orientation) {
+      Orientation.portrait => SizedBox(
           height: _datePickerHeaderPortraitHeight,
           child: Material(
             color: primarySurfaceColor,
@@ -545,9 +536,8 @@ class _YearMonthPickerHeader extends StatelessWidget {
               ),
             ),
           ),
-        );
-      case Orientation.landscape:
-        return SizedBox(
+        ),
+      Orientation.landscape => SizedBox(
           width: _datePickerHeaderLandscapeWidth,
           child: Material(
             color: primarySurfaceColor,
@@ -573,8 +563,8 @@ class _YearMonthPickerHeader extends StatelessWidget {
               ],
             ),
           ),
-        );
-    }
+        )
+    };
   }
 }
 
@@ -688,17 +678,14 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     setState(() {
       _mode = mode;
 
-      final String message;
-      switch (_mode) {
-        case YearMonthPickerMode.month:
-          message = _localizations.formatMonthYear(
+      final message = switch (_mode) {
+        YearMonthPickerMode.month => _localizations.formatMonthYear(
             _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
-          );
-        case YearMonthPickerMode.year:
-          message = _localizations.formatYear(
+          ),
+        YearMonthPickerMode.year => _localizations.formatYear(
             _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
-          );
-      }
+          )
+      };
       unawaited(SemanticsService.announce(message, _textDirection));
     });
   }

@@ -9,22 +9,12 @@ FirebaseOptions supernovaFirebaseOptions({
   required String messagingSenderId,
   required String projectId,
 }) {
-  final FirebaseConfig base;
-  final IosFirebaseConfig? iosConfig;
-  switch (PlatformX.platform) {
-    case PlatformEnum.Android:
-      base = android!;
-      iosConfig = null;
-    case PlatformEnum.IOS:
-      base = ios!;
-      iosConfig = ios;
-    case PlatformEnum.Web:
-      base = web!;
-      iosConfig = null;
-    // ignore: no_default_cases
-    default:
-      TODO('Unsupported platform ${PlatformX.platform.name}.');
-  }
+  final (base, iosConfig) = switch (PlatformX.platform) {
+    PlatformEnum.Android => (android!, null),
+    PlatformEnum.IOS => (ios!, ios),
+    PlatformEnum.Web => (web!, null),
+    _ => TODO('Unsupported platform ${PlatformX.platform.name}.'),
+  };
   return FirebaseOptions(
     apiKey: base.apiKey,
     appId: base.appId,

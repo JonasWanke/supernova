@@ -17,19 +17,25 @@ int compareBy<T>(T a, T b, Mapper<T, Comparable<dynamic>> getKey) =>
 int compareByMultiple<T>(
   T a,
   T b,
-  Mapper<T, List<Comparable<dynamic>>> getKeys,
-) =>
-    compareMultiple(getKeys(a), getKeys(b));
-int compareMultiple(List<Comparable<dynamic>> a, List<Comparable<dynamic>> b) {
+  Mapper<T, List<Comparable<dynamic>>> getKeys, {
+  bool isDescending = false,
+}) =>
+    compareMultiple(getKeys(a), getKeys(b), isDescending: isDescending);
+int compareMultiple(
+  List<Comparable<dynamic>> a,
+  List<Comparable<dynamic>> b, {
+  bool isDescending = false,
+}) {
   assert(a.length == b.length);
   assert(a.isNotEmpty);
 
-  return IterableSupernova(a)
+  final result = IterableSupernova(a)
           .zip(b)
           .map((it) => it.$1.compareTo(it.$2))
           .where((it) => it != 0)
           .firstOrNull ??
       0;
+  return isDescending ? -result : result;
 }
 
 extension IterableSupernova<T> on Iterable<T> {
@@ -79,10 +85,25 @@ extension IterableSupernova<T> on Iterable<T> {
   }
 
   /// Stable sort by multiple keys for each item.
-  List<T> sortedByMultiple(Mapper<T, List<Comparable<dynamic>>> getKeys) =>
-      sortedByCompare(getKeys, compareMultiple);
-  bool isSortedByMultiple(Mapper<T, List<Comparable<dynamic>>> getKeys) =>
-      isSortedByCompare(getKeys, compareMultiple);
+  List<T> sortedByMultiple(
+    Mapper<T, List<Comparable<dynamic>>> getKeys, {
+    bool isDescending = false,
+  }) {
+    return sortedByCompare(
+      getKeys,
+      (a, b) => compareMultiple(a, b, isDescending: isDescending),
+    );
+  }
+
+  bool isSortedByMultiple(
+    Mapper<T, List<Comparable<dynamic>>> getKeys, {
+    bool isDescending = false,
+  }) {
+    return isSortedByCompare(
+      getKeys,
+      (a, b) => compareMultiple(a, b, isDescending: isDescending),
+    );
+  }
 
   Iterable<T> withSeparators(T separator) sync* {
     var isFirst = true;

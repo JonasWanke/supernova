@@ -212,8 +212,7 @@ class _AutocompleteOptions<T extends Object> extends StatelessWidget {
           if (AutocompleteHighlightedOption.of(context) != index) return child;
 
           SchedulerBinding.instance.addPostFrameCallback(
-            (timeStamp) async =>
-                Scrollable.ensureVisible(context, alignment: 0.5),
+            (timeStamp) => Scrollable.ensureVisible(context, alignment: 0.5),
           );
           return ColoredBox(color: context.theme.focusColor, child: child);
         },

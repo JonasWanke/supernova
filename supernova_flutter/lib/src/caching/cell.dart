@@ -27,7 +27,7 @@ class ApiReadonlyCachedCell<T extends Object> {
 
   void clear() => _behaviorSubject.value = null;
 
-  Future<void> dispose() async => _behaviorSubject.close();
+  Future<void> dispose() => _behaviorSubject.close();
 }
 
 abstract class CachedCell<T extends Object, U extends Object>

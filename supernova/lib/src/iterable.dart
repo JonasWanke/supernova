@@ -43,7 +43,6 @@ extension IterableSupernova<T> on Iterable<T> {
     final result = (<T>[], <T>[]);
     for (final element in this) {
       final list = predicate(element) ? result.$1 : result.$2;
-      // ignore: cascade_invocations
       list.add(element);
     }
     return result;

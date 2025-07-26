@@ -159,7 +159,6 @@ Snapshot<T> useFuture<T>(
   T? initialData,
   required List<Object?> keys,
 }) {
-  // ignore: discarded_futures
   final future = useMemoized(
     () async {
       try {

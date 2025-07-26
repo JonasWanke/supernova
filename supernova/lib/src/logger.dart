@@ -293,7 +293,6 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
     );
   }
 
-  // ignore: avoid_print
   print(output.toString().trimRight());
 }
 
@@ -326,12 +325,10 @@ String stringifyObjectForLogging(dynamic message, [String? indent]) {
     try {
       // ignore: avoid_dynamic_calls
       return object.toJson();
-      // ignore: avoid_catches_without_on_clauses
     } catch (_) {}
 
     try {
       return '$object';
-      // ignore: avoid_catches_without_on_clauses
     } catch (_) {}
 
     return object.runtimeType;

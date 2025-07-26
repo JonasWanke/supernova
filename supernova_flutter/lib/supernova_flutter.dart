@@ -26,7 +26,6 @@ export 'package:flutter/foundation.dart'
 export 'package:flutter/material.dart'
     hide
         FutureBuilder,
-        // ignore: undefined_hidden_name
         ImageDecoderCallback,
         SnapshotWidget,
         StepState,

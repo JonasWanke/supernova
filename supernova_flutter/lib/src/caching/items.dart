@@ -24,5 +24,5 @@ class CachedItems<K extends Object, T extends Object> {
 
   void clear() => _behaviorSubject.value = {};
 
-  Future<void> dispose() async => _behaviorSubject.close();
+  Future<void> dispose() => _behaviorSubject.close();
 }

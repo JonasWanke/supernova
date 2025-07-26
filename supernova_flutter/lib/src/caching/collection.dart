@@ -62,7 +62,7 @@ class CachedSparseCollection<K extends Object, T extends Object> {
 
   void clear() => _value = {};
 
-  Future<void> dispose() async => _behaviorSubject.close();
+  Future<void> dispose() => _behaviorSubject.close();
 }
 
 class CachedCollection<K extends Object, T extends Object>

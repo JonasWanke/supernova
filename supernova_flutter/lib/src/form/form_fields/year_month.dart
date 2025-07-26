@@ -296,7 +296,7 @@ Future<YearMonth?> showYearMonthPicker({
   String? helpText,
   bool useRootNavigator = true,
   YearMonthPickerMode initialPickerMode = YearMonthPickerMode.year,
-}) async {
+}) {
   assert(
     firstYearMonth <= lastYearMonth,
     'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
@@ -610,7 +610,7 @@ class _CalendarMonthPicker extends StatefulWidget {
 }
 
 class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
-  bool _announcedInitialYearMonth = false;
+  var _announcedInitialYearMonth = false;
   late YearMonthPickerMode _mode;
   late Year _currentDisplayedYear;
   late YearMonth _selectedYearMonth;

@@ -17,8 +17,8 @@ typedef SupernovaAutocompleteOptionsBuilder<T extends Object> = Future<List<T>>
     Function(TextEditingValue textEditingValue);
 
 @freezed
-class SupernovaAutocompleteFormField<T extends Object, R extends Object>
-    extends SupernovaFormFieldBase<R>
+abstract class SupernovaAutocompleteFormField<T extends Object,
+        R extends Object> extends SupernovaFormFieldBase<R>
     with _$SupernovaAutocompleteFormField<T, R> {
   const factory SupernovaAutocompleteFormField(
     TextEditingController textEditingController,
@@ -60,7 +60,7 @@ class _SupernovaAutocompleteFormFieldWidget<T extends Object, R extends Object>
           common.necessity
               .when(optional: () => true, required: (text) => text != null),
           "SupernovaAutocompleteFormField needs a `requiredText` if it's "
-          'required.' ,
+          'required.',
         );
 
   final SupernovaFormFieldData common;

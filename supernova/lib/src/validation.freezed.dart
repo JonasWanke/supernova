@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,72 +9,41 @@ part of 'validation.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ValidationError {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) =>
-      throw _privateConstructorUsedError;
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ValidationError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+}
+
+/// @nodoc
+class $ValidationErrorCopyWith<$Res> {
+  $ValidationErrorCopyWith(
+      ValidationError _, $Res Function(ValidationError) __);
+}
+
+/// Adds pattern-matching-related methods to [ValidationError].
+extension ValidationErrorPatterns on ValidationError {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(FieldValidationError value)? field,
@@ -85,87 +54,275 @@ mixin _$ValidationError {
     TResult Function(NotEqualValidationError value)? notEqual,
     TResult Function(CustomValidationError value)? custom,
     required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ValidationErrorCopyWith<$Res> {
-  factory $ValidationErrorCopyWith(
-          ValidationError value, $Res Function(ValidationError) then) =
-      _$ValidationErrorCopyWithImpl<$Res, ValidationError>;
-}
-
-/// @nodoc
-class _$ValidationErrorCopyWithImpl<$Res, $Val extends ValidationError>
-    implements $ValidationErrorCopyWith<$Res> {
-  _$ValidationErrorCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$FieldValidationErrorCopyWith<$Res> {
-  factory _$$FieldValidationErrorCopyWith(_$FieldValidationError value,
-          $Res Function(_$FieldValidationError) then) =
-      __$$FieldValidationErrorCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String fieldName, List<ValidationError> errors});
-}
-
-/// @nodoc
-class __$$FieldValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$FieldValidationError>
-    implements _$$FieldValidationErrorCopyWith<$Res> {
-  __$$FieldValidationErrorCopyWithImpl(_$FieldValidationError _value,
-      $Res Function(_$FieldValidationError) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? fieldName = null,
-    Object? errors = null,
   }) {
-    return _then(_$FieldValidationError(
-      null == fieldName
-          ? _value.fieldName
-          : fieldName // ignore: cast_nullable_to_non_nullable
-              as String,
-      null == errors
-          ? _value._errors
-          : errors // ignore: cast_nullable_to_non_nullable
-              as List<ValidationError>,
-    ));
+    final _that = this;
+    switch (_that) {
+      case FieldValidationError() when field != null:
+        return field(_that);
+      case ListItemValidationError() when listItem != null:
+        return listItem(_that);
+      case SetItemValidationError() when setItem != null:
+        return setItem(_that);
+      case MapKeyValidationError() when mapKey != null:
+        return mapKey(_that);
+      case MapValueValidationError() when mapValue != null:
+        return mapValue(_that);
+      case NotEqualValidationError() when notEqual != null:
+        return notEqual(_that);
+      case CustomValidationError() when custom != null:
+        return custom(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(FieldValidationError value) field,
+    required TResult Function(ListItemValidationError value) listItem,
+    required TResult Function(SetItemValidationError value) setItem,
+    required TResult Function(MapKeyValidationError value) mapKey,
+    required TResult Function(MapValueValidationError value) mapValue,
+    required TResult Function(NotEqualValidationError value) notEqual,
+    required TResult Function(CustomValidationError value) custom,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case FieldValidationError():
+        return field(_that);
+      case ListItemValidationError():
+        return listItem(_that);
+      case SetItemValidationError():
+        return setItem(_that);
+      case MapKeyValidationError():
+        return mapKey(_that);
+      case MapValueValidationError():
+        return mapValue(_that);
+      case NotEqualValidationError():
+        return notEqual(_that);
+      case CustomValidationError():
+        return custom(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(FieldValidationError value)? field,
+    TResult? Function(ListItemValidationError value)? listItem,
+    TResult? Function(SetItemValidationError value)? setItem,
+    TResult? Function(MapKeyValidationError value)? mapKey,
+    TResult? Function(MapValueValidationError value)? mapValue,
+    TResult? Function(NotEqualValidationError value)? notEqual,
+    TResult? Function(CustomValidationError value)? custom,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case FieldValidationError() when field != null:
+        return field(_that);
+      case ListItemValidationError() when listItem != null:
+        return listItem(_that);
+      case SetItemValidationError() when setItem != null:
+        return setItem(_that);
+      case MapKeyValidationError() when mapKey != null:
+        return mapKey(_that);
+      case MapValueValidationError() when mapValue != null:
+        return mapValue(_that);
+      case NotEqualValidationError() when notEqual != null:
+        return notEqual(_that);
+      case CustomValidationError() when custom != null:
+        return custom(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String fieldName, ValidationErrors errors)? field,
+    TResult Function(int index, ValidationErrors errors)? listItem,
+    TResult Function(dynamic item, ValidationErrors errors)? setItem,
+    TResult Function(dynamic key, ValidationErrors errors)? mapKey,
+    TResult Function(dynamic key, ValidationErrors errors)? mapValue,
+    TResult Function(dynamic actual, dynamic expected)? notEqual,
+    TResult Function(String message)? custom,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case FieldValidationError() when field != null:
+        return field(_that.fieldName, _that.errors);
+      case ListItemValidationError() when listItem != null:
+        return listItem(_that.index, _that.errors);
+      case SetItemValidationError() when setItem != null:
+        return setItem(_that.item, _that.errors);
+      case MapKeyValidationError() when mapKey != null:
+        return mapKey(_that.key, _that.errors);
+      case MapValueValidationError() when mapValue != null:
+        return mapValue(_that.key, _that.errors);
+      case NotEqualValidationError() when notEqual != null:
+        return notEqual(_that.actual, _that.expected);
+      case CustomValidationError() when custom != null:
+        return custom(_that.message);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String fieldName, ValidationErrors errors) field,
+    required TResult Function(int index, ValidationErrors errors) listItem,
+    required TResult Function(dynamic item, ValidationErrors errors) setItem,
+    required TResult Function(dynamic key, ValidationErrors errors) mapKey,
+    required TResult Function(dynamic key, ValidationErrors errors) mapValue,
+    required TResult Function(dynamic actual, dynamic expected) notEqual,
+    required TResult Function(String message) custom,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case FieldValidationError():
+        return field(_that.fieldName, _that.errors);
+      case ListItemValidationError():
+        return listItem(_that.index, _that.errors);
+      case SetItemValidationError():
+        return setItem(_that.item, _that.errors);
+      case MapKeyValidationError():
+        return mapKey(_that.key, _that.errors);
+      case MapValueValidationError():
+        return mapValue(_that.key, _that.errors);
+      case NotEqualValidationError():
+        return notEqual(_that.actual, _that.expected);
+      case CustomValidationError():
+        return custom(_that.message);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String fieldName, ValidationErrors errors)? field,
+    TResult? Function(int index, ValidationErrors errors)? listItem,
+    TResult? Function(dynamic item, ValidationErrors errors)? setItem,
+    TResult? Function(dynamic key, ValidationErrors errors)? mapKey,
+    TResult? Function(dynamic key, ValidationErrors errors)? mapValue,
+    TResult? Function(dynamic actual, dynamic expected)? notEqual,
+    TResult? Function(String message)? custom,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case FieldValidationError() when field != null:
+        return field(_that.fieldName, _that.errors);
+      case ListItemValidationError() when listItem != null:
+        return listItem(_that.index, _that.errors);
+      case SetItemValidationError() when setItem != null:
+        return setItem(_that.item, _that.errors);
+      case MapKeyValidationError() when mapKey != null:
+        return mapKey(_that.key, _that.errors);
+      case MapValueValidationError() when mapValue != null:
+        return mapValue(_that.key, _that.errors);
+      case NotEqualValidationError() when notEqual != null:
+        return notEqual(_that.actual, _that.expected);
+      case CustomValidationError() when custom != null:
+        return custom(_that.message);
+      case _:
+        return null;
+    }
   }
 }
 
 /// @nodoc
 
-class _$FieldValidationError extends FieldValidationError {
-  const _$FieldValidationError(
-      this.fieldName, final List<ValidationError> errors)
+class FieldValidationError extends ValidationError {
+  const FieldValidationError(this.fieldName, final ValidationErrors errors)
       : _errors = errors,
         super._();
 
-  @override
   final String fieldName;
-  final List<ValidationError> _errors;
-  @override
-  List<ValidationError> get errors {
+  final ValidationErrors _errors;
+  ValidationErrors get errors {
     if (_errors is EqualUnmodifiableListView) return _errors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_errors);
   }
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FieldValidationErrorCopyWith<FieldValidationError> get copyWith =>
+      _$FieldValidationErrorCopyWithImpl<FieldValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FieldValidationError &&
+            other is FieldValidationError &&
             (identical(other.fieldName, fieldName) ||
                 other.fieldName == fieldName) &&
             const DeepCollectionEquality().equals(other._errors, _errors));
@@ -174,182 +331,74 @@ class _$FieldValidationError extends FieldValidationError {
   @override
   int get hashCode => Object.hash(
       runtimeType, fieldName, const DeepCollectionEquality().hash(_errors));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FieldValidationErrorCopyWith<_$FieldValidationError> get copyWith =>
-      __$$FieldValidationErrorCopyWithImpl<_$FieldValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) {
-    return field(fieldName, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return field?.call(fieldName, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (field != null) {
-      return field(fieldName, errors);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return field(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return field?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (field != null) {
-      return field(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class FieldValidationError extends ValidationError {
-  const factory FieldValidationError(
-          final String fieldName, final List<ValidationError> errors) =
-      _$FieldValidationError;
-  const FieldValidationError._() : super._();
-
-  String get fieldName;
-  List<ValidationError> get errors;
-  @JsonKey(ignore: true)
-  _$$FieldValidationErrorCopyWith<_$FieldValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$ListItemValidationErrorCopyWith<$Res> {
-  factory _$$ListItemValidationErrorCopyWith(_$ListItemValidationError value,
-          $Res Function(_$ListItemValidationError) then) =
-      __$$ListItemValidationErrorCopyWithImpl<$Res>;
+abstract mixin class $FieldValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $FieldValidationErrorCopyWith(FieldValidationError value,
+          $Res Function(FieldValidationError) _then) =
+      _$FieldValidationErrorCopyWithImpl;
   @useResult
-  $Res call({int index, List<ValidationError> errors});
+  $Res call({String fieldName, ValidationErrors errors});
 }
 
 /// @nodoc
-class __$$ListItemValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$ListItemValidationError>
-    implements _$$ListItemValidationErrorCopyWith<$Res> {
-  __$$ListItemValidationErrorCopyWithImpl(_$ListItemValidationError _value,
-      $Res Function(_$ListItemValidationError) _then)
-      : super(_value, _then);
+class _$FieldValidationErrorCopyWithImpl<$Res>
+    implements $FieldValidationErrorCopyWith<$Res> {
+  _$FieldValidationErrorCopyWithImpl(this._self, this._then);
 
+  final FieldValidationError _self;
+  final $Res Function(FieldValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? index = null,
+    Object? fieldName = null,
     Object? errors = null,
   }) {
-    return _then(_$ListItemValidationError(
-      null == index
-          ? _value.index
-          : index // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(FieldValidationError(
+      null == fieldName
+          ? _self.fieldName
+          : fieldName // ignore: cast_nullable_to_non_nullable
+              as String,
       null == errors
-          ? _value._errors
+          ? _self._errors
           : errors // ignore: cast_nullable_to_non_nullable
-              as List<ValidationError>,
+              as ValidationErrors,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ListItemValidationError extends ListItemValidationError {
-  const _$ListItemValidationError(
-      this.index, final List<ValidationError> errors)
+class ListItemValidationError extends ValidationError {
+  const ListItemValidationError(this.index, final ValidationErrors errors)
       : _errors = errors,
         super._();
 
-  @override
   final int index;
-  final List<ValidationError> _errors;
-  @override
-  List<ValidationError> get errors {
+  final ValidationErrors _errors;
+  ValidationErrors get errors {
     if (_errors is EqualUnmodifiableListView) return _errors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_errors);
   }
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ListItemValidationErrorCopyWith<ListItemValidationError> get copyWith =>
+      _$ListItemValidationErrorCopyWithImpl<ListItemValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ListItemValidationError &&
+            other is ListItemValidationError &&
             (identical(other.index, index) || other.index == index) &&
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
@@ -357,181 +406,74 @@ class _$ListItemValidationError extends ListItemValidationError {
   @override
   int get hashCode => Object.hash(
       runtimeType, index, const DeepCollectionEquality().hash(_errors));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ListItemValidationErrorCopyWith<_$ListItemValidationError> get copyWith =>
-      __$$ListItemValidationErrorCopyWithImpl<_$ListItemValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) {
-    return listItem(index, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return listItem?.call(index, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (listItem != null) {
-      return listItem(index, errors);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return listItem(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return listItem?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (listItem != null) {
-      return listItem(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ListItemValidationError extends ValidationError {
-  const factory ListItemValidationError(
-          final int index, final List<ValidationError> errors) =
-      _$ListItemValidationError;
-  const ListItemValidationError._() : super._();
-
-  int get index;
-  List<ValidationError> get errors;
-  @JsonKey(ignore: true)
-  _$$ListItemValidationErrorCopyWith<_$ListItemValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$SetItemValidationErrorCopyWith<$Res> {
-  factory _$$SetItemValidationErrorCopyWith(_$SetItemValidationError value,
-          $Res Function(_$SetItemValidationError) then) =
-      __$$SetItemValidationErrorCopyWithImpl<$Res>;
+abstract mixin class $ListItemValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $ListItemValidationErrorCopyWith(ListItemValidationError value,
+          $Res Function(ListItemValidationError) _then) =
+      _$ListItemValidationErrorCopyWithImpl;
   @useResult
-  $Res call({dynamic item, List<ValidationError> errors});
+  $Res call({int index, ValidationErrors errors});
 }
 
 /// @nodoc
-class __$$SetItemValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$SetItemValidationError>
-    implements _$$SetItemValidationErrorCopyWith<$Res> {
-  __$$SetItemValidationErrorCopyWithImpl(_$SetItemValidationError _value,
-      $Res Function(_$SetItemValidationError) _then)
-      : super(_value, _then);
+class _$ListItemValidationErrorCopyWithImpl<$Res>
+    implements $ListItemValidationErrorCopyWith<$Res> {
+  _$ListItemValidationErrorCopyWithImpl(this._self, this._then);
 
+  final ListItemValidationError _self;
+  final $Res Function(ListItemValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? item = freezed,
+    Object? index = null,
     Object? errors = null,
   }) {
-    return _then(_$SetItemValidationError(
-      freezed == item
-          ? _value.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+    return _then(ListItemValidationError(
+      null == index
+          ? _self.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
       null == errors
-          ? _value._errors
+          ? _self._errors
           : errors // ignore: cast_nullable_to_non_nullable
-              as List<ValidationError>,
+              as ValidationErrors,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SetItemValidationError extends SetItemValidationError {
-  const _$SetItemValidationError(this.item, final List<ValidationError> errors)
+class SetItemValidationError extends ValidationError {
+  const SetItemValidationError(this.item, final ValidationErrors errors)
       : _errors = errors,
         super._();
 
-  @override
   final dynamic item;
-  final List<ValidationError> _errors;
-  @override
-  List<ValidationError> get errors {
+  final ValidationErrors _errors;
+  ValidationErrors get errors {
     if (_errors is EqualUnmodifiableListView) return _errors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_errors);
   }
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $SetItemValidationErrorCopyWith<SetItemValidationError> get copyWith =>
+      _$SetItemValidationErrorCopyWithImpl<SetItemValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SetItemValidationError &&
+            other is SetItemValidationError &&
             const DeepCollectionEquality().equals(other.item, item) &&
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
@@ -541,181 +483,74 @@ class _$SetItemValidationError extends SetItemValidationError {
       runtimeType,
       const DeepCollectionEquality().hash(item),
       const DeepCollectionEquality().hash(_errors));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SetItemValidationErrorCopyWith<_$SetItemValidationError> get copyWith =>
-      __$$SetItemValidationErrorCopyWithImpl<_$SetItemValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) {
-    return setItem(item, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return setItem?.call(item, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (setItem != null) {
-      return setItem(item, errors);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return setItem(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return setItem?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (setItem != null) {
-      return setItem(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SetItemValidationError extends ValidationError {
-  const factory SetItemValidationError(
-          final dynamic item, final List<ValidationError> errors) =
-      _$SetItemValidationError;
-  const SetItemValidationError._() : super._();
-
-  dynamic get item;
-  List<ValidationError> get errors;
-  @JsonKey(ignore: true)
-  _$$SetItemValidationErrorCopyWith<_$SetItemValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MapKeyValidationErrorCopyWith<$Res> {
-  factory _$$MapKeyValidationErrorCopyWith(_$MapKeyValidationError value,
-          $Res Function(_$MapKeyValidationError) then) =
-      __$$MapKeyValidationErrorCopyWithImpl<$Res>;
+abstract mixin class $SetItemValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $SetItemValidationErrorCopyWith(SetItemValidationError value,
+          $Res Function(SetItemValidationError) _then) =
+      _$SetItemValidationErrorCopyWithImpl;
   @useResult
-  $Res call({dynamic key, List<ValidationError> errors});
+  $Res call({dynamic item, ValidationErrors errors});
 }
 
 /// @nodoc
-class __$$MapKeyValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$MapKeyValidationError>
-    implements _$$MapKeyValidationErrorCopyWith<$Res> {
-  __$$MapKeyValidationErrorCopyWithImpl(_$MapKeyValidationError _value,
-      $Res Function(_$MapKeyValidationError) _then)
-      : super(_value, _then);
+class _$SetItemValidationErrorCopyWithImpl<$Res>
+    implements $SetItemValidationErrorCopyWith<$Res> {
+  _$SetItemValidationErrorCopyWithImpl(this._self, this._then);
 
+  final SetItemValidationError _self;
+  final $Res Function(SetItemValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? key = freezed,
+    Object? item = freezed,
     Object? errors = null,
   }) {
-    return _then(_$MapKeyValidationError(
-      freezed == key
-          ? _value.key
-          : key // ignore: cast_nullable_to_non_nullable
+    return _then(SetItemValidationError(
+      freezed == item
+          ? _self.item
+          : item // ignore: cast_nullable_to_non_nullable
               as dynamic,
       null == errors
-          ? _value._errors
+          ? _self._errors
           : errors // ignore: cast_nullable_to_non_nullable
-              as List<ValidationError>,
+              as ValidationErrors,
     ));
   }
 }
 
 /// @nodoc
 
-class _$MapKeyValidationError extends MapKeyValidationError {
-  const _$MapKeyValidationError(this.key, final List<ValidationError> errors)
+class MapKeyValidationError extends ValidationError {
+  const MapKeyValidationError(this.key, final ValidationErrors errors)
       : _errors = errors,
         super._();
 
-  @override
   final dynamic key;
-  final List<ValidationError> _errors;
-  @override
-  List<ValidationError> get errors {
+  final ValidationErrors _errors;
+  ValidationErrors get errors {
     if (_errors is EqualUnmodifiableListView) return _errors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_errors);
   }
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MapKeyValidationErrorCopyWith<MapKeyValidationError> get copyWith =>
+      _$MapKeyValidationErrorCopyWithImpl<MapKeyValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapKeyValidationError &&
+            other is MapKeyValidationError &&
             const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
@@ -725,181 +560,74 @@ class _$MapKeyValidationError extends MapKeyValidationError {
       runtimeType,
       const DeepCollectionEquality().hash(key),
       const DeepCollectionEquality().hash(_errors));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MapKeyValidationErrorCopyWith<_$MapKeyValidationError> get copyWith =>
-      __$$MapKeyValidationErrorCopyWithImpl<_$MapKeyValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) {
-    return mapKey(key, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return mapKey?.call(key, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (mapKey != null) {
-      return mapKey(key, errors);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return mapKey(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return mapKey?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (mapKey != null) {
-      return mapKey(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MapKeyValidationError extends ValidationError {
-  const factory MapKeyValidationError(
-          final dynamic key, final List<ValidationError> errors) =
-      _$MapKeyValidationError;
-  const MapKeyValidationError._() : super._();
-
-  dynamic get key;
-  List<ValidationError> get errors;
-  @JsonKey(ignore: true)
-  _$$MapKeyValidationErrorCopyWith<_$MapKeyValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$MapValueValidationErrorCopyWith<$Res> {
-  factory _$$MapValueValidationErrorCopyWith(_$MapValueValidationError value,
-          $Res Function(_$MapValueValidationError) then) =
-      __$$MapValueValidationErrorCopyWithImpl<$Res>;
+abstract mixin class $MapKeyValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $MapKeyValidationErrorCopyWith(MapKeyValidationError value,
+          $Res Function(MapKeyValidationError) _then) =
+      _$MapKeyValidationErrorCopyWithImpl;
   @useResult
-  $Res call({dynamic key, List<ValidationError> errors});
+  $Res call({dynamic key, ValidationErrors errors});
 }
 
 /// @nodoc
-class __$$MapValueValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$MapValueValidationError>
-    implements _$$MapValueValidationErrorCopyWith<$Res> {
-  __$$MapValueValidationErrorCopyWithImpl(_$MapValueValidationError _value,
-      $Res Function(_$MapValueValidationError) _then)
-      : super(_value, _then);
+class _$MapKeyValidationErrorCopyWithImpl<$Res>
+    implements $MapKeyValidationErrorCopyWith<$Res> {
+  _$MapKeyValidationErrorCopyWithImpl(this._self, this._then);
 
+  final MapKeyValidationError _self;
+  final $Res Function(MapKeyValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? key = freezed,
     Object? errors = null,
   }) {
-    return _then(_$MapValueValidationError(
+    return _then(MapKeyValidationError(
       freezed == key
-          ? _value.key
+          ? _self.key
           : key // ignore: cast_nullable_to_non_nullable
               as dynamic,
       null == errors
-          ? _value._errors
+          ? _self._errors
           : errors // ignore: cast_nullable_to_non_nullable
-              as List<ValidationError>,
+              as ValidationErrors,
     ));
   }
 }
 
 /// @nodoc
 
-class _$MapValueValidationError extends MapValueValidationError {
-  const _$MapValueValidationError(this.key, final List<ValidationError> errors)
+class MapValueValidationError extends ValidationError {
+  const MapValueValidationError(this.key, final ValidationErrors errors)
       : _errors = errors,
         super._();
 
-  @override
   final dynamic key;
-  final List<ValidationError> _errors;
-  @override
-  List<ValidationError> get errors {
+  final ValidationErrors _errors;
+  ValidationErrors get errors {
     if (_errors is EqualUnmodifiableListView) return _errors;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_errors);
   }
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $MapValueValidationErrorCopyWith<MapValueValidationError> get copyWith =>
+      _$MapValueValidationErrorCopyWithImpl<MapValueValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapValueValidationError &&
+            other is MapValueValidationError &&
             const DeepCollectionEquality().equals(other.key, key) &&
             const DeepCollectionEquality().equals(other._errors, _errors));
   }
@@ -909,174 +637,67 @@ class _$MapValueValidationError extends MapValueValidationError {
       runtimeType,
       const DeepCollectionEquality().hash(key),
       const DeepCollectionEquality().hash(_errors));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MapValueValidationErrorCopyWith<_$MapValueValidationError> get copyWith =>
-      __$$MapValueValidationErrorCopyWithImpl<_$MapValueValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) {
-    return mapValue(key, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return mapValue?.call(key, errors);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (mapValue != null) {
-      return mapValue(key, errors);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return mapValue(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return mapValue?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (mapValue != null) {
-      return mapValue(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MapValueValidationError extends ValidationError {
-  const factory MapValueValidationError(
-          final dynamic key, final List<ValidationError> errors) =
-      _$MapValueValidationError;
-  const MapValueValidationError._() : super._();
-
-  dynamic get key;
-  List<ValidationError> get errors;
-  @JsonKey(ignore: true)
-  _$$MapValueValidationErrorCopyWith<_$MapValueValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$NotEqualValidationErrorCopyWith<$Res> {
-  factory _$$NotEqualValidationErrorCopyWith(_$NotEqualValidationError value,
-          $Res Function(_$NotEqualValidationError) then) =
-      __$$NotEqualValidationErrorCopyWithImpl<$Res>;
+abstract mixin class $MapValueValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $MapValueValidationErrorCopyWith(MapValueValidationError value,
+          $Res Function(MapValueValidationError) _then) =
+      _$MapValueValidationErrorCopyWithImpl;
   @useResult
-  $Res call({dynamic actual, dynamic expected});
+  $Res call({dynamic key, ValidationErrors errors});
 }
 
 /// @nodoc
-class __$$NotEqualValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$NotEqualValidationError>
-    implements _$$NotEqualValidationErrorCopyWith<$Res> {
-  __$$NotEqualValidationErrorCopyWithImpl(_$NotEqualValidationError _value,
-      $Res Function(_$NotEqualValidationError) _then)
-      : super(_value, _then);
+class _$MapValueValidationErrorCopyWithImpl<$Res>
+    implements $MapValueValidationErrorCopyWith<$Res> {
+  _$MapValueValidationErrorCopyWithImpl(this._self, this._then);
 
+  final MapValueValidationError _self;
+  final $Res Function(MapValueValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? actual = freezed,
-    Object? expected = freezed,
+    Object? key = freezed,
+    Object? errors = null,
   }) {
-    return _then(_$NotEqualValidationError(
-      freezed == actual
-          ? _value.actual
-          : actual // ignore: cast_nullable_to_non_nullable
+    return _then(MapValueValidationError(
+      freezed == key
+          ? _self.key
+          : key // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      freezed == expected
-          ? _value.expected
-          : expected // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+      null == errors
+          ? _self._errors
+          : errors // ignore: cast_nullable_to_non_nullable
+              as ValidationErrors,
     ));
   }
 }
 
 /// @nodoc
 
-class _$NotEqualValidationError extends NotEqualValidationError {
-  const _$NotEqualValidationError(this.actual, this.expected) : super._();
+class NotEqualValidationError extends ValidationError {
+  const NotEqualValidationError(this.actual, this.expected) : super._();
 
-  @override
   final dynamic actual;
-  @override
   final dynamic expected;
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $NotEqualValidationErrorCopyWith<NotEqualValidationError> get copyWith =>
+      _$NotEqualValidationErrorCopyWithImpl<NotEqualValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NotEqualValidationError &&
+            other is NotEqualValidationError &&
             const DeepCollectionEquality().equals(other.actual, actual) &&
             const DeepCollectionEquality().equals(other.expected, expected));
   }
@@ -1086,282 +707,104 @@ class _$NotEqualValidationError extends NotEqualValidationError {
       runtimeType,
       const DeepCollectionEquality().hash(actual),
       const DeepCollectionEquality().hash(expected));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$NotEqualValidationErrorCopyWith<_$NotEqualValidationError> get copyWith =>
-      __$$NotEqualValidationErrorCopyWithImpl<_$NotEqualValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
-  }) {
-    return notEqual(actual, expected);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return notEqual?.call(actual, expected);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (notEqual != null) {
-      return notEqual(actual, expected);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return notEqual(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return notEqual?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (notEqual != null) {
-      return notEqual(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NotEqualValidationError extends ValidationError {
-  const factory NotEqualValidationError(
-      final dynamic actual, final dynamic expected) = _$NotEqualValidationError;
-  const NotEqualValidationError._() : super._();
-
-  dynamic get actual;
-  dynamic get expected;
-  @JsonKey(ignore: true)
-  _$$NotEqualValidationErrorCopyWith<_$NotEqualValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CustomValidationErrorCopyWith<$Res> {
-  factory _$$CustomValidationErrorCopyWith(_$CustomValidationError value,
-          $Res Function(_$CustomValidationError) then) =
-      __$$CustomValidationErrorCopyWithImpl<$Res>;
+abstract mixin class $NotEqualValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $NotEqualValidationErrorCopyWith(NotEqualValidationError value,
+          $Res Function(NotEqualValidationError) _then) =
+      _$NotEqualValidationErrorCopyWithImpl;
   @useResult
-  $Res call({String message});
+  $Res call({dynamic actual, dynamic expected});
 }
 
 /// @nodoc
-class __$$CustomValidationErrorCopyWithImpl<$Res>
-    extends _$ValidationErrorCopyWithImpl<$Res, _$CustomValidationError>
-    implements _$$CustomValidationErrorCopyWith<$Res> {
-  __$$CustomValidationErrorCopyWithImpl(_$CustomValidationError _value,
-      $Res Function(_$CustomValidationError) _then)
-      : super(_value, _then);
+class _$NotEqualValidationErrorCopyWithImpl<$Res>
+    implements $NotEqualValidationErrorCopyWith<$Res> {
+  _$NotEqualValidationErrorCopyWithImpl(this._self, this._then);
 
+  final NotEqualValidationError _self;
+  final $Res Function(NotEqualValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? message = null,
+    Object? actual = freezed,
+    Object? expected = freezed,
   }) {
-    return _then(_$CustomValidationError(
-      null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(NotEqualValidationError(
+      freezed == actual
+          ? _self.actual
+          : actual // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      freezed == expected
+          ? _self.expected
+          : expected // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
 
 /// @nodoc
 
-class _$CustomValidationError extends CustomValidationError {
-  const _$CustomValidationError(this.message) : super._();
+class CustomValidationError extends ValidationError {
+  const CustomValidationError(this.message) : super._();
 
-  @override
   final String message;
 
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CustomValidationErrorCopyWith<CustomValidationError> get copyWith =>
+      _$CustomValidationErrorCopyWithImpl<CustomValidationError>(
+          this, _$identity);
+
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CustomValidationError &&
+            other is CustomValidationError &&
             (identical(other.message, message) || other.message == message));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, message);
+}
 
-  @JsonKey(ignore: true)
-  @override
+/// @nodoc
+abstract mixin class $CustomValidationErrorCopyWith<$Res>
+    implements $ValidationErrorCopyWith<$Res> {
+  factory $CustomValidationErrorCopyWith(CustomValidationError value,
+          $Res Function(CustomValidationError) _then) =
+      _$CustomValidationErrorCopyWithImpl;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class _$CustomValidationErrorCopyWithImpl<$Res>
+    implements $CustomValidationErrorCopyWith<$Res> {
+  _$CustomValidationErrorCopyWithImpl(this._self, this._then);
+
+  final CustomValidationError _self;
+  final $Res Function(CustomValidationError) _then;
+
+  /// Create a copy of ValidationError
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  _$$CustomValidationErrorCopyWith<_$CustomValidationError> get copyWith =>
-      __$$CustomValidationErrorCopyWithImpl<_$CustomValidationError>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String fieldName, List<ValidationError> errors)
-        field,
-    required TResult Function(int index, List<ValidationError> errors) listItem,
-    required TResult Function(dynamic item, List<ValidationError> errors)
-        setItem,
-    required TResult Function(dynamic key, List<ValidationError> errors) mapKey,
-    required TResult Function(dynamic key, List<ValidationError> errors)
-        mapValue,
-    required TResult Function(dynamic actual, dynamic expected) notEqual,
-    required TResult Function(String message) custom,
+  $Res call({
+    Object? message = null,
   }) {
-    return custom(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String fieldName, List<ValidationError> errors)? field,
-    TResult? Function(int index, List<ValidationError> errors)? listItem,
-    TResult? Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult? Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult? Function(dynamic actual, dynamic expected)? notEqual,
-    TResult? Function(String message)? custom,
-  }) {
-    return custom?.call(message);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String fieldName, List<ValidationError> errors)? field,
-    TResult Function(int index, List<ValidationError> errors)? listItem,
-    TResult Function(dynamic item, List<ValidationError> errors)? setItem,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapKey,
-    TResult Function(dynamic key, List<ValidationError> errors)? mapValue,
-    TResult Function(dynamic actual, dynamic expected)? notEqual,
-    TResult Function(String message)? custom,
-    required TResult orElse(),
-  }) {
-    if (custom != null) {
-      return custom(message);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(FieldValidationError value) field,
-    required TResult Function(ListItemValidationError value) listItem,
-    required TResult Function(SetItemValidationError value) setItem,
-    required TResult Function(MapKeyValidationError value) mapKey,
-    required TResult Function(MapValueValidationError value) mapValue,
-    required TResult Function(NotEqualValidationError value) notEqual,
-    required TResult Function(CustomValidationError value) custom,
-  }) {
-    return custom(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(FieldValidationError value)? field,
-    TResult? Function(ListItemValidationError value)? listItem,
-    TResult? Function(SetItemValidationError value)? setItem,
-    TResult? Function(MapKeyValidationError value)? mapKey,
-    TResult? Function(MapValueValidationError value)? mapValue,
-    TResult? Function(NotEqualValidationError value)? notEqual,
-    TResult? Function(CustomValidationError value)? custom,
-  }) {
-    return custom?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(FieldValidationError value)? field,
-    TResult Function(ListItemValidationError value)? listItem,
-    TResult Function(SetItemValidationError value)? setItem,
-    TResult Function(MapKeyValidationError value)? mapKey,
-    TResult Function(MapValueValidationError value)? mapValue,
-    TResult Function(NotEqualValidationError value)? notEqual,
-    TResult Function(CustomValidationError value)? custom,
-    required TResult orElse(),
-  }) {
-    if (custom != null) {
-      return custom(this);
-    }
-    return orElse();
+    return _then(CustomValidationError(
+      null == message
+          ? _self.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
-abstract class CustomValidationError extends ValidationError {
-  const factory CustomValidationError(final String message) =
-      _$CustomValidationError;
-  const CustomValidationError._() : super._();
-
-  String get message;
-  @JsonKey(ignore: true)
-  _$$CustomValidationErrorCopyWith<_$CustomValidationError> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

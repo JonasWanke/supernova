@@ -9,8 +9,8 @@ import 'text.dart';
 part 'https_url.freezed.dart';
 
 @freezed
-class SupernovaHttpsUrlFormField extends SupernovaFormFieldBase<HttpsUrl>
-    with _$SupernovaHttpsUrlFormField {
+abstract class SupernovaHttpsUrlFormField
+    extends SupernovaFormFieldBase<HttpsUrl> with _$SupernovaHttpsUrlFormField {
   const factory SupernovaHttpsUrlFormField(
     ValueNotifier<HttpsUrl?> currentValue, {
     required TextInputAction textInputAction,

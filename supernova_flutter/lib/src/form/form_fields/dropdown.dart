@@ -10,7 +10,7 @@ import '../form_field.dart';
 part 'dropdown.freezed.dart';
 
 @freezed
-class SupernovaDropdownFormField<T extends Object>
+abstract class SupernovaDropdownFormField<T extends Object>
     extends SupernovaFormFieldBase<T> with _$SupernovaDropdownFormField<T> {
   const factory SupernovaDropdownFormField(
     ValueNotifier<T?> selectedItem, {

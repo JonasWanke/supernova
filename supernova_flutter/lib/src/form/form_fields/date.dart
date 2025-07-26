@@ -12,7 +12,7 @@ import 'utils.dart';
 part 'date.freezed.dart';
 
 @freezed
-class SupernovaDateFormField extends SupernovaFormFieldBase<Date>
+abstract class SupernovaDateFormField extends SupernovaFormFieldBase<Date>
     with _$SupernovaDateFormField {
   const factory SupernovaDateFormField(
     ValueNotifier<Date?> selectedDate, {

@@ -9,7 +9,8 @@ import '../form_field.dart';
 part 'required_checkbox.freezed.dart';
 
 @freezed
-class SupernovaRequiredCheckboxFormField extends SupernovaFormFieldBase<bool>
+abstract class SupernovaRequiredCheckboxFormField
+    extends SupernovaFormFieldBase<bool>
     with _$SupernovaRequiredCheckboxFormField {
   const factory SupernovaRequiredCheckboxFormField(
     ValueNotifier<bool> currentValue, {

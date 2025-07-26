@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,212 +9,29 @@ part of 'number.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaNumberFormField {
-  ValueNotifier<int?> get currentValue => throw _privateConstructorUsedError;
-  ({int max, String Function(String) tooLargeErrorFormatter})? get max =>
-      throw _privateConstructorUsedError;
-  TextInputAction get textInputAction => throw _privateConstructorUsedError;
-  String? get hintText => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            ValueNotifier<int?> currentValue,
-            ({int max, String Function(String) tooLargeErrorFormatter})? max,
-            TextInputAction textInputAction,
-            String? hintText)
-        amount,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            ValueNotifier<int?> currentValue,
-            ({int max, String Function(String) tooLargeErrorFormatter})? max,
-            TextInputAction textInputAction,
-            String? hintText)?
-        amount,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            ValueNotifier<int?> currentValue,
-            ({int max, String Function(String) tooLargeErrorFormatter})? max,
-            TextInputAction textInputAction,
-            String? hintText)?
-        amount,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SingleLineSupernovaNumberFormField value) amount,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SingleLineSupernovaNumberFormField value)? amount,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SingleLineSupernovaNumberFormField value)? amount,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
+  ValueNotifier<int?> get currentValue;
+  ({int max, Mapper<String, String> tooLargeErrorFormatter})? get max;
+  TextInputAction get textInputAction;
+  String? get hintText;
 
   /// Create a copy of SupernovaNumberFormField
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SupernovaNumberFormFieldCopyWith<SupernovaNumberFormField> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SupernovaNumberFormFieldCopyWith<$Res> {
-  factory $SupernovaNumberFormFieldCopyWith(SupernovaNumberFormField value,
-          $Res Function(SupernovaNumberFormField) then) =
-      _$SupernovaNumberFormFieldCopyWithImpl<$Res, SupernovaNumberFormField>;
-  @useResult
-  $Res call(
-      {ValueNotifier<int?> currentValue,
-      ({int max, String Function(String) tooLargeErrorFormatter})? max,
-      TextInputAction textInputAction,
-      String? hintText});
-}
-
-/// @nodoc
-class _$SupernovaNumberFormFieldCopyWithImpl<$Res,
-        $Val extends SupernovaNumberFormField>
-    implements $SupernovaNumberFormFieldCopyWith<$Res> {
-  _$SupernovaNumberFormFieldCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SupernovaNumberFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? currentValue = null,
-    Object? max = freezed,
-    Object? textInputAction = null,
-    Object? hintText = freezed,
-  }) {
-    return _then(_value.copyWith(
-      currentValue: null == currentValue
-          ? _value.currentValue
-          : currentValue // ignore: cast_nullable_to_non_nullable
-              as ValueNotifier<int?>,
-      max: freezed == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as ({int max, String Function(String) tooLargeErrorFormatter})?,
-      textInputAction: null == textInputAction
-          ? _value.textInputAction
-          : textInputAction // ignore: cast_nullable_to_non_nullable
-              as TextInputAction,
-      hintText: freezed == hintText
-          ? _value.hintText
-          : hintText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$SingleLineSupernovaNumberFormFieldImplCopyWith<$Res>
-    implements $SupernovaNumberFormFieldCopyWith<$Res> {
-  factory _$$SingleLineSupernovaNumberFormFieldImplCopyWith(
-          _$SingleLineSupernovaNumberFormFieldImpl value,
-          $Res Function(_$SingleLineSupernovaNumberFormFieldImpl) then) =
-      __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ValueNotifier<int?> currentValue,
-      ({int max, String Function(String) tooLargeErrorFormatter})? max,
-      TextInputAction textInputAction,
-      String? hintText});
-}
-
-/// @nodoc
-class __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl<$Res>
-    extends _$SupernovaNumberFormFieldCopyWithImpl<$Res,
-        _$SingleLineSupernovaNumberFormFieldImpl>
-    implements _$$SingleLineSupernovaNumberFormFieldImplCopyWith<$Res> {
-  __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl(
-      _$SingleLineSupernovaNumberFormFieldImpl _value,
-      $Res Function(_$SingleLineSupernovaNumberFormFieldImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SupernovaNumberFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? currentValue = null,
-    Object? max = freezed,
-    Object? textInputAction = null,
-    Object? hintText = freezed,
-  }) {
-    return _then(_$SingleLineSupernovaNumberFormFieldImpl(
-      null == currentValue
-          ? _value.currentValue
-          : currentValue // ignore: cast_nullable_to_non_nullable
-              as ValueNotifier<int?>,
-      max: freezed == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as ({int max, String Function(String) tooLargeErrorFormatter})?,
-      textInputAction: null == textInputAction
-          ? _value.textInputAction
-          : textInputAction // ignore: cast_nullable_to_non_nullable
-              as TextInputAction,
-      hintText: freezed == hintText
-          ? _value.hintText
-          : hintText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SingleLineSupernovaNumberFormFieldImpl
-    extends _SingleLineSupernovaNumberFormField {
-  const _$SingleLineSupernovaNumberFormFieldImpl(this.currentValue,
-      {this.max, required this.textInputAction, this.hintText})
-      : super._();
-
-  @override
-  final ValueNotifier<int?> currentValue;
-  @override
-  final ({int max, String Function(String) tooLargeErrorFormatter})? max;
-  @override
-  final TextInputAction textInputAction;
-  @override
-  final String? hintText;
-
-  @override
-  String toString() {
-    return 'SupernovaNumberFormField.amount(currentValue: $currentValue, max: $max, textInputAction: $textInputAction, hintText: $hintText)';
-  }
+      _$SupernovaNumberFormFieldCopyWithImpl<SupernovaNumberFormField>(
+          this as SupernovaNumberFormField, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SingleLineSupernovaNumberFormFieldImpl &&
+            other is SupernovaNumberFormField &&
             (identical(other.currentValue, currentValue) ||
                 other.currentValue == currentValue) &&
             (identical(other.max, max) || other.max == max) &&
@@ -228,111 +45,342 @@ class _$SingleLineSupernovaNumberFormFieldImpl
   int get hashCode =>
       Object.hash(runtimeType, currentValue, max, textInputAction, hintText);
 
+  @override
+  String toString() {
+    return 'SupernovaNumberFormField(currentValue: $currentValue, max: $max, textInputAction: $textInputAction, hintText: $hintText)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $SupernovaNumberFormFieldCopyWith<$Res> {
+  factory $SupernovaNumberFormFieldCopyWith(SupernovaNumberFormField value,
+          $Res Function(SupernovaNumberFormField) _then) =
+      _$SupernovaNumberFormFieldCopyWithImpl;
+  @useResult
+  $Res call(
+      {ValueNotifier<int?> currentValue,
+      ({int max, Mapper<String, String> tooLargeErrorFormatter})? max,
+      TextInputAction textInputAction,
+      String? hintText});
+}
+
+/// @nodoc
+class _$SupernovaNumberFormFieldCopyWithImpl<$Res>
+    implements $SupernovaNumberFormFieldCopyWith<$Res> {
+  _$SupernovaNumberFormFieldCopyWithImpl(this._self, this._then);
+
+  final SupernovaNumberFormField _self;
+  final $Res Function(SupernovaNumberFormField) _then;
+
   /// Create a copy of SupernovaNumberFormField
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
   @pragma('vm:prefer-inline')
-  _$$SingleLineSupernovaNumberFormFieldImplCopyWith<
-          _$SingleLineSupernovaNumberFormFieldImpl>
-      get copyWith => __$$SingleLineSupernovaNumberFormFieldImplCopyWithImpl<
-          _$SingleLineSupernovaNumberFormFieldImpl>(this, _$identity);
-
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            ValueNotifier<int?> currentValue,
-            ({int max, String Function(String) tooLargeErrorFormatter})? max,
-            TextInputAction textInputAction,
-            String? hintText)
-        amount,
+  $Res call({
+    Object? currentValue = null,
+    Object? max = freezed,
+    Object? textInputAction = null,
+    Object? hintText = freezed,
   }) {
-    return amount(currentValue, max, textInputAction, hintText);
+    return _then(_self.copyWith(
+      currentValue: null == currentValue
+          ? _self.currentValue
+          : currentValue // ignore: cast_nullable_to_non_nullable
+              as ValueNotifier<int?>,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as ({int max, Mapper<String, String> tooLargeErrorFormatter})?,
+      textInputAction: null == textInputAction
+          ? _self.textInputAction
+          : textInputAction // ignore: cast_nullable_to_non_nullable
+              as TextInputAction,
+      hintText: freezed == hintText
+          ? _self.hintText
+          : hintText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
+}
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            ValueNotifier<int?> currentValue,
-            ({int max, String Function(String) tooLargeErrorFormatter})? max,
-            TextInputAction textInputAction,
-            String? hintText)?
-        amount,
-  }) {
-    return amount?.call(currentValue, max, textInputAction, hintText);
-  }
+/// Adds pattern-matching-related methods to [SupernovaNumberFormField].
+extension SupernovaNumberFormFieldPatterns on SupernovaNumberFormField {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            ValueNotifier<int?> currentValue,
-            ({int max, String Function(String) tooLargeErrorFormatter})? max,
-            TextInputAction textInputAction,
-            String? hintText)?
-        amount,
-    required TResult orElse(),
-  }) {
-    if (amount != null) {
-      return amount(currentValue, max, textInputAction, hintText);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SingleLineSupernovaNumberFormField value) amount,
-  }) {
-    return amount(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_SingleLineSupernovaNumberFormField value)? amount,
-  }) {
-    return amount?.call(this);
-  }
-
-  @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SingleLineSupernovaNumberFormField value)? amount,
     required TResult orElse(),
   }) {
-    if (amount != null) {
-      return amount(this);
+    final _that = this;
+    switch (_that) {
+      case _SingleLineSupernovaNumberFormField() when amount != null:
+        return amount(_that);
+      case _:
+        return orElse();
     }
-    return orElse();
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SingleLineSupernovaNumberFormField value) amount,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SingleLineSupernovaNumberFormField():
+        return amount(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_SingleLineSupernovaNumberFormField value)? amount,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SingleLineSupernovaNumberFormField() when amount != null:
+        return amount(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            ValueNotifier<int?> currentValue,
+            ({int max, Mapper<String, String> tooLargeErrorFormatter})? max,
+            TextInputAction textInputAction,
+            String? hintText)?
+        amount,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SingleLineSupernovaNumberFormField() when amount != null:
+        return amount(_that.currentValue, _that.max, _that.textInputAction,
+            _that.hintText);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            ValueNotifier<int?> currentValue,
+            ({int max, Mapper<String, String> tooLargeErrorFormatter})? max,
+            TextInputAction textInputAction,
+            String? hintText)
+        amount,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SingleLineSupernovaNumberFormField():
+        return amount(_that.currentValue, _that.max, _that.textInputAction,
+            _that.hintText);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            ValueNotifier<int?> currentValue,
+            ({int max, Mapper<String, String> tooLargeErrorFormatter})? max,
+            TextInputAction textInputAction,
+            String? hintText)?
+        amount,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SingleLineSupernovaNumberFormField() when amount != null:
+        return amount(_that.currentValue, _that.max, _that.textInputAction,
+            _that.hintText);
+      case _:
+        return null;
+    }
   }
 }
 
-abstract class _SingleLineSupernovaNumberFormField
-    extends SupernovaNumberFormField {
-  const factory _SingleLineSupernovaNumberFormField(
-      final ValueNotifier<int?> currentValue,
-      {final ({int max, String Function(String) tooLargeErrorFormatter})? max,
-      required final TextInputAction textInputAction,
-      final String? hintText}) = _$SingleLineSupernovaNumberFormFieldImpl;
-  const _SingleLineSupernovaNumberFormField._() : super._();
+/// @nodoc
+
+class _SingleLineSupernovaNumberFormField extends SupernovaNumberFormField {
+  const _SingleLineSupernovaNumberFormField(this.currentValue,
+      {this.max, required this.textInputAction, this.hintText})
+      : super._();
 
   @override
-  ValueNotifier<int?> get currentValue;
+  final ValueNotifier<int?> currentValue;
   @override
-  ({int max, String Function(String) tooLargeErrorFormatter})? get max;
+  final ({int max, Mapper<String, String> tooLargeErrorFormatter})? max;
   @override
-  TextInputAction get textInputAction;
+  final TextInputAction textInputAction;
   @override
-  String? get hintText;
+  final String? hintText;
 
   /// Create a copy of SupernovaNumberFormField
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SingleLineSupernovaNumberFormFieldImplCopyWith<
-          _$SingleLineSupernovaNumberFormFieldImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$SingleLineSupernovaNumberFormFieldCopyWith<
+          _SingleLineSupernovaNumberFormField>
+      get copyWith => __$SingleLineSupernovaNumberFormFieldCopyWithImpl<
+          _SingleLineSupernovaNumberFormField>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SingleLineSupernovaNumberFormField &&
+            (identical(other.currentValue, currentValue) ||
+                other.currentValue == currentValue) &&
+            (identical(other.max, max) || other.max == max) &&
+            (identical(other.textInputAction, textInputAction) ||
+                other.textInputAction == textInputAction) &&
+            (identical(other.hintText, hintText) ||
+                other.hintText == hintText));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, currentValue, max, textInputAction, hintText);
+
+  @override
+  String toString() {
+    return 'SupernovaNumberFormField.amount(currentValue: $currentValue, max: $max, textInputAction: $textInputAction, hintText: $hintText)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$SingleLineSupernovaNumberFormFieldCopyWith<$Res>
+    implements $SupernovaNumberFormFieldCopyWith<$Res> {
+  factory _$SingleLineSupernovaNumberFormFieldCopyWith(
+          _SingleLineSupernovaNumberFormField value,
+          $Res Function(_SingleLineSupernovaNumberFormField) _then) =
+      __$SingleLineSupernovaNumberFormFieldCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {ValueNotifier<int?> currentValue,
+      ({int max, Mapper<String, String> tooLargeErrorFormatter})? max,
+      TextInputAction textInputAction,
+      String? hintText});
+}
+
+/// @nodoc
+class __$SingleLineSupernovaNumberFormFieldCopyWithImpl<$Res>
+    implements _$SingleLineSupernovaNumberFormFieldCopyWith<$Res> {
+  __$SingleLineSupernovaNumberFormFieldCopyWithImpl(this._self, this._then);
+
+  final _SingleLineSupernovaNumberFormField _self;
+  final $Res Function(_SingleLineSupernovaNumberFormField) _then;
+
+  /// Create a copy of SupernovaNumberFormField
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? currentValue = null,
+    Object? max = freezed,
+    Object? textInputAction = null,
+    Object? hintText = freezed,
+  }) {
+    return _then(_SingleLineSupernovaNumberFormField(
+      null == currentValue
+          ? _self.currentValue
+          : currentValue // ignore: cast_nullable_to_non_nullable
+              as ValueNotifier<int?>,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as ({int max, Mapper<String, String> tooLargeErrorFormatter})?,
+      textInputAction: null == textInputAction
+          ? _self.textInputAction
+          : textInputAction // ignore: cast_nullable_to_non_nullable
+              as TextInputAction,
+      hintText: freezed == hintText
+          ? _self.hintText
+          : hintText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+// dart format on

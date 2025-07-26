@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,45 +9,90 @@ part of 'autocomplete.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SupernovaAutocompleteFormField<T extends Object, R extends Object> {
-  TextEditingController get textEditingController =>
-      throw _privateConstructorUsedError;
-  ValueNotifier<R?> get selectedItem => throw _privateConstructorUsedError;
-  R Function(T) get valueSelector => throw _privateConstructorUsedError;
-  List<String>? get autofillHints => throw _privateConstructorUsedError;
-  TextInputAction get textInputAction => throw _privateConstructorUsedError;
-  String? get hintText => throw _privateConstructorUsedError;
-  bool get shouldDebounce => throw _privateConstructorUsedError;
-  SupernovaAutocompleteOptionsBuilder<T> get optionsBuilder =>
-      throw _privateConstructorUsedError;
-  AutocompleteOptionToString<T> get displayStringForOption =>
-      throw _privateConstructorUsedError;
-  DataWidgetBuilder<T>? get optionViewBuilder =>
-      throw _privateConstructorUsedError;
-  Widget? get optionFooter => throw _privateConstructorUsedError;
+  TextEditingController get textEditingController;
+  ValueNotifier<R?> get selectedItem;
+  R Function(T) get valueSelector;
+  List<String>? get autofillHints;
+  TextInputAction get textInputAction;
+  String? get hintText;
+  bool get shouldDebounce;
+  SupernovaAutocompleteOptionsBuilder<T> get optionsBuilder;
+  AutocompleteOptionToString<T> get displayStringForOption;
+  DataWidgetBuilder<T>? get optionViewBuilder;
+  Widget? get optionFooter;
 
   /// Create a copy of SupernovaAutocompleteFormField
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SupernovaAutocompleteFormFieldCopyWith<T, R,
           SupernovaAutocompleteFormField<T, R>>
-      get copyWith => throw _privateConstructorUsedError;
+      get copyWith => _$SupernovaAutocompleteFormFieldCopyWithImpl<T, R,
+              SupernovaAutocompleteFormField<T, R>>(
+          this as SupernovaAutocompleteFormField<T, R>, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SupernovaAutocompleteFormField<T, R> &&
+            (identical(other.textEditingController, textEditingController) ||
+                other.textEditingController == textEditingController) &&
+            (identical(other.selectedItem, selectedItem) ||
+                other.selectedItem == selectedItem) &&
+            (identical(other.valueSelector, valueSelector) ||
+                other.valueSelector == valueSelector) &&
+            const DeepCollectionEquality()
+                .equals(other.autofillHints, autofillHints) &&
+            (identical(other.textInputAction, textInputAction) ||
+                other.textInputAction == textInputAction) &&
+            (identical(other.hintText, hintText) ||
+                other.hintText == hintText) &&
+            (identical(other.shouldDebounce, shouldDebounce) ||
+                other.shouldDebounce == shouldDebounce) &&
+            (identical(other.optionsBuilder, optionsBuilder) ||
+                other.optionsBuilder == optionsBuilder) &&
+            (identical(other.displayStringForOption, displayStringForOption) ||
+                other.displayStringForOption == displayStringForOption) &&
+            (identical(other.optionViewBuilder, optionViewBuilder) ||
+                other.optionViewBuilder == optionViewBuilder) &&
+            (identical(other.optionFooter, optionFooter) ||
+                other.optionFooter == optionFooter));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      textEditingController,
+      selectedItem,
+      valueSelector,
+      const DeepCollectionEquality().hash(autofillHints),
+      textInputAction,
+      hintText,
+      shouldDebounce,
+      optionsBuilder,
+      displayStringForOption,
+      optionViewBuilder,
+      optionFooter);
+
+  @override
+  String toString() {
+    return 'SupernovaAutocompleteFormField<$T, $R>(textEditingController: $textEditingController, selectedItem: $selectedItem, valueSelector: $valueSelector, autofillHints: $autofillHints, textInputAction: $textInputAction, hintText: $hintText, shouldDebounce: $shouldDebounce, optionsBuilder: $optionsBuilder, displayStringForOption: $displayStringForOption, optionViewBuilder: $optionViewBuilder, optionFooter: $optionFooter)';
+  }
 }
 
 /// @nodoc
-abstract class $SupernovaAutocompleteFormFieldCopyWith<T extends Object,
+abstract mixin class $SupernovaAutocompleteFormFieldCopyWith<T extends Object,
     R extends Object, $Res> {
   factory $SupernovaAutocompleteFormFieldCopyWith(
           SupernovaAutocompleteFormField<T, R> value,
-          $Res Function(SupernovaAutocompleteFormField<T, R>) then) =
-      _$SupernovaAutocompleteFormFieldCopyWithImpl<T, R, $Res,
-          SupernovaAutocompleteFormField<T, R>>;
+          $Res Function(SupernovaAutocompleteFormField<T, R>) _then) =
+      _$SupernovaAutocompleteFormFieldCopyWithImpl;
   @useResult
   $Res call(
       {TextEditingController textEditingController,
@@ -65,119 +110,13 @@ abstract class $SupernovaAutocompleteFormFieldCopyWith<T extends Object,
 
 /// @nodoc
 class _$SupernovaAutocompleteFormFieldCopyWithImpl<
-        T extends Object,
-        R extends Object,
-        $Res,
-        $Val extends SupernovaAutocompleteFormField<T, R>>
-    implements $SupernovaAutocompleteFormFieldCopyWith<T, R, $Res> {
-  _$SupernovaAutocompleteFormFieldCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SupernovaAutocompleteFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? textEditingController = null,
-    Object? selectedItem = null,
-    Object? valueSelector = null,
-    Object? autofillHints = freezed,
-    Object? textInputAction = null,
-    Object? hintText = freezed,
-    Object? shouldDebounce = null,
-    Object? optionsBuilder = null,
-    Object? displayStringForOption = null,
-    Object? optionViewBuilder = freezed,
-    Object? optionFooter = freezed,
-  }) {
-    return _then(_value.copyWith(
-      textEditingController: null == textEditingController
-          ? _value.textEditingController
-          : textEditingController // ignore: cast_nullable_to_non_nullable
-              as TextEditingController,
-      selectedItem: null == selectedItem
-          ? _value.selectedItem
-          : selectedItem // ignore: cast_nullable_to_non_nullable
-              as ValueNotifier<R?>,
-      valueSelector: null == valueSelector
-          ? _value.valueSelector
-          : valueSelector // ignore: cast_nullable_to_non_nullable
-              as R Function(T),
-      autofillHints: freezed == autofillHints
-          ? _value.autofillHints
-          : autofillHints // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      textInputAction: null == textInputAction
-          ? _value.textInputAction
-          : textInputAction // ignore: cast_nullable_to_non_nullable
-              as TextInputAction,
-      hintText: freezed == hintText
-          ? _value.hintText
-          : hintText // ignore: cast_nullable_to_non_nullable
-              as String?,
-      shouldDebounce: null == shouldDebounce
-          ? _value.shouldDebounce
-          : shouldDebounce // ignore: cast_nullable_to_non_nullable
-              as bool,
-      optionsBuilder: null == optionsBuilder
-          ? _value.optionsBuilder
-          : optionsBuilder // ignore: cast_nullable_to_non_nullable
-              as SupernovaAutocompleteOptionsBuilder<T>,
-      displayStringForOption: null == displayStringForOption
-          ? _value.displayStringForOption
-          : displayStringForOption // ignore: cast_nullable_to_non_nullable
-              as AutocompleteOptionToString<T>,
-      optionViewBuilder: freezed == optionViewBuilder
-          ? _value.optionViewBuilder
-          : optionViewBuilder // ignore: cast_nullable_to_non_nullable
-              as DataWidgetBuilder<T>?,
-      optionFooter: freezed == optionFooter
-          ? _value.optionFooter
-          : optionFooter // ignore: cast_nullable_to_non_nullable
-              as Widget?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$SupernovaAutocompleteFormFieldImplCopyWith<
     T extends Object,
     R extends Object,
     $Res> implements $SupernovaAutocompleteFormFieldCopyWith<T, R, $Res> {
-  factory _$$SupernovaAutocompleteFormFieldImplCopyWith(
-          _$SupernovaAutocompleteFormFieldImpl<T, R> value,
-          $Res Function(_$SupernovaAutocompleteFormFieldImpl<T, R>) then) =
-      __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T, R, $Res>;
-  @override
-  @useResult
-  $Res call(
-      {TextEditingController textEditingController,
-      ValueNotifier<R?> selectedItem,
-      R Function(T) valueSelector,
-      List<String>? autofillHints,
-      TextInputAction textInputAction,
-      String? hintText,
-      bool shouldDebounce,
-      SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
-      AutocompleteOptionToString<T> displayStringForOption,
-      DataWidgetBuilder<T>? optionViewBuilder,
-      Widget? optionFooter});
-}
+  _$SupernovaAutocompleteFormFieldCopyWithImpl(this._self, this._then);
 
-/// @nodoc
-class __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T extends Object,
-        R extends Object, $Res>
-    extends _$SupernovaAutocompleteFormFieldCopyWithImpl<T, R, $Res,
-        _$SupernovaAutocompleteFormFieldImpl<T, R>>
-    implements _$$SupernovaAutocompleteFormFieldImplCopyWith<T, R, $Res> {
-  __$$SupernovaAutocompleteFormFieldImplCopyWithImpl(
-      _$SupernovaAutocompleteFormFieldImpl<T, R> _value,
-      $Res Function(_$SupernovaAutocompleteFormFieldImpl<T, R>) _then)
-      : super(_value, _then);
+  final SupernovaAutocompleteFormField<T, R> _self;
+  final $Res Function(SupernovaAutocompleteFormField<T, R>) _then;
 
   /// Create a copy of SupernovaAutocompleteFormField
   /// with the given fields replaced by the non-null parameter values.
@@ -196,60 +135,287 @@ class __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T extends Object,
     Object? optionViewBuilder = freezed,
     Object? optionFooter = freezed,
   }) {
-    return _then(_$SupernovaAutocompleteFormFieldImpl<T, R>(
-      null == textEditingController
-          ? _value.textEditingController
+    return _then(_self.copyWith(
+      textEditingController: null == textEditingController
+          ? _self.textEditingController
           : textEditingController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      null == selectedItem
-          ? _value.selectedItem
+      selectedItem: null == selectedItem
+          ? _self.selectedItem
           : selectedItem // ignore: cast_nullable_to_non_nullable
               as ValueNotifier<R?>,
       valueSelector: null == valueSelector
-          ? _value.valueSelector
+          ? _self.valueSelector
           : valueSelector // ignore: cast_nullable_to_non_nullable
               as R Function(T),
       autofillHints: freezed == autofillHints
-          ? _value._autofillHints
+          ? _self.autofillHints
           : autofillHints // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       textInputAction: null == textInputAction
-          ? _value.textInputAction
+          ? _self.textInputAction
           : textInputAction // ignore: cast_nullable_to_non_nullable
               as TextInputAction,
       hintText: freezed == hintText
-          ? _value.hintText
+          ? _self.hintText
           : hintText // ignore: cast_nullable_to_non_nullable
               as String?,
       shouldDebounce: null == shouldDebounce
-          ? _value.shouldDebounce
+          ? _self.shouldDebounce
           : shouldDebounce // ignore: cast_nullable_to_non_nullable
               as bool,
       optionsBuilder: null == optionsBuilder
-          ? _value.optionsBuilder
+          ? _self.optionsBuilder
           : optionsBuilder // ignore: cast_nullable_to_non_nullable
               as SupernovaAutocompleteOptionsBuilder<T>,
       displayStringForOption: null == displayStringForOption
-          ? _value.displayStringForOption
+          ? _self.displayStringForOption
           : displayStringForOption // ignore: cast_nullable_to_non_nullable
               as AutocompleteOptionToString<T>,
       optionViewBuilder: freezed == optionViewBuilder
-          ? _value.optionViewBuilder
+          ? _self.optionViewBuilder
           : optionViewBuilder // ignore: cast_nullable_to_non_nullable
               as DataWidgetBuilder<T>?,
       optionFooter: freezed == optionFooter
-          ? _value.optionFooter
+          ? _self.optionFooter
           : optionFooter // ignore: cast_nullable_to_non_nullable
               as Widget?,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [SupernovaAutocompleteFormField].
+extension SupernovaAutocompleteFormFieldPatterns<T extends Object,
+    R extends Object> on SupernovaAutocompleteFormField<T, R> {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_SupernovaAutocompleteFormField<T, R> value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupernovaAutocompleteFormField() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_SupernovaAutocompleteFormField<T, R> value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupernovaAutocompleteFormField():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_SupernovaAutocompleteFormField<T, R> value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupernovaAutocompleteFormField() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            TextEditingController textEditingController,
+            ValueNotifier<R?> selectedItem,
+            R Function(T) valueSelector,
+            List<String>? autofillHints,
+            TextInputAction textInputAction,
+            String? hintText,
+            bool shouldDebounce,
+            SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
+            AutocompleteOptionToString<T> displayStringForOption,
+            DataWidgetBuilder<T>? optionViewBuilder,
+            Widget? optionFooter)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _SupernovaAutocompleteFormField() when $default != null:
+        return $default(
+            _that.textEditingController,
+            _that.selectedItem,
+            _that.valueSelector,
+            _that.autofillHints,
+            _that.textInputAction,
+            _that.hintText,
+            _that.shouldDebounce,
+            _that.optionsBuilder,
+            _that.displayStringForOption,
+            _that.optionViewBuilder,
+            _that.optionFooter);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            TextEditingController textEditingController,
+            ValueNotifier<R?> selectedItem,
+            R Function(T) valueSelector,
+            List<String>? autofillHints,
+            TextInputAction textInputAction,
+            String? hintText,
+            bool shouldDebounce,
+            SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
+            AutocompleteOptionToString<T> displayStringForOption,
+            DataWidgetBuilder<T>? optionViewBuilder,
+            Widget? optionFooter)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupernovaAutocompleteFormField():
+        return $default(
+            _that.textEditingController,
+            _that.selectedItem,
+            _that.valueSelector,
+            _that.autofillHints,
+            _that.textInputAction,
+            _that.hintText,
+            _that.shouldDebounce,
+            _that.optionsBuilder,
+            _that.displayStringForOption,
+            _that.optionViewBuilder,
+            _that.optionFooter);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            TextEditingController textEditingController,
+            ValueNotifier<R?> selectedItem,
+            R Function(T) valueSelector,
+            List<String>? autofillHints,
+            TextInputAction textInputAction,
+            String? hintText,
+            bool shouldDebounce,
+            SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
+            AutocompleteOptionToString<T> displayStringForOption,
+            DataWidgetBuilder<T>? optionViewBuilder,
+            Widget? optionFooter)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _SupernovaAutocompleteFormField() when $default != null:
+        return $default(
+            _that.textEditingController,
+            _that.selectedItem,
+            _that.valueSelector,
+            _that.autofillHints,
+            _that.textInputAction,
+            _that.hintText,
+            _that.shouldDebounce,
+            _that.optionsBuilder,
+            _that.displayStringForOption,
+            _that.optionViewBuilder,
+            _that.optionFooter);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 
-class _$SupernovaAutocompleteFormFieldImpl<T extends Object, R extends Object>
-    extends _SupernovaAutocompleteFormField<T, R> {
-  const _$SupernovaAutocompleteFormFieldImpl(
+class _SupernovaAutocompleteFormField<T extends Object, R extends Object>
+    extends SupernovaAutocompleteFormField<T, R> {
+  const _SupernovaAutocompleteFormField(
       this.textEditingController, this.selectedItem,
       {required this.valueSelector,
       required final List<String>? autofillHints,
@@ -295,16 +461,21 @@ class _$SupernovaAutocompleteFormFieldImpl<T extends Object, R extends Object>
   @override
   final Widget? optionFooter;
 
+  /// Create a copy of SupernovaAutocompleteFormField
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SupernovaAutocompleteFormField<$T, $R>(textEditingController: $textEditingController, selectedItem: $selectedItem, valueSelector: $valueSelector, autofillHints: $autofillHints, textInputAction: $textInputAction, hintText: $hintText, shouldDebounce: $shouldDebounce, optionsBuilder: $optionsBuilder, displayStringForOption: $displayStringForOption, optionViewBuilder: $optionViewBuilder, optionFooter: $optionFooter)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SupernovaAutocompleteFormFieldCopyWith<T, R,
+          _SupernovaAutocompleteFormField<T, R>>
+      get copyWith => __$SupernovaAutocompleteFormFieldCopyWithImpl<T, R,
+          _SupernovaAutocompleteFormField<T, R>>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SupernovaAutocompleteFormFieldImpl<T, R> &&
+            other is _SupernovaAutocompleteFormField<T, R> &&
             (identical(other.textEditingController, textEditingController) ||
                 other.textEditingController == textEditingController) &&
             (identical(other.selectedItem, selectedItem) ||
@@ -344,61 +515,111 @@ class _$SupernovaAutocompleteFormFieldImpl<T extends Object, R extends Object>
       optionViewBuilder,
       optionFooter);
 
+  @override
+  String toString() {
+    return 'SupernovaAutocompleteFormField<$T, $R>(textEditingController: $textEditingController, selectedItem: $selectedItem, valueSelector: $valueSelector, autofillHints: $autofillHints, textInputAction: $textInputAction, hintText: $hintText, shouldDebounce: $shouldDebounce, optionsBuilder: $optionsBuilder, displayStringForOption: $displayStringForOption, optionViewBuilder: $optionViewBuilder, optionFooter: $optionFooter)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$SupernovaAutocompleteFormFieldCopyWith<
+    T extends Object,
+    R extends Object,
+    $Res> implements $SupernovaAutocompleteFormFieldCopyWith<T, R, $Res> {
+  factory _$SupernovaAutocompleteFormFieldCopyWith(
+          _SupernovaAutocompleteFormField<T, R> value,
+          $Res Function(_SupernovaAutocompleteFormField<T, R>) _then) =
+      __$SupernovaAutocompleteFormFieldCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {TextEditingController textEditingController,
+      ValueNotifier<R?> selectedItem,
+      R Function(T) valueSelector,
+      List<String>? autofillHints,
+      TextInputAction textInputAction,
+      String? hintText,
+      bool shouldDebounce,
+      SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
+      AutocompleteOptionToString<T> displayStringForOption,
+      DataWidgetBuilder<T>? optionViewBuilder,
+      Widget? optionFooter});
+}
+
+/// @nodoc
+class __$SupernovaAutocompleteFormFieldCopyWithImpl<
+    T extends Object,
+    R extends Object,
+    $Res> implements _$SupernovaAutocompleteFormFieldCopyWith<T, R, $Res> {
+  __$SupernovaAutocompleteFormFieldCopyWithImpl(this._self, this._then);
+
+  final _SupernovaAutocompleteFormField<T, R> _self;
+  final $Res Function(_SupernovaAutocompleteFormField<T, R>) _then;
+
   /// Create a copy of SupernovaAutocompleteFormField
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$SupernovaAutocompleteFormFieldImplCopyWith<T, R,
-          _$SupernovaAutocompleteFormFieldImpl<T, R>>
-      get copyWith => __$$SupernovaAutocompleteFormFieldImplCopyWithImpl<T, R,
-          _$SupernovaAutocompleteFormFieldImpl<T, R>>(this, _$identity);
+  $Res call({
+    Object? textEditingController = null,
+    Object? selectedItem = null,
+    Object? valueSelector = null,
+    Object? autofillHints = freezed,
+    Object? textInputAction = null,
+    Object? hintText = freezed,
+    Object? shouldDebounce = null,
+    Object? optionsBuilder = null,
+    Object? displayStringForOption = null,
+    Object? optionViewBuilder = freezed,
+    Object? optionFooter = freezed,
+  }) {
+    return _then(_SupernovaAutocompleteFormField<T, R>(
+      null == textEditingController
+          ? _self.textEditingController
+          : textEditingController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      null == selectedItem
+          ? _self.selectedItem
+          : selectedItem // ignore: cast_nullable_to_non_nullable
+              as ValueNotifier<R?>,
+      valueSelector: null == valueSelector
+          ? _self.valueSelector
+          : valueSelector // ignore: cast_nullable_to_non_nullable
+              as R Function(T),
+      autofillHints: freezed == autofillHints
+          ? _self._autofillHints
+          : autofillHints // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      textInputAction: null == textInputAction
+          ? _self.textInputAction
+          : textInputAction // ignore: cast_nullable_to_non_nullable
+              as TextInputAction,
+      hintText: freezed == hintText
+          ? _self.hintText
+          : hintText // ignore: cast_nullable_to_non_nullable
+              as String?,
+      shouldDebounce: null == shouldDebounce
+          ? _self.shouldDebounce
+          : shouldDebounce // ignore: cast_nullable_to_non_nullable
+              as bool,
+      optionsBuilder: null == optionsBuilder
+          ? _self.optionsBuilder
+          : optionsBuilder // ignore: cast_nullable_to_non_nullable
+              as SupernovaAutocompleteOptionsBuilder<T>,
+      displayStringForOption: null == displayStringForOption
+          ? _self.displayStringForOption
+          : displayStringForOption // ignore: cast_nullable_to_non_nullable
+              as AutocompleteOptionToString<T>,
+      optionViewBuilder: freezed == optionViewBuilder
+          ? _self.optionViewBuilder
+          : optionViewBuilder // ignore: cast_nullable_to_non_nullable
+              as DataWidgetBuilder<T>?,
+      optionFooter: freezed == optionFooter
+          ? _self.optionFooter
+          : optionFooter // ignore: cast_nullable_to_non_nullable
+              as Widget?,
+    ));
+  }
 }
 
-abstract class _SupernovaAutocompleteFormField<T extends Object,
-    R extends Object> extends SupernovaAutocompleteFormField<T, R> {
-  const factory _SupernovaAutocompleteFormField(
-      final TextEditingController textEditingController,
-      final ValueNotifier<R?> selectedItem,
-      {required final R Function(T) valueSelector,
-      required final List<String>? autofillHints,
-      required final TextInputAction textInputAction,
-      final String? hintText,
-      final bool shouldDebounce,
-      required final SupernovaAutocompleteOptionsBuilder<T> optionsBuilder,
-      required final AutocompleteOptionToString<T> displayStringForOption,
-      final DataWidgetBuilder<T>? optionViewBuilder,
-      final Widget? optionFooter}) = _$SupernovaAutocompleteFormFieldImpl<T, R>;
-  const _SupernovaAutocompleteFormField._() : super._();
-
-  @override
-  TextEditingController get textEditingController;
-  @override
-  ValueNotifier<R?> get selectedItem;
-  @override
-  R Function(T) get valueSelector;
-  @override
-  List<String>? get autofillHints;
-  @override
-  TextInputAction get textInputAction;
-  @override
-  String? get hintText;
-  @override
-  bool get shouldDebounce;
-  @override
-  SupernovaAutocompleteOptionsBuilder<T> get optionsBuilder;
-  @override
-  AutocompleteOptionToString<T> get displayStringForOption;
-  @override
-  DataWidgetBuilder<T>? get optionViewBuilder;
-  @override
-  Widget? get optionFooter;
-
-  /// Create a copy of SupernovaAutocompleteFormField
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SupernovaAutocompleteFormFieldImplCopyWith<T, R,
-          _$SupernovaAutocompleteFormFieldImpl<T, R>>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

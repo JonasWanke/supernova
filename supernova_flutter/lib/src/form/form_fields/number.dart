@@ -10,7 +10,7 @@ import 'text.dart';
 part 'number.freezed.dart';
 
 @freezed
-class SupernovaNumberFormField extends SupernovaFormFieldBase<int>
+abstract class SupernovaNumberFormField extends SupernovaFormFieldBase<int>
     with _$SupernovaNumberFormField {
   const factory SupernovaNumberFormField.amount(
     ValueNotifier<int?> currentValue, {

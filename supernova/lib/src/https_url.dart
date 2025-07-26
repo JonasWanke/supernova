@@ -5,7 +5,7 @@ import 'validation.dart';
 part 'https_url.freezed.dart';
 
 @Freezed(fromJson: false, toJson: false)
-class HttpsUrl with _$HttpsUrl implements Validatable {
+abstract class HttpsUrl with _$HttpsUrl implements Validatable {
   const factory HttpsUrl(Uri value) = _HttpsUrl;
   const HttpsUrl._();
 

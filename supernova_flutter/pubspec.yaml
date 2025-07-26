@@ -13,13 +13,13 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/chrono.git
       path: chrono
-      ref: 1ddb4151078e668d40d1f662d2b3d8f873faeb6e
+      ref: d5ce8a530e95fdd3216cbe3dfa33229b9ad219e8
   debug_overlay: ^1.0.0
   firebase_core: ^3.0.0
   firebase_crashlytics: ^4.0.0
   flutter:
     sdk: flutter
-  flutter_hooks: ^0.20.3
+  flutter_hooks: ^0.21.2
   flutter_localizations:
     sdk: flutter
   flutter_web_plugins:
@@ -40,7 +40,7 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.4.6
-  freezed: ^2.4.5
+  freezed: ^3.2.0
 
 flutter:
   uses-material-design: true

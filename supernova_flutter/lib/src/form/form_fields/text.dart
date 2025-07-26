@@ -15,7 +15,7 @@ part 'text.freezed.dart';
 enum SupernovaPasswordFormFieldRole { create, enter }
 
 @freezed
-class SupernovaTextFormField extends SupernovaFormFieldBase<String>
+sealed class SupernovaTextFormField extends SupernovaFormFieldBase<String>
     with _$SupernovaTextFormField {
   const factory SupernovaTextFormField.singleLine(
     TextEditingController controller, {

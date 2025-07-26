@@ -120,7 +120,7 @@ class OptionalSupernovaFormField<T extends Object>
 }
 
 @freezed
-class SupernovaFormFieldData with _$SupernovaFormFieldData {
+abstract class SupernovaFormFieldData with _$SupernovaFormFieldData {
   const factory SupernovaFormFieldData({
     required FocusNode focusNode,
     String? labelText,
@@ -130,7 +130,7 @@ class SupernovaFormFieldData with _$SupernovaFormFieldData {
 }
 
 @freezed
-class SupernovaFormFieldNecessity with _$SupernovaFormFieldNecessity {
+sealed class SupernovaFormFieldNecessity with _$SupernovaFormFieldNecessity {
   const factory SupernovaFormFieldNecessity.optional() =
       _OptionalSupernovaFormFieldNecessity;
   const factory SupernovaFormFieldNecessity.required(String? text) =

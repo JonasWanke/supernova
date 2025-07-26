@@ -22,7 +22,8 @@ import 'utils.dart';
 part 'year_month.freezed.dart';
 
 @freezed
-class SupernovaYearMonthFormField extends SupernovaFormFieldBase<YearMonth>
+abstract class SupernovaYearMonthFormField
+    extends SupernovaFormFieldBase<YearMonth>
     with _$SupernovaYearMonthFormField {
   const factory SupernovaYearMonthFormField(
     ValueNotifier<YearMonth?> selectedYearMonth, {

@@ -10,7 +10,7 @@ import '../label.dart';
 part 'slider.freezed.dart';
 
 @freezed
-class SupernovaSliderFormField<T extends Object>
+abstract class SupernovaSliderFormField<T extends Object>
     extends SupernovaFormFieldBase<T> with _$SupernovaSliderFormField<T> {
   const factory SupernovaSliderFormField(
     ValueNotifier<T> selectedValue, {

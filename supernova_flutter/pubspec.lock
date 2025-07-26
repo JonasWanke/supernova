@@ -262,8 +262,8 @@ packages:
     dependency: transitive
     description:
       path: "."
-      ref: "2455a7afce011db7f016890a3b06cb620a278405"
-      resolved-ref: "2455a7afce011db7f016890a3b06cb620a278405"
+      ref: "930a216b8bd8cc9f3e5c2b6751c33cd257725b77"
+      resolved-ref: "930a216b8bd8cc9f3e5c2b6751c33cd257725b77"
       url: "https://github.com/JonasWanke/dart-code-metrics.git"
     source: git
     version: "5.7.5"

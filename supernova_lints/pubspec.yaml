@@ -8,4 +8,4 @@ dependencies:
   dart_code_metrics:
     git:
       url: https://github.com/JonasWanke/dart-code-metrics.git
-      ref: 2455a7afce011db7f016890a3b06cb620a278405
+      ref: 930a216b8bd8cc9f3e5c2b6751c33cd257725b77

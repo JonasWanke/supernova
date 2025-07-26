@@ -4,16 +4,25 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, flake-utils }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = import nixpkgs { inherit system; };
-        flutter = pkgs.flutterPackages.v3_27;
-      in {
-        devShell = with pkgs;
+        flutter = pkgs.flutterPackages.v3_32;
+      in
+      {
+        devShell =
+          with pkgs;
           mkShell {
             FLUTTER_ROOT = flutter;
             buildInputs = [ flutter ];
           };
-      });
+      }
+    );
 }

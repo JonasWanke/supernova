@@ -15,8 +15,8 @@ dependencies:
       path: chrono
       ref: d5ce8a530e95fdd3216cbe3dfa33229b9ad219e8
   debug_overlay: ^1.0.0
-  firebase_core: ^3.0.0
-  firebase_crashlytics: ^4.0.0
+  firebase_core: ^4.1.0
+  firebase_crashlytics: ^5.0.1
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.2

@@ -10,16 +10,17 @@ import 'package:stack_trace/stack_trace.dart';
 import 'debug_mode.dart';
 import 'typedefs.dart';
 
-late final Stopwatch _stopwatch;
+final _stopwatch = Stopwatch()..start();
 
-late final LogLevel _minLogLevel;
+var _minLogLevel = LogLevel.min;
 final logger = Logger();
 
 // ignore: avoid-global-state
 List<LogListener> logListeners = <LogListener>[printLogPretty];
 
 void initLogger({LogLevel? minLogLevel}) {
-  _stopwatch = Stopwatch()..start();
+  // ignore: unnecessary_statements
+  _stopwatch;
   _minLogLevel =
       minLogLevel ?? (isInDebugMode ? LogLevel.min : LogLevel.config);
 

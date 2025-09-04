@@ -7,7 +7,7 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:stack_trace/stack_trace.dart';
 import 'package:supernova/supernova.dart';
 
-final services = GetIt.instance;
+final services = LoggingGetIt(GetIt.instance);
 
 Future<void> initServices({FirebaseOptions? firebaseOptions}) async {
   logger.trace('Initializing common_flutter services…');
@@ -20,9 +20,9 @@ Future<void> initServices({FirebaseOptions? firebaseOptions}) async {
   }
 }
 
-extension GetItSupernova on GetIt {
-  PackageInfo get packageInfo => get();
-  FirebaseCrashlytics get firebaseCrashlytics => get();
+extension LoggingGetItSupernova on LoggingGetIt {
+  PackageInfo get packageInfo => this();
+  FirebaseCrashlytics get firebaseCrashlytics => this();
 }
 
 String get appVersion {
@@ -62,4 +62,98 @@ Future<void> _initializeFirebaseCrashlytics() async {
   services.registerSingleton(crashlytics);
   _isFirebaseCrashlyticsInitialized = true;
   logger.trace('Initialized Firebase Crashlytics!');
+}
+
+class LoggingGetIt {
+  LoggingGetIt(this.getIt);
+
+  final GetIt getIt;
+
+  T call<T extends Object>({
+    String? instanceName,
+    dynamic param1,
+    dynamic param2,
+    Type? type,
+  }) {
+    return getIt(
+      instanceName: instanceName,
+      param1: param1,
+      param2: param2,
+      type: type,
+    );
+  }
+
+  Future<T> getAsync<T extends Object>({
+    String? instanceName,
+    dynamic param1,
+    dynamic param2,
+    Type? type,
+  }) => logger.traceAsync(
+    'services.getAsync<$T>',
+    body: () => getIt.getAsync<T>(
+      instanceName: instanceName,
+      param1: param1,
+      param2: param2,
+      type: type,
+    ),
+  );
+
+  void registerFactory<T extends Object>(
+    FactoryFunc<T> factoryFunc, {
+    String? instanceName,
+  }) {
+    logger.trace('services.registerFactory<$T>');
+    getIt.registerFactory<T>(factoryFunc, instanceName: instanceName);
+  }
+
+  T registerSingleton<T extends Object>(
+    T instance, {
+    String? instanceName,
+    bool? signalsReady,
+    DisposingFunc<T>? dispose,
+  }) {
+    logger.trace('services.registerSingleton<$T>');
+    return getIt.registerSingleton<T>(
+      instance,
+      instanceName: instanceName,
+      signalsReady: signalsReady,
+      dispose: dispose,
+    );
+  }
+
+  void registerSingletonAsync<T extends Object>(
+    FactoryFuncAsync<T> factoryFunc, {
+    String? instanceName,
+    Iterable<Type>? dependsOn,
+    bool? signalsReady,
+    DisposingFunc<T>? dispose,
+  }) {
+    logger.trace('services.registerSingletonAsync<$T>');
+    getIt.registerSingletonAsync<T>(
+      () => logger.traceAsync(
+        'services.registerSingletonAsync<$T>.factory',
+        body: factoryFunc,
+      ),
+      instanceName: instanceName,
+      dependsOn: dependsOn,
+      signalsReady: signalsReady,
+      dispose: dispose,
+    );
+  }
+
+  bool isRegistered<T extends Object>({
+    Object? instance,
+    String? instanceName,
+  }) => getIt.isRegistered<T>(instance: instance, instanceName: instanceName);
+
+  Future<void> allReady({
+    Duration? timeout,
+    bool ignorePendingAsyncCreation = false,
+  }) => logger.traceAsync(
+    'services.allReady',
+    body: () => getIt.allReady(
+      timeout: timeout,
+      ignorePendingAsyncCreation: ignorePendingAsyncCreation,
+    ),
+  );
 }

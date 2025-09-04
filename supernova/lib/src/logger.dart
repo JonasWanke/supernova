@@ -52,8 +52,7 @@ class Logger {
     String message, [
     Object? data,
     StackTrace? stackTrace,
-  ]) =>
-      logRecord(LogRecord(level, message, data, stackTrace));
+  ]) => logRecord(LogRecord(level, message, data, stackTrace));
 
   void logRecord(LogRecord record) {
     if (record.level < _minLogLevel) return;
@@ -107,11 +106,8 @@ class Logger {
 }
 
 typedef LogListener = void Function(LogRecord);
-typedef TraceListener = void Function(
-  String message,
-  Microseconds start,
-  Microseconds end,
-);
+typedef TraceListener =
+    void Function(String message, Microseconds start, Microseconds end);
 
 /// See `/docs/logging.md` for descriptions of these levels.
 enum LogLevel {
@@ -138,15 +134,11 @@ enum LogLevel {
 }
 
 class LogRecord {
-  LogRecord(
-    LogLevel level,
-    this.message, [
-    this.data,
-    StackTrace? stackTrace,
-  ])  : level = data is AssertionError ? LogLevel.wtf : level,
-        instant = Instant.now(),
-        stackTrace = _traceFromStackTrace(level, stackTrace),
-        zone = Zone.current;
+  LogRecord(LogLevel level, this.message, [this.data, StackTrace? stackTrace])
+    : level = data is AssertionError ? LogLevel.wtf : level,
+      instant = Instant.now(),
+      stackTrace = _traceFromStackTrace(level, stackTrace),
+      zone = Zone.current;
 
   static Trace? _traceFromStackTrace(LogLevel level, StackTrace? stackTrace) {
     var actualStackTrace = stackTrace != null ? Trace.from(stackTrace) : null;
@@ -262,8 +254,8 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
       : record.message;
   final firstContent = messageFirstLinebreakIndex >= 0
       ? record.message
-          .substring(messageFirstLinebreakIndex + 1)
-          .splitMapJoin('\n', onNonMatch: color)
+            .substring(messageFirstLinebreakIndex + 1)
+            .splitMapJoin('\n', onNonMatch: color)
       : '';
 
   formatPrettySection(

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:collection/collection.dart';
 import 'package:meta/meta.dart';
 
 @immutable
@@ -15,6 +16,12 @@ class Bytes {
   int get length => data.length;
 
   String toJson() => base64Encode(data);
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Bytes && data.equals(other.data);
+  @override
+  int get hashCode => Object.hashAll(data);
 
   @override
   String toString() {

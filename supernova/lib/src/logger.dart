@@ -30,8 +30,6 @@ void initLogger({LogLevel? minLogLevel}) {
   }
 }
 
-const minProductionLogLevel = LogLevel.config;
-
 @immutable
 class Logger {
   void trace(String message, [Object? data, StackTrace? stackTrace]) =>

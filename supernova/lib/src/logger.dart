@@ -19,8 +19,6 @@ final logger = Logger();
 List<LogListener> logListeners = <LogListener>[printLogPretty];
 
 void initLogger({LogLevel? minLogLevel}) {
-  // ignore: unnecessary_statements
-  _stopwatch;
   _minLogLevel =
       minLogLevel ?? (isInDebugMode ? LogLevel.min : LogLevel.config);
 
@@ -95,7 +93,7 @@ class Logger {
     trace('$message: Start', data);
   }
 
-  void traceEnd(String message, Microseconds start, Object? data) {
+  void traceEnd(String message, TimeDelta start, Object? data) {
     trace('$message: End', data);
 
     final end = _stopwatch.elapsedChrono;
@@ -107,7 +105,7 @@ class Logger {
 
 typedef LogListener = void Function(LogRecord);
 typedef TraceListener =
-    void Function(String message, Microseconds start, Microseconds end);
+    void Function(String message, TimeDelta start, TimeDelta end);
 
 /// See `/docs/logging.md` for descriptions of these levels.
 enum LogLevel {
@@ -237,9 +235,7 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
     final hour = time.hour.toString().padLeft(2, '0');
     final minute = time.minute.toString().padLeft(2, '0');
     final second = time.second.toString().padLeft(2, '0');
-    final microseconds = time.nanoseconds
-        .roundToMilliseconds(rounding: Rounding.down)
-        .inMicroseconds
+    final microseconds = (time.subSecondNanos ~/ TimeDelta.nanosPerMicrosecond)
         .toString()
         .padLeft(6, '0');
     return '$hour:$minute:$second.$microseconds';

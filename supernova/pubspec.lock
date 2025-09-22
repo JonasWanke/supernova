@@ -149,8 +149,8 @@ packages:
     dependency: "direct main"
     description:
       path: chrono
-      ref: d5ce8a530e95fdd3216cbe3dfa33229b9ad219e8
-      resolved-ref: d5ce8a530e95fdd3216cbe3dfa33229b9ad219e8
+      ref: "243af455733dbb6540998f5afd0dcafcdeb67fe1"
+      resolved-ref: "243af455733dbb6540998f5afd0dcafcdeb67fe1"
       url: "https://github.com/JonasWanke/chrono.git"
     source: git
     version: "0.1.0"

@@ -2,7 +2,7 @@ name: supernova
 publish_to: none
 
 environment:
-  sdk: ^3.0.0
+  sdk: ^3.8.0
 
 dependencies:
   ansi_styles: ^0.3.1-dev.0
@@ -11,7 +11,7 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/chrono.git
       path: chrono
-      ref: d5ce8a530e95fdd3216cbe3dfa33229b9ad219e8
+      ref: 243af455733dbb6540998f5afd0dcafcdeb67fe1
   collection: ^1.17.0
   color: ^3.0.0
   dartx: ^1.2.0

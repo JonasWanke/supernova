@@ -181,7 +181,7 @@ class Is {
   static Validator<String> get phoneNumber => singleLineString();
 
   // Instant
-  static Validator<Instant> inPast(TimeDuration allowedClockSkew) {
+  static Validator<Instant> inPast(TimeDelta allowedClockSkew) {
     return (value) {
       return Validate.custom(
         'Instant must be in the past (± $allowedClockSkew).',
@@ -190,7 +190,7 @@ class Is {
     };
   }
 
-  static Validator<Instant> inFuture(TimeDuration allowedClockSkew) {
+  static Validator<Instant> inFuture(TimeDelta allowedClockSkew) {
     return (value) {
       return Validate.custom(
         'Instant must be in the future (± $allowedClockSkew).',
@@ -202,13 +202,13 @@ class Is {
   // LocalDate
   static Validator<Date> get dateInPastLocalZone {
     return (value) => Validate.custom(
-          'Date must be in the past.',
-          value < Date.todayInLocalZone(),
-        );
+      'Date must be in the past.',
+      value < Date.todayInLocalZone(),
+    );
   }
 
   // Duration
-  static Validator<TimeDuration> get positiveTimeDuration {
+  static Validator<TimeDelta> get positiveTimeDelta {
     return (value) {
       return Validate.custom(
         'Duration must be positive (> 0).',
@@ -306,10 +306,8 @@ class ValidationError with _$ValidationError {
   const factory ValidationError.listItem(int index, ValidationErrors errors) =
       ListItemValidationError;
 
-  const factory ValidationError.setItem(
-    dynamic item,
-    ValidationErrors errors,
-  ) = SetItemValidationError;
+  const factory ValidationError.setItem(dynamic item, ValidationErrors errors) =
+      SetItemValidationError;
 
   const factory ValidationError.mapKey(dynamic key, ValidationErrors errors) =
       MapKeyValidationError;

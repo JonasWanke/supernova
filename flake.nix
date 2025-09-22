@@ -14,7 +14,7 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
-        flutter = pkgs.flutterPackages.v3_32;
+        flutter = pkgs.flutterPackages.v3_35;
       in
       {
         devShell =

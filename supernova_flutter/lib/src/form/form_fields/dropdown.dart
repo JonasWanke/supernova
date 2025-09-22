@@ -72,7 +72,7 @@ class SupernovaDropdownFormFieldWidget<T extends Object> extends HookWidget {
               ),
             for (final item in formField.items) _buildItem(context, item),
           ],
-          value: formField.selectedItem.value != null
+          initialValue: formField.selectedItem.value != null
               ? _ClearableDropdownSelection.value(formField.selectedItem.value!)
               : null,
           style: SupernovaFormFieldWidget.textStyle(context),

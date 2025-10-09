@@ -4,7 +4,7 @@ import 'json.dart';
 
 @immutable
 @sealed
-class Id<T> implements ToJson {
+class Id<T> implements Comparable<Id<T>>, ToJson {
   const Id(this.value);
 
   static Id<T>? fromStringOrNull<T>(String? value) =>
@@ -16,6 +16,9 @@ class Id<T> implements ToJson {
   final String value;
 
   Id<R> cast<R>() => Id(value);
+
+  @override
+  int compareTo(Id<T> other) => value.compareTo(other.value);
 
   @override
   bool operator ==(Object other) =>

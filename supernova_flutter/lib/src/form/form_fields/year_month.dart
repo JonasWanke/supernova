@@ -76,13 +76,18 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
           }
 
           Future<void> onTap() async {
-            final firstYearMonth = formField.firstYearMonth?.call() ??
+            final firstYearMonth =
+                formField.firstYearMonth?.call() ??
                 const Year(1900).months.start;
-            final lastYearMonth = formField.lastYearMonth?.call() ??
+            final lastYearMonth =
+                formField.lastYearMonth?.call() ??
                 const Year(2100).months.endInclusive;
-            final initialYearMonth = formField.value ??
-                YearMonth.currentInLocalZone()
-                    .coerceIn(firstYearMonth, lastYearMonth);
+            final initialYearMonth =
+                formField.value ??
+                YearMonth.currentInLocalZone().coerceIn(
+                  firstYearMonth,
+                  lastYearMonth,
+                );
 
             final month = await showYearMonthPicker(
               context: context,
@@ -101,8 +106,9 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
               SupernovaFormFieldWidget.horizontalPaddingValue(context);
           return InkWell(
             onTap: SupernovaForm.isEnabled(context) ? onTap : null,
-            borderRadius: SupernovaFormFieldWidget.borderRadius(context)
-                .resolve(context.directionality),
+            borderRadius: SupernovaFormFieldWidget.borderRadius(
+              context,
+            ).resolve(context.directionality),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
@@ -140,8 +146,9 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
           Expanded(
             child: Text(
               formField.selectedYearMonth.value != null
-                  ? formField
-                      .formatYearMonth(formField.selectedYearMonth.value!)
+                  ? formField.formatYearMonth(
+                      formField.selectedYearMonth.value!,
+                    )
                   : formField.hintText ?? context.supernovaL10n.choose,
               style: formField.selectedYearMonth.value == null
                   ? SupernovaFormFieldWidget.hintTextStyle(context)
@@ -170,9 +177,9 @@ class MonthPicker extends HookWidget {
     required this.lastMonth,
     required this.selectedMonth,
     required this.onChanged,
-  })  : assert(firstMonth <= lastMonth),
-        assert(selectedMonth == null || firstMonth <= selectedMonth),
-        assert(selectedMonth == null || selectedMonth <= lastMonth);
+  }) : assert(firstMonth <= lastMonth),
+       assert(selectedMonth == null || firstMonth <= selectedMonth),
+       assert(selectedMonth == null || selectedMonth <= lastMonth);
 
   static const columnCount = 3;
   static const rowCount = 4;
@@ -185,9 +192,7 @@ class MonthPicker extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    assert(
-      MonthPicker.rowCount * MonthPicker.columnCount == Months.perYear,
-    );
+    assert(MonthPicker.rowCount * MonthPicker.columnCount == Months.perYear);
     assert(debugCheckHasMaterial(context));
 
     final autoSizeGroup = useAutoSizeGroup();
@@ -200,8 +205,9 @@ class MonthPicker extends HookWidget {
           children: List.generate(
             MonthPicker.columnCount,
             (columnIndex) => buildMonth(
-              Month.fromIndex(rowIndex * MonthPicker.columnCount + columnIndex)
-                  .unwrap(),
+              Month.fromIndex(
+                rowIndex * MonthPicker.columnCount + columnIndex,
+              ).unwrap(),
             ),
           ),
         ),
@@ -210,9 +216,7 @@ class MonthPicker extends HookWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: _yearPickerPadding),
-      child: Column(
-        children: List.generate(MonthPicker.rowCount, buildRow),
-      ),
+      child: Column(children: List.generate(MonthPicker.rowCount, buildRow)),
     );
   }
 
@@ -334,21 +338,21 @@ class _MonthPickerDialog extends StatefulWidget {
     required this.lastYearMonth,
     this.helpText,
     this.initialPickerMode = YearMonthPickerMode.year,
-  })  : assert(
-          firstYearMonth <= lastYearMonth,
-          'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
-          '$firstYearMonth.',
-        ),
-        assert(
-          firstYearMonth <= initialYearMonth,
-          'initialYearMonth $initialYearMonth must be on or after '
-          'firstYearMonth $firstYearMonth.',
-        ),
-        assert(
-          initialYearMonth <= lastYearMonth,
-          'initialYearMonth $initialYearMonth must be on or before '
-          'lastYearMonth $lastYearMonth.',
-        );
+  }) : assert(
+         firstYearMonth <= lastYearMonth,
+         'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
+         '$firstYearMonth.',
+       ),
+       assert(
+         firstYearMonth <= initialYearMonth,
+         'initialYearMonth $initialYearMonth must be on or after '
+         'firstYearMonth $firstYearMonth.',
+       ),
+       assert(
+         initialYearMonth <= lastYearMonth,
+         'initialYearMonth $initialYearMonth must be on or before '
+         'lastYearMonth $lastYearMonth.',
+       );
 
   final YearMonth initialYearMonth;
   final YearMonth firstYearMonth;
@@ -368,7 +372,7 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
   Size _dialogSize(BuildContext context) {
     return switch (context.mediaQuery.orientation) {
       Orientation.portrait => _calendarPortraitDialogSize,
-      Orientation.landscape => _calendarLandscapeDialogSize
+      Orientation.landscape => _calendarLandscapeDialogSize,
     };
   }
 
@@ -446,24 +450,31 @@ class _MonthPickerDialogState extends State<_MonthPickerDialog> {
           data: context.mediaQuery.copyWith(textScaleFactor: textScaleFactor),
           child: switch (orientation) {
             Orientation.portrait => Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [header, Expanded(child: picker), actions],
-              ),
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                header,
+                Expanded(child: picker),
+                actions,
+              ],
+            ),
             Orientation.landscape => Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  header,
-                  Flexible(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [Expanded(child: picker), actions],
-                    ),
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                header,
+                Flexible(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Expanded(child: picker),
+                      actions,
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
+            ),
           },
         ),
       ),
@@ -499,13 +510,16 @@ class _YearMonthPickerHeader extends StatelessWidget {
     // The header should use the primary color in light themes and surface color
     // in dark.
     final isDark = colorScheme.brightness == Brightness.dark;
-    final primarySurfaceColor =
-        isDark ? colorScheme.surface : colorScheme.primary;
-    final onPrimarySurfaceColor =
-        isDark ? colorScheme.onSurface : colorScheme.onPrimary;
+    final primarySurfaceColor = isDark
+        ? colorScheme.surface
+        : colorScheme.primary;
+    final onPrimarySurfaceColor = isDark
+        ? colorScheme.onSurface
+        : colorScheme.onPrimary;
 
-    final helpStyle =
-        textTheme.labelSmall?.copyWith(color: onPrimarySurfaceColor);
+    final helpStyle = textTheme.labelSmall?.copyWith(
+      color: onPrimarySurfaceColor,
+    );
 
     final help = Text(
       helpText,
@@ -521,50 +535,50 @@ class _YearMonthPickerHeader extends StatelessWidget {
 
     return switch (orientation) {
       Orientation.portrait => SizedBox(
-          height: _datePickerHeaderPortraitHeight,
-          child: Material(
-            color: primarySurfaceColor,
-            child: Padding(
-              padding: const EdgeInsetsDirectional.only(start: 24, end: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 16),
-                  help,
-                  const Flexible(child: SizedBox(height: 38)),
-                  title,
-                ],
-              ),
-            ),
-          ),
-        ),
-      Orientation.landscape => SizedBox(
-          width: _datePickerHeaderLandscapeWidth,
-          child: Material(
-            color: primarySurfaceColor,
+        height: _datePickerHeaderPortraitHeight,
+        child: Material(
+          color: primarySurfaceColor,
+          child: Padding(
+            padding: const EdgeInsetsDirectional.only(start: 24, end: 12),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 16),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: _headerPaddingLandscape,
-                  ),
-                  child: help,
-                ),
-                SizedBox(height: isShort ? 16 : 56),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: _headerPaddingLandscape,
-                    ),
-                    child: title,
-                  ),
-                ),
+                help,
+                const Flexible(child: SizedBox(height: 38)),
+                title,
               ],
             ),
           ),
-        )
+        ),
+      ),
+      Orientation.landscape => SizedBox(
+        width: _datePickerHeaderLandscapeWidth,
+        child: Material(
+          color: primarySurfaceColor,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: _headerPaddingLandscape,
+                ),
+                child: help,
+              ),
+              SizedBox(height: isShort ? 16 : 56),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: _headerPaddingLandscape,
+                  ),
+                  child: title,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     };
   }
 }
@@ -583,21 +597,21 @@ class _CalendarMonthPicker extends StatefulWidget {
     required this.lastYearMonth,
     required this.onMonthChanged,
     this.initialPickerMode = YearMonthPickerMode.year,
-  })  : assert(
-          firstYearMonth <= lastYearMonth,
-          'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
-          '$firstYearMonth.',
-        ),
-        assert(
-          firstYearMonth <= initialYearMonth,
-          'initialYearMonth $initialYearMonth must be on or after '
-          'firstYearMonth $firstYearMonth.',
-        ),
-        assert(
-          initialYearMonth <= lastYearMonth,
-          'initialYearMonth $initialYearMonth must be on or before '
-          'lastYearMonth $lastYearMonth.',
-        );
+  }) : assert(
+         firstYearMonth <= lastYearMonth,
+         'lastYearMonth $lastYearMonth must be on or after firstYearMonth '
+         '$firstYearMonth.',
+       ),
+       assert(
+         firstYearMonth <= initialYearMonth,
+         'initialYearMonth $initialYearMonth must be on or after '
+         'firstYearMonth $firstYearMonth.',
+       ),
+       assert(
+         initialYearMonth <= lastYearMonth,
+         'initialYearMonth $initialYearMonth must be on or before '
+         'lastYearMonth $lastYearMonth.',
+       );
 
   final YearMonth initialYearMonth;
   final YearMonth firstYearMonth;
@@ -681,11 +695,11 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
 
       final message = switch (_mode) {
         YearMonthPickerMode.month => _localizations.formatMonthYear(
-            _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
-          ),
+          _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
+        ),
         YearMonthPickerMode.year => _localizations.formatYear(
-            _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
-          )
+          _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
+        ),
       };
       unawaited(SemanticsService.announce(message, _textDirection));
     });
@@ -820,9 +834,9 @@ class _YearMonthPickerModeToggleButtonState
     if (oldWidget.mode == widget.mode) return;
 
     if (widget.mode == YearMonthPickerMode.year) {
-      _controller.forward();
+      unawaited(_controller.forward());
     } else {
-      _controller.reverse();
+      unawaited(_controller.reverse());
     }
   }
 

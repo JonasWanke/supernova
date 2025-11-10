@@ -106,6 +106,17 @@ class LoggingGetIt {
     getIt.registerFactory<T>(factoryFunc, instanceName: instanceName);
   }
 
+  void registerCachedFactoryParam<T extends Object, P>(
+    T Function(P) factoryFunc, {
+    String? instanceName,
+  }) {
+    logger.trace('services.registerCachedFactoryParam<$T, $P>');
+    getIt.registerCachedFactoryParam<T, P, void>(
+      (it, _) => factoryFunc(it),
+      instanceName: instanceName,
+    );
+  }
+
   T registerSingleton<T extends Object>(
     T instance, {
     String? instanceName,

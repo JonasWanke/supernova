@@ -46,8 +46,9 @@ class Snapshot<T> with _$Snapshot<T> {
       success: dataToText,
       error: (error, stackTrace) => shouldUseShortMessages
           ? context.supernovaL10n.errorUnknownShort
-          : context.supernovaL10n
-              .errorUnknown(message: isInDebugMode ? error.toString() : null),
+          : context.supernovaL10n.errorUnknown(
+              message: isInDebugMode ? error.toString() : null,
+            ),
     );
   }
 }
@@ -72,7 +73,8 @@ class SnapshotWidget<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final wrapLoadingError = this.wrapLoadingError ??
+    final wrapLoadingError =
+        this.wrapLoadingError ??
         (it) => isSliver ? SliverFillRemaining(child: it) : it;
 
     return snapshot.when(
@@ -97,8 +99,9 @@ class SnapshotWidget<T> extends StatelessWidget {
       child: Builder(
         builder: (context) {
           return Text(
-            context.supernovaL10n
-                .errorUnknown(message: isInDebugMode ? error.toString() : null),
+            context.supernovaL10n.errorUnknown(
+              message: isInDebugMode ? error.toString() : null,
+            ),
           );
         },
       ),
@@ -113,43 +116,42 @@ SnapshotWidgetBuilder<T> handleLoadingError<T>(
   double? progressIndicatorSize,
 }) =>
     (snapshot) => SnapshotWidget(
-          snapshot,
-          wrapLoadingError: wrapLoadingError,
-          progressIndicatorSize: progressIndicatorSize,
-          builder: builder,
-        );
+      snapshot,
+      wrapLoadingError: wrapLoadingError,
+      progressIndicatorSize: progressIndicatorSize,
+      builder: builder,
+    );
 SnapshotWidgetBuilder<T> handleLoadingErrorSliver<T>(
   DataWidgetBuilder<T> builder, {
   double? progressIndicatorSize,
 }) {
   return (snapshot) => SnapshotWidget(
-        snapshot,
-        isSliver: true,
-        progressIndicatorSize: progressIndicatorSize,
-        builder: builder,
-      );
+    snapshot,
+    isSliver: true,
+    progressIndicatorSize: progressIndicatorSize,
+    builder: builder,
+  );
 }
 
 SnapshotWidgetBuilder<T> handleError<T extends Object>(
   DataWidgetBuilder<T?> builder,
 ) {
   return (snapshot) => snapshot.when(
-        loading: () => builder(null),
-        success: (it) => builder(it),
-        error: (error, stackTrace) => SnapshotWidget.buildError(error),
-      );
+    loading: () => builder(null),
+    success: (it) => builder(it),
+    error: (error, stackTrace) => SnapshotWidget.buildError(error),
+  );
 }
 
 SnapshotWidgetBuilder<T> handleErrorSliver<T extends Object>(
   DataWidgetBuilder<T?> builder,
 ) {
   return (snapshot) => snapshot.when(
-        loading: () => builder(null),
-        success: (it) => builder(it),
-        error: (error, stackTrace) => SliverFillRemaining(
-          child: SnapshotWidget.buildError(error),
-        ),
-      );
+    loading: () => builder(null),
+    success: (it) => builder(it),
+    error: (error, stackTrace) =>
+        SliverFillRemaining(child: SnapshotWidget.buildError(error)),
+  );
 }
 
 // Future
@@ -159,17 +161,14 @@ Snapshot<T> useFuture<T>(
   T? initialData,
   required List<Object?> keys,
 }) {
-  final future = useMemoized(
-    () async {
-      try {
-        return await futureGetter();
-      } on Exception catch (e, st) {
-        logger.error('Future<$T> in `useFuture` has an error:', e, st);
-        rethrow;
-      }
-    },
-    keys,
-  );
+  final future = useMemoized(() async {
+    try {
+      return await futureGetter();
+    } on Exception catch (e, st) {
+      logger.error('Future<$T> in `useFuture` has an error:', e, st);
+      rethrow;
+    }
+  }, keys);
   final asyncSnapshot = hooks.useFuture(future, initialData: initialData);
   return Snapshot.fromAsyncSnapshot(asyncSnapshot);
 }

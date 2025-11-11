@@ -34,11 +34,13 @@ abstract class SupernovaNumberFormField extends SupernovaFormFieldBase<int>
 
 class _SupernovaNumberFormFieldWidget extends HookWidget {
   _SupernovaNumberFormFieldWidget(this.common, this.onSubmitted, this.formField)
-      : assert(
-          common.necessity
-              .when(optional: () => true, required: (text) => text != null),
-          "SupernovaNumberFormField needs a `requiredText` if it's required.",
-        );
+    : assert(
+        common.necessity.when(
+          optional: () => true,
+          required: (text) => text != null,
+        ),
+        "SupernovaNumberFormField needs a `requiredText` if it's required.",
+      );
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
@@ -49,18 +51,15 @@ class _SupernovaNumberFormFieldWidget extends HookWidget {
     final textEditingController = useTextEditingController(
       text: formField.currentValue.value?.toString(),
     );
-    useEffect(
-      () {
-        void onChanged() {
-          formField.currentValue.value =
-              textEditingController.text.emptyToNull?.toInt();
-        }
+    useEffect(() {
+      void onChanged() {
+        formField.currentValue.value = textEditingController.text.emptyToNull
+            ?.toInt();
+      }
 
-        textEditingController.addListener(onChanged);
-        return () => textEditingController.removeListener(onChanged);
-      },
-      [textEditingController],
-    );
+      textEditingController.addListener(onChanged);
+      return () => textEditingController.removeListener(onChanged);
+    }, [textEditingController]);
 
     return SupernovaTextFormField.singleLine(
       textEditingController,

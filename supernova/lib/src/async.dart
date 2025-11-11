@@ -23,8 +23,9 @@ extension IterableOfFuturesOfMapEntrySupernova<K, V>
 
 extension MapOfKeyToFutureSupernova<K, V> on Map<K, Future<V>> {
   Future<Map<K, V>> get wait async {
-    final newEntries =
-        await entries.map((it) async => MapEntry(it.key, await it.value)).wait;
+    final newEntries = await entries
+        .map((it) async => MapEntry(it.key, await it.value))
+        .wait;
     return newEntries.toMap();
   }
 }
@@ -67,23 +68,14 @@ extension Tuple3Supernova<T1, T2, T3> on (Stream<T1>, Stream<T2>, Stream<T3>) {
       Rx.combineLatest3($1, $2, $3, (a, b, c) => (a, b, c));
 }
 
-extension Tuple4Supernova<T1, T2, T3, T4> on (
-  Stream<T1>,
-  Stream<T2>,
-  Stream<T3>,
-  Stream<T4>
-) {
+extension Tuple4Supernova<T1, T2, T3, T4>
+    on (Stream<T1>, Stream<T2>, Stream<T3>, Stream<T4>) {
   Stream<(T1, T2, T3, T4)> combineLatest() =>
       Rx.combineLatest4($1, $2, $3, $4, (a, b, c, d) => (a, b, c, d));
 }
 
-extension Tuple5Supernova<T1, T2, T3, T4, T5> on (
-  Stream<T1>,
-  Stream<T2>,
-  Stream<T3>,
-  Stream<T4>,
-  Stream<T5>
-) {
+extension Tuple5Supernova<T1, T2, T3, T4, T5>
+    on (Stream<T1>, Stream<T2>, Stream<T3>, Stream<T4>, Stream<T5>) {
   Stream<(T1, T2, T3, T4, T5)> combineLatest() =>
       Rx.combineLatest5($1, $2, $3, $4, $5, (a, b, c, d, e) => (a, b, c, d, e));
 }

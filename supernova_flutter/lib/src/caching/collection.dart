@@ -3,8 +3,8 @@ import 'package:supernova/supernova.dart' hide AsyncValueGetter;
 
 import 'refresher.dart';
 
-typedef AsyncItemGetter<K extends Object, T extends Object> = Future<T?>
-    Function(Id<K>);
+typedef AsyncItemGetter<K extends Object, T extends Object> =
+    Future<T?> Function(Id<K>);
 
 /// A cache for individual items of a collection.
 ///
@@ -14,8 +14,8 @@ class CachedSparseCollection<K extends Object, T extends Object> {
   CachedSparseCollection({
     required Mapper<T, Id<K>> idFromItem,
     required AsyncItemGetter<K, T> getFromApi,
-  })  : _idFromItem = idFromItem,
-        _getFromApi = getFromApi;
+  }) : _idFromItem = idFromItem,
+       _getFromApi = getFromApi;
 
   final Mapper<T, Id<K>> _idFromItem;
   final AsyncItemGetter<K, T> _getFromApi;
@@ -28,18 +28,15 @@ class CachedSparseCollection<K extends Object, T extends Object> {
   Refresher<T?> _getRefresher(Id<K> id) {
     return _refreshers.putIfAbsent(
       id,
-      () => Refresher(
-        () async {
-          final item = await _getFromApi(id);
-          if (item != null) {
-            notifyItemChanged(item);
-          } else {
-            notifyItemRemoved(id);
-          }
-          return item;
-        },
-        parent: _getParentRefresherFor(id),
-      ),
+      () => Refresher(() async {
+        final item = await _getFromApi(id);
+        if (item != null) {
+          notifyItemChanged(item);
+        } else {
+          notifyItemRemoved(id);
+        }
+        return item;
+      }, parent: _getParentRefresherFor(id)),
     );
   }
 
@@ -99,7 +96,8 @@ class CachedCollection<K extends Object, T extends Object>
 
   @override
   BaseRefresher<T?>? _getParentRefresherFor(Id<K> id) {
-    return _refresher
-        .map((it) => it.firstOrNullWhere((it) => _idFromItem(it) == id));
+    return _refresher.map(
+      (it) => it.firstOrNullWhere((it) => _idFromItem(it) == id),
+    );
   }
 }

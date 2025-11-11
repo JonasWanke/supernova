@@ -78,11 +78,13 @@ sealed class SupernovaTextFormField extends SupernovaFormFieldBase<String>
 
 class _SupernovaTextFormFieldWidget extends StatelessWidget {
   _SupernovaTextFormFieldWidget(this.common, this.onSubmitted, this.formField)
-      : assert(
-          common.necessity
-              .when(optional: () => true, required: (text) => text != null),
-          "SupernovaTextFormField needs a `requiredText` if it's required.",
-        );
+    : assert(
+        common.necessity.when(
+          optional: () => true,
+          required: (text) => text != null,
+        ),
+        "SupernovaTextFormField needs a `requiredText` if it's required.",
+      );
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
@@ -102,8 +104,9 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
       emailAddress: (_) => TextInputType.emailAddress,
       password: (_) => null,
     );
-    final inputFormatters =
-        formField.mapOrNull(singleLine: (it) => it.inputFormatters);
+    final inputFormatters = formField.mapOrNull(
+      singleLine: (it) => it.inputFormatters,
+    );
     final maxLength = formField.mapOrNull(
       singleLine: (it) => it.maxLength,
       multiLine: (it) => it.maxLength,
@@ -130,7 +133,7 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
               SupernovaTextFormField.minPasswordLength,
             ),
           ),
-        SupernovaPasswordFormFieldRole.enter => null
+        SupernovaPasswordFormFieldRole.enter => null,
       },
     );
     final textInputAction = formField.map(
@@ -147,8 +150,10 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
       emailAddress: (_) => context.supernovaL10n.formFieldTextEmailAddress,
       password: (_) => context.supernovaL10n.formFieldTextPassword,
     );
-    final isPassword =
-        formField.maybeMap(password: (_) => true, orElse: () => false);
+    final isPassword = formField.maybeMap(
+      password: (_) => true,
+      orElse: () => false,
+    );
     final prefixIcon = formField.mapOrNull(singleLine: (it) => it.prefixIcon);
     final suffixIcon = formField.mapOrNull(singleLine: (it) => it.suffixIcon);
 
@@ -163,7 +168,8 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
         inputFormatters: inputFormatters,
         maxLength: maxLength,
         textCapitalization: textCapitalization,
-        validator: common.necessity.stringValidator() &
+        validator:
+            common.necessity.stringValidator() &
             (_) {
               if (customValidator == null || formField.value == null) {
                 return null;
@@ -175,18 +181,21 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
         minLines: formField.maybeMap(multiLine: (_) => 4, orElse: () => null),
         textInputAction: textInputAction,
         style: SupernovaFormFieldWidget.textStyle(context),
-        onFieldSubmitted:
-            onSubmitted == null ? null : (_) => onSubmitted!.call(),
+        onFieldSubmitted: onSubmitted == null
+            ? null
+            : (_) => onSubmitted!.call(),
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: SupernovaFormFieldWidget.hintTextStyle(context),
           contentPadding: EdgeInsets.symmetric(
-            horizontal:
-                SupernovaFormFieldWidget.horizontalPaddingValue(context),
+            horizontal: SupernovaFormFieldWidget.horizontalPaddingValue(
+              context,
+            ),
             vertical: 16,
           ),
-          prefixIcon:
-              prefixIcon == null ? null : Icon(prefixIcon.outlined, size: 20),
+          prefixIcon: prefixIcon == null
+              ? null
+              : Icon(prefixIcon.outlined, size: 20),
           suffixIcon: suffixIcon,
           border: InputBorder.none,
         ),

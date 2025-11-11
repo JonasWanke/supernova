@@ -17,7 +17,7 @@ extension PlatformEnumSupernova on PlatformEnum {
       PlatformEnum.Windows => windows,
       PlatformEnum.Linux => linux,
       PlatformEnum.MacOS => macOs,
-      PlatformEnum.Fuchsia => fuchsia
+      PlatformEnum.Fuchsia => fuchsia,
     };
   }
 }

@@ -8,8 +8,7 @@ import 'iterable.dart';
 class L10nString {
   const L10nString(this.values) : assert(values.length > 0);
   factory L10nString.from({String? de, String? en}) {
-    final entries = {'de': de, 'en': en}
-        .entries
+    final entries = {'de': de, 'en': en}.entries
         .where((it) => it.value != null)
         .map(
           (it) => MapEntry(Locale.fromSubtags(languageCode: it.key), it.value!),

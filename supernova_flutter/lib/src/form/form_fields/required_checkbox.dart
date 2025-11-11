@@ -38,11 +38,13 @@ class _SupernovaRequiredCheckboxFormFieldWidget extends HookWidget {
     this.onSubmitted,
     this.formField,
   ) : assert(
-          common.necessity
-              .when(optional: () => false, required: (text) => text != null),
-          'SupernovaRequiredCheckboxFormField must be required with a '
-          '`requiredText`.',
-        );
+        common.necessity.when(
+          optional: () => false,
+          required: (text) => text != null,
+        ),
+        'SupernovaRequiredCheckboxFormField must be required with a '
+        '`requiredText`.',
+      );
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;

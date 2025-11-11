@@ -28,8 +28,9 @@ class PaddedFormError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final horizontalPadding =
-        SupernovaFormFieldWidget.horizontalPaddingValue(context);
+    final horizontalPadding = SupernovaFormFieldWidget.horizontalPaddingValue(
+      context,
+    );
     return Padding(
       padding: EdgeInsets.fromLTRB(horizontalPadding, 8, horizontalPadding, 4),
       child: Text(errorText, style: context.theme.textTheme.labelMedium),

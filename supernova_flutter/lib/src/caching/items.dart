@@ -11,8 +11,8 @@ class CachedItems<K extends Object, T extends Object> {
 
   final _behaviorSubject = BehaviorSubject<Map<K, T>>.seeded({});
 
-  void update(T item) => _behaviorSubject.value =
-      _behaviorSubject.value.setImmutable(_idFromItem(item), item);
+  void update(T item) => _behaviorSubject.value = _behaviorSubject.value
+      .setImmutable(_idFromItem(item), item);
   T requireSync(K id) => _behaviorSubject.value[id]!;
   Stream<T> getStream(T item) {
     update(item);

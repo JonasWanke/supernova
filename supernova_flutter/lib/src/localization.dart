@@ -11,9 +11,8 @@ extension L10nStringSupernova on L10nString {
       getValue(context.locale.asIntlLocale);
 }
 
-typedef SupernovaL10nStringGetter = String Function(
-  SupernovaLocalizations l10n,
-);
+typedef SupernovaL10nStringGetter =
+    String Function(SupernovaLocalizations l10n);
 
 extension on Locale {
   intl.Locale get asIntlLocale {
@@ -53,7 +52,7 @@ class SupernovaLocalizationsDelegate
     return switch (locale.languageCode) {
       'de' => const SupernovaLocalizationDe(),
       'en' => const SupernovaLocalizationEn(),
-      _ => null
+      _ => null,
     };
   }
 }
@@ -153,7 +152,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
       AddressingFormality.formal =>
         'Ihre Änderungen wurden erfolgreich gespeichert!',
       AddressingFormality.informal =>
-        'Deine Änderungen wurden erfolgreich gespeichert!'
+        'Deine Änderungen wurden erfolgreich gespeichert!',
     };
   }
 
@@ -197,7 +196,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
             'erneut.',
       AddressingFormality.informal =>
         'Du scheinst offline zu sein. Bitte stell sicher, dass du mit '
-            'dem Internet verbunden bist, und versuche es dann erneut.'
+            'dem Internet verbunden bist, und versuche es dann erneut.',
     };
   }
 
@@ -209,7 +208,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
       if (shouldTryAgain)
         switch (addressingFormality) {
           AddressingFormality.formal => 'Bitte versuchen Sie es erneut.',
-          AddressingFormality.informal => 'Bitte versuche es erneut.'
+          AddressingFormality.informal => 'Bitte versuche es erneut.',
         },
     ].join(message != null ? '\n' : ' ');
   }
@@ -226,7 +225,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
   String get formFieldTextEmailAddressErrorEmpty {
     return switch (addressingFormality) {
       AddressingFormality.formal => 'Bitte geben Sie Ihre E-Mail-Adresse ein.',
-      AddressingFormality.informal => 'Bitte gib deine E-Mail-Adresse ein.'
+      AddressingFormality.informal => 'Bitte gib deine E-Mail-Adresse ein.',
     };
   }
 
@@ -236,7 +235,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
       AddressingFormality.formal =>
         'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
       AddressingFormality.informal =>
-        'Bitte gib eine gültige E-Mail-Adresse ein.'
+        'Bitte gib eine gültige E-Mail-Adresse ein.',
     };
   }
 
@@ -246,7 +245,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
   String get formFieldTextPasswordErrorEmpty {
     return switch (addressingFormality) {
       AddressingFormality.formal => 'Bitte geben Sie Ihr Passwort ein.',
-      AddressingFormality.informal => 'Bitte gib dein Passwort ein.'
+      AddressingFormality.informal => 'Bitte gib dein Passwort ein.',
     };
   }
 
@@ -260,7 +259,7 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
   String get inputUrlErrorInvalid {
     return switch (addressingFormality) {
       AddressingFormality.formal => 'Bitte geben Sie eine gültige URL ein.',
-      AddressingFormality.informal => 'Bitte gib eine gültige URL ein.'
+      AddressingFormality.informal => 'Bitte gib eine gültige URL ein.',
     };
   }
 
@@ -431,7 +430,7 @@ class SupernovaLocalizationEn extends SupernovaLocalizations {
     return switch (items.length) {
       1 => items.first,
       2 => '${items.first} and ${items.last}',
-      _ => '${items.dropLast(1).join(', ')}, and ${items.last}'
+      _ => '${items.dropLast(1).join(', ')}, and ${items.last}',
     };
   }
 

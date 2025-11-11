@@ -11,7 +11,8 @@ part 'slider.freezed.dart';
 
 @freezed
 abstract class SupernovaSliderFormField<T extends Object>
-    extends SupernovaFormFieldBase<T> with _$SupernovaSliderFormField<T> {
+    extends SupernovaFormFieldBase<T>
+    with _$SupernovaSliderFormField<T> {
   const factory SupernovaSliderFormField(
     ValueNotifier<T> selectedValue, {
     required List<T> values,
@@ -36,10 +37,10 @@ abstract class SupernovaSliderFormField<T extends Object>
 
 class _SupernovaSliderFormFieldWidget<T extends Object> extends HookWidget {
   _SupernovaSliderFormFieldWidget(this.common, this.onSubmitted, this.formField)
-      : assert(
-          common.necessity.isRequired,
-          'SupernovaSliderFormField only supports required.',
-        );
+    : assert(
+        common.necessity.isRequired,
+        'SupernovaSliderFormField only supports required.',
+      );
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
@@ -77,17 +78,19 @@ class _SupernovaSliderFormFieldWidget<T extends Object> extends HookWidget {
         trackShape: _SupernovaSliderTrackShape(),
       ),
       child: Slider(
-        value:
-            formField.values.indexOf(formField.selectedValue.value).toDouble(),
+        value: formField.values
+            .indexOf(formField.selectedValue.value)
+            .toDouble(),
         onChanged: SupernovaForm.isEnabled(context)
-            ? (value) =>
-                formField.selectedValue.value = formField.values[value.toInt()]
+            ? (value) => formField.selectedValue.value =
+                  formField.values[value.toInt()]
             : null,
         onChangeEnd: onSubmitted == null ? null : (_) => onSubmitted!.call(),
         max: formField.values.lastIndex.toDouble(),
         divisions: formField.values.lastIndex,
-        label: (formField.labelGetter ?? formField.descriptionGetter)
-            .call(formField.selectedValue.value),
+        label: (formField.labelGetter ?? formField.descriptionGetter).call(
+          formField.selectedValue.value,
+        ),
       ),
     );
   }

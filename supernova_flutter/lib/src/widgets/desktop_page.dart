@@ -14,9 +14,8 @@ class DesktopPage extends StatelessWidget {
     this.isFullwidth = false,
     required Widget child,
   }) : builder = ((horizontalMargin) => SliverToBoxAdapter(
-              child:
-                  Padding(padding: _getPadding(horizontalMargin), child: child),
-            ));
+         child: Padding(padding: _getPadding(horizontalMargin), child: child),
+       ));
   DesktopPage.center({
     super.key,
     required this.title,
@@ -24,12 +23,12 @@ class DesktopPage extends StatelessWidget {
     this.isFullwidth = false,
     required Widget child,
   }) : builder = ((horizontalMargin) => SliverFillRemaining(
-              hasScrollBody: false,
-              child: Padding(
-                padding: _getPadding(horizontalMargin),
-                child: Center(child: child),
-              ),
-            ));
+         hasScrollBody: false,
+         child: Padding(
+           padding: _getPadding(horizontalMargin),
+           child: Center(child: child),
+         ),
+       ));
 
   DesktopPage.sliver({
     super.key,
@@ -38,9 +37,9 @@ class DesktopPage extends StatelessWidget {
     this.isFullwidth = false,
     required Widget sliver,
   }) : builder = ((horizontalMargin) => SliverPadding(
-              padding: _getPadding(horizontalMargin),
-              sliver: sliver,
-            ));
+         padding: _getPadding(horizontalMargin),
+         sliver: sliver,
+       ));
 
   static const _verticalPadding = 32.0;
   static EdgeInsets _getPadding(double horizontalMargin) =>

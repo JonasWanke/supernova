@@ -5,15 +5,12 @@ import 'package:supernova/supernova.dart' hide ValueChanged, ValueGetter;
 
 import '../hooks.dart';
 
-typedef SupernovaFormBuilder = Widget Function(
-  AsyncVoidCallback submit,
-  // ignore: avoid_positional_boolean_parameters
-  bool isSubmitting,
-);
+typedef SupernovaFormBuilder =
+    // ignore: avoid_positional_boolean_parameters
+    Widget Function(AsyncVoidCallback submit, bool isSubmitting);
 
-typedef StatelessSupernovaFormBuilder = Widget Function(
-  AsyncVoidCallback submit,
-);
+typedef StatelessSupernovaFormBuilder =
+    Widget Function(AsyncVoidCallback submit);
 
 class SupernovaForm extends HookWidget {
   const SupernovaForm({

@@ -85,8 +85,9 @@ class _SupernovaDateFormFieldWidget extends StatelessWidget {
               SupernovaFormFieldWidget.horizontalPaddingValue(context);
           return InkWell(
             onTap: SupernovaForm.isEnabled(context) ? onTap : null,
-            borderRadius: SupernovaFormFieldWidget.borderRadius(context)
-                .resolve(context.directionality),
+            borderRadius: SupernovaFormFieldWidget.borderRadius(
+              context,
+            ).resolve(context.directionality),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [

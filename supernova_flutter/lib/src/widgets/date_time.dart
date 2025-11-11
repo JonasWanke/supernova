@@ -22,9 +22,9 @@ class InstantWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Tooltip(
-      message: DateFormat.yMMMMEEEEd()
-          .add_jms()
-          .format(instant.asCoreDateTimeInLocalZone),
+      message: DateFormat.yMMMMEEEEd().add_jms().format(
+        instant.asCoreDateTimeInLocalZone,
+      ),
       child: Timeago(
         date: instant.asCoreDateTimeInLocalZone,
         locale: context.locale.toLanguageTag(),

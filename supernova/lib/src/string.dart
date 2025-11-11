@@ -5,8 +5,9 @@ extension StringSupernova on String {
   String? get blankToNull => isBlank ? null : this;
 
   /// https://www.unicode.org/versions/Unicode14.0.0/ch05.pdf#page=16
-  static final anyNewlineCharacterRegExp =
-      RegExp('\r\n|\n|\u{0b}|\f|\r|\u{85}|\u{2028}|\u{2029}');
+  static final anyNewlineCharacterRegExp = RegExp(
+    '\r\n|\n|\u{0b}|\f|\r|\u{85}|\u{2028}|\u{2029}',
+  );
   bool get isSingleLine => !anyNewlineCharacterRegExp.hasMatch(this);
 
   String limitWithEllipsis(int limit) {

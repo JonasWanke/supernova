@@ -42,8 +42,7 @@ mixin EnumJson on Enum {
   static Set<T> setFromJson<T extends Enum>(
     List<T> values,
     List<dynamic> json,
-  ) =>
-      json.cast<String>().map((it) => fromJson(values, it)).toSet();
+  ) => json.cast<String>().map((it) => fromJson(values, it)).toSet();
 
   String toJson() => name;
 }
@@ -52,12 +51,12 @@ extension EnumSetToJsonSupernova<T extends EnumJson> on Set<T> {
   List<String> toJson() => map((it) => it.toJson()).toList();
 }
 
-typedef FromNullableJson<T extends Object> = T? Function(
-  Map<String, dynamic>? it,
-);
+typedef FromNullableJson<T extends Object> =
+    T? Function(Map<String, dynamic>? it);
 
 extension FromJsonNullableSupernova<T extends Object> on FromJson<T> {
-  FromNullableJson<T> get orNull => (it) => it == null ? null : this(it);
+  FromNullableJson<T> get orNull =>
+      (it) => it == null ? null : this(it);
 }
 
 // Utils

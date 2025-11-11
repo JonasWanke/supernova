@@ -20,11 +20,11 @@ abstract class SupernovaFormField<T extends Object> {
     required SupernovaFormFieldNecessity necessity,
     required this.formField,
   }) : common = SupernovaFormFieldData(
-          focusNode: focusNode ?? FocusNode(),
-          labelText: labelText,
-          helpText: helpText,
-          necessity: necessity,
-        );
+         focusNode: focusNode ?? FocusNode(),
+         labelText: labelText,
+         helpText: helpText,
+         necessity: necessity,
+       );
 
   final SupernovaFormFieldData common;
   final SupernovaFormFieldBase<T> formField;
@@ -65,8 +65,8 @@ class RequiredSupernovaFormField<T extends Object>
     super.helpText,
     required String? requiredText,
     required super.formField,
-  })  : assert((requiredText == null).implies(formField.value != null)),
-        super._(necessity: SupernovaFormFieldNecessity.required(requiredText));
+  }) : assert((requiredText == null).implies(formField.value != null)),
+       super._(necessity: SupernovaFormFieldNecessity.required(requiredText));
 
   T get value => rawValue!;
 }
@@ -85,7 +85,7 @@ OptionalSupernovaFormField<T> useOptionalSupernovaFormField<T extends Object>({
 }
 
 OptionalSupernovaFormField<T>
-    useMaybeRequiredSupernovaFormField<T extends Object>({
+useMaybeRequiredSupernovaFormField<T extends Object>({
   String? labelText,
   String? helpText,
   required SupernovaFormFieldNecessity necessity,
@@ -196,9 +196,9 @@ class SupernovaFormFieldWidget extends StatelessWidget {
   }
 
   static TextStyle hintTextStyle(BuildContext context) {
-    return textStyle(context).copyWith(
-      color: context.theme.colorScheme.surface.mediumEmphasisOnColor,
-    );
+    return textStyle(
+      context,
+    ).copyWith(color: context.theme.colorScheme.surface.mediumEmphasisOnColor);
   }
 
   static const labelSpacing = 8.0;
@@ -216,7 +216,9 @@ class SupernovaFormFieldWidget extends StatelessWidget {
           SupernovaFormFieldLabel.forCommon(common),
           const SizedBox(height: labelSpacing),
         ],
-        Card(child: Padding(padding: padding, child: child)),
+        Card(
+          child: Padding(padding: padding, child: child),
+        ),
       ],
     );
   }

@@ -9,18 +9,18 @@ class FlatIcon {
 
 class _Outlined extends IconData {
   const _Outlined(super.codePoint)
-      : super(
-          fontFamily: 'FlatIconsOutlinedRounded',
-          fontPackage: 'supernova_flutter',
-        );
+    : super(
+        fontFamily: 'FlatIconsOutlinedRounded',
+        fontPackage: 'supernova_flutter',
+      );
 }
 
 class _Filled extends IconData {
   const _Filled(super.codePoint)
-      : super(
-          fontFamily: 'FlatIconsFilledRounded',
-          fontPackage: 'supernova_flutter',
-        );
+    : super(
+        fontFamily: 'FlatIconsFilledRounded',
+        fontPackage: 'supernova_flutter',
+      );
 }
 
 @immutable
@@ -40,16 +40,24 @@ class FlatIcons {
   static const ambulance = FlatIcon._(_Outlined(0xf108), _Filled(0xf108));
   static const angleCircleDown = FlatIcon._(_Outlined(0xf109), _Filled(0xf109));
   static const angleCircleLeft = FlatIcon._(_Outlined(0xf10a), _Filled(0xf10a));
-  static const angleCircleRight =
-      FlatIcon._(_Outlined(0xf10b), _Filled(0xf10b));
+  static const angleCircleRight = FlatIcon._(
+    _Outlined(0xf10b),
+    _Filled(0xf10b),
+  );
   static const angleCircleUp = FlatIcon._(_Outlined(0xf10c), _Filled(0xf10c));
   static const angleDoubleLeft = FlatIcon._(_Outlined(0xf10d), _Filled(0xf10d));
-  static const angleDoubleRight =
-      FlatIcon._(_Outlined(0xf10e), _Filled(0xf10e));
-  static const angleDoubleSmallLeft =
-      FlatIcon._(_Outlined(0xf10f), _Filled(0xf10f));
-  static const angleDoubleSmallRight =
-      FlatIcon._(_Outlined(0xf110), _Filled(0xf110));
+  static const angleDoubleRight = FlatIcon._(
+    _Outlined(0xf10e),
+    _Filled(0xf10e),
+  );
+  static const angleDoubleSmallLeft = FlatIcon._(
+    _Outlined(0xf10f),
+    _Filled(0xf10f),
+  );
+  static const angleDoubleSmallRight = FlatIcon._(
+    _Outlined(0xf110),
+    _Filled(0xf110),
+  );
   static const angleDown = FlatIcon._(_Outlined(0xf111), _Filled(0xf111));
   static const angleLeft = FlatIcon._(_Outlined(0xf112), _Filled(0xf112));
   static const angleRight = FlatIcon._(_Outlined(0xf113), _Filled(0xf113));
@@ -59,8 +67,10 @@ class FlatIcons {
   static const angleSmallUp = FlatIcon._(_Outlined(0xf117), _Filled(0xf117));
   static const angleSquareDown = FlatIcon._(_Outlined(0xf118), _Filled(0xf118));
   static const angleSquareLeft = FlatIcon._(_Outlined(0xf119), _Filled(0xf119));
-  static const angleSquareRight =
-      FlatIcon._(_Outlined(0xf11a), _Filled(0xf11a));
+  static const angleSquareRight = FlatIcon._(
+    _Outlined(0xf11a),
+    _Filled(0xf11a),
+  );
   static const angleSquareUp = FlatIcon._(_Outlined(0xf11b), _Filled(0xf11b));
   static const angleUp = FlatIcon._(_Outlined(0xf11c), _Filled(0xf11c));
   static const angry = FlatIcon._(_Outlined(0xf11d), _Filled(0xf11d));
@@ -72,8 +82,10 @@ class FlatIcons {
   static const archive = FlatIcon._(_Outlined(0xf123), _Filled(0xf123));
   static const arrowCircleDown = FlatIcon._(_Outlined(0xf124), _Filled(0xf124));
   static const arrowCircleLeft = FlatIcon._(_Outlined(0xf125), _Filled(0xf125));
-  static const arrowCircleRight =
-      FlatIcon._(_Outlined(0xf126), _Filled(0xf126));
+  static const arrowCircleRight = FlatIcon._(
+    _Outlined(0xf126),
+    _Filled(0xf126),
+  );
   static const arrowCircleUp = FlatIcon._(_Outlined(0xf127), _Filled(0xf127));
   static const arrowDown = FlatIcon._(_Outlined(0xf128), _Filled(0xf128));
   static const arrowFromBottom = FlatIcon._(_Outlined(0xf129), _Filled(0xf129));
@@ -92,8 +104,10 @@ class FlatIcons {
   static const arrowSmallUp = FlatIcon._(_Outlined(0xf132), _Filled(0xf132));
   static const arrowSquareDown = FlatIcon._(_Outlined(0xf133), _Filled(0xf133));
   static const arrowSquareLeft = FlatIcon._(_Outlined(0xf134), _Filled(0xf134));
-  static const arrowSquareRight =
-      FlatIcon._(_Outlined(0xf135), _Filled(0xf135));
+  static const arrowSquareRight = FlatIcon._(
+    _Outlined(0xf135),
+    _Filled(0xf135),
+  );
   static const arrowSquareUp = FlatIcon._(_Outlined(0xf136), _Filled(0xf136));
   static const arrowToBottom = FlatIcon._(_Outlined(0xf137), _Filled(0xf137));
   static const arrowToLeft = FlatIcon._(_Outlined(0xf138), _Filled(0xf138));
@@ -162,18 +176,24 @@ class FlatIcons {
   static const cannedFood = FlatIcon._(_Outlined(0xf17b), _Filled(0xf17b));
   static const car = FlatIcon._(_Outlined(0xf17c), _Filled(0xf17c));
   static const caretCircleDown = FlatIcon._(_Outlined(0xf17d), _Filled(0xf17d));
-  static const caretCircleRight =
-      FlatIcon._(_Outlined(0xf17e), _Filled(0xf17e));
+  static const caretCircleRight = FlatIcon._(
+    _Outlined(0xf17e),
+    _Filled(0xf17e),
+  );
   static const caretCircleUp = FlatIcon._(_Outlined(0xf17f), _Filled(0xf17f));
   static const caretDown = FlatIcon._(_Outlined(0xf180), _Filled(0xf180));
   static const caretLeft = FlatIcon._(_Outlined(0xf181), _Filled(0xf181));
   static const caretRight = FlatIcon._(_Outlined(0xf183), _Filled(0xf183));
   static const caretSquareDown = FlatIcon._(_Outlined(0xf184), _Filled(0xf184));
   static const caretSquareLeft = FlatIcon._(_Outlined(0xf186), _Filled(0xf186));
-  static const caretSquareLeft1 =
-      FlatIcon._(_Outlined(0xf185), _Filled(0xf185));
-  static const caretSquareRight =
-      FlatIcon._(_Outlined(0xf187), _Filled(0xf187));
+  static const caretSquareLeft1 = FlatIcon._(
+    _Outlined(0xf185),
+    _Filled(0xf185),
+  );
+  static const caretSquareRight = FlatIcon._(
+    _Outlined(0xf187),
+    _Filled(0xf187),
+  );
   static const caretSquareUp = FlatIcon._(_Outlined(0xf182), _Filled(0xf182));
   static const caretUp = FlatIcon._(_Outlined(0xf188), _Filled(0xf188));
   static const carrot = FlatIcon._(_Outlined(0xf189), _Filled(0xf189));
@@ -193,8 +213,10 @@ class FlatIcons {
   static const cherry = FlatIcon._(_Outlined(0xf197), _Filled(0xf197));
   static const chessBoard = FlatIcon._(_Outlined(0xf198), _Filled(0xf198));
   static const chessPiece = FlatIcon._(_Outlined(0xf199), _Filled(0xf199));
-  static const chevronDoubleDown =
-      FlatIcon._(_Outlined(0xf19a), _Filled(0xf19a));
+  static const chevronDoubleDown = FlatIcon._(
+    _Outlined(0xf19a),
+    _Filled(0xf19a),
+  );
   static const chevronDoubleUp = FlatIcon._(_Outlined(0xf19b), _Filled(0xf19b));
   static const childHead = FlatIcon._(_Outlined(0xf19c), _Filled(0xf19c));
   static const chocolate = FlatIcon._(_Outlined(0xf19d), _Filled(0xf19d));
@@ -275,8 +297,10 @@ class FlatIcons {
   static const eLearning = FlatIcon._(_Outlined(0xf1e2), _Filled(0xf1e2));
   static const envelope = FlatIcon._(_Outlined(0xf1ed), _Filled(0xf1ed));
   static const envelopeBan = FlatIcon._(_Outlined(0xf1e8), _Filled(0xf1e8));
-  static const envelopeDownload =
-      FlatIcon._(_Outlined(0xf1e9), _Filled(0xf1e9));
+  static const envelopeDownload = FlatIcon._(
+    _Outlined(0xf1e9),
+    _Filled(0xf1e9),
+  );
   static const envelopeMarker = FlatIcon._(_Outlined(0xf1ea), _Filled(0xf1ea));
   static const envelopeOpen = FlatIcon._(_Outlined(0xf1eb), _Filled(0xf1eb));
   static const envelopePlus = FlatIcon._(_Outlined(0xf1ec), _Filled(0xf1ec));
@@ -358,23 +382,29 @@ class FlatIcons {
   static const grinStars = FlatIcon._(_Outlined(0xf238), _Filled(0xf238));
   static const grinTears = FlatIcon._(_Outlined(0xf239), _Filled(0xf239));
   static const grinTongue = FlatIcon._(_Outlined(0xf23c), _Filled(0xf23c));
-  static const grinTongueSquint =
-      FlatIcon._(_Outlined(0xf23a), _Filled(0xf23a));
+  static const grinTongueSquint = FlatIcon._(
+    _Outlined(0xf23a),
+    _Filled(0xf23a),
+  );
   static const grinTongueWink = FlatIcon._(_Outlined(0xf23b), _Filled(0xf23b));
   static const grinWink = FlatIcon._(_Outlined(0xf23d), _Filled(0xf23d));
   static const guitar = FlatIcon._(_Outlined(0xf23f), _Filled(0xf23f));
   static const gym = FlatIcon._(_Outlined(0xf240), _Filled(0xf240));
   static const hamburger = FlatIcon._(_Outlined(0xf242), _Filled(0xf242));
   static const hamburgerSoda = FlatIcon._(_Outlined(0xf241), _Filled(0xf241));
-  static const handHoldingHeart =
-      FlatIcon._(_Outlined(0xf243), _Filled(0xf243));
+  static const handHoldingHeart = FlatIcon._(
+    _Outlined(0xf243),
+    _Filled(0xf243),
+  );
   static const hashtag = FlatIcon._(_Outlined(0xf244), _Filled(0xf244));
   static const hatBirthday = FlatIcon._(_Outlined(0xf245), _Filled(0xf245));
   static const hatChef = FlatIcon._(_Outlined(0xf246), _Filled(0xf246));
   static const headphones = FlatIcon._(_Outlined(0xf248), _Filled(0xf248));
   static const headset = FlatIcon._(_Outlined(0xf249), _Filled(0xf249));
-  static const headSideThinking =
-      FlatIcon._(_Outlined(0xf247), _Filled(0xf247));
+  static const headSideThinking = FlatIcon._(
+    _Outlined(0xf247),
+    _Filled(0xf247),
+  );
   static const heart = FlatIcon._(_Outlined(0xf24b), _Filled(0xf24b));
   static const heartArrow = FlatIcon._(_Outlined(0xf24a), _Filled(0xf24a));
   static const hiking = FlatIcon._(_Outlined(0xf24c), _Filled(0xf24c));
@@ -458,8 +488,10 @@ class FlatIcons {
   static const melon = FlatIcon._(_Outlined(0xf29a), _Filled(0xf29a));
   static const menuBurger = FlatIcon._(_Outlined(0xf29b), _Filled(0xf29b));
   static const menuDots = FlatIcon._(_Outlined(0xf29d), _Filled(0xf29d));
-  static const menuDotsVertical =
-      FlatIcon._(_Outlined(0xf29c), _Filled(0xf29c));
+  static const menuDotsVertical = FlatIcon._(
+    _Outlined(0xf29c),
+    _Filled(0xf29c),
+  );
   static const microphone = FlatIcon._(_Outlined(0xf29f), _Filled(0xf29f));
   static const microphone1 = FlatIcon._(_Outlined(0xf29e), _Filled(0xf29e));
   static const minus = FlatIcon._(_Outlined(0xf2a1), _Filled(0xf2a1));
@@ -542,12 +574,18 @@ class FlatIcons {
   static const rec = FlatIcon._(_Outlined(0xf2ed), _Filled(0xf2ed));
   static const receipt = FlatIcon._(_Outlined(0xf2ee), _Filled(0xf2ee));
   static const recordVinyl = FlatIcon._(_Outlined(0xf2ef), _Filled(0xf2ef));
-  static const rectangleHorizontal =
-      FlatIcon._(_Outlined(0xf2f1), _Filled(0xf2f1));
-  static const rectanglePanoramic =
-      FlatIcon._(_Outlined(0xf2f2), _Filled(0xf2f2));
-  static const rectangleVertical =
-      FlatIcon._(_Outlined(0xf2f0), _Filled(0xf2f0));
+  static const rectangleHorizontal = FlatIcon._(
+    _Outlined(0xf2f1),
+    _Filled(0xf2f1),
+  );
+  static const rectanglePanoramic = FlatIcon._(
+    _Outlined(0xf2f2),
+    _Filled(0xf2f2),
+  );
+  static const rectangleVertical = FlatIcon._(
+    _Outlined(0xf2f0),
+    _Filled(0xf2f0),
+  );
   static const recycle = FlatIcon._(_Outlined(0xf2f3), _Filled(0xf2f3));
   static const redo = FlatIcon._(_Outlined(0xf2f5), _Filled(0xf2f5));
   static const redo1 = FlatIcon._(_Outlined(0xf2f4), _Filled(0xf2f4));
@@ -587,10 +625,14 @@ class FlatIcons {
   static const share = FlatIcon._(_Outlined(0xf317), _Filled(0xf317));
   static const shield = FlatIcon._(_Outlined(0xf31c), _Filled(0xf31c));
   static const shieldCheck = FlatIcon._(_Outlined(0xf318), _Filled(0xf318));
-  static const shieldExclamation =
-      FlatIcon._(_Outlined(0xf319), _Filled(0xf319));
-  static const shieldInterrogation =
-      FlatIcon._(_Outlined(0xf31a), _Filled(0xf31a));
+  static const shieldExclamation = FlatIcon._(
+    _Outlined(0xf319),
+    _Filled(0xf319),
+  );
+  static const shieldInterrogation = FlatIcon._(
+    _Outlined(0xf31a),
+    _Filled(0xf31a),
+  );
   static const shieldPlus = FlatIcon._(_Outlined(0xf31b), _Filled(0xf31b));
   static const ship = FlatIcon._(_Outlined(0xf31e), _Filled(0xf31e));
   static const shipSide = FlatIcon._(_Outlined(0xf31d), _Filled(0xf31d));
@@ -599,8 +641,10 @@ class FlatIcons {
   static const shoppingBagAdd = FlatIcon._(_Outlined(0xf320), _Filled(0xf320));
   static const shoppingCart = FlatIcon._(_Outlined(0xf324), _Filled(0xf324));
   static const shoppingCartAdd = FlatIcon._(_Outlined(0xf322), _Filled(0xf322));
-  static const shoppingCartCheck =
-      FlatIcon._(_Outlined(0xf323), _Filled(0xf323));
+  static const shoppingCartCheck = FlatIcon._(
+    _Outlined(0xf323),
+    _Filled(0xf323),
+  );
   static const shrimp = FlatIcon._(_Outlined(0xf325), _Filled(0xf325));
   static const shuffle = FlatIcon._(_Outlined(0xf326), _Filled(0xf326));
   static const shuttlecock = FlatIcon._(_Outlined(0xf327), _Filled(0xf327));
@@ -674,8 +718,10 @@ class FlatIcons {
   static const timeDelete = FlatIcon._(_Outlined(0xf36b), _Filled(0xf36b));
   static const timeFast = FlatIcon._(_Outlined(0xf36c), _Filled(0xf36c));
   static const timeForward = FlatIcon._(_Outlined(0xf36f), _Filled(0xf36f));
-  static const timeForwardSixty =
-      FlatIcon._(_Outlined(0xf36d), _Filled(0xf36d));
+  static const timeForwardSixty = FlatIcon._(
+    _Outlined(0xf36d),
+    _Filled(0xf36d),
+  );
   static const timeForwardTen = FlatIcon._(_Outlined(0xf36e), _Filled(0xf36e));
   static const timeHalfPast = FlatIcon._(_Outlined(0xf370), _Filled(0xf370));
   static const timeOClock = FlatIcon._(_Outlined(0xf371), _Filled(0xf371));

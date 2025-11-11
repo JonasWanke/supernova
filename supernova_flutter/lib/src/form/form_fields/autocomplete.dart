@@ -13,12 +13,15 @@ import 'utils.dart';
 
 part 'autocomplete.freezed.dart';
 
-typedef SupernovaAutocompleteOptionsBuilder<T extends Object> = Future<List<T>>
-    Function(TextEditingValue textEditingValue);
+typedef SupernovaAutocompleteOptionsBuilder<T extends Object> =
+    Future<List<T>> Function(TextEditingValue textEditingValue);
 
 @freezed
-abstract class SupernovaAutocompleteFormField<T extends Object,
-        R extends Object> extends SupernovaFormFieldBase<R>
+abstract class SupernovaAutocompleteFormField<
+  T extends Object,
+  R extends Object
+>
+    extends SupernovaFormFieldBase<R>
     with _$SupernovaAutocompleteFormField<T, R> {
   const factory SupernovaAutocompleteFormField(
     TextEditingController textEditingController,
@@ -57,11 +60,13 @@ class _SupernovaAutocompleteFormFieldWidget<T extends Object, R extends Object>
     this.onSubmitted,
     this.formField,
   ) : assert(
-          common.necessity
-              .when(optional: () => true, required: (text) => text != null),
-          "SupernovaAutocompleteFormField needs a `requiredText` if it's "
-          'required.',
-        );
+        common.necessity.when(
+          optional: () => true,
+          required: (text) => text != null,
+        ),
+        "SupernovaAutocompleteFormField needs a `requiredText` if it's "
+        'required.',
+      );
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
@@ -75,25 +80,22 @@ class _SupernovaAutocompleteFormFieldWidget<T extends Object, R extends Object>
     final currentGeneration = useRef(0);
     final lastOptions = useRef<List<T>>([]);
 
-    useEffect(
-      () {
-        var previousText = formField.textEditingController.text;
-        void onTextChanged() {
-          if (previousText == formField.textEditingController.text) return;
+    useEffect(() {
+      var previousText = formField.textEditingController.text;
+      void onTextChanged() {
+        if (previousText == formField.textEditingController.text) return;
 
-          // When editing the text and then dismissing the autocomplete
-          // dropdown, the old selection would still be cached, but out of sync
-          // with the text.
-          formField.selectedItem.value = null;
-          previousText = formField.textEditingController.text;
-        }
+        // When editing the text and then dismissing the autocomplete
+        // dropdown, the old selection would still be cached, but out of sync
+        // with the text.
+        formField.selectedItem.value = null;
+        previousText = formField.textEditingController.text;
+      }
 
-        formField.textEditingController.addListener(onTextChanged);
-        return () =>
-            formField.textEditingController.removeListener(onTextChanged);
-      },
-      [formField.textEditingController],
-    );
+      formField.textEditingController.addListener(onTextChanged);
+      return () =>
+          formField.textEditingController.removeListener(onTextChanged);
+    }, [formField.textEditingController]);
 
     final shouldShowClearButton = useListenableSelector(
       formField.textEditingController,
@@ -151,13 +153,10 @@ class _SupernovaAutocompleteFormFieldWidget<T extends Object, R extends Object>
           textInputAction: formField.textInputAction,
           hintText: formField.hintText ?? context.supernovaL10n.choose,
           suffixIcon: suffixIcon,
-        ).build(
-          common,
-          () {
-            onFieldSubmitted();
-            onSubmitted?.call();
-          },
-        );
+        ).build(common, () {
+          onFieldSubmitted();
+          onSubmitted?.call();
+        });
       },
     );
   }

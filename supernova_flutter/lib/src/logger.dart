@@ -64,6 +64,6 @@ DiagnosticLevel _loggerToDiagnosticLevel(LogLevel level) {
     LogLevel.info => DiagnosticLevel.info,
     LogLevel.config => DiagnosticLevel.info,
     LogLevel.debug => DiagnosticLevel.debug,
-    LogLevel.trace => DiagnosticLevel.hint
+    LogLevel.trace => DiagnosticLevel.hint,
   };
 }

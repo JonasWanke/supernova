@@ -27,7 +27,7 @@ extension ResultJsonSupernova<T extends ToJson, E extends ToJson>
     return switch (type) {
       'ok' => Result.ok(okFromJson(value)),
       'error' => Result.err(errorFromJson(value)),
-      _ => throw ArgumentError.value(type, 'type', 'Invalid `Result` variant')
+      _ => throw ArgumentError.value(type, 'type', 'Invalid `Result` variant'),
     };
   }
 

@@ -19,8 +19,7 @@ int compareByMultiple<T>(
   T b,
   Mapper<T, List<Comparable<dynamic>>> getKeys, {
   bool isDescending = false,
-}) =>
-    compareMultiple(getKeys(a), getKeys(b), isDescending: isDescending);
+}) => compareMultiple(getKeys(a), getKeys(b), isDescending: isDescending);
 int compareMultiple(
   List<Comparable<dynamic>> a,
   List<Comparable<dynamic>> b, {
@@ -29,7 +28,8 @@ int compareMultiple(
   assert(a.length == b.length);
   assert(a.isNotEmpty);
 
-  final result = IterableSupernova(a)
+  final result =
+      IterableSupernova(a)
           .zip(b)
           .map((it) => it.$1.compareTo(it.$2))
           .where((it) => it != 0)
@@ -135,8 +135,7 @@ extension ListSupernova<T> on List<T> {
   List<T> insertImmutableSortedBy<K extends Comparable<K>>(
     T item,
     K Function(T) keyOf,
-  ) =>
-      insertImmutable(lowerBoundBy(item, keyOf), item);
+  ) => insertImmutable(lowerBoundBy(item, keyOf), item);
 
   @useResult
   List<T> removeImmutable(int index) {
@@ -175,8 +174,11 @@ extension SetSupernova<T> on Set<T> {
   Set<T> addAllImmutable(Iterable<T> items) => Set.of(this)..addAll(items);
 
   @useResult
-  Set<T> replaceImmutableOrdered(int index, T item) =>
-      {...take(index), item, ...skip(index + 1)};
+  Set<T> replaceImmutableOrdered(int index, T item) => {
+    ...take(index),
+    item,
+    ...skip(index + 1),
+  };
 
   @useResult
   Set<T> removeImmutable(T item) => Set.of(this)..remove(item);

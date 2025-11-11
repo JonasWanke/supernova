@@ -10,7 +10,8 @@ part 'https_url.freezed.dart';
 
 @freezed
 abstract class SupernovaHttpsUrlFormField
-    extends SupernovaFormFieldBase<HttpsUrl> with _$SupernovaHttpsUrlFormField {
+    extends SupernovaFormFieldBase<HttpsUrl>
+    with _$SupernovaHttpsUrlFormField {
   const factory SupernovaHttpsUrlFormField(
     ValueNotifier<HttpsUrl?> currentValue, {
     required TextInputAction textInputAction,
@@ -36,10 +37,12 @@ class _SupernovaHttpsUrlFormFieldWidget extends HookWidget {
     this.onSubmitted,
     this.formField,
   ) : assert(
-          common.necessity
-              .when(optional: () => true, required: (text) => text != null),
-          "SupernovaHttpsUrlFormField needs a `requiredText` if it's required.",
-        );
+        common.necessity.when(
+          optional: () => true,
+          required: (text) => text != null,
+        ),
+        "SupernovaHttpsUrlFormField needs a `requiredText` if it's required.",
+      );
 
   final SupernovaFormFieldData common;
   final VoidCallback? onSubmitted;
@@ -69,16 +72,14 @@ class _SupernovaHttpsUrlFormFieldWidget extends HookWidget {
     final textEditingController = useTextEditingController(
       text: formField.currentValue.value?.toString(),
     );
-    useEffect(
-      () {
-        void onChanged() => formField.currentValue.value =
-            parse(textEditingController.text).ok().toNullable()?.toNullable();
+    useEffect(() {
+      void onChanged() => formField.currentValue.value = parse(
+        textEditingController.text,
+      ).ok().toNullable()?.toNullable();
 
-        textEditingController.addListener(onChanged);
-        return () => textEditingController.removeListener(onChanged);
-      },
-      [textEditingController],
-    );
+      textEditingController.addListener(onChanged);
+      return () => textEditingController.removeListener(onChanged);
+    }, [textEditingController]);
 
     return SupernovaTextFormField.singleLine(
       textEditingController,

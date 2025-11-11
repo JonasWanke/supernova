@@ -23,9 +23,9 @@ class SupernovaFormFieldLabel extends StatelessWidget {
     this.textStyle,
     this.valueText,
     this.padding,
-  })  : text = common.labelText!,
-        isRequired = common.necessity.isRequired,
-        helpText = common.helpText;
+  }) : text = common.labelText!,
+       isRequired = common.necessity.isRequired,
+       helpText = common.helpText;
 
   final String text;
   final String? semanticsLabel;
@@ -59,8 +59,9 @@ class SupernovaFormFieldLabel extends StatelessWidget {
               child: Text(
                 valueText!,
                 textAlign: TextAlign.right,
-                style: SupernovaFormFieldWidget.textStyle(context)
-                    .copyWith(color: context.theme.colorScheme.primary),
+                style: SupernovaFormFieldWidget.textStyle(
+                  context,
+                ).copyWith(color: context.theme.colorScheme.primary),
               ),
             ),
           ],

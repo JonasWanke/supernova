@@ -11,7 +11,8 @@ part 'dropdown.freezed.dart';
 
 @freezed
 abstract class SupernovaDropdownFormField<T extends Object>
-    extends SupernovaFormFieldBase<T> with _$SupernovaDropdownFormField<T> {
+    extends SupernovaFormFieldBase<T>
+    with _$SupernovaDropdownFormField<T> {
   const factory SupernovaDropdownFormField(
     ValueNotifier<T?> selectedItem, {
     required List<DropdownMenuItem<T>> items,

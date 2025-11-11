@@ -7,7 +7,7 @@ import 'refresher.dart';
 /// Like [CachedCell], but without an `update(…)` method to update the API.
 class ApiReadonlyCachedCell<T extends Object> {
   ApiReadonlyCachedCell({required AsyncValueGetter<T> getFromApi})
-      : _getFromApi = getFromApi;
+    : _getFromApi = getFromApi;
 
   final AsyncValueGetter<T> _getFromApi;
 
@@ -45,8 +45,7 @@ abstract class CachedCell<T extends Object, U extends Object>
   static CachedCell<T, T> symmetric<T extends Object>({
     required AsyncValueGetter<T> getFromApi,
     required AsyncValueSetter<T> updateApi,
-  }) =>
-      _SymmetricCachedCell(getFromApi: getFromApi, updateApi: updateApi);
+  }) => _SymmetricCachedCell(getFromApi: getFromApi, updateApi: updateApi);
 
   final AsyncValueSetter<U> _updateApi;
 
@@ -57,7 +56,7 @@ abstract class CachedCell<T extends Object, U extends Object>
 /// are the same.
 class _SymmetricCachedCell<T extends Object> extends CachedCell<T, T> {
   _SymmetricCachedCell({required super.getFromApi, required super.updateApi})
-      : super._();
+    : super._();
 
   @override
   Future<void> update(T update) async {
@@ -71,7 +70,7 @@ class _SymmetricCachedCell<T extends Object> extends CachedCell<T, T> {
 class _AsymmetricCachedCell<T extends Object, U extends Object>
     extends CachedCell<T, U> {
   _AsymmetricCachedCell({required super.getFromApi, required super.updateApi})
-      : super._();
+    : super._();
 
   @override
   Future<void> update(U update) async {

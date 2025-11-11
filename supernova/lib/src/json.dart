@@ -3,8 +3,13 @@ import 'string.dart';
 
 typedef FromJson<T extends Object> = T Function(Map<String, dynamic> json);
 
-abstract class ToJson {
+abstract interface class ToJson {
   dynamic toJson();
+}
+
+abstract interface class ToJsonMap implements ToJson {
+  @override
+  Map<String, dynamic> toJson();
 }
 
 // List

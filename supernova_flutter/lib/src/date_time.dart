@@ -6,5 +6,5 @@ extension TimeSupernovaFlutter on Time {
 }
 
 extension TimeOfDaySupernovaFlutter on TimeOfDay {
-  Time get localTime => Time.from(hour, minute).unwrap();
+  Time get localTime => Time.from(hour, minute);
 }

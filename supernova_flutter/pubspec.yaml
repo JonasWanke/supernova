@@ -13,7 +13,7 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/chrono.git
       path: chrono
-      ref: 243af455733dbb6540998f5afd0dcafcdeb67fe1
+      ref: 887cf85ad44b4a96e80755a7b1f71aeeb7c397df
   debug_overlay: ^1.0.0
   firebase_core: ^3.0.0
   firebase_crashlytics: ^4.0.0

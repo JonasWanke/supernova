@@ -235,7 +235,7 @@ void printLogPretty(LogRecord record, [void Function(String) print = print]) {
     final hour = time.hour.toString().padLeft(2, '0');
     final minute = time.minute.toString().padLeft(2, '0');
     final second = time.second.toString().padLeft(2, '0');
-    final microseconds = (time.subSecondNanos ~/ TimeDelta.nanosPerMicrosecond)
+    final microseconds = (time.subSecondNanos ~/ TimeDelta.nanosPerMicro)
         .toString()
         .padLeft(6, '0');
     return '$hour:$minute:$second.$microseconds';

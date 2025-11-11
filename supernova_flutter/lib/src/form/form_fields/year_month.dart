@@ -205,9 +205,7 @@ class MonthPicker extends HookWidget {
           children: List.generate(
             MonthPicker.columnCount,
             (columnIndex) => buildMonth(
-              Month.fromIndex(
-                rowIndex * MonthPicker.columnCount + columnIndex,
-              ).unwrap(),
+              Month.fromIndex(rowIndex * MonthPicker.columnCount + columnIndex),
             ),
           ),
         ),

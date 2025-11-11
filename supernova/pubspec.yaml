@@ -11,7 +11,7 @@ dependencies:
     git:
       url: https://github.com/JonasWanke/chrono.git
       path: chrono
-      ref: 243af455733dbb6540998f5afd0dcafcdeb67fe1
+      ref: 887cf85ad44b4a96e80755a7b1f71aeeb7c397df
   collection: ^1.17.0
   color: ^3.0.0
   dartx: ^1.2.0

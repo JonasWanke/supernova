@@ -195,5 +195,5 @@ extension MapSupernova<K, V> on Map<K, V> {
   @useResult
   Map<K, V> setImmutable(K key, V value) => {...this, key: value};
   @useResult
-  Map<K, V> removeImmutable(K key) => Map.from(this)..remove(key);
+  Map<K, V> removeImmutable(K key) => Map.of(this)..remove(key);
 }

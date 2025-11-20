@@ -58,7 +58,6 @@ class _MapRefresher<T, R> extends BaseRefresher<R> {
   final Mapper<T, R> mapper;
 
   @override
-  // ignore: prefer-async-await
   Future<R>? get _currentFuture => base._currentFuture?.then(mapper);
 
   @override

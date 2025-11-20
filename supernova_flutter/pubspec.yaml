@@ -12,8 +12,8 @@ dependencies:
   black_hole_flutter: ^1.1.0
   chrono:
   debug_overlay: ^1.0.0
-  firebase_core: ^3.0.0
-  firebase_crashlytics: ^4.0.0
+  firebase_core: ^4.2.1
+  firebase_crashlytics: ^5.0.5
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.2
@@ -21,9 +21,9 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  get_it: '>=7.6.4 < 9.0.0'
+  get_it: ^9.0.5
   intl: '>=0.17.0 <0.21.0'
-  package_info_plus: '>=3.0.0 <9.0.0'
+  package_info_plus: '>=3.0.0 <10.0.0'
   platformx: ^1.1.0
   shared_preferences: ^2.2.2
   sliver_tools: ^0.2.12

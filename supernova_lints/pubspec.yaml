@@ -5,8 +5,3 @@ environment:
   sdk: ^3.10.0
 
 resolution: workspace
-dependencies:
-  dart_code_metrics:
-    git:
-      url: https://github.com/JonasWanke/dart-code-metrics.git
-      ref: 930a216b8bd8cc9f3e5c2b6751c33cd257725b77

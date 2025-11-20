@@ -8,8 +8,6 @@ analyzer:
     - lib/**.freezed.dart
   errors:
     invalid_annotation_target: ignore
-  plugins:
-    - dart_code_metrics
 
 linter:
   rules:
@@ -284,7 +282,9 @@ linter:
     valid_regexps: true
     void_checks: true
 
-dart_code_metrics:
+dcm:
+  extends:
+    - recommended
   rules:
     - always-remove-listener
     - avoid-border-all
@@ -313,11 +313,6 @@ dart_code_metrics:
     - prefer-correct-edge-insets-constructor
     - prefer-correct-test-file-name
     - prefer-enums-by-name
-    - prefer-extracting-callbacks:
-        allowed-line-count: 5
-        ignored-named-arguments:
-          - builder
-          - rowBuilder
     - prefer-immediate-return
     - prefer-intl-name
     - prefer-iterable-of

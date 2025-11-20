@@ -165,7 +165,6 @@ class LogRecord {
   final LogLevel level;
   final String message;
   final Instant instant;
-  // ignore: no-object-declaration
   final Object? data;
   final Trace? stackTrace;
   final Zone zone;

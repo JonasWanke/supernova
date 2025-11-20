@@ -235,7 +235,7 @@ class MonthPicker extends HookWidget {
       textColor = Colors.white;
       decoration = BoxDecoration(
         color: colorScheme.primary,
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: const BorderRadius.all(Radius.circular(borderRadius)),
       );
     } else if (isDisabled) {
       textColor = colorScheme.surface.disabledOnColor;
@@ -243,7 +243,7 @@ class MonthPicker extends HookWidget {
       textColor = colorScheme.primary;
       decoration = BoxDecoration(
         border: Border.fromBorderSide(BorderSide(color: colorScheme.primary)),
-        borderRadius: BorderRadius.circular(borderRadius),
+        borderRadius: const BorderRadius.all(Radius.circular(borderRadius)),
       );
     } else {
       textColor = colorScheme.surface.mediumEmphasisOnColor;

@@ -662,7 +662,8 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
     if (!_announcedInitialYearMonth) {
       _announcedInitialYearMonth = true;
       unawaited(
-        SemanticsService.announce(
+        SemanticsService.sendAnnouncement(
+          View.of(context),
           _localizations.formatMonthYear(
             _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
           ),
@@ -699,7 +700,13 @@ class _CalendarMonthPickerState extends State<_CalendarMonthPicker> {
           _selectedYearMonth.dateTimes.start.asCoreDateTimeInLocalZone,
         ),
       };
-      unawaited(SemanticsService.announce(message, _textDirection));
+      unawaited(
+        SemanticsService.sendAnnouncement(
+          View.of(context),
+          message,
+          _textDirection,
+        ),
+      );
     });
   }
 

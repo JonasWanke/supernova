@@ -4,6 +4,7 @@ publish_to: none
 environment:
   sdk: ^3.10.0
 
+resolution: workspace
 dependencies:
   dart_code_metrics:
     git:

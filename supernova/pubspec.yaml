@@ -4,14 +4,11 @@ publish_to: none
 environment:
   sdk: ^3.10.0
 
+resolution: workspace
 dependencies:
   ansi_styles: ^0.3.1-dev.0
   characters: ^1.2.0
   chrono:
-    git:
-      url: https://github.com/JonasWanke/chrono.git
-      path: chrono
-      ref: 887cf85ad44b4a96e80755a7b1f71aeeb7c397df
   collection: ^1.17.0
   color: ^3.0.0
   dartx: ^1.2.0
@@ -26,7 +23,6 @@ dependencies:
   rxdart: ^0.28.0
   stack_trace: ^1.11.0
   supernova_lints:
-    path: ../supernova_lints
   time: ^2.1.0
   todo: ^2.0.1
 

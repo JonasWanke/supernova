@@ -1,0 +1,18 @@
+name: _
+publish_to: none
+
+workspace:
+  - supernova
+  - supernova_flutter
+  - supernova_lints
+
+environment:
+  sdk: ^3.10.0
+  flutter: '>=3.38.0'
+
+dependency_overrides:
+  chrono:
+    git:
+      url: https://github.com/JonasWanke/chrono.git
+      path: chrono
+      ref: 887cf85ad44b4a96e80755a7b1f71aeeb7c397df

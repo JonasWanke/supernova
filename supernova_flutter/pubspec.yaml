@@ -30,6 +30,7 @@ dependencies:
   stack_trace: ^1.10.0
   streaming_shared_preferences: ^2.0.0
   supernova:
+    path: ../supernova
   timeago: ^3.6.0
   timeago_flutter: ^3.6.0
   url_launcher: ^6.1.14

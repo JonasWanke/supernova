@@ -23,6 +23,7 @@ dependencies:
   rxdart: ^0.28.0
   stack_trace: ^1.11.0
   supernova_lints:
+    path: ../supernova_lints
   time: ^2.1.0
   todo: ^2.0.1
 

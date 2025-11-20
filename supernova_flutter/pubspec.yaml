@@ -2,8 +2,8 @@ name: supernova_flutter
 publish_to: none
 
 environment:
-  sdk: ^3.8.0
-  flutter: '>=3.32.0'
+  sdk: ^3.10.0
+  flutter: '>=3.38.0'
 
 dependencies:
   align_positioned: '>=3.0.0 <6.0.0'

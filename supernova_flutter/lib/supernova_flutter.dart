@@ -71,7 +71,6 @@ export 'src/sliver.dart';
 export 'src/url.dart';
 export 'src/widgets/adaptive_page.dart';
 export 'src/widgets/async.dart';
-export 'src/widgets/circle.dart';
 export 'src/widgets/date_time.dart';
 export 'src/widgets/desktop_page.dart';
 export 'src/widgets/divider.dart';

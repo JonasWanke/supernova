@@ -30,7 +30,7 @@ extension BuildContextSupernovaFormDialogs on BuildContext {
             onPressed: () => context.navigator.pop(false),
             child: Text(actionCancel),
           ),
-          ElevatedButton(
+          FilledButton(
             onPressed: () => context.navigator.pop(true),
             child: Text(actionConfirm),
           ),

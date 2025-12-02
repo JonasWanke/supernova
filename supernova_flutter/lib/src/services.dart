@@ -120,6 +120,23 @@ class LoggingGetIt {
     );
   }
 
+  void registerSingletonWithDependencies<T extends Object>(
+    FactoryFunc<T> factoryFunc, {
+    String? instanceName,
+    required Iterable<Type> dependsOn,
+    bool? signalsReady,
+    DisposingFunc<T>? dispose,
+  }) {
+    logger.trace('services.registerSingletonWithDependencies<$T>');
+    getIt.registerSingletonWithDependencies<T>(
+      factoryFunc,
+      instanceName: instanceName,
+      dependsOn: dependsOn,
+      signalsReady: signalsReady,
+      dispose: dispose,
+    );
+  }
+
   void registerSingletonAsync<T extends Object>(
     FactoryFuncAsync<T> factoryFunc, {
     String? instanceName,

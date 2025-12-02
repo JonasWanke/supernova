@@ -58,24 +58,63 @@ extension IterableOfStreamSupernova<T> on Iterable<Stream<T>> {
   }
 }
 
-extension Tuple2Supernova<T1, T2> on (Stream<T1>, Stream<T2>) {
+extension TupleOf2StreamsSupernova<T1, T2> on (Stream<T1>, Stream<T2>) {
   Stream<(T1, T2)> combineLatest() =>
       Rx.combineLatest2($1, $2, (a, b) => (a, b));
 }
 
-extension Tuple3Supernova<T1, T2, T3> on (Stream<T1>, Stream<T2>, Stream<T3>) {
+extension TupleOf3StreamsSupernova<T1, T2, T3>
+    on (Stream<T1>, Stream<T2>, Stream<T3>) {
   Stream<(T1, T2, T3)> combineLatest() =>
       Rx.combineLatest3($1, $2, $3, (a, b, c) => (a, b, c));
 }
 
-extension Tuple4Supernova<T1, T2, T3, T4>
+extension TupleOf4StreamsSupernova<T1, T2, T3, T4>
     on (Stream<T1>, Stream<T2>, Stream<T3>, Stream<T4>) {
   Stream<(T1, T2, T3, T4)> combineLatest() =>
       Rx.combineLatest4($1, $2, $3, $4, (a, b, c, d) => (a, b, c, d));
 }
 
-extension Tuple5Supernova<T1, T2, T3, T4, T5>
+extension TupleOf5StreamsSupernova<T1, T2, T3, T4, T5>
     on (Stream<T1>, Stream<T2>, Stream<T3>, Stream<T4>, Stream<T5>) {
   Stream<(T1, T2, T3, T4, T5)> combineLatest() =>
       Rx.combineLatest5($1, $2, $3, $4, $5, (a, b, c, d, e) => (a, b, c, d, e));
+}
+
+// ValueStream
+
+extension ValueStreamSupernova<T> on ValueStream<T> {
+  ValueStream<T2> mapValue<T2>(T2 Function(T value) mapper) =>
+      map(mapper).shareValueSeeded(mapper(value));
+}
+
+extension TupleOf2ValueStreamsSupernova<T1, T2>
+    on (ValueStream<T1>, ValueStream<T2>) {
+  Stream<(T1, T2)> combineLatestValue() =>
+      combineLatest().shareValueSeeded(($1.value, $2.value));
+}
+
+extension TupleOf3ValueStreamsSupernova<T1, T2, T3>
+    on (ValueStream<T1>, ValueStream<T2>, ValueStream<T3>) {
+  ValueStream<(T1, T2, T3)> combineLatestValue() =>
+      combineLatest().shareValueSeeded(($1.value, $2.value, $3.value));
+}
+
+extension TupleOf4ValueStreamsSupernova<T1, T2, T3, T4>
+    on (ValueStream<T1>, ValueStream<T2>, ValueStream<T3>, ValueStream<T4>) {
+  ValueStream<(T1, T2, T3, T4)> combineLatestValue() => combineLatest()
+      .shareValueSeeded(($1.value, $2.value, $3.value, $4.value));
+}
+
+extension TupleOf5ValueStreamsSupernova<T1, T2, T3, T4, T5>
+    on
+        (
+          ValueStream<T1>,
+          ValueStream<T2>,
+          ValueStream<T3>,
+          ValueStream<T4>,
+          ValueStream<T5>,
+        ) {
+  Stream<(T1, T2, T3, T4, T5)> combineLatestValue() => combineLatest()
+      .shareValueSeeded(($1.value, $2.value, $3.value, $4.value, $5.value));
 }

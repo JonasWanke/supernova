@@ -39,4 +39,44 @@ extension BuildContextSupernovaFormDialogs on BuildContext {
     );
     return result ?? false;
   }
+
+  Future<bool> showDeleteConfirmationDialog({
+    required String title,
+    required String message,
+    String? actionCancel,
+    String? actionConfirm,
+  }) async {
+    final result = await showDialog<bool>(
+      context: this,
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 512),
+          child: Text(message),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => context.navigator.pop(false),
+            child: Text(actionCancel ?? supernovaL10n.actionCancel),
+          ),
+          ElevatedButton(
+            autofocus: true,
+            onPressed: () => context.navigator.pop(true),
+            style: ButtonStyle(
+              backgroundColor: WidgetStatePropertyAll(
+                context.theme.colorScheme.error,
+              ),
+              foregroundColor: WidgetStatePropertyAll(
+                context.theme.colorScheme.onError,
+              ),
+            ),
+            child: Text(
+              actionConfirm ?? supernovaL10n.deleteConfirmationActionConfirm,
+            ),
+          ),
+        ],
+      ),
+    );
+    return result ?? false;
+  }
 }

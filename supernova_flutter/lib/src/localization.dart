@@ -83,6 +83,8 @@ abstract class SupernovaLocalizations {
   String get companyDeleted;
   String get companyTitle;
 
+  String get deleteConfirmationActionConfirm;
+
   String get done;
 
   String get discardChanges;
@@ -173,6 +175,9 @@ class SupernovaLocalizationDe extends SupernovaLocalizations {
   String get companyDeleted => 'Dieses Unternehmen wurde gelöscht.';
   @override
   String get companyTitle => 'Unternehmen';
+
+  @override
+  String get deleteConfirmationActionConfirm => 'Löschen';
 
   @override
   String get done => 'Fertig';
@@ -366,6 +371,9 @@ class SupernovaLocalizationEn extends SupernovaLocalizations {
   String get companyDeleted => 'This company was deleted.';
   @override
   String get companyTitle => 'Company';
+
+  @override
+  String get deleteConfirmationActionConfirm => 'Delete';
 
   @override
   String get done => 'Done';

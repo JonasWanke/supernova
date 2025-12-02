@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart' as hooks;
 import 'package:flutter_hooks/flutter_hooks.dart' hide useFuture, useStream;
 import 'package:supernova/supernova.dart' hide ValueGetter;
 
+import '../hooks.dart';
 import '../localization.dart';
 
 part 'async.freezed.dart';
@@ -231,5 +232,55 @@ class StreamBuilder<T> extends HookWidget {
   Widget build(BuildContext context) {
     final snapshot = useStream(getStream, keys: keys);
     return builder(snapshot);
+  }
+}
+
+// ValueStream
+
+T useValueStream<T>(
+  ValueGetter<ValueStream<T>> streamGetter, {
+  required List<Object?> keys,
+}) {
+  // When a stream completes, an `AsyncSnapshot` with `ConnectionState.done` is
+  // emitted. Unfortunately, it doesn't contain any data (e.g., the previously
+  // emitted data). To work around this, we concat a `StreamController` that
+  // never emits anything. This way, the last emitted data is still available.
+  final stream = useMemoized(streamGetter, keys);
+  final value = useRef(stream.value);
+  final rebuild = useRebuildRequest();
+  useEffect(() {
+    value.value = stream.value;
+    final subscription = stream.listen(
+      (event) {
+        value.value = event;
+        rebuild.request();
+      },
+      onError: (Object e, StackTrace st) => logger.error(
+        'ValueStream<$T> in `useValueStream` has an error:',
+        e,
+        st,
+      ),
+    );
+    return subscription.cancel;
+  }, keys);
+  return value.value;
+}
+
+class ValueStreamBuilder<T> extends HookWidget {
+  const ValueStreamBuilder(
+    this.getStream, {
+    super.key,
+    required this.keys,
+    required this.builder,
+  });
+
+  final ValueGetter<ValueStream<T>> getStream;
+  final List<Object?> keys;
+  final Widget Function(T) builder;
+
+  @override
+  Widget build(BuildContext context) {
+    final value = useValueStream(getStream, keys: keys);
+    return builder(value);
   }
 }

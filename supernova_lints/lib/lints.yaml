@@ -292,8 +292,6 @@ dcm:
     - avoid-collection-methods-with-unrelated-types
     - avoid-duplicate-exports
     - avoid-global-state
-    - avoid-nested-conditional-expressions:
-        acceptable-level: 3
     - avoid-shrink-wrap-in-lists
     - avoid-top-level-members-in-tests
     - avoid-unnecessary-setstate

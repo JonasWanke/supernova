@@ -5,3 +5,5 @@ environment:
   sdk: ^3.10.0
 
 resolution: workspace
+dependencies:
+  leancode_lint: ^6.0.0

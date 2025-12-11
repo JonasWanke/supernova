@@ -12,8 +12,8 @@ abstract interface class ToJsonMap implements ToJson {
   Map<String, dynamic> toJson();
 }
 
-// List
-extension ToJsonListToJsonSupernova<T extends ToJson> on List<T> {
+// Iterable
+extension ToJsonIterableToJsonSupernova<T extends ToJson> on Iterable<T> {
   List<dynamic> toJson() => map((it) => it.toJson()).toList();
 }
 

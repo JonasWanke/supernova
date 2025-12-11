@@ -87,8 +87,9 @@ extension ValueStreamSupernova<T> on ValueStream<T> {
   ValueStream<T2> mapValue<T2>(T2 Function(T value) mapper) =>
       map(mapper).shareValueSeeded(mapper(value));
 
-  ValueStream<T2> switchValue<T2>(ValueStream<T2> Function(T value) mapper) =>
-      switchMap(mapper).shareValueSeeded(mapper(value).value);
+  ValueStream<T2> switchMapValue<T2>(
+    ValueStream<T2> Function(T value) mapper,
+  ) => switchMap(mapper).shareValueSeeded(mapper(value).value);
 }
 
 extension TupleOf2ValueStreamsSupernova<T1, T2>

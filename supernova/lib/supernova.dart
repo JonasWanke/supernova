@@ -5,6 +5,7 @@ export 'dart:async';
 export 'package:characters/characters.dart';
 export 'package:collection/collection.dart' hide IterableZip;
 export 'package:color/color.dart' show RgbColor;
+export 'package:dart_either/dart_either.dart';
 export 'package:dartx/dartx.dart'
     hide
         IterableAll,
@@ -27,9 +28,8 @@ export 'package:json_annotation/json_annotation.dart';
 export 'package:meta/meta.dart';
 export 'package:oxidized/oxidized.dart';
 export 'package:rxdart/rxdart.dart';
+export 'package:rxdart_ext/rxdart_ext.dart' hide Equality;
 export 'package:time/time.dart';
-export 'package:dart_either/dart_either.dart';
-export 'package:rxdart_ext/rxdart_ext.dart';
 export 'package:todo/todo.dart';
 
 export 'src/async.dart';

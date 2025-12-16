@@ -28,6 +28,8 @@ export 'package:meta/meta.dart';
 export 'package:oxidized/oxidized.dart';
 export 'package:rxdart/rxdart.dart';
 export 'package:time/time.dart';
+export 'package:dart_either/dart_either.dart';
+export 'package:rxdart_ext/rxdart_ext.dart';
 export 'package:todo/todo.dart';
 
 export 'src/async.dart';

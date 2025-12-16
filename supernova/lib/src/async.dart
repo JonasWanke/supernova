@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:rxdart/rxdart.dart';
+import 'package:rxdart_ext/rxdart_ext.dart';
 
 import 'iterable.dart';
 import 'typedefs.dart';
@@ -85,29 +85,29 @@ extension TupleOf5StreamsSupernova<T1, T2, T3, T4, T5>
 
 extension ValueStreamSupernova<T> on ValueStream<T> {
   ValueStream<T2> mapValue<T2>(T2 Function(T value) mapper) =>
-      map(mapper).shareValueSeeded(mapper(value));
+      map(mapper).toNotReplayValueStream(mapper(value));
 
   ValueStream<T2> switchMapValue<T2>(
     ValueStream<T2> Function(T value) mapper,
-  ) => switchMap(mapper).shareValueSeeded(mapper(value).value);
+  ) => switchMap(mapper).toNotReplayValueStream(mapper(value).value);
 }
 
 extension TupleOf2ValueStreamsSupernova<T1, T2>
     on (ValueStream<T1>, ValueStream<T2>) {
   Stream<(T1, T2)> combineLatestValue() =>
-      combineLatest().shareValueSeeded(($1.value, $2.value));
+      combineLatest().toNotReplayValueStream(($1.value, $2.value));
 }
 
 extension TupleOf3ValueStreamsSupernova<T1, T2, T3>
     on (ValueStream<T1>, ValueStream<T2>, ValueStream<T3>) {
   ValueStream<(T1, T2, T3)> combineLatestValue() =>
-      combineLatest().shareValueSeeded(($1.value, $2.value, $3.value));
+      combineLatest().toNotReplayValueStream(($1.value, $2.value, $3.value));
 }
 
 extension TupleOf4ValueStreamsSupernova<T1, T2, T3, T4>
     on (ValueStream<T1>, ValueStream<T2>, ValueStream<T3>, ValueStream<T4>) {
   ValueStream<(T1, T2, T3, T4)> combineLatestValue() => combineLatest()
-      .shareValueSeeded(($1.value, $2.value, $3.value, $4.value));
+      .toNotReplayValueStream(($1.value, $2.value, $3.value, $4.value));
 }
 
 extension TupleOf5ValueStreamsSupernova<T1, T2, T3, T4, T5>
@@ -119,6 +119,12 @@ extension TupleOf5ValueStreamsSupernova<T1, T2, T3, T4, T5>
           ValueStream<T4>,
           ValueStream<T5>,
         ) {
-  Stream<(T1, T2, T3, T4, T5)> combineLatestValue() => combineLatest()
-      .shareValueSeeded(($1.value, $2.value, $3.value, $4.value, $5.value));
+  Stream<(T1, T2, T3, T4, T5)> combineLatestValue() =>
+      combineLatest().toNotReplayValueStream((
+        $1.value,
+        $2.value,
+        $3.value,
+        $4.value,
+        $5.value,
+      ));
 }

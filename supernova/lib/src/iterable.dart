@@ -197,3 +197,9 @@ extension MapSupernova<K, V> on Map<K, V> {
   @useResult
   Map<K, V> removeImmutable(K key) => Map.of(this)..remove(key);
 }
+
+extension MapOfNonNullableSupernova<K, V extends Object> on Map<K, V> {
+  @useResult
+  Map<K, V> setOrRemoveImmutable(K key, V? value) =>
+      value == null ? removeImmutable(key) : setImmutable(key, value);
+}

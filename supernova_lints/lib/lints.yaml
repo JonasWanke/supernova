@@ -107,7 +107,8 @@ linter:
     flutter_style_todos: true
     hash_and_equals: true
     implementation_imports: true
-    implicit_call_tearoffs: true
+    implicit_call_tearoffs: false
+    # Don't see the purpose.
     implicit_reopen: true
     invalid_case_patterns: true
     invalid_runtime_check_with_js_interop_types: true

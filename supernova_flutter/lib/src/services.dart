@@ -69,7 +69,8 @@ class LoggingGetIt {
 
   final GetIt getIt;
 
-  T call<T extends Object>([dynamic param1]) => getIt(param1: param1);
+  T call<T extends Object>({dynamic param, String? instanceName}) =>
+      getIt(param1: param, instanceName: instanceName);
 
   Future<T> getAsync<T extends Object>({
     String? instanceName,

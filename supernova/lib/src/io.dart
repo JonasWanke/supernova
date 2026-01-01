@@ -13,6 +13,15 @@ extension FileSystemEntitySupernova on FileSystemEntity {
 
   String relativePathFrom(Directory directory) =>
       p.relative(path, from: directory.path);
+
+  Future<bool> deleteIfExists() async {
+    try {
+      await delete();
+      return true;
+    } on PathNotFoundException {
+      return false;
+    }
+  }
 }
 
 extension FileSupernova on File {

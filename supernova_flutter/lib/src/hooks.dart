@@ -1,3 +1,5 @@
+// ignore_for_file: unnecessary_ignore
+
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -85,6 +87,7 @@ class _TickerProviderHookState
   @override
   TickerProvider build(BuildContext context) {
     for (final ticker in _tickers) {
+      // ignore: deprecated_member_use, Use `TickerMode.valueOf(context)` after v3.35.0-0.0.pre
       ticker.muted = !TickerMode.of(context);
     }
     return this;

@@ -15,6 +15,7 @@ dependencies:
   dartx: ^1.2.0
   email_validator: ^3.0.0
   freezed_annotation: ^3.1.0
+  get_it: ^9.0.5
   http: ^1.1.0
   intl: '>=0.17.0 <0.21.0'
   json_annotation: ^4.6.0

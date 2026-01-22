@@ -34,7 +34,6 @@ export 'package:flutter/material.dart'
 export 'package:flutter/services.dart';
 export 'package:flutter_hooks/flutter_hooks.dart' hide useFuture, useStream;
 export 'package:gap/gap.dart';
-export 'package:get_it/get_it.dart' show GetIt;
 export 'package:shared_preferences/shared_preferences.dart';
 export 'package:sliver_tools/sliver_tools.dart';
 export 'package:streaming_shared_preferences/streaming_shared_preferences.dart';

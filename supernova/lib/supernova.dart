@@ -23,6 +23,7 @@ export 'package:dartx/dartx.dart'
         ListElementAtOrNull,
         ListLowerBoundExtension;
 export 'package:freezed_annotation/freezed_annotation.dart';
+export 'package:get_it/get_it.dart' show GetIt;
 export 'package:intl/intl.dart' hide DateFormat, TextDirection;
 export 'package:json_annotation/json_annotation.dart';
 export 'package:meta/meta.dart';
@@ -37,6 +38,7 @@ export 'src/bool.dart';
 export 'src/bytes.dart';
 export 'src/debug_mode.dart';
 export 'src/email_address.dart';
+export 'src/get_it.dart';
 export 'src/google_cloud.dart';
 export 'src/https_url.dart';
 export 'src/id.dart';

@@ -12,6 +12,10 @@ extension IterableOfMapEntrySupernova<K, V> on Iterable<MapEntry<K, V>> {
   Map<K, V> toMap() => Map.fromEntries(this);
 }
 
+extension IterableOfTuple2Supernova<T1, T2> on Iterable<(T1, T2)> {
+  Map<T1, T2> toMap() => Map.fromEntries(map((e) => MapEntry(e.$1, e.$2)));
+}
+
 int compareBy<T>(T a, T b, Mapper<T, Comparable<dynamic>> getKey) =>
     getKey(a).compareTo(getKey(b));
 int compareByMultiple<T>(

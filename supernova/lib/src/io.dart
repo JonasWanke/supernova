@@ -28,8 +28,11 @@ extension FileSupernova on File {
   Directory get directory => Directory(p.dirname(path));
   Future<void> createDirectory() => directory.create(recursive: true);
 
+  File relativeFrom(Directory directory) => File(relativePathFrom(directory));
   String relativeDirectoryPathFrom(Directory directory) =>
       p.dirname(relativePathFrom(directory));
+  Directory relativeDirectoryFrom(Directory directory) =>
+      Directory(relativeDirectoryPathFrom(directory));
 
   String get nameWithoutExtension => p.basenameWithoutExtension(path);
   String get extension => p.extension(path);
@@ -45,6 +48,9 @@ extension FileSupernova on File {
 }
 
 extension DirectorySupernova on Directory {
+  Directory relativeFrom(Directory directory) =>
+      Directory(relativePathFrom(directory));
+
   /// Copies all files in this directory (recursively) to the target directory.
   Future<void> copyContentsTo(Directory targetDirectory) {
     return list(recursive: true)

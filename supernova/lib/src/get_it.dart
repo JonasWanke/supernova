@@ -11,6 +11,8 @@ class LoggingGetIt {
 
   T call<T extends Object>({dynamic param, String? instanceName}) =>
       getIt(param1: param, instanceName: instanceName);
+  T? maybeGet<T extends Object>({dynamic param, String? instanceName}) =>
+      getIt.maybeGet<T>(param1: param, instanceName: instanceName);
 
   Future<T> getAsync<T extends Object>({
     String? instanceName,

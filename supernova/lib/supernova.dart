@@ -8,6 +8,15 @@ export 'package:color/color.dart' show RgbColor;
 export 'package:dart_either/dart_either.dart';
 export 'package:dartx/dartx.dart'
     hide
+        CharacterRange,
+        ComparableInRangeExtension,
+        ComparableRange,
+        ComparableRangeX,
+        DoubleRange,
+        DoubleRangeToExtension,
+        IntProgression,
+        IntRange,
+        IntRangeToExtension,
         IterableAll,
         IterableChunked,
         IterableFilter,
@@ -21,7 +30,9 @@ export 'package:dartx/dartx.dart'
         IterableWhereNotNull,
         IterableZip,
         ListElementAtOrNull,
-        ListLowerBoundExtension;
+        ListLowerBoundExtension,
+        NumCoerceInRangeExtension,
+        Range;
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:get_it/get_it.dart' show GetIt;
 export 'package:intl/intl.dart' hide DateFormat, TextDirection;

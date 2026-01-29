@@ -94,7 +94,7 @@ extension ValueStreamSupernova<T> on ValueStream<T> {
 
 extension TupleOf2ValueStreamsSupernova<T1, T2>
     on (ValueStream<T1>, ValueStream<T2>) {
-  Stream<(T1, T2)> combineLatestValue() =>
+  ValueStream<(T1, T2)> combineLatestValue() =>
       combineLatest().toNotReplayValueStream(($1.value, $2.value));
 }
 

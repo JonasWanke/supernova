@@ -22,7 +22,7 @@ class SwitchPreferenceTile extends StatelessWidget {
     return PreferenceBuilder(
       preference: preference,
       builder: (context, value) => SwitchListTile(
-        value: preference.getValue(),
+        value: value,
         onChanged: isEnabled
             ? (value) async {
                 await preference.setValue(value);

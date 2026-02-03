@@ -21,7 +21,6 @@ dependencies:
     sdk: flutter
   gap: ^3.0.1
   intl: '>=0.17.0 <0.21.0'
-  package_info_plus: '>=3.0.0 <10.0.0'
   platformx: ^1.1.0
   shared_preferences: ^2.2.2
   sliver_tools: ^0.2.12

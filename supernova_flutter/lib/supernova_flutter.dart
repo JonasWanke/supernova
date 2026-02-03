@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:supernova/supernova.dart' as supernova;
@@ -7,7 +6,6 @@ import 'package:timeago/timeago.dart' as timeago;
 import 'src/localization.dart' as localization;
 import 'src/localization.dart';
 import 'src/logger.dart';
-import 'src/services.dart';
 
 export 'dart:ui'
     hide
@@ -51,7 +49,6 @@ export 'src/caching/module.dart';
 export 'src/color.dart';
 export 'src/date_time.dart';
 export 'src/empty_state_page_content.dart';
-export 'src/firebase.dart';
 export 'src/floating_action_button.dart';
 export 'src/form/module.dart';
 export 'src/hooks.dart';
@@ -66,7 +63,6 @@ export 'src/pages/not_found.dart';
 export 'src/platform.dart';
 export 'src/preferences.dart';
 export 'src/scroll_controller.dart';
-export 'src/services.dart' hide initServices;
 export 'src/sliver.dart';
 export 'src/url.dart';
 export 'src/widgets/adaptive_page.dart';
@@ -80,7 +76,6 @@ export 'src/widgets/stepper.dart';
 
 Future<void> initSupernova({
   supernova.LogLevel? minLogLevel,
-  FirebaseOptions? firebaseOptions,
   AddressingFormality addressingFormality = AddressingFormality.informal,
 }) async {
   localization.addressingFormality = addressingFormality;
@@ -89,8 +84,6 @@ Future<void> initSupernova({
   WidgetsFlutterBinding.ensureInitialized();
 
   usePathUrlStrategy();
-
-  await initServices(firebaseOptions: firebaseOptions);
 
   // https://pub.dev/packages/timeago#adding-locales
   timeago.setLocaleMessages('de', timeago.DeMessages());

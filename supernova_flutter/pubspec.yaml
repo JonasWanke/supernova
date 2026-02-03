@@ -12,8 +12,6 @@ dependencies:
   black_hole_flutter: ^1.1.0
   chrono:
   debug_overlay: ^1.0.0
-  firebase_core: ^4.2.1
-  firebase_crashlytics: ^5.0.5
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.2

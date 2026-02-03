@@ -1,10 +1,7 @@
 import 'package:debug_overlay/debug_overlay.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:platformx/platformx.dart';
 import 'package:supernova/supernova.dart';
-
-import 'services.dart';
 
 final logs = LogCollection(onlyStoreLogsInDebugMode: false);
 
@@ -30,29 +27,6 @@ void initLogging() {
     // We can't add logs during the build phase in case the debug overlay is
     // currently open.
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) => logs.add(log));
-  });
-  if (isInDebugMode) return;
-
-  logListeners.add((it) async {
-    if (!isFirebaseCrashlyticsInitialized) return;
-
-    if (it.level < LogLevel.error) {
-      final message = [
-        '${it.level.emoji} ${it.instant}: ${it.message}',
-        if (it.data != null) 'Data: ${stringifyObjectForLogging(it.data)}',
-        if (it.stackTrace != null) 'Stack Trace: ${it.stackTrace}',
-      ].join('\n');
-      await services.firebaseCrashlytics.log(message);
-    } else {
-      await services.firebaseCrashlytics.recordError(
-        stringifyObjectForLogging(it.data),
-        it.stackTrace,
-        reason: it.message,
-        information: [StringProperty('instant', it.instant.toString())],
-        printDetails: false,
-        fatal: it.level >= LogLevel.wtf,
-      );
-    }
   });
 }
 

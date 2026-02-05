@@ -38,12 +38,14 @@ extension FileSupernova on File {
   String get extension => p.extension(path);
   bool get hasExtension => extension.isNotEmpty;
 
+  Future<File> moveTo(Directory directory) async {
+    await directory.create(recursive: true);
+    return rename((directory ~/ name).path);
+  }
+
   Future<File> copyTo(Directory directory) async {
     await directory.create(recursive: true);
-
-    final targetFile = directory ~/ name;
-    await copy(targetFile.path);
-    return targetFile;
+    return copy((directory ~/ name).path);
   }
 }
 

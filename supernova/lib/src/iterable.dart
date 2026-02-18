@@ -190,6 +190,7 @@ extension SetSupernova<T> on Set<T> {
   Set<T> removeAllImmutable(Iterable<T> items) =>
       Set.of(this)..removeAll(items);
 
+  void toggle(T item) => contains(item) ? remove(item) : add(item);
   @useResult
   Set<T> toggleImmutable(T item) =>
       contains(item) ? removeImmutable(item) : addImmutable(item);
@@ -203,6 +204,8 @@ extension MapSupernova<K, V> on Map<K, V> {
 }
 
 extension MapOfNonNullableSupernova<K, V extends Object> on Map<K, V> {
+  void setOrRemove(K key, V? value) =>
+      value == null ? remove(key) : this[key] = value;
   @useResult
   Map<K, V> setOrRemoveImmutable(K key, V? value) =>
       value == null ? removeImmutable(key) : setImmutable(key, value);

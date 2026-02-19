@@ -1,7 +1,12 @@
 import 'id.dart';
 import 'string.dart';
 
-typedef FromJson<T extends Object> = T Function(Map<String, dynamic> json);
+typedef FromJson<T> = T Function(dynamic json);
+typedef FromJsonMap<T extends Object> = T Function(Map<String, dynamic> json);
+typedef FromNullableJsonMap<T extends Object> =
+    T? Function(Map<String, dynamic>? it);
+typedef FromJsonList<T extends Object> = T Function(List<dynamic> json);
+typedef FromNullableJsonList<T extends Object> = T? Function(List<dynamic>? it);
 
 abstract interface class ToJson {
   dynamic toJson();
@@ -26,11 +31,7 @@ extension IdMapToJsonSupernova<T extends ToJson> on IdMap<T> {
 Map<Id<K>, T> idMapFromJson<K, T extends Object>(
   Map<String, dynamic> json,
   FromJson<T> fromJson,
-) {
-  return json.map(
-    (key, value) => MapEntry(Id(key), fromJson(value as Map<String, dynamic>)),
-  );
-}
+) => json.map((key, value) => MapEntry(Id(key), fromJson(value)));
 
 // Enum
 mixin EnumJson on Enum {
@@ -51,11 +52,13 @@ extension EnumSetToJsonSupernova<T extends EnumJson> on Set<T> {
   List<String> toJson() => map((it) => it.toJson()).toList();
 }
 
-typedef FromNullableJson<T extends Object> =
-    T? Function(Map<String, dynamic>? it);
+extension FromJsonMapNullableSupernova<T extends Object> on FromJsonMap<T> {
+  FromNullableJsonMap<T> get orNull =>
+      (it) => it == null ? null : this(it);
+}
 
-extension FromJsonNullableSupernova<T extends Object> on FromJson<T> {
-  FromNullableJson<T> get orNull =>
+extension FromJsonListNullableSupernova<T extends Object> on FromJsonList<T> {
+  FromNullableJsonList<T> get orNull =>
       (it) => it == null ? null : this(it);
 }
 

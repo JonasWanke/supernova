@@ -142,7 +142,9 @@ extension ListSupernova<T> on List<T> {
   ) => insertImmutable(lowerBoundBy(item, keyOf), item);
 
   @useResult
-  List<T> removeImmutable(int index) {
+  List<T> removeImmutable(T item) => removeAtImmutable(indexOf(item));
+  @useResult
+  List<T> removeAtImmutable(int index) {
     assert(isValidIndex(index));
     return [...sublist(0, index), ...sublist(index + 1)];
   }

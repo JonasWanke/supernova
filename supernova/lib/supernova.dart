@@ -21,6 +21,7 @@ export 'package:dartx/dartx.dart'
         IterableChunked,
         IterableFilter,
         IterableFirstOrNull,
+        IterableFirstOrNullWhere,
         IterableLastOrNull,
         IterableMapIndexed,
         IterableNone,

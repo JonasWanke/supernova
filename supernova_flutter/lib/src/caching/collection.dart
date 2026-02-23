@@ -97,7 +97,7 @@ class CachedCollection<K extends Object, T extends Object>
   @override
   BaseRefresher<T?>? _getParentRefresherFor(Id<K> id) {
     return _refresher.map(
-      (it) => it.firstOrNullWhere((it) => _idFromItem(it) == id),
+      (it) => it.firstWhereOrNull((it) => _idFromItem(it) == id),
     );
   }
 }

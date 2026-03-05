@@ -81,7 +81,7 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
                 const Year(1900).months.start;
             final lastYearMonth =
                 formField.lastYearMonth?.call() ??
-                const Year(2100).months.endInclusive;
+                const Year(2100).months.end;
             final initialYearMonth =
                 formField.value ??
                 YearMonth.currentInLocalZone().coerceIn(

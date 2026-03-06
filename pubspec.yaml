@@ -15,4 +15,4 @@ dependency_overrides:
     git:
       url: https://github.com/JonasWanke/chrono.git
       path: chrono
-      ref: 887cf85ad44b4a96e80755a7b1f71aeeb7c397df
+      ref: 3c8bf3a9433737a2ba6b48b7ccc3460dfde2fcec

@@ -125,6 +125,11 @@ extension ListSupernova<T> on List<T> {
 
   T? get randomItem => isEmpty ? null : this[Random().nextInt(length)];
 
+  void insertSorted(T item) =>
+      insert(ListLowerBoundExtension(this).lowerBound(item), item);
+  void insertSortedBy<K extends Comparable<K>>(T item, K Function(T) keyOf) =>
+      insert(lowerBoundBy(item, keyOf), item);
+
   @useResult
   List<T> addImmutable(T item) => [...this, item];
   @useResult

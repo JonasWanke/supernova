@@ -12,6 +12,10 @@ abstract interface class ToJson {
   dynamic toJson();
 }
 
+abstract interface class ToJsonString {
+  String toJson();
+}
+
 abstract interface class ToJsonMap implements ToJson {
   @override
   Map<String, dynamic> toJson();
@@ -20,6 +24,11 @@ abstract interface class ToJsonMap implements ToJson {
 // Iterable
 extension ToJsonIterableToJsonSupernova<T extends ToJson> on Iterable<T> {
   List<dynamic> toJson() => map((it) => it.toJson()).toList();
+}
+
+extension ToJsonStringIterableToJsonSupernova<T extends ToJsonString>
+    on Iterable<T> {
+  List<String> toJson() => map((it) => it.toJson()).toList();
 }
 
 // Map

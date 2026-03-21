@@ -12,7 +12,8 @@ abstract interface class ToJson {
   dynamic toJson();
 }
 
-abstract interface class ToJsonString {
+abstract interface class ToJsonString implements ToJson {
+  @override
   String toJson();
 }
 

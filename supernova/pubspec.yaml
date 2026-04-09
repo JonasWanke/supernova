@@ -2,7 +2,7 @@ name: supernova
 publish_to: none
 
 environment:
-  sdk: ^3.10.0
+  sdk: ^3.11.0
 
 resolution: workspace
 dependencies:

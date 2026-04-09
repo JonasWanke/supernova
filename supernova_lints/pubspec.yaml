@@ -6,4 +6,4 @@ environment:
 
 resolution: workspace
 dependencies:
-  leancode_lint: ^19.0.1
+  leancode_lint: '>=19.0.0 <23.0.0'

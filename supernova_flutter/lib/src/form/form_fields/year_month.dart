@@ -80,8 +80,7 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
                 formField.firstYearMonth?.call() ??
                 const Year(1900).months.start;
             final lastYearMonth =
-                formField.lastYearMonth?.call() ??
-                const Year(2100).months.end;
+                formField.lastYearMonth?.call() ?? const Year(2100).months.end;
             final initialYearMonth =
                 formField.value ??
                 YearMonth.currentInLocalZone().coerceIn(
@@ -839,9 +838,11 @@ class _YearMonthPickerModeToggleButtonState
     if (oldWidget.mode == widget.mode) return;
 
     if (widget.mode == YearMonthPickerMode.year) {
-      unawaited(_controller.forward());
+      // ignore: discarded_futures
+      _controller.forward();
     } else {
-      unawaited(_controller.reverse());
+      // ignore: discarded_futures
+      _controller.reverse();
     }
   }
 

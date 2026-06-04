@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:supernova/supernova.dart' hide ValueChanged;
 
-import '../../icons.dart';
 import '../../localization.dart';
 import '../form.dart';
 import '../form_field.dart';
@@ -193,9 +192,7 @@ class _SupernovaTextFormFieldWidget extends StatelessWidget {
             ),
             vertical: 16,
           ),
-          prefixIcon: prefixIcon == null
-              ? null
-              : Icon(prefixIcon.outlined, size: 20),
+          prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           border: InputBorder.none,
         ),

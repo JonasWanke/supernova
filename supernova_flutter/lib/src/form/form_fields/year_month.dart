@@ -838,10 +838,8 @@ class _YearMonthPickerModeToggleButtonState
     if (oldWidget.mode == widget.mode) return;
 
     if (widget.mode == YearMonthPickerMode.year) {
-      // ignore: discarded_futures
       _controller.forward();
     } else {
-      // ignore: discarded_futures
       _controller.reverse();
     }
   }

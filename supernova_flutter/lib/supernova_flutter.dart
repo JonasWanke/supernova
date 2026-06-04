@@ -52,7 +52,6 @@ export 'src/empty_state_page_content.dart';
 export 'src/floating_action_button.dart';
 export 'src/form/module.dart';
 export 'src/hooks.dart';
-export 'src/icons.dart';
 export 'src/json.dart';
 export 'src/localization.dart';
 export 'src/logger.dart' hide initLogging;

@@ -28,7 +28,7 @@ sealed class SupernovaTextFormField extends SupernovaFormFieldBase<String>
     SupernovaFormFieldValidator<String>? validator,
     required TextInputAction textInputAction,
     String? hintText,
-    FlatIcon? prefixIcon,
+    Widget? prefixIcon,
     Widget? suffixIcon,
   }) = _SingleLineSupernovaTextFormField;
 

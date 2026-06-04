@@ -38,11 +38,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-  fonts:
-    - family: FlatIconsFilledRounded
-      fonts:
-        - asset: fonts/flaticons-filled-rounded.ttf
-    - family: FlatIconsOutlinedRounded
-      fonts:
-        - asset: fonts/flaticons-outlined-rounded.ttf

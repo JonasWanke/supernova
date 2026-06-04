@@ -17,11 +17,6 @@
 *.iws
 .idea/
 
-# Visual Studio Code
-.vscode/*
-!.vscode/launch.json
-!.vscode/extensions.json
-
 # Flutter/Dart/Pub related
 **/.dart_tool/
 **/.flutter-plugins

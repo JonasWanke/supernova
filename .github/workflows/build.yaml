@@ -30,12 +30,6 @@ jobs:
           channel: ${{ matrix.flutterChannel }}
       - run: flutter --version
 
-      - run: dart pub get
-        working-directory: supernova
-      - run: dart analyze
-        working-directory: supernova
-
       - run: flutter pub get
-        working-directory: supernova_flutter
+
       - run: flutter analyze
-        working-directory: supernova_flutter

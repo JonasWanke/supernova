@@ -6,8 +6,7 @@ import 'refresher.dart';
 
 /// Like [CachedCell], but without an `update(…)` method to update the API.
 class ApiReadonlyCachedCell<T extends Object> {
-  ApiReadonlyCachedCell({required AsyncValueGetter<T> getFromApi})
-    : _getFromApi = getFromApi;
+  ApiReadonlyCachedCell({required this._getFromApi});
 
   final AsyncValueGetter<T> _getFromApi;
 
@@ -32,10 +31,7 @@ class ApiReadonlyCachedCell<T extends Object> {
 
 abstract class CachedCell<T extends Object, U extends Object>
     extends ApiReadonlyCachedCell<T> {
-  CachedCell._({
-    required super.getFromApi,
-    required AsyncValueSetter<U> updateApi,
-  }) : _updateApi = updateApi;
+  CachedCell._({required super.getFromApi, required this._updateApi});
 
   factory CachedCell.asymmetric({
     required AsyncValueGetter<T> getFromApi,

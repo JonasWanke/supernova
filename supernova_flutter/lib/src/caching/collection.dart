@@ -12,10 +12,9 @@ typedef AsyncItemGetter<K extends Object, T extends Object> =
 /// (usually the same type).
 class CachedSparseCollection<K extends Object, T extends Object> {
   CachedSparseCollection({
-    required Mapper<T, Id<K>> idFromItem,
-    required AsyncItemGetter<K, T> getFromApi,
-  }) : _idFromItem = idFromItem,
-       _getFromApi = getFromApi;
+    required this._idFromItem,
+    required this._getFromApi,
+  });
 
   final Mapper<T, Id<K>> _idFromItem;
   final AsyncItemGetter<K, T> _getFromApi;
@@ -66,9 +65,9 @@ class CachedCollection<K extends Object, T extends Object>
     extends CachedSparseCollection<K, T> {
   CachedCollection({
     required super.idFromItem,
-    required AsyncValueGetter<List<T>> getAllFromApi,
+    required this._getAllFromApi,
     required super.getFromApi,
-  }) : _getAllFromApi = getAllFromApi;
+  });
 
   final AsyncValueGetter<List<T>> _getAllFromApi;
 

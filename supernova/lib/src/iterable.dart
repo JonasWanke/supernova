@@ -160,12 +160,10 @@ extension ListSupernova<T> on List<T> {
     return [...sublist(0, index), item, ...sublist(index + 1)];
   }
 
-  /// Suitable for https://api.flutter.dev/flutter/widgets/ReorderCallback.html.
+  /// Suitable for https://api.flutter.dev/flutter/widgets/ReorderableList/onReorderItem.html
   @useResult
   List<T> reorderImmutable(int oldIndex, int newIndex) {
     assert(isValidIndex(oldIndex));
-
-    if (oldIndex < newIndex) newIndex--;
     assert(isValidIndex(newIndex));
 
     final newList = List.of(this);

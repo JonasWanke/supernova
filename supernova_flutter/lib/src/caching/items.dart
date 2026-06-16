@@ -5,7 +5,7 @@ import 'package:supernova/supernova.dart';
 /// Whenever an item is requested, its current value has to be supplied so that
 /// other listeners are updated as well.
 class CachedItems<K extends Object, T extends Object> {
-  CachedItems({required Mapper<T, K> idFromItem}) : _idFromItem = idFromItem;
+  CachedItems({required this._idFromItem});
 
   final Mapper<T, K> _idFromItem;
 

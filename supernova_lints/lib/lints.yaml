@@ -4,6 +4,13 @@ analyzer:
     strict-inference: true
     strict-raw-types: true
   exclude:
+    - android/**
+    - build/**
+    - ios/**
+    - linux/**
+    - macos/**
+    - web/**
+    - windows/**
     - '**/*.g.dart'
     - '**/*.freezed.dart'
   errors:

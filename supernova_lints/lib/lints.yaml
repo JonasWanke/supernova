@@ -283,6 +283,9 @@ linter:
     valid_regexps: true
     void_checks: true
 
+plugins:
+  leancode_lint: ^20.0.0
+
 dcm:
   extends:
     - recommended

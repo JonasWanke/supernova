@@ -30,14 +30,12 @@ void initLogging() {
   });
 }
 
-DiagnosticLevel _loggerToDiagnosticLevel(LogLevel level) {
-  return switch (level) {
-    LogLevel.wtf => DiagnosticLevel.error,
-    LogLevel.error => DiagnosticLevel.error,
-    LogLevel.warning => DiagnosticLevel.warning,
-    LogLevel.info => DiagnosticLevel.info,
-    LogLevel.config => DiagnosticLevel.info,
-    LogLevel.debug => DiagnosticLevel.debug,
-    LogLevel.trace => DiagnosticLevel.hint,
-  };
-}
+DiagnosticLevel _loggerToDiagnosticLevel(LogLevel level) => switch (level) {
+  .wtf => .error,
+  .error => .error,
+  .warning => .warning,
+  .info => .info,
+  .config => .info,
+  .debug => .debug,
+  .trace => .hint,
+};

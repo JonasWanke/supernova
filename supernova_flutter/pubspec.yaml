@@ -11,7 +11,7 @@ dependencies:
   auto_size_text: ^3.0.0
   black_hole_flutter: ^1.1.0
   chrono:
-  debug_overlay: ^1.0.0
+  debug_overlay: ^2.0.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.2

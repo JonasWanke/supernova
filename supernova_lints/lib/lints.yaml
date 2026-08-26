@@ -293,7 +293,7 @@ linter:
 plugins:
   leancode_lint:
     version: ^27.0.0
-    rules:
+    diagnostics:
       # We want e, st instead of err, st
       catch_parameter_names: false
 

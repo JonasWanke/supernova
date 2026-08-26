@@ -291,7 +291,11 @@ linter:
     void_checks: true
 
 plugins:
-  leancode_lint: ^27.0.0
+  leancode_lint:
+    version: ^27.0.0
+    rules:
+      # We want e, st instead of err, st
+      catch_parameter_names: false
 
 dcm:
   extends:

@@ -1,7 +1,7 @@
 {
   inputs = {
-    # https://github.com/NixOS/nixpkgs/pull/531252
-    nixpkgs.url = "github:nixos/nixpkgs?ref=9280dfc36d5597676cc65668061796487bb16779";
+    # https://github.com/NixOS/nixpkgs/pull/556426
+    nixpkgs.url = "github:nixos/nixpkgs?ref=376b94add7951eb8c87c6670e72ac4f35a1368d3";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -15,7 +15,7 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; };
-        flutter = pkgs.flutterPackages.v3_44;
+        flutter = pkgs.flutterPackages.v3_47;
       in
       {
         devShell =

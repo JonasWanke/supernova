@@ -291,7 +291,7 @@ linter:
     void_checks: true
 
 plugins:
-  leancode_lint: ^20.0.0
+  leancode_lint: ^27.0.0
 
 dcm:
   extends:

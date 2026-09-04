@@ -48,9 +48,7 @@ extension ValidatableExtension on Validatable {
 }
 
 @immutable
-class Validate {
-  const Validate._();
-
+abstract final class Validate {
   static ValidationErrors field(String fieldName, ValidationErrors errors) {
     if (errors.isEmpty) return [];
 
@@ -72,9 +70,7 @@ class Validate {
 }
 
 @immutable
-class Is {
-  const Is._();
-
+abstract final class Is {
   static const ValidationErrors alwaysValid = [];
 
   static Validator<T?> nullOr<T extends Object>(Validator<T> other) {

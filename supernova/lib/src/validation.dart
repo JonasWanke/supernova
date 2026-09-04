@@ -1,3 +1,6 @@
+// TODO(JonasWanke): remove when updating Flutter
+// ignore_for_file: unnecessary_ignore
+
 import 'package:chrono/chrono.dart';
 import 'package:dartx/dartx.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

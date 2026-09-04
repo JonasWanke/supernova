@@ -1,3 +1,6 @@
+// TODO(JonasWanke): remove when updating Flutter
+// ignore_for_file: unnecessary_ignore
+
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

@@ -22,8 +22,15 @@ export 'package:black_hole_flutter/black_hole_flutter.dart';
 export 'package:flutter/foundation.dart'
     hide Factory, binarySearch, clampDouble, mergeSort;
 export 'package:flutter/services.dart';
-export 'package:flutter_hooks/flutter_hooks.dart' hide useFuture, useStream;
+export 'package:flutter_hooks/flutter_hooks.dart'
+    hide
+        useCarouselController,
+        useFuture,
+        useSearchController,
+        useStream,
+        useTabController;
 export 'package:gap/gap.dart';
+export 'package:material_hooks/material_hooks.dart';
 export 'package:material_ui/material_ui.dart'
     hide
         FutureBuilder,

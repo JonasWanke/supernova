@@ -1,8 +1,6 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:chrono/chrono.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_localizations/flutter_localizations.dart'
-    hide GlobalMaterialLocalizations;
 import 'package:intl/locale.dart' as intl;
 import 'package:material_ui/material_ui.dart';
 import 'package:supernova/supernova.dart';
@@ -30,8 +28,7 @@ class SupernovaLocalizationsDelegate
   const SupernovaLocalizationsDelegate();
 
   static const delegates = [
-    GlobalWidgetsLocalizations.delegate,
-    GlobalMaterialLocalizations.delegate,
+    ...GlobalMaterialLocalizations.delegates,
     SupernovaLocalizationsDelegate(),
   ];
 

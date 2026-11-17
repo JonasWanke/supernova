@@ -13,7 +13,7 @@ void initLogging() {
       (record) => printLogPretty(record, debugPrint),
   ];
 
-  DebugOverlay.appendHelper(LogsDebugHelper(logs));
+  DebugOverlay.appendTool(LogsDebugTool(logs));
 
   logListeners.add((it) {
     final log = Log(

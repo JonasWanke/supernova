@@ -5,10 +5,10 @@ import 'dart:math' as math;
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:chrono/chrono.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:platformx/platformx.dart';
 import 'package:supernova/supernova.dart' hide ValueChanged, ValueGetter;
 
@@ -49,7 +49,7 @@ abstract class SupernovaYearMonthFormField
   void dispose() => selectedYearMonth.dispose();
 }
 
-class _SupernovaYearMonthFormFieldWidget extends HookWidget {
+class _SupernovaYearMonthFormFieldWidget extends StatelessWidget {
   const _SupernovaYearMonthFormFieldWidget(
     this.common,
     this.onSubmitted,
@@ -68,7 +68,7 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
         initialValue: formField.selectedYearMonth.value,
         validator:
             common.necessity.validator<YearMonth>() & formField.validator,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: .onUserInteraction,
         builder: (state) {
           void setValue(YearMonth? month) {
             state.didChange(month);
@@ -109,7 +109,7 @@ class _SupernovaYearMonthFormFieldWidget extends HookWidget {
               context,
             ).resolve(context.directionality),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              crossAxisAlignment: .stretch,
               children: [
                 Row(
                   children: [

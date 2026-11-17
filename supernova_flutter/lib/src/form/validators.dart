@@ -1,11 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 typedef SupernovaFormFieldValidator<T> = String? Function(T value);
 
 @immutable
-class SupernovaFormFieldValidators {
-  const SupernovaFormFieldValidators._();
-
+abstract final class SupernovaFormFieldValidators {
   static SupernovaFormFieldValidator<T> buildValidator<T>(
     bool Function(T value) validator,
     String message,

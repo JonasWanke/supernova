@@ -1,6 +1,5 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:supernova/supernova.dart' hide ValueChanged;
 
 import '../form.dart';
@@ -32,7 +31,7 @@ abstract class SupernovaRequiredCheckboxFormField
   void dispose() => currentValue.dispose();
 }
 
-class _SupernovaRequiredCheckboxFormFieldWidget extends HookWidget {
+class _SupernovaRequiredCheckboxFormFieldWidget extends StatelessWidget {
   _SupernovaRequiredCheckboxFormFieldWidget(
     this.common,
     this.onSubmitted,
@@ -57,10 +56,10 @@ class _SupernovaRequiredCheckboxFormFieldWidget extends HookWidget {
       autovalidateMode: AutovalidateMode.onUserInteraction,
       validator: (value) => value! ? null : common.necessity.requiredText!,
       builder: (field) => Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        crossAxisAlignment: .stretch,
         children: [
           CheckboxListTile(
-            controlAffinity: ListTileControlAffinity.leading,
+            controlAffinity: .leading,
             value: formField.currentValue.value,
             onChanged: SupernovaForm.isEnabled(context)
                 ? (value) {

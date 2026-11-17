@@ -1,6 +1,6 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
 import 'package:chrono/chrono.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:supernova/supernova.dart' hide ValueChanged, ValueGetter;
 
 import '../../localization.dart';

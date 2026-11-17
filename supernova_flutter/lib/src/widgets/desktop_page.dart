@@ -1,5 +1,5 @@
 import 'package:black_hole_flutter/black_hole_flutter.dart';
-import 'package:flutter/material.dart' hide Title;
+import 'package:material_ui/material_ui.dart' hide Title;
 
 import 'adaptive_page.dart';
 

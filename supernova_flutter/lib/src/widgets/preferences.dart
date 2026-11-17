@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
 class SwitchPreferenceTile extends StatelessWidget {

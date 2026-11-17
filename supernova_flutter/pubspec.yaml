@@ -9,9 +9,9 @@ resolution: workspace
 dependencies:
   align_positioned: '>=3.0.0 <6.0.0'
   auto_size_text: ^3.0.0
-  black_hole_flutter: ^1.1.0
+  black_hole_flutter: ^2.0.0
   chrono:
-  debug_overlay: ^2.0.0
+  debug_overlay: ^3.0.1
   flutter:
     sdk: flutter
   flutter_hooks: ^0.21.2
@@ -21,6 +21,7 @@ dependencies:
     sdk: flutter
   gap: ^3.0.1
   intl: '>=0.17.0 <0.21.0'
+  material_ui: ^1.8.0
   platformx: ^1.1.0
   shared_preferences: ^2.2.2
   sliver_tools: ^0.2.12

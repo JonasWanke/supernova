@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 extension EdgeInsetsSupernova on EdgeInsets {
   EdgeInsets get onlyTop => EdgeInsets.only(top: top);
